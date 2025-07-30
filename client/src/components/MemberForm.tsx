@@ -4,7 +4,9 @@ import { Button } from "./ui/button";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -12,30 +14,39 @@ import {
 export default function MemberForm() {
   return (
     <>
-      <form>
-        <div className="flex gap-4">
+      <form className="max-w-3xl">
+        <div className="flex flex-col gap-4 md:flex-row">
           <Input
             placeholder="Adınız Soyadınız"
-            className="max-w-sm p-6 text-[#f5f5f5]"
+            className="flex-1 md:p-6 p-3 text-[#f5f5f5] md:text-base text-sm  min-w-0"
           />
           <Input
             placeholder="E Posta Adresiniz"
-            className="max-w-sm p-6 text-[#f5f5f5]"
+            className="flex-1 md:p-6 p-3 text-[#f5f5f5] md:text-base text-sm  min-w-0"
           />
         </div>
         <div className="flex flex-col mt-2">
           <Select>
-            <SelectTrigger className="mt-4 p-6 min-w-[784px] text-[#f5f5f5]">
+            <SelectTrigger className="mt-4 p-6  text-[#f5f5f5] w-full">
               <SelectValue placeholder="Etkinlik Seçiniz" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="1">Etkinlik 1</SelectItem>
-              <SelectItem value="2">Etkinlik 2</SelectItem>
-              <SelectItem value="3">Etkinlik 3</SelectItem>
+              <SelectGroup>
+                <SelectLabel>Müzik</SelectLabel>
+                <SelectItem value="enstruman">Enstrüman</SelectItem>
+                <SelectItem value="solist">Solist</SelectItem>
+                <SelectItem value="dj">Dj Performans</SelectItem>
+              </SelectGroup>
+              <SelectGroup>
+                <SelectLabel>Mekan</SelectLabel>
+                <SelectItem value="roofbar">Roof Bar</SelectItem>
+                <SelectItem value="kokteyl">Kokteyl Bar</SelectItem>
+                <SelectItem value="canlimuzik">Canlı Müzik</SelectItem>
+              </SelectGroup>
             </SelectContent>
           </Select>
           <Button
-            className="mt-6 max-w-sm p-6 text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200"
+            className="mt-6 md:p-6 p-3 text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200"
             size={"lg"}
             variant="default"
           >

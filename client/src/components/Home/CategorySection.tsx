@@ -1,35 +1,38 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import Image from "next/image";
-
-const categories = [
-  { id: 1, name: "Düğün", img: "/dugun.jpg" },
-  { id: 2, name: "Özel Çekim", img: "/ozel-cekim.jpg" },
-  { id: 3, name: "Baby Shower", img: "/baby-shower.jpg" },
-  { id: 4, name: "Happy Hour", img: "/happy-hour.jpg" },
-  { id: 5, name: "Dj Performansı", img: "/dj.jpg" },
-  { id: 6, name: "Doğum Günü", img: "/dogum-gunu.jpg" },
-];
+import CategorySlider from "../SliderGsap/CategorySlider";
+import { Button } from "../ui/button";
+import { ChevronRight } from "lucide-react";
 
 export default function CategorySection() {
   return (
-    <section className="mx-auto container py-8">
-      <div className="flex gap-6 justify-center">
-        {categories.map((category) => (
-          <div key={category.id} className="flex flex-col w-60  text-[#f5f5f5]">
-            <div className="w-60 h-60">
-              <Image
-                src={category.img}
-                alt={category.name}
-                width={240}
-                height={240}
-                className="object-cover rounded-md w-full h-full"
-              />
-            </div>
-            <p className="text-center">{category.name}</p>
-          </div>
-        ))}
+    <>
+      <div className="mx-auto container h-[30vh]">
+        <div className="flex flex-col gap-4 h-full justify-center">
+          <h3 className="md:text-4xl text-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug">
+            Etkinliğini sahneye taşıyacak <br /> sanatçıları keşfet
+          </h3>
+          <p className="text-[#1A1A2E] text-sm md:text-base ml-2">
+            Hayalindeki etkinliği gerçeğe dönüştür! En yetenekli müzisyenlerle{" "}
+            tanış ve <br />
+            sahneye kendi hikayeni taşı.
+          </p>
+        </div>
       </div>
-    </section>
+      <div className="w-full bg-[#040519]">
+        <CategorySlider />
+      </div>
+      <div className="w-full bg-[#f5f5f5]">
+        <div className="mx-auto container h-[15vh] p-3 md:p-0">
+          <div className="flex gap-4 h-full items-center w-fit">
+            <Button className="cursor-pointer px-8 ">Üye Olun</Button>
+            <span className="flex items-center ml-3 text-[#FF007A] font-semibold cursor-pointer">
+              {" "}
+              Daha Fazlası İçin{" "}
+              <ChevronRight size={20} className="text-[#FF007A] mt-1" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
