@@ -1,6 +1,7 @@
 import SceneStarsSection from "@/components/Home/SceneStarsSection";
 import HeroSection from "../components/Home/HeroSection";
 import CategorySection from "@/components/Home/CategorySection";
+import RithmSection from "@/components/Home/RithmSection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <CategorySection />
       <SceneStarsSection />
+      <RithmSection />
     </main>
   );
 }

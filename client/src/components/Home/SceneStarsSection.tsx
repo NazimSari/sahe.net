@@ -28,17 +28,14 @@ export default function SceneStarsSection() {
     });
     scrollTimeline.from(paragraphSplit.lines, {
       opacity: 0,
-      duration: 3,
-      yPercent: 500,
+      duration: 2,
+      yPercent: 200,
       ease: "expo.out",
     });
   }, []);
   return (
     <>
-      <section
-        id="scene-stars"
-        className="mx-auto container min-h-screen mt-16"
-      >
+      <section id="scene-stars" className="mx-auto container mt-16">
         <div className="flex flex-col gap-4 h-full justify-center">
           <h3 className="md:text-4xl text-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug">
             Sahnenin Yıldızları
