@@ -1,3 +1,5 @@
+"use client";
+
 import { Input } from "@/components/ui/input";
 import React from "react";
 import { Button } from "./ui/button";
@@ -46,7 +48,7 @@ export default function MemberForm() {
             </SelectContent>
           </Select>
           <Button
-            className="mt-6 md:p-6 p-3 text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200"
+            className="md:p-6 p-3 text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200"
             size={"lg"}
             variant="default"
           >
