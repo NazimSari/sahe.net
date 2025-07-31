@@ -46,7 +46,7 @@ export default function SceneCards() {
         {sahneData.map((item, index) => (
           <div
             key={index}
-            className="bg-black rounded-lg shadow-lg overflow-hidden transform h-[600px] transition-transform duration-300"
+            className="bg-black rounded-lg shadow-lg overflow-hidden transform h-[600px] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
             <div className="relative">
               {/* Görsel ve badge için relative bir kapsayıcı */}

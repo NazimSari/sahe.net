@@ -63,31 +63,48 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <main className="bg-[#040519]">
-      <section className=" mx-auto container h-screen bg-[url('/hero.png')] bg-cover bg-end p-2">
-        <div className="grid grid-cols-1 md:grid-cols-12 h-full">
-          <div className="md:col-span-8 flex flex-col justify-center gap-5">
-            <h1
-              id="hero-title"
-              className="md:text-7xl sm:text-4xl text-3xl font-bold text-[#f5f5f5] opacity-0" // Başlangıçta görünmez
-            >
-              Etkinlikleriniz İçin Sanatçılara Ulaşmanın <br />
-              En Kolay Yolu
-            </h1>
-            <p
-              id="hero-paragraph"
-              className="text-[#f5f5f5] md:font-semibold md:text-xl sm:text-base text-sm leading-relaxed opacity-0" // Başlangıçta görünmez
-            >
-              Müzisyenlerin buluştuğu en iyi online platforma hoş geldin! Her
-              türlü etkinlik için <br />
-              müzisyenleri kolayca bul, iletişime geç ve hemen rezervasyon yap.
-            </p>
-            <div id="hero-forms" className="mt-10 opacity-0">
-              <MemberForm />
+    <>
+      <main className="bg-[#040519] w-full">
+        <section className="mx-auto container my-16 md:my-10 p-2">
+          <div className="flex justify-between items-center h-full">
+            <div className="flex flex-col justify-center  gap-5">
+              <h1
+                id="hero-title"
+                className="lg:text-6xl md:text-5xl text-4xl  max-w-6xl font-bold text-[#f5f5f5] opacity-0 z-10" // Başlangıçta görünmez
+              >
+                Etkinlikleriniz İçin Sanatçılara Ulaşmanın En Kolay Yolu
+              </h1>
+              <p
+                id="hero-paragraph"
+                className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed opacity-0 z-10" // Başlangıçta görünmez
+              >
+                Müzisyenlerin buluştuğu en iyi online platforma hoş geldin! Her
+                türlü etkinlik için müzisyenleri kolayca bul, iletişime geç ve
+                hemen rezervasyon yap.
+              </p>
+              <div id="hero-forms" className="mt-10 opacity-0 z-10">
+                <MemberForm />
+              </div>
+            </div>
+            <div className="hidden lg:flex mt-16 md:mt-10">
+              <div className="w-full h-full">
+                <img
+                  src="/hero.png"
+                  alt="hero image"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+          <div className="absolute inset-0 lg:hidden z-0">
+            <img
+              src="/hero.png"
+              alt="hero image"
+              className="w-full  h-[50vh] object-cover object-top opacity-30"
+            />
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
