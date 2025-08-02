@@ -64,7 +64,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <main className="bg-[#040519] w-full">
+      <main className="bg-[#040519] w-full pt-20 xl:pt-0">
         <section className="mx-auto container my-16 md:my-10 p-2">
           <div className="flex justify-between items-center h-full">
             <div className="flex flex-col justify-center  gap-5">

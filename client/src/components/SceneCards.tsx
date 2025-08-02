@@ -80,7 +80,7 @@ export default function SceneCards() {
               <Button variant="outline" className="w-fit cursor-pointer">
                 Hemen Dinle
               </Button>
-              <span className="flex items-center ml-3 text-sm text-[#FF007A] font-semibold cursor-pointer">
+              <span className="flex items-center md:ml-3 text-sm text-[#FF007A] font-semibold cursor-pointer">
                 Rezervasyon Yap
                 <ChevronRight size={20} className="text-[#FF007A] mt-1" />
               </span>

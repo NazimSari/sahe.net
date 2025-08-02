@@ -1,0 +1,38 @@
+import React from "react";
+import { Button } from "../ui/button";
+import { ChevronRight } from "lucide-react";
+
+export default function InfoSection() {
+  return (
+    <section className="mx-auto py-32 w-full bg-[#040519]">
+      <div className="container w-full mx-auto p-4 md:p-0 h-full">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-4 justify-center lg:justify-between items-center h-full text-center lg:text-left">
+          {/* Başlık */}
+          <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#f5f5f5] leading-snug max-w-2xl">
+            Müziğin Gücüyle Kalpleri Birleştiriyoruz
+          </h3>
+
+          {/* Açıklama + Butonlar */}
+          <div className="flex flex-col items-center lg:items-start justify-center gap-5 max-w-xl">
+            <p className="text-[#f5f5f5] text-sm md:text-lg leading-relaxed">
+              Biz, müzisyenlerin yeteneklerini dünyaya duyurabileceği,
+              dinleyicilerin ise unutulmaz müzik deneyimleri yaşayabileceği bir
+              platform yaratıyoruz. Her nota, bir bağ kurar; her ritim, bir
+              hikaye anlatır. Sen de bu hikayenin parçası ol!
+            </p>
+
+            <div className="flex  items-center gap-4 w-fit">
+              <Button variant="outline" className="cursor-pointer px-8">
+                Üye Olun
+              </Button>
+              <span className="flex items-center text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer">
+                Daha Fazlası İçin{" "}
+                <ChevronRight size={20} className="text-[#FF007A] mt-1 ml-1" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -48,31 +48,38 @@ export default function SceneStarsSection() {
     <>
       <section id="scene-stars" className="mx-auto  my-16">
         <div className="container mx-auto p-4 md:p-0">
-          <div className="flex max-w-[80vw] items-center justify-between">
+          <div className="flex items-center justify-between">
             <div className="flex flex-col gap-4  justify-center">
-              <h3 className="md:text-4xl text-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug">
+              <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug">
                 Sahnenin Yıldızları
               </h3>
               <p
                 id="scene-paragraf"
-                className="text-[#1A1A2E] text-sm md:text-base ml-2"
+                className="text-[#1A1A2E] text-sm md:text-base max-w-xl ml-2"
               >
                 En iyi müzisyenleri bul, güvenli şekilde rezerve et ve sahneyi
-                hazırla! Etkinliğin <br /> için her şey birkaç tık uzağında.
+                hazırla! Etkinliğin için her şey birkaç tık uzağında.
               </p>
             </div>
-            <Link
-              href="/#festivals"
-              className="border border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300"
-            >
+            <div className="hidden md:block border border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
+              <Link href="/#festivals">
+                <span className="flex items-center ml-3">
+                  {" "}
+                  Daha Fazlası İçin <ChevronRight size={20} className="mt-1" />
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="mt-8">
+            <SceneCards />
+          </div>
+          <div className="md:hidden border w-fit mt-5 border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
+            <Link href="/#festivals">
               <span className="flex items-center ml-3">
                 {" "}
                 Daha Fazlası İçin <ChevronRight size={20} className="mt-1" />
               </span>
             </Link>
-          </div>
-          <div className="mt-8">
-            <SceneCards />
           </div>
         </div>
       </section>

@@ -78,7 +78,7 @@ export function Navbar() {
     <header
       className={`transition-all duration-300 z-50 ${
         scrolled
-          ? "fixed top-0 w-full h-20 bg-[#040519]/30 backdrop-blur-md backdrop-saturate-150 shadow-sm"
+          ? "fixed top-0 w-full h-20 bg-[#040519]/50 backdrop-blur-md backdrop-saturate-150 shadow-sm"
           : "absolute top-0 w-full bg-transparent"
       }`}
     >
@@ -89,11 +89,11 @@ export function Navbar() {
           className="font-bold text-xl transition-colors duration-300 
             text-[#FF007A]"
         >
-          LOGO
+          SAHNE
         </Link>
 
         {/* MENÜ ORTADA */}
-        <div className="flex-1 flex justify-center text-[#f5f5f5]">
+        <div className="hidden md:flex flex-1  justify-center text-[#f5f5f5]">
           <NavigationMenu>
             <NavigationMenuList>
               {/* HOME */}
@@ -161,11 +161,7 @@ export function Navbar() {
         <div className="hidden md:flex gap-2">
           <Button
             variant="outline"
-            className={`bg-transparent hover:bg-[#f5f5f5] px-4 py-2 transition-colors duration-300 ${
-              scrolled
-                ? "text-[#040519] border-current"
-                : "text-[#f5f5f5] border-[#f5f5f5]"
-            }`}
+            className="bg-transparent hover:bg-[#f5f5f5] px-4 py-2 transition-colors duration-300 text-[#f5f5f5] border-[#f5f5f5]"
           >
             Sign In
           </Button>
@@ -177,7 +173,7 @@ export function Navbar() {
         {/* MOBILE MENU */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" className="bg-transparent">
+            <Button variant="outline" size="icon" className="bg-white">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
