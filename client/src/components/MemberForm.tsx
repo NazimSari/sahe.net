@@ -52,7 +52,7 @@ export default function MemberForm() {
             size={"lg"}
             variant="default"
           >
-            Rezervasyon Yap
+            Ön Kayıt
           </Button>
         </div>
       </form>

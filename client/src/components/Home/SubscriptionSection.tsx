@@ -1,8 +1,16 @@
+"use client";
+
 import React from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
 export default function SubscriptionSection() {
+  const handleScroll = () => {
+    const heroSection = document.getElementById(
+      "hero-section"
+    ) as HTMLDivElement | null;
+    heroSection?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <section className="w-full py-16 bg-[url('/abonelik.jpg')] bg-cover bg-top">
       <div className="container mx-auto h-full">
@@ -22,8 +30,12 @@ export default function SubscriptionSection() {
               placeholder="E-posta adresinizi girin"
               className="p-6 border-1 border-[#040519] placeholder:text-[#040519] text-[#040519] font-semibold focus:border-[#FF007A]"
             />
-            <Button size={"lg"} className="cursor-pointer w-fit">
-              Abone Ol
+            <Button
+              onClick={handleScroll}
+              size={"lg"}
+              className="cursor-pointer w-fit"
+            >
+              Ön Kayıt
             </Button>
           </div>
         </div>

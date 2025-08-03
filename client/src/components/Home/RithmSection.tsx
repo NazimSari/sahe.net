@@ -1,9 +1,17 @@
+"use client";
+
 import React from "react";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import RithmSlider from "../SliderGsap/RithmSlider";
 
 export default function RithmSection() {
+  const handleScroll = () => {
+    const heroSection = document.getElementById(
+      "hero-section"
+    ) as HTMLDivElement | null;
+    heroSection?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       <section className="w-full bg-[#040519]">
@@ -21,8 +29,12 @@ export default function RithmSection() {
         <RithmSlider />
         <div className="mx-auto container pb-16">
           <div className="flex gap-4 h-full items-center w-fit p-3 md:p-0">
-            <Button variant="outline" className="cursor-pointer px-8">
-              Üye Olun
+            <Button
+              variant="outline"
+              className="cursor-pointer px-8"
+              onClick={handleScroll}
+            >
+              Ön Kayıt
             </Button>
             <span className="flex items-center ml-3 text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer">
               {" "}

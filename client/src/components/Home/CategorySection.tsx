@@ -1,11 +1,17 @@
 "use client";
 
-import React from "react";
 import CategorySlider from "../SliderGsap/CategorySlider";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 
 export default function CategorySection() {
+  const handleScroll = () => {
+    const heroSection = document.getElementById(
+      "hero-section"
+    ) as HTMLDivElement | null;
+    heroSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <section className="w-full bg-[#040519]">
@@ -23,8 +29,12 @@ export default function CategorySection() {
         <CategorySlider />
         <div className="mx-auto container pb-16">
           <div className="flex gap-4 h-full items-center w-fit p-3 md:p-0">
-            <Button variant="outline" className="cursor-pointer px-8">
-              Üye Olun
+            <Button
+              onClick={handleScroll}
+              variant="outline"
+              className="cursor-pointer px-8"
+            >
+              Ön Kayıt
             </Button>
             <span className="flex items-center ml-3 text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer">
               {" "}

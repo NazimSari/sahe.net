@@ -10,6 +10,7 @@ import Banner from "@/components/Home/Banner";
 import InfoSection from "@/components/Home/InfoSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import Footer from "@/components/Footer/Footer";
+import TonightWhoSection from "@/components/Home/TonightWhoSection";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <StepsSection />
       <Banner />
       <FestivalSection />
+      <TonightWhoSection />
       <PlaceSection />
       <InfoSection />
       <SubscriptionSection />

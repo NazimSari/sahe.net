@@ -1,8 +1,15 @@
+"use client";
 import React from "react";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 
 export default function InfoSection() {
+  const handleScroll = () => {
+    const heroSection = document.getElementById(
+      "hero-section"
+    ) as HTMLDivElement | null;
+    heroSection?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <section className="mx-auto py-32 w-full bg-[#040519]">
       <div className="container w-full mx-auto p-4 md:p-0 h-full">
@@ -22,8 +29,12 @@ export default function InfoSection() {
             </p>
 
             <div className="flex  items-center gap-4 w-fit">
-              <Button variant="outline" className="cursor-pointer px-8">
-                Üye Olun
+              <Button
+                onClick={handleScroll}
+                variant="outline"
+                className="cursor-pointer px-8"
+              >
+                Ön Kayıt
               </Button>
               <span className="flex items-center text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer">
                 Daha Fazlası İçin{" "}

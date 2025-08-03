@@ -159,15 +159,18 @@ export function Navbar() {
 
         {/* SAĞ BUTONLAR */}
         <div className="hidden md:flex gap-2">
-          <Button
+          {/* <Button
             variant="outline"
             className="bg-transparent hover:bg-[#f5f5f5] px-4 py-2 transition-colors duration-300 text-[#f5f5f5] border-[#f5f5f5]"
           >
             Sign In
-          </Button>
-          <Button className="bg-[#f5f5f5] text-[#040519] hover:bg-[#040519] hover:text-[#f5f5f5] border border-[#f5f5f5]  px-4 py-2">
-            Sign Up
-          </Button>
+          </Button> */}
+          <Link
+            href={"/#hero-section"}
+            className="bg-[#f5f5f5] text-[#040519] hover:bg-[#040519] hover:text-[#f5f5f5] border font-semibold border-[#f5f5f5] rounded-lg transition-all duration-300 px-4 py-2"
+          >
+            Ön Kayıt
+          </Link>
         </div>
 
         {/* MOBILE MENU */}
@@ -216,15 +219,18 @@ export function Navbar() {
 
               {/* Mobile'de butonlar */}
               <div className="mt-4 flex flex-col gap-2">
-                <Button
+                {/* <Button
                   variant="outline"
                   className="w-1/2 bg-transparent hover:bg-[#f5f5f5]"
                 >
                   Sign In
-                </Button>
-                <Button className="w-1/2 bg-[#040519] hover:bg-[#f5f5f5] text-white">
-                  Sign Up
-                </Button>
+                </Button> */}
+                <Link
+                  href={"/#hero-section"}
+                  className="w-1/2 bg-[#040519] hover:bg-[#f5f5f5] text-white rounded-md py-1 text-center border border-[#040519] transition-all duration-300 hover:text-[#040519]"
+                >
+                  Ön Kayıt
+                </Link>
               </div>
             </div>
           </SheetContent>
