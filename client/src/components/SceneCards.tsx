@@ -33,7 +33,7 @@ const sahneData = [
   {
     name: "Group Nefes",
     url: "/nefes.jpg",
-    description: "Zarif klasik müzikle nişan ve davetlere sınıf katar",
+    description: "Zarif klasik müzikle nişan ve davetlere sınıf katar.",
     categroy: "Enstrümantal",
     badgeText: "İzmir",
   },
