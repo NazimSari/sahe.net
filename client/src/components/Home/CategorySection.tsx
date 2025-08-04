@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import CategorySlider from "../SliderGsap/CategorySlider";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
@@ -36,11 +37,14 @@ export default function CategorySection() {
             >
               Ön Kayıt
             </Button>
-            <span className="flex items-center ml-3 text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer">
+            <Link
+              href="/etkinlik-turleri"
+              className="flex items-center ml-3 text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer"
+            >
               {" "}
               Daha Fazlası İçin{" "}
               <ChevronRight size={20} className="text-[#FF007A] mt-1" />
-            </span>
+            </Link>
           </div>
         </div>
       </section>
