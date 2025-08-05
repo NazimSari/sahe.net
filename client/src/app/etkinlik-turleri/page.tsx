@@ -5,6 +5,14 @@ import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import MobilFilter from "@/components/MobilFilter";
 import SceneCards from "@/components/SceneCards";
 import ArtistSlider from "@/components/SliderGsap/ArtistSlider";
+import {
+  babyshowerData,
+  djData,
+  dogumGunuData,
+  happyhourData,
+  ozelcekimData,
+  sahneData,
+} from "@/lib/data";
 
 import Link from "next/link";
 import React from "react";
@@ -49,7 +57,7 @@ export default function EtkinlikTurleri() {
             </p>
           </div>
           <div className="mt-8">
-            <SceneCards />
+            <SceneCards data={sahneData} />
           </div>
           <div className="text-center mt-2">
             <Link href="/etkinlik-turleri" className="text-[#f5f5f5]">
@@ -74,7 +82,7 @@ export default function EtkinlikTurleri() {
             </p>
           </div>
           <div className="mt-8">
-            <SceneCards />
+            <SceneCards data={dogumGunuData} />
           </div>
           <div className="text-center mt-5">
             <Link href="/etkinlik-turleri" className="text-[#040519]">
@@ -113,7 +121,7 @@ export default function EtkinlikTurleri() {
             </p>
           </div>
           <div className="mt-8">
-            <SceneCards />
+            <SceneCards data={babyshowerData} />
           </div>
           <div className="text-center mt-5">
             <Link href="/etkinlik-turleri" className="text-[#040519]">
@@ -137,7 +145,7 @@ export default function EtkinlikTurleri() {
             </p>
           </div>
           <div className="mt-8">
-            <SceneCards />
+            <SceneCards data={happyhourData} />
           </div>
           <div className="text-center mt-2">
             <Link href="/etkinlik-turleri" className="text-[#f5f5f5]">
@@ -161,7 +169,7 @@ export default function EtkinlikTurleri() {
             </p>
           </div>
           <div className="mt-8">
-            <SceneCards />
+            <SceneCards data={djData} />
           </div>
           <div className="text-center mt-5">
             <Link href="/etkinlik-turleri" className="text-[#040519]">
@@ -187,7 +195,7 @@ export default function EtkinlikTurleri() {
             </p>
           </div>
           <div className="mt-8">
-            <SceneCards />
+            <SceneCards data={ozelcekimData} />
           </div>
           <div className="text-center mt-5">
             <Link href="/etkinlik-turleri" className="text-[#040519]">

@@ -56,7 +56,7 @@ const categories: {
   },
   {
     title: "Etkinlik Türleri",
-    href: "/category/girisim",
+    href: "/etkinlik-turleri",
     description: "Startup hikayeleri ve iş stratejileri.",
     img: "/ozel-cekim.jpg",
   },

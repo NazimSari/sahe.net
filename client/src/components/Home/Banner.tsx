@@ -3,6 +3,7 @@
 import React from "react";
 import { ContainerTextFlipDemo } from "../Banner/ContainerText";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Banner() {
   const handleScroll = () => {
@@ -18,12 +19,13 @@ export default function Banner() {
         <p className="text-[#f5f5f5] font-semibold md:text-2xl sm:text-base text-sm">
           Şimdi üye ol, sanatın sınırları aşsın!
         </p>
-        <Button
+        <Link
+          href="/#hero-section"
           onClick={handleScroll}
           className="border bg-transparent border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300 w-fit"
         >
           <span className="flex items-center"> Ön Kayıt</span>
-        </Button>
+        </Link>
       </div>
     </div>
   );

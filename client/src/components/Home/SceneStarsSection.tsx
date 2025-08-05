@@ -6,6 +6,7 @@ import { SplitText } from "gsap/all";
 import SceneCards from "../SceneCards";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { sahneData } from "@/lib/data";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -71,7 +72,7 @@ export default function SceneStarsSection() {
             </div>
           </div>
           <div className="mt-8">
-            <SceneCards />
+            <SceneCards data={sahneData} />
           </div>
           <div className="md:hidden border w-fit mt-5 border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
             <Link href="/#festivals">

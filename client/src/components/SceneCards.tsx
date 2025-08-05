@@ -5,45 +5,23 @@ import { ChevronRight } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { FaLocationDot } from "react-icons/fa6";
 
-const sahneData = [
-  {
-    name: "Kamil Aydınlı",
-    url: "/kamil.jpg",
-    description:
-      "Pop ve funk’ın enerjik birleşimi! Düğün ve partiler için mükemmel.",
-    categroy: "Rock",
-    badgeText: "İstanbul",
-  },
-  {
-    name: "Micheal Tartum",
-    url: "/micheal.jpg",
-    description:
-      "Elektronik ritimlerle dans pistini ateşler. Özel etkinliklerin aranan ismi!",
-    categroy: "Jazz",
-    badgeText: "Ankara",
-  },
-  {
-    name: "Group Brooke",
-    url: "/brooklin.jpg",
-    description:
-      "Sert ritimler, güçlü sahne! Festivaller ve partiler için hazır.",
-    categroy: "Rock",
-    badgeText: "Antalya",
-  },
-  {
-    name: "Group Nefes",
-    url: "/nefes.jpg",
-    description: "Zarif klasik müzikle nişan ve davetlere sınıf katar.",
-    categroy: "Enstrümantal",
-    badgeText: "İzmir",
-  },
-];
+interface EventData {
+  name: string;
+  url: string;
+  description: string;
+  category: string;
+  badgeText?: string;
+}
 
-export default function SceneCards() {
+interface SceneCardsProps {
+  data: EventData[];
+}
+
+const SceneCards: React.FC<SceneCardsProps> = ({ data }) => {
   return (
     <div className="container mx-auto p-2">
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-        {sahneData.map((item, index) => (
+        {data.map((item, index) => (
           <div
             key={index}
             className="bg-black rounded-lg shadow-lg overflow-hidden transform h-[600px] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
@@ -62,7 +40,7 @@ export default function SceneCards() {
             </div>
             <div className="p-4">
               <span className="inline-block text-[#9D9D9D] text-sm font-semibold">
-                {item.categroy}
+                {item.category}
               </span>
               <div className="flex text-yellow-400 text-sm my-1">
                 {Array(5)
@@ -74,7 +52,9 @@ export default function SceneCards() {
               <h3 className="text-lg font-semibold text-[#f5f5f5]">
                 {item.name}
               </h3>
-              <p className="text-[#9D9D9D] mt-2">{item.description}</p>
+              <p className="text-[#9D9D9D] mt-2 line-clamp-2">
+                {item.description}
+              </p>
             </div>
             <div className="p-4 flex items-center justify-between">
               <Button variant="outline" className="w-fit cursor-pointer">
@@ -90,4 +70,5 @@ export default function SceneCards() {
       </div>
     </div>
   );
-}
+};
+export default SceneCards;
