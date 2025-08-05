@@ -28,7 +28,7 @@ const stepsData = [
 ];
 export default function StepsSection() {
   return (
-    <section className="mx-auto my-16">
+    <section className="mx-auto pb-16">
       <div className="container mx-auto p-4 md:p-0">
         <div className="flex flex-col gap-4 h-full justify-center">
           <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug md:mt-16 mt-8">

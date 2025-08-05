@@ -42,7 +42,7 @@ export default function CategorySection() {
               className="flex items-center ml-3 text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer"
             >
               {" "}
-              Daha Fazlası İçin{" "}
+              Tümünü Gör
               <ChevronRight size={20} className="text-[#FF007A] mt-1" />
             </Link>
           </div>
