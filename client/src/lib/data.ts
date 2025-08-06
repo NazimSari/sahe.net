@@ -213,3 +213,19 @@ export const ozelcekimData: EventData[] = [
     badgeText: "Adana",
   },
 ];
+
+export const sanatciDetayData = {
+  description:
+    "2002 yılında İstanbul’da, sazının 4 usta müzisyeni tarafından kurulan ARSER ORKESTRASI dinleyicilerini Jazz, Latin ve Napoliten klasiklerinden, unutulmaz müzikallere; Rock’n Roll eserlerden Hicaz örneklemelere uzanan eşsiz bir yolculuğa davet ediyor. Medeniyetler şehri olan İstanbul’un tarihi zenginliğinden aldıkları ilham ile beslenen grup kendisini takip eden seçkin bir dinleyici topluluğu ile yoluna devam etmektedir. Ülke çapında birçok firmanın özel organizasyonu, lansman toplantıları olmak üzere referans listesinde sayısız seçkin düğün davet ve toplantı bulundurmaktadır. Türkiye’yi ziyaret eden misafirleri tarihi ve coğrafi güzelliği ile büyüleyen cennet vatanımızın müzikal zenginliğini göstermeyi kendimize görev bilmiş ve bu bilinçte hizmet vermeyi kendimize prensip edinmişizdir.",
+  language: "Türkçe",
+  createdAt: "2002",
+  enstrumans:
+    "Akordeon, Akustik Davul, Akustik Gitar, Cajon, Asma Davul, Bağlama, Banjo, Bas Gitar, Bendir, Bongo, Buzuki, Cümbüş, Çello/Viyolonsel, Darbuka, Davul, Def, Elektro Davul, Elektro Gitar, Flüt, Gitar, Kanun, Kaşık, Kaval, Keman, Kemençe, Klarnet, Klavye, Konga, Kontrbas, Ney, Perküsyon, Saksafon, Solist, Trompet, Ud, Viyola, Viyolonsel/Çello, Vokal, Zurna",
+  memberDate: "9 Şubat 2017",
+  address: "İstanbul/Türkiye",
+  events: "Doğum Günü, Happy Hour, Baby Shower, Düğün",
+  tur: "Latin, Pop, Jazz, Rock, Dans",
+  repertuvar: "",
+  category: "",
+  price: "3.000 TL - 5.000 TL",
+};

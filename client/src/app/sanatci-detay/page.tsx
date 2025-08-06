@@ -1,9 +1,13 @@
+"use client";
 import BagIcon from "@/components/icons/BagIcon";
 import ClockIcon from "@/components/icons/ClockIcon";
 import UserIcon from "@/components/icons/UserIcon";
 import VehicleIcon from "@/components/icons/VehicleIcon";
 import { Button } from "@/components/ui/button";
-import React from "react";
+
+import DetailsTab from "@/components/DetailsTab";
+import { sanatciDetayData } from "@/lib/data";
+import DetailsPriceCard from "@/components/DetailsPriceCard";
 
 export default function SanatciDetayPage() {
   return (
@@ -76,13 +80,21 @@ export default function SanatciDetayPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full items-center justify-between">
-                <Button className=" w-1/2 mt-10 bg-[#FF007A] mr-3">
+              <div className="flex w-full items-center justify-between gap-1">
+                <Button className=" w-1/2 mt-10 bg-[#FF007A]">
                   Hemen İzle
                 </Button>
                 <Button className=" w-1/2 mt-10 bg-[#FF007A]">Teklif Al</Button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-[#160317]">
+        <div className="container mx-auto py-16">
+          <div className="flex flex-col lg:flex-row">
+            <DetailsTab sanatciDetayData={sanatciDetayData} />
+            <DetailsPriceCard sanatciDetayData={sanatciDetayData} />
           </div>
         </div>
       </section>
