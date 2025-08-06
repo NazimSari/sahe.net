@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { FaLocationDot } from "react-icons/fa6";
+import Link from "next/link";
 
 interface EventData {
   name: string;
@@ -60,10 +61,13 @@ const SceneCards: React.FC<SceneCardsProps> = ({ data }) => {
               <Button variant="outline" className="w-fit cursor-pointer">
                 Hemen Dinle
               </Button>
-              <span className="flex items-center md:ml-3 text-sm text-[#FF007A] font-semibold cursor-pointer">
+              <Link
+                href="/sanatci-detay"
+                className="flex items-center md:ml-3 text-sm text-[#FF007A] font-semibold cursor-pointer"
+              >
                 Rezervasyon Yap
                 <ChevronRight size={20} className="text-[#FF007A] mt-1" />
-              </span>
+              </Link>
             </div>
           </div>
         ))}
