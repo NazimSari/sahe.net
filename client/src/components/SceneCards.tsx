@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Button } from "./ui/button";
@@ -5,6 +6,7 @@ import { ChevronRight } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { FaLocationDot } from "react-icons/fa6";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface EventData {
   name: string;
@@ -19,6 +21,7 @@ interface SceneCardsProps {
 }
 
 const SceneCards: React.FC<SceneCardsProps> = ({ data }) => {
+  const router = useRouter();
   return (
     <div className="container mx-auto p-2">
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -58,7 +61,11 @@ const SceneCards: React.FC<SceneCardsProps> = ({ data }) => {
               </p>
             </div>
             <div className="p-4 flex items-center justify-between">
-              <Button variant="outline" className="w-fit cursor-pointer">
+              <Button
+                variant="outline"
+                className="w-fit cursor-pointer"
+                onClick={() => router.push("/sanatci-detay")}
+              >
                 Hemen Dinle
               </Button>
               <Link
