@@ -54,10 +54,10 @@ export default function FestivalSection() {
             </p>
           </div>
           <div className="hidden md:block border border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-            <Link href="/#festivals">
+            <Link href="/festivaller">
               <span className="flex items-center ml-3">
                 {" "}
-                Daha Fazlası İçin <ChevronRight size={20} className="mt-1" />
+                Tümünü Gör <ChevronRight size={20} className="mt-1" />
               </span>
             </Link>
           </div>
@@ -100,10 +100,10 @@ export default function FestivalSection() {
           ))}
         </div>
         <div className="md:hidden border w-fit mt-5 border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-          <Link href="/#festivals">
+          <Link href="/festivaller">
             <span className="flex items-center ml-3">
               {" "}
-              Daha Fazlası İçin <ChevronRight size={20} className="mt-1" />
+              Tümünü Gör <ChevronRight size={20} className="mt-1" />
             </span>
           </Link>
         </div>

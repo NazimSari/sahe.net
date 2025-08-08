@@ -57,8 +57,14 @@ const categories: {
   {
     title: "Etkinlik Türleri",
     href: "/etkinlik-turleri",
+    description: "Etkinliğin için en iyi favori grubunu keşfet!",
+    img: "/page2.jpg",
+  },
+  {
+    title: "Festivaller",
+    href: "/festivaller",
     description: "Startup hikayeleri ve iş stratejileri.",
-    img: "/ozel-cekim.jpg",
+    img: "/page4.jpg",
   },
 ];
 

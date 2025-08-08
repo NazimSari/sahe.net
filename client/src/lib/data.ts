@@ -229,3 +229,69 @@ export const sanatciDetayData = {
   category: "",
   price: "3.000 TL - 5.000 TL",
 };
+
+export const festivalData = [
+  {
+    title: "İstanbul Yaz Rüzgarı Festivali",
+    description:
+      "İstanbul’un kalbinde, yerli ve uluslararası pop-rock sanatçılarının sahne aldığı üç günlük bir müzik şöleni. Genç yetenekler ve büyük isimler bir arada!",
+    img: "https://muzik.iksv.org/i/content/26479_1_52imf-KV-web-277x395.jpg",
+    month: "NİS",
+    day: "26",
+    location: "İstanbul",
+  },
+  {
+    title: "Cappadox Müzik ve Sanat Festivali",
+    description:
+      "Kapadokya’nın büyülü atmosferinde, balon turları ve sanat enstalasyonlarıyla zenginleşen bir festival. Elektronik ritimler ve indie melodilerle dolu bir deneyim.",
+    img: "https://www.creative-flyers.com/wp-content/uploads/2022/07/Music-Festival-Poster-Design-1.jpg",
+    month: "MAY",
+    day: "15",
+    location: "Kapadokya, Nevşehir",
+  },
+  {
+    title: "İzmir Uluslararası Caz Festivali",
+    description:
+      "Dünyaca ünlü caz sanatçıları ve yerel yeteneklerin buluştuğu bu festival, İzmir’in tarihi dokusunda unutulmaz bir müzik ziyafeti sunuyor.",
+    img: "https://st4.depositphotos.com/1536490/29098/v/600/depositphotos_290988594-stock-illustration-poster-for-a-jazz-music.jpg",
+    month: "TEM",
+    day: "15",
+    location: "Sanat Merkezi, İzmir",
+  },
+  {
+    title: "Antalya Gençlik Festivali",
+    description:
+      "Genç kitleye hitap eden bu festival, Türkiye’nin popüler rap ve pop sanatçılarını bir araya getiriyor. Enerji dolu bir yaz etkinliği!",
+    img: "https://st4.depositphotos.com/2793243/24265/v/380/depositphotos_242658908-stock-illustration-hip-hop-music-ready-made.jpg",
+    month: "TEM",
+    day: "15",
+    location: "Subaşı Tesisleri, Antalya",
+  },
+  {
+    title: "Headbangers’ Weekend",
+    description:
+      "Metal müzik tutkunları için epik bir hafta sonu. Uluslararası ve yerel metal gruplarının sahne aldığı bu festival, adrenalini yüksek bir deneyim vadediyor.",
+    img: "https://st.depositphotos.com/1807998/1420/v/380/depositphotos_14203892-stock-illustration-rock-festival-design-template.jpg",
+    month: "AĞU",
+    day: "3",
+    location: "Life Park, İstanbul",
+  },
+  {
+    title: "Sónar İstanbul 2025",
+    description:
+      "Elektronik müziğin öncü isimlerini ve yenilikçi sesleri buluşturan Sónar, sanat ve teknolojiyle harmanlanmış bir festival. Beşiktaş’ta müzik ve yaratıcılık bir arada!",
+    img: "https://st.depositphotos.com/1301934/1554/v/380/depositphotos_15546575-stock-illustration-music-concept-retro-poster-template.jpg",
+    month: "AĞU",
+    day: "12",
+    location: "PSM, İstanbul",
+  },
+  {
+    title: "Nefis Orman Festivali",
+    description:
+      "Doğayla iç içe bir festival. Yerli pop ve folk sanatçılarının akustik performanslarıyla, şehirden uzak bir müzik kaçamağı.",
+    img: "https://st4.depositphotos.com/5934840/41033/v/380/depositphotos_410334678-stock-illustration-music-festival-poster-with-speaker.jpg",
+    month: "TEM",
+    day: "22",
+    location: "Nefes Orman Sahnesi, İstanbul",
+  },
+];

@@ -338,8 +338,8 @@ export default function SanatciDetayPage() {
               id="scene-paragraf"
               className="text-[#f5f5f5] text-sm md:text-base max-w-xl ml-2"
             >
-              Aşkınızı müziğin büyüsüyle kutlayın! Düğün etkinlikleriniz için en
-              iyi müzik gruplarını keşfedin, romantik ve enerjik anlar yaratın.
+              Ruhuna Dokunan Ritimleri Yakala! Sana hitap eden benzer müzik
+              gruplarıyla tanış, sahnede yeni favorilerini keşfet.
             </p>
           </div>
           <div className="mt-8">
