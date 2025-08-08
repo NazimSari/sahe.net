@@ -22,22 +22,24 @@ import { Separator } from "@/components/ui/separator";
 import { festivalData } from "@/lib/data";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import { PaginationComp } from "@/components/PaginationComp";
+import { useRouter } from "next/navigation";
 
 export default function FestivalPage() {
   const [date, setDate] = useState<Date | undefined>(undefined);
+  const router = useRouter();
 
   return (
     <main className="min-h-screen w-full overflow-hidden">
-      <section className="p-2 bg-[url('/page4.jpg')] bg-cover bg-bottom flex items-center h-[100vh] md:min-h-screen  w-full">
-        <div className="container mx-auto flex flex-col justify-center gap-8 h-full">
-          <div className="flex flex-col gap-4 justify-center mt-16">
-            <h1 className="lg:text-6xl md:text-5xl text-4xl  max-w-4xl font-bold text-[#f5f5f5] leading-tight">
+      <section className="p-2 pt-16 sm:pt-20 bg-[url('/page4.jpg')] bg-cover bg-bottom flex items-center min-h-screen w-full">
+        <div className="container mx-auto flex flex-col justify-center gap-6 py-8 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-4 justify-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f5f5f5] leading-tight max-w-4xl">
               Tüm Festivaller Tek Çatı Altında!
             </h1>
-            <h2 className="md:text-3xl text-2xl max-w-4xl  font-bold text-[#f5f5f5] md:leading-snug">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#f5f5f5] leading-snug max-w-4xl">
               Müziğin Ritmini Yakala, En İyi Etkinlikleri Keşfet
             </h2>
-            <p className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg xl:text-xl font-semibold text-[#f5f5f5] max-w-4xl leading-relaxed">
               Türkiye’nin dört bir yanındaki müzik festivallerini ve
               etkinliklerini keşfet! Rock’tan elektroniğe, cazdan popa, her
               zevke hitap eden festival duyurularına göz at, biletini kap ve
@@ -45,23 +47,23 @@ export default function FestivalPage() {
               coşkusuna katıl!
             </p>
           </div>
-          <div className="md:mt-8">
-            <div className="flex gap-1 items-center">
+          <div className="mt-6">
+            <div className="flex flex-col sm:flex-row gap-2 items-center">
               <Input
                 placeholder="Ara..."
-                className="max-w-5xl md:py-6 bg-[#f5f5f5]"
+                className="w-full sm:flex-1 bg-[#f5f5f5] md:py-6 "
               />
-              <Button className="cursor-pointer hidden sm:flex w-1/3 md:py-6 bg-[#040519] text-[#FF007A] border hover:text-white">
+              <Button className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border hover:text-white text-sm sm:text-base">
                 Sonuçları Göster
               </Button>
             </div>
-            <div className="w-full flex flex-col gap-3">
-              <div className="flex flex-col sm:flex-row md:items-center  gap-3">
+            <div className="flex flex-col gap-3 mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 <Select>
-                  <SelectTrigger className="mt-4 md:py-6 bg-[#f5f5f5] w-full md:w-2/5">
+                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
                     <SelectValue
                       placeholder="Şehir"
-                      className="bg-[#f5f5f5] text-[#040519]"
+                      className="text-[#040519]"
                     />
                   </SelectTrigger>
                   <SelectContent>
@@ -71,10 +73,10 @@ export default function FestivalPage() {
                   </SelectContent>
                 </Select>
                 <Select>
-                  <SelectTrigger className="mt-4 md:py-6 bg-[#f5f5f5] w-full md:w-2/5">
+                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
                     <SelectValue
                       placeholder="Etkinlik Türü"
-                      className="bg-[#f5f5f5] text-[#040519]"
+                      className="text-[#040519]"
                     />
                   </SelectTrigger>
                   <SelectContent>
@@ -84,10 +86,10 @@ export default function FestivalPage() {
                   </SelectContent>
                 </Select>
                 <Select>
-                  <SelectTrigger className="mt-4 md:py-6 bg-[#f5f5f5] w-full md:w-2/5">
+                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
                     <SelectValue
                       placeholder="Müzik Türü"
-                      className="bg-[#f5f5f5] text-[#040519]"
+                      className="text-[#040519]"
                     />
                   </SelectTrigger>
                   <SelectContent>
@@ -96,13 +98,12 @@ export default function FestivalPage() {
                     <SelectItem value="dj">Dj Performans</SelectItem>
                   </SelectContent>
                 </Select>
-                {/* Popover Takvim */}
                 <Popover>
                   <PopoverTrigger asChild>
                     <div
                       role="button"
                       tabIndex={0}
-                      className="mt-4 py-2 md:py-3 bg-[#f5f5f5] w-full md:w-2/5 text-[#040519]/55 text-sm border rounded-md px-4 text-left cursor-pointer"
+                      className="py-2 sm:py-1 md:py-3 bg-[#f5f5f5] w-full text-[#040519]/55 text-sm sm:text-base border rounded-md px-4 text-left cursor-pointer"
                     >
                       {date
                         ? format(date, "d MMMM yyyy", { locale: tr })
@@ -121,50 +122,61 @@ export default function FestivalPage() {
                   </PopoverContent>
                 </Popover>
               </div>
-              <Button className="cursor-pointer sm:hidden md:py-6 bg-[#040519] text-[#FF007A] border hover:text-white">
+              <Button className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border hover:text-white text-sm">
                 Sonuçları Göster
               </Button>
             </div>
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] pb-16">
-        <div className="container mx-auto p-3">
+      <section className="w-full bg-[#160317] pt-16 sm:pt-20 pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {festivalData.map((item, index) => (
-            <div key={index} className="pb-6">
-              <div className="flex w-full gap-3">
-                <div className="lg:w-16 lg:h-16 w-12 h-12 bg-[#FF007A] flex flex-col items-center justify-center rounded-lg text-[#f5f5f5] font-semibold">
-                  <p className="text-sm lg:text-base">{item.day}</p>
-                  <p className="text-sm lg:text-base">{item.month}</p>
+            <div key={index} className="py-6">
+              <div className="flex w-full gap-4 sm:gap-6">
+                <div className="hidden md:flex w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#FF007A] flex-col items-center justify-center rounded-lg text-[#f5f5f5] font-semibold">
+                  <p className="text-xs sm:text-sm lg:text-base">{item.day}</p>
+                  <p className="text-xs sm:text-sm lg:text-base">
+                    {item.month}
+                  </p>
                 </div>
-                <div className="flex items-center gap-6 w-full">
-                  <div className="w-38 h-38 lg:w-45 lg:h-45">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 w-full">
+                  <div className="relative w-full h-60 sm:w-44 sm:h-44 lg:w-48 lg:h-48 flex-shrink-0">
                     <img
                       src={item.img}
                       alt={item.title}
                       className="w-full h-full object-cover rounded-lg"
                     />
+                    <div className="md:hidden absolute top-2 left-2 w-12 h-12 bg-[#FF007A] flex flex-col items-center justify-center rounded-lg text-[#f5f5f5] font-semibold">
+                      <p className="text-xs">{item.day}</p>
+                      <p className="text-xs">{item.month}</p>
+                    </div>
                   </div>
-                  <div className="text-[#f5f5f5] flex justify-between gap-5 h-full w-full">
+                  <div className="text-[#f5f5f5] flex flex-col sm:flex-row justify-between gap-4 sm:gap-6 w-full">
                     <div className="flex flex-col">
-                      <h3 className="font-semibold lg:text-2xl text-xl mb-2">
+                      <h3 className="font-semibold text-lg sm:text-xl lg:text-2xl mb-2">
                         {item.title}
                       </h3>
-                      <div className="flex items-center gap-2 mb-5">
+                      <div className="flex items-center gap-2 mb-4">
                         <span>
                           <FaLocationDot />
                         </span>
-                        <p className="lg:text-sm text-xs font-semibold text-gray-400">
+                        <p className="text-xs sm:text-sm text-gray-400 font-semibold">
                           {item.location}
                         </p>
                       </div>
-                      <p className="text-sm md:text-base">{item.description}</p>
+                      <p className="text-sm sm:text-base lg:text-lg">
+                        {item.description}
+                      </p>
                     </div>
-                    <div className="flex flex-col gap-4 justify-center">
-                      <Button className="border border-[#FF007A] bg-transparent text-[#FF007A]">
+                    <div className="flex flex-col gap-3 sm:gap-4 sm:justify-center">
+                      <Button className="border border-[#FF007A] bg-transparent text-[#FF007A] cursor-pointer py-2 text-sm sm:text-base">
                         Biletini Al
                       </Button>
-                      <Button className="border border-[#f5f5f5] bg-transparent text-[#f5f5f5]">
+                      <Button
+                        className="border border-[#f5f5f5] bg-transparent text-[#f5f5f5] cursor-pointer py-2 text-sm sm:text-base"
+                        onClick={() => router.push("/festival-detay")}
+                      >
                         Hemen İncele
                       </Button>
                     </div>
@@ -175,7 +187,7 @@ export default function FestivalPage() {
             </div>
           ))}
         </div>
-        <div className="mt-5">
+        <div className="mt-6 px-4 sm:px-6 lg:px-8">
           <PaginationComp />
         </div>
       </section>

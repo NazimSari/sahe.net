@@ -20,13 +20,13 @@ import React from "react";
 export default function EtkinlikTurleri() {
   return (
     <main className="bg-[#040519] min-h-screen w-full overflow-hidden">
-      <section className="p-2 bg-[url('/page2.jpg')] bg-cover bg-center flex items-center h-[70vh] md:min-h-screen md:h-full w-full">
-        <div className="container mx-auto flex flex-col justify-center gap-8 h-full">
+      <section className="p-4 pt-16 sm:pt-20 bg-[url('/page2.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
+        <div className="container mx-auto flex flex-col justify-center gap-8 py-8">
           <div className="flex flex-col gap-4 justify-center">
-            <h1 className="lg:text-6xl md:text-5xl text-4xl  max-w-4xl font-bold text-[#f5f5f5] leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f5f5f5] leading-tight max-w-4xl">
               Tarzına Uygun Müzik Gruplarını Keşfet
             </h1>
-            <p className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg xl:text-xl font-semibold text-[#f5f5f5] max-w-4xl leading-relaxed">
               Rock’tan caza, pop’tan metale, her türden müzik grubunu bir arada
               bulabileceğin yerdesin! Kategorilere göz at, tarzını seç ve sana
               en uygun grupları keşfet. Etkinliklerin için mükemmel performansı

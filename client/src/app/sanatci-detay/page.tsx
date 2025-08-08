@@ -16,79 +16,86 @@ import SceneCards from "@/components/SceneCards";
 export default function SanatciDetayPage() {
   return (
     <main className="min-h-screen w-full overflow-hidden">
-      <section className="p-2 bg-[url('/page3.jpg')] bg-cover bg-center flex items-center h-[100vh] md:min-h-screen md:h-full w-full">
-        <div className="container mx-auto bg-[#160317]/50 h-[80vh] rounded-2xl mt-10">
-          <div className="flex flex-col md:flex-row items-center h-full w-full md:justify-evenly">
-            <div className="h-[60vh] w-full  md:w-2/3 p-6 lg:w-[35vw] overflow-hidden xl:ml-8">
+      <section className="p-4 lg:pt-16 pt-28 bg-[url('/page3.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
+        <div className="container mx-auto bg-[#160317]/50 rounded-2xl xl:py-20 py-8 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 h-full w-full">
+            {/* Görsel Kısmı */}
+            <div className="w-full lg:w-1/2 max-w-[550px] aspect-[4/3] overflow-hidden rounded-xl">
               <img
                 src="/rock-music.jpg"
-                alt=""
-                className="w-full h-full object-cover rounded-xl"
+                alt="Arser Orkestrası"
+                className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex flex-col gap-4 justify-center h-[65vh] w-full lg:w-1/2 px-4 pb-6">
-              <div className="flex flex-col  gap-4 text-[#f5f5f5]">
-                <h1 className="lg:text-5xl md:text-4xl text-3xl  max-w-4xl font-bold text-[#f5f5f5] leading-tight">
+
+            {/* Metin ve Bilgi Kısmı */}
+            <div className="flex flex-col gap-6 w-full lg:w-1/2 justify-center">
+              <div className="flex flex-col gap-4 text-[#f5f5f5]">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                   Arser Orkestrası
                 </h1>
-                <p className="text-[#f5f5f5] font-semibold xl:text-xl md:text-base text-sm md:max-w-lg leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-xl font-semibold max-w-md leading-relaxed">
                   Efsanevi Gitar Soloları ve Patlayıcı Sahne Enerjisiyle
                   Tanışın!
                 </p>
               </div>
-              <div className="flex flex-col gap-4 justify-between w-full mt-10">
-                <div className="flex w-full justify-between gap-5">
-                  <div className="flex flex-col sm:flex-row sm:items-center md:gap-4 gap-2  w-1/2">
-                    <VehicleIcon className="h-10 w-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-[#f5f5f5] flex-shrink-0" />
-                    <div className="flex flex-col">
-                      <p className="text-[#f5f5f5] lg:text-lg">
-                        Seyahat Mesafesi
-                      </p>
-                      <p className="text-[#858585] font-semibold text-sm lg:text-base">
-                        1400 KM
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center md:gap-4 gap-2 w-1/2 xl:w-1/3">
-                    <UserIcon className="h-10 w-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-[#f5f5f5] flex-shrink-0" />
-                    <div className="flex flex-col w-full ">
-                      <p className="text-[#f5f5f5] lg:text-lg">Profil Tipi</p>
-                      <p className="text-[#858585] font-semibold text-sm lg:text-base">
-                        Grup (4-6 Kişi)
-                      </p>
-                    </div>
+
+              {/* İkonlar ve Bilgiler */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                <div className="flex items-center gap-3">
+                  <VehicleIcon className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 text-[#f5f5f5] flex-shrink-0" />
+                  <div>
+                    <p className="text-[#f5f5f5] text-sm lg:text-lg">
+                      Seyahat Mesafesi
+                    </p>
+                    <p className="text-[#858585] font-semibold text-sm lg:text-base">
+                      1400 KM
+                    </p>
                   </div>
                 </div>
-                <div className="flex w-full justify-between gap-5">
-                  <div className="flex flex-col sm:flex-row sm:items-center md:gap-4 gap-2 w-1/2">
-                    <ClockIcon className="h-10 w-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-[#f5f5f5] flex-shrink-0" />
-                    <div className="flex flex-col">
-                      <p className="text-[#f5f5f5] lg:text-lg">
-                        Ortalama Hizmet Süresi
-                      </p>
-                      <p className="text-[#858585] font-semibold text-sm lg:text-base">
-                        150 Dakika
-                      </p>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <UserIcon className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 text-[#f5f5f5] flex-shrink-0" />
+                  <div>
+                    <p className="text-[#f5f5f5] text-sm lg:text-lg">
+                      Profil Tipi
+                    </p>
+                    <p className="text-[#858585] font-semibold text-sm lg:text-base">
+                      Grup (4-6 Kişi)
+                    </p>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center md:gap-4 gap-2 w-1/2 xl:w-1/3">
-                    <BagIcon className="h-10 w-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-[#f5f5f5] flex-shrink-0" />
-                    <div className="flex flex-col w-full ">
-                      <p className="text-[#f5f5f5] lg:text-lg">
-                        Performans Tecrübesi
-                      </p>
-                      <p className="text-[#858585] font-semibold text-sm lg:text-base">
-                        15 Yıl
-                      </p>
-                    </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <ClockIcon className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 text-[#f5f5f5] flex-shrink-0" />
+                  <div>
+                    <p className="text-[#f5f5f5] text-sm lg:text-lg">
+                      Ortalama Hizmet Süresi
+                    </p>
+                    <p className="text-[#858585] font-semibold text-sm lg:text-base">
+                      150 Dakika
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <BagIcon className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 text-[#f5f5f5] flex-shrink-0" />
+                  <div>
+                    <p className="text-[#f5f5f5] text-sm lg:text-lg">
+                      Performans Tecrübesi
+                    </p>
+                    <p className="text-[#858585] font-semibold text-sm lg:text-base">
+                      15 Yıl
+                    </p>
                   </div>
                 </div>
               </div>
-              <div className="flex w-full items-center justify-between gap-1">
-                <Button className=" w-1/2 mt-10 bg-[#FF007A]">
+
+              {/* Butonlar */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <Button className="flex-1 bg-[#FF007A] py-3 text-sm sm:text-base">
                   Hemen İzle
                 </Button>
-                <Button className=" w-1/2 mt-10 bg-[#FF007A]">Teklif Al</Button>
+                <Button className="flex-1 bg-[#FF007A] py-3 text-sm sm:text-base">
+                  Teklif Al
+                </Button>
               </div>
             </div>
           </div>
