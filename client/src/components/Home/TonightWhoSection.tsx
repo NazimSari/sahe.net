@@ -68,22 +68,22 @@ export default function TonightWhoSection() {
 
   return (
     <section className="mx-auto my-16 w-full bg-[#1A1A2E]">
-      <div className="container mx-auto  p-4 md:p-0">
-        <div className="flex justify-between gap-8">
+      <div className="container mx-auto p-4">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between lg:gap-8">
           <div className="flex flex-col gap-8">
-            <h3 className="md:text-6xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:mt-16 mt-8">
+            <h3 className="lg:text-6xl md:text-5xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:mt-16 mt-8">
               Bu Gece <span className="text-[#FF007A]">Sahnede</span> Kim Var?
             </h3>
-            <p className="text-[#f5f5f5] text-sm md:text-lg leading-relaxed max-w-xl ml-2">
+            <p className="text-[#f5f5f5] text-sm lg:text-lg md:text-base leading-relaxed max-w-xl ml-2">
               Gecenin ritmini belirleyen sanatçılar burada! Bu gece kim
               performans sergiliyor, hemen göz at.
             </p>
-            <Button className="border bg-transparent border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300 w-fit">
+            <Button className="border bg-transparent border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300 w-fit hidden lg:flex">
               <span className="flex items-center">Tümünü İncele</span>
             </Button>
           </div>
           <div
-            className="relative h-[400px] w-[700px] overflow-hidden rounded-2xl my-10"
+            className="relative h-[400px] w-7/8 lg:w-[700px] overflow-hidden rounded-2xl my-10"
             onMouseEnter={stopSlider}
             onMouseLeave={startSlider}
           >
@@ -105,13 +105,13 @@ export default function TonightWhoSection() {
                       <span>
                         <FaLocationDot />
                       </span>{" "}
-                      <p>{bannerItem.location}</p>
+                      <p className="font-semibold">{bannerItem.location}</p>
                     </div>
                   </div>
                 </div>
                 {/* Card Tasarımı */}
-                <div className="absolute bottom-5 left-5 bg-[#1A1A2E]/80 rounded-lg p-6 max-w-96 w-full shadow-lg">
-                  <h2 className="text-2xl font-bold text-[#f5f5f5]">
+                <div className="absolute bottom-5 left-5 bg-[#1A1A2E]/80 rounded-lg p-6 md:w-1/2 w-6/7 shadow-lg">
+                  <h2 className="lg:text-2xl md:text-xl text-lg font-bold text-[#f5f5f5]">
                     {bannerItem.name}
                   </h2>
                   <p className="text-sm text-[#f5f5f5] mt-1">
@@ -132,19 +132,24 @@ export default function TonightWhoSection() {
                 </div>
               </div>
             ))}
-            <div className="absolute bottom-6 right-5 transform -translate-x-1/2 mx-2">
+            <div className="absolute bottom-6  right-5  mx-1">
               {banners.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ml-1 ${
+                  className={`sm:w-2 sm:h-2 w-1 h-1 rounded-full transition-all ml-1 ${
                     currentSlide === index
-                      ? "bg-[#FF007A] w-6"
+                      ? "bg-[#FF007A] sm:w-6 w-3"
                       : "bg-white/50 hover:bg-white/75"
                   }`}
                 />
               ))}
             </div>
+          </div>
+          <div className="mb-5">
+            <Button className="border bg-transparent border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300 w-fit lg:hidden">
+              <span className="flex items-center">Tümünü İncele</span>
+            </Button>
           </div>
         </div>
       </div>

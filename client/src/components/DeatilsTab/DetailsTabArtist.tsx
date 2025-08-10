@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 
-export default function DetailsTab({ sanatciDetayData }: any) {
+export default function DetailsTabArtist({ sanatciDetayData }: any) {
   const [selectedTab, setSelectedTab] = useState("genel-bakis");
 
   return (

@@ -13,9 +13,9 @@ import { FaLinkedin } from "react-icons/fa6";
 import { AiFillTikTok } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
-export default function DetailsPriceCard({ sanatciDetayData }: any) {
+export default function DetailsPriceCardArtist({ sanatciDetayData }: any) {
   return (
     <div className="w-full lg:w-1/3 mt-4 p-3">
       <Card className="w-full mx-auto p-6">

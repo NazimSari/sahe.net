@@ -295,3 +295,16 @@ export const festivalData = [
     location: "Nefes Orman Sahnesi, İstanbul",
   },
 ];
+export const festivalDetayData = {
+  description:
+    "İstanbul Yaz Rüzgarı Festivali, müziğin birleştirici gücünü İstanbul’un eşsiz atmosferinde buluşturan 3 günlük bir müzik şölenidir. Pop, rock ve alternatif müzik tutkunlarını bir araya getiren bu festival, yerli ve uluslararası sanatçıların enerjik performanslarıyla unutulmaz anlar vadediyor. KüçükÇiftlik Park’ın açık hava sahnesinde, yazın en güzel günlerinde müzik, dans ve eğlence bir arada!",
+  date: "20-22 Haziran 2025",
+  location: "KüçükÇiftlik Park, İstanbul",
+  tur: "Pop, Rock, Alternatif",
+  price:
+    "300 TL, Kombine (3 Gün), 800 TL (Erken bilet alımlarında %20 indirim!)",
+  age: "16+ (16-18 yaş arası ebeveyn izniyle katılabilir)",
+  program: "",
+  singers: "",
+  amenities: "",
+};

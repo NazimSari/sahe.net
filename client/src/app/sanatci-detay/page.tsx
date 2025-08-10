@@ -4,14 +4,13 @@ import ClockIcon from "@/components/icons/ClockIcon";
 import UserIcon from "@/components/icons/UserIcon";
 import VehicleIcon from "@/components/icons/VehicleIcon";
 import { Button } from "@/components/ui/button";
-
-import DetailsTab from "@/components/DetailsTab";
 import { happyhourData, sanatciDetayData } from "@/lib/data";
-import DetailsPriceCard from "@/components/DetailsPriceCard";
 import { Check } from "lucide-react";
 import { FaStar, FaUserCircle, FaDotCircle } from "react-icons/fa";
 import StepsSection from "@/components/Home/StepsSection";
 import SceneCards from "@/components/SceneCards";
+import DetailsTabArtist from "@/components/DeatilsTab/DetailsTabArtist";
+import DetailsPriceCardArtist from "@/components/DeatilsPriceCard/DetailsPriceCardArtist";
 
 export default function SanatciDetayPage() {
   return (
@@ -104,8 +103,8 @@ export default function SanatciDetayPage() {
       <section className="bg-[#160317]">
         <div className="container mx-auto py-16">
           <div className="flex flex-col lg:flex-row">
-            <DetailsTab sanatciDetayData={sanatciDetayData} />
-            <DetailsPriceCard sanatciDetayData={sanatciDetayData} />
+            <DetailsTabArtist sanatciDetayData={sanatciDetayData} />
+            <DetailsPriceCardArtist sanatciDetayData={sanatciDetayData} />
           </div>
         </div>
       </section>
