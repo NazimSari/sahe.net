@@ -44,9 +44,9 @@ const categories: {
   },
   {
     title: "Mekanlar",
-    href: "/category/tasarim",
+    href: "/mekanlar",
     description: "UI/UX, grafik tasarım ve yaratıcı fikirler.",
-    img: "/roof.jpg",
+    img: "/page10.jpg",
   },
   {
     title: "Müzik Türleri",

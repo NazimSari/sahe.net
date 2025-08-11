@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/all";
-import SceneCards from "../SceneCards";
+import SceneCards from "../Cards/SceneCards";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { sahneData } from "@/lib/data";

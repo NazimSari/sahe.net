@@ -8,7 +8,7 @@ import { happyhourData, sanatciDetayData } from "@/lib/data";
 import { Check } from "lucide-react";
 import { FaStar, FaUserCircle, FaDotCircle } from "react-icons/fa";
 import StepsSection from "@/components/Home/StepsSection";
-import SceneCards from "@/components/SceneCards";
+import SceneCards from "@/components/Cards/SceneCards";
 import DetailsTabArtist from "@/components/DeatilsTab/DetailsTabArtist";
 import DetailsPriceCardArtist from "@/components/DeatilsPriceCard/DetailsPriceCardArtist";
 

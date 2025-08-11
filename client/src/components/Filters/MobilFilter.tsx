@@ -5,10 +5,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
-import { Button } from "./ui/button";
+} from "../ui/dialog";
+import { Button } from "../ui/button";
 import { SlidersHorizontal } from "lucide-react";
-import Filter from "./Filter";
+import Filter from "../Filters/Filter";
 
 export default function MobilFilter() {
   return (

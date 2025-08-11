@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { FaStar } from "react-icons/fa";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
-import { Badge } from "./ui/badge";
+import { Badge } from "../ui/badge";
 import { FaLocationDot } from "react-icons/fa6";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

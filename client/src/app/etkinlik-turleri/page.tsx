@@ -1,9 +1,9 @@
-import Filter from "@/components/Filter";
+import Filter from "@/components/Filters/Filter";
 import Banner from "@/components/Home/Banner";
 import StepsSection from "@/components/Home/StepsSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
-import MobilFilter from "@/components/MobilFilter";
-import SceneCards from "@/components/SceneCards";
+import MobilFilter from "@/components/Filters/MobilFilter";
+import SceneCards from "@/components/Cards/SceneCards";
 import ArtistSlider from "@/components/SliderGsap/ArtistSlider";
 import {
   babyshowerData,
