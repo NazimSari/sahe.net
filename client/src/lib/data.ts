@@ -489,3 +489,20 @@ export const rooftopData: PlaceData[] = [
     badgeText: "Muğla",
   },
 ];
+
+export const mekanDetayData = {
+  description:
+    "Ritim Bar, İstanbul’un gece hayatının nabzını tutan, canlı müzik ve DJ partilerinin vazgeçilmez adresi! Beyoğlu’nun kalbinde yer alan bu enerjik mekan, rock’tan elektroniğe, indie’den popa geniş bir müzik yelpazesi sunuyor. Sıcak bir pub atmosferi, samimi sahne performansları ve dans pistinde bitmeyen eğlenceyle, Ritim Bar müzikseverlerin buluşma noktası. Haftanın her günü farklı bir vibe, her gece yeni bir hikaye!",
+  address: "İstanbul/Türkiye",
+  tur: "Pop, Rock, Alternatif",
+  category: "Canlı Müzik",
+  price: "3.000 TL - 5.000 TL",
+  age: "16+ (16-18 yas arası ebeveyn izniyle katılabilir)",
+  program: "",
+  foodDrink: "",
+  phone: "0535 000 00 00",
+  singers: "",
+  amenities: "",
+  worksHours: "14:00-02:00",
+  reservation: "0535 000 00 00",
+};

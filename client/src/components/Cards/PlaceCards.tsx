@@ -65,12 +65,12 @@ const PlaceCards: React.FC<PlaceCardsProps> = ({ data }) => {
               <Button
                 variant="outline"
                 className="w-fit cursor-pointer"
-                onClick={() => router.push("/sanatci-detay")}
+                onClick={() => router.push("/mekan-detay")}
               >
                 Hemen İncele
               </Button>
               <Link
-                href="/sanatci-detay"
+                href="/mekan-detay"
                 className="flex items-center md:ml-3 text-sm text-[#FF007A] font-semibold cursor-pointer"
               >
                 Rezervasyon Yap
