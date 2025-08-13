@@ -37,8 +37,8 @@ const categories: {
   img: string;
 }[] = [
   {
-    title: "Sahnenin Yıldızları",
-    href: "/category/teknoloji",
+    title: "Bu Gece Sahnede Kim Var?",
+    href: "/bu-gece-sahne",
     description: "Son teknoloji haberleri ve ürün incelemeleri.",
     img: "/rock-music.jpg",
   },

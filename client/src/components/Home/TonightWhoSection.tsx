@@ -3,50 +3,15 @@ import { useEffect, useState, useRef } from "react";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import { FaLocationDot } from "react-icons/fa6";
-
-const banners = [
-  {
-    id: 1,
-    name: "Neşe Karaböcek",
-    genres: "Pop, Dance",
-    hour: "19:00",
-    venue: "Babylon",
-    location: "İstanbul",
-    image: "/dogum-gunu.jpg",
-  },
-  {
-    id: 2,
-    name: "Berkay Aydınlı",
-    genres: "Rock, Dance",
-    hour: "20:00",
-    venue: "Vakkoroma Cafe",
-    location: "İstanbul",
-    image: "/dj-performans.jpg",
-  },
-  {
-    id: 3,
-    name: "Tan Yılmaz",
-    genres: "Sanat Müziği",
-    hour: "21:30",
-    venue: "Black Box",
-    location: "Ankara",
-    image: "/canli-music.jpg",
-  },
-  {
-    id: 4,
-    name: "DJ Yelken",
-    genres: "House, Club",
-    hour: "22:00",
-    venue: "Cath Restaurant",
-    location: "Antalya",
-    image: "/dugun-orkestra.jpg",
-  },
-];
+import { useRouter } from "next/navigation";
+import { banners } from "@/lib/data";
 
 export default function TonightWhoSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const router = useRouter();
 
   const startSlider = () => {
     intervalRef.current = setInterval(() => {
@@ -78,7 +43,10 @@ export default function TonightWhoSection() {
               Gecenin ritmini belirleyen sanatçılar burada! Bu gece kim
               performans sergiliyor, hemen göz at.
             </p>
-            <Button className="border bg-transparent border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300 w-fit hidden lg:flex">
+            <Button
+              onClick={() => router.push("/bu-gece-sahne")}
+              className="border bg-transparent border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300 w-fit hidden lg:flex"
+            >
               <span className="flex items-center">Tümünü İncele</span>
             </Button>
           </div>
@@ -147,7 +115,10 @@ export default function TonightWhoSection() {
             </div>
           </div>
           <div className="mb-5">
-            <Button className="border bg-transparent border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300 w-fit lg:hidden">
+            <Button
+              onClick={() => router.push("/bu-gece-sahne")}
+              className="border bg-transparent border-[#FF007A] px-8 py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300 w-fit lg:hidden"
+            >
               <span className="flex items-center">Tümünü İncele</span>
             </Button>
           </div>

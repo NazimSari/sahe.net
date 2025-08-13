@@ -14,6 +14,12 @@ interface PlaceData {
   badgeText?: string; // Opsiyonel, çünkü badgeText her zaman zorunlu değil
 }
 
+interface SingerData {
+  name: string;
+  url: string;
+  category: string;
+}
+
 export const sahneData: EventData[] = [
   {
     name: "Kamil Aydınlı",
@@ -506,3 +512,110 @@ export const mekanDetayData = {
   worksHours: "14:00-02:00",
   reservation: "0535 000 00 00",
 };
+
+export const banners = [
+  {
+    id: 1,
+    name: "Neşe Karaböcek",
+    genres: "Pop, Dance",
+    hour: "19:00",
+    venue: "Babylon",
+    location: "İstanbul",
+    image: "/dogum-gunu.jpg",
+  },
+  {
+    id: 2,
+    name: "Berkay Aydınlı",
+    genres: "Rock, Dance",
+    hour: "20:00",
+    venue: "Vakkoroma Cafe",
+    location: "İstanbul",
+    image: "/dj-performans.jpg",
+  },
+  {
+    id: 3,
+    name: "Tan Yılmaz",
+    genres: "Sanat Müziği",
+    hour: "21:30",
+    venue: "Black Box",
+    location: "Ankara",
+    image: "/canli-music.jpg",
+  },
+  {
+    id: 4,
+    name: "DJ Yelken",
+    genres: "House, Club",
+    hour: "22:00",
+    venue: "Cath Restaurant",
+    location: "Antalya",
+    image: "/dugun-orkestra.jpg",
+  },
+];
+
+export const singerCardsDataIstanbul = [
+  {
+    url: "https://st2.depositphotos.com/6571396/9693/i/380/depositphotos_96932416-stock-photo-beautiful-girl-singing-into-microphone.jpg",
+    name: " Şermin Yüce",
+    category: "Pop",
+  },
+  {
+    url: "https://st3.depositphotos.com/9880800/17889/i/380/depositphotos_178892154-stock-photo-sensual-young-female-singer-performing.jpg",
+    name: "Deniz Derman",
+    category: "Türkü",
+  },
+  {
+    url: "https://st4.depositphotos.com/12985790/25168/i/380/depositphotos_251683390-stock-photo-close-good-looking-musician-singing.jpg",
+    name: "Berkut",
+    category: "Rock",
+  },
+  {
+    url: "https://st3.depositphotos.com/1001951/13987/i/380/depositphotos_139879404-stock-photo-two-professional-guitarists-performing-in.jpg",
+    name: "Grup Tarçın",
+    category: "Pop",
+  },
+];
+export const singerCardsDataAnkara = [
+  {
+    url: "https://st3.depositphotos.com/10638998/15079/i/380/depositphotos_150799476-stock-photo-rock-band-on-stage.jpg",
+    name: "Melisa Güven",
+    category: "Pop",
+  },
+  {
+    url: "https://st.depositphotos.com/1010710/3384/i/380/depositphotos_33840331-stock-photo-pop-singer.jpg",
+    name: "Antonio Morano",
+    category: "Akustik",
+  },
+  {
+    url: "https://st2.depositphotos.com/3662505/5297/i/380/depositphotos_52979941-stock-photo-recording-studio.jpg",
+    name: "Sinem Kaya",
+    category: "Blues",
+  },
+  {
+    url: "https://st2.depositphotos.com/1284069/6417/i/380/depositphotos_64170833-stock-photo-beautiful-african-woman-singing-with.jpg",
+    name: "Angelina Jolie",
+    category: "Rock",
+  },
+];
+
+export const singerCardsDataIzmir = [
+  {
+    url: "https://st5.depositphotos.com/16122460/72457/i/380/depositphotos_724574592-stock-photo-beautiful-young-woman-stylish-dress.jpg",
+    name: "Selin Sarıkaya",
+    category: "Rock",
+  },
+  {
+    url: "https://st.depositphotos.com/1003293/1485/i/380/depositphotos_14854739-stock-photo-singer.jpg",
+    name: "Can Sırdaş",
+    category: "Pop",
+  },
+  {
+    url: "https://st2.depositphotos.com/1004918/6227/i/380/depositphotos_62270347-stock-photo-woman-singer-recording-a-ballad.jpg",
+    name: "Hazan Yıldız",
+    category: "Akustik",
+  },
+  {
+    url: "https://static3.depositphotos.com/1003368/160/i/380/depositphotos_1605170-stock-photo-singer-with-the-retro-microphone.jpg",
+    name: "Gülçin Turan",
+    category: "Pop",
+  },
+];
