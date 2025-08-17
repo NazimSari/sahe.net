@@ -3,15 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import SliderCard from "./SliderCard";
 import gsap from "gsap";
-
-const categoriesSlider = [
-  { path: "/dugun.jpg", name: "Düğün" },
-  { path: "/ozel-cekim.jpg", name: "Özel Çekim" },
-  { path: "/baby-shower.jpg", name: "Bebek Partisi" },
-  { path: "/happy-hour.jpg", name: "Mutlu Saatler" },
-  { path: "/dj-performans.jpg", name: "DJ Performansı" },
-  { path: "/dogum-gunu.jpg", name: "Doğum Günü" },
-];
+import { categoriesSlider } from "@/lib/data";
 
 export default function CategorySlider() {
   const containerRef = useRef<HTMLDivElement>(null);

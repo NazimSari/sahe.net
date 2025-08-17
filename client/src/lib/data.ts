@@ -20,6 +20,15 @@ interface SingerData {
   category: string;
 }
 
+export const categoriesSlider = [
+  { path: "/dugun.jpg", name: "Düğün" },
+  { path: "/ozel-cekim.jpg", name: "Özel Çekim" },
+  { path: "/baby-shower.jpg", name: "Bebek Partisi" },
+  { path: "/happy-hour.jpg", name: "Mutlu Saatler" },
+  { path: "/dj-performans.jpg", name: "DJ Performansı" },
+  { path: "/dogum-gunu.jpg", name: "Doğum Günü" },
+];
+
 export const sahneData: EventData[] = [
   {
     name: "Kamil Aydınlı",

@@ -1,115 +1,99 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import SliderCard from "./SliderCard";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-
-const categoriesSlider = [
-  { path: "/dugun.jpg", name: "Düğün" },
-  { path: "/ozel-cekim.jpg", name: "Özel Çekim" },
-  { path: "/baby-shower.jpg", name: "Bebek Partisi" },
-  { path: "/happy-hour.jpg", name: "Mutlu Saatler" },
-  { path: "/dj-performans.jpg", name: "DJ Performansı" },
-  { path: "/dogum-gunu.jpg", name: "Doğum Günü" },
-];
+import MobilSliderCard from "./MobilSliderCard";
+import { categoriesSlider } from "@/lib/data";
 
 export default function MobilSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const currentIndexRef = useRef(0); // Aktif kartın indeksini tut
+  const currentIndexRef = useRef(categoriesSlider.length); // Ortadaki setten başla
 
-  // Başlangıç pozisyonunu ayarla
   useEffect(() => {
     if (!containerRef.current) return;
 
     const container = containerRef.current;
     const cardWidth =
       container.querySelector(".slider-card")?.clientWidth || 250;
-    const gap = 16; // gap-4 = 16px
-    const totalWidth = (cardWidth + gap) * categoriesSlider.length; // Tek setin genişliği
+    const gap = 16;
+    const step = cardWidth + gap;
     const viewportWidth = window.innerWidth;
-    const centerOffset = (viewportWidth - cardWidth) / 2; // Ekranın ortasına hizalamak için ofset
+    const centerOffset = (viewportWidth - cardWidth) / 2;
 
-    // Başlangıç pozisyonunu orta sete ve ilk kartın ortasına ayarla
-    const initialX = -(totalWidth + centerOffset);
-    gsap.set(container, { x: initialX });
+    // Başlangıç pozisyonu → orta setin ilk kartı
+    const startX = -(currentIndexRef.current * step - centerOffset);
+    gsap.set(container, { x: startX });
   }, []);
 
-  // Kartı ekranın ortasına hizala ve sonsuz kaydırmayı yönet
-  const centerCard = (direction: "left" | "right") => {
+  const slideTo = (direction: "left" | "right") => {
     if (!containerRef.current) return;
 
     const container = containerRef.current;
-    const cardWidth =
-      container.querySelector(".slider-card")?.clientWidth || 250;
-    const gap = 16; // gap-4 = 16px
-    const totalWidth = (cardWidth + gap) * categoriesSlider.length; // Tek setin genişliği
-    const viewportWidth = window.innerWidth;
-    const centerOffset = (viewportWidth - cardWidth) / 2; // Ekranın ortasına hizalamak için ofset
+    const card = container.querySelector(".slider-card") as HTMLElement;
+    if (!card) return;
 
-    // Aktif kart indeksini güncelle
+    const cardWidth = card.clientWidth;
+    const gap = 16;
+    const step = cardWidth + gap;
+    const viewportWidth = window.innerWidth;
+    const centerOffset = (viewportWidth - cardWidth) / 2;
+
+    // index güncelle
     if (direction === "left") {
-      currentIndexRef.current = currentIndexRef.current + 1;
+      currentIndexRef.current += 1;
     } else {
-      currentIndexRef.current = currentIndexRef.current - 1;
+      currentIndexRef.current -= 1;
     }
 
-    // Aktif kartın pozisyonunu hesapla (orta setten)
-    const activeCardOffset =
-      (cardWidth + gap) *
-      ((currentIndexRef.current % categoriesSlider.length) +
-        categoriesSlider.length);
-    const targetX = -(activeCardOffset - centerOffset);
+    const targetX = -(currentIndexRef.current * step - centerOffset);
 
     gsap.to(container, {
       x: targetX,
-      duration: 0.3,
+      duration: 0.4,
       ease: "power2.out",
-      onUpdate: () => {
-        // Animasyon sırasında pozisyonu kontrol et
-        if (containerRef.current) {
-          const currentX = gsap.getProperty(
-            containerRef.current,
-            "x"
-          ) as number;
-          if (currentX < -totalWidth * 2) {
-            gsap.set(containerRef.current, { x: currentX + totalWidth });
-            currentIndexRef.current -= categoriesSlider.length;
-          } else if (currentX > -totalWidth) {
-            gsap.set(containerRef.current, { x: currentX - totalWidth });
-            currentIndexRef.current += categoriesSlider.length;
-          }
+      onComplete: () => {
+        if (!containerRef.current) return;
+        let currentX = gsap.getProperty(containerRef.current, "x") as number;
+        const totalWidth = step * categoriesSlider.length;
+
+        // Sonsuz kaydırma için pozisyon resetle
+        if (currentIndexRef.current >= categoriesSlider.length * 2) {
+          // Çok sağa gitti → orta sete al
+          currentIndexRef.current -= categoriesSlider.length;
+          gsap.set(containerRef.current, { x: currentX + totalWidth });
+        } else if (currentIndexRef.current < categoriesSlider.length) {
+          // Çok sola gitti → orta sete al
+          currentIndexRef.current += categoriesSlider.length;
+          gsap.set(containerRef.current, { x: currentX - totalWidth });
         }
       },
     });
   };
 
-  // Swipe handlers for mobile
   const handlers = useSwipeable({
-    onSwipedLeft: () => centerCard("left"),
-    onSwipedRight: () => centerCard("right"),
-    trackMouse: false, // Only track touch events
-    delta: 10, // Minimum swipe distance
+    onSwipedLeft: () => slideTo("left"),
+    onSwipedRight: () => slideTo("right"),
+    delta: 10,
+    trackMouse: false,
   });
-
-  // handlers içinden ref'i hariç tut
-  const { ref, ...swipeHandlers } = handlers;
+  const { ref: swipeRef, ...swipeHandlers } = handlers;
 
   return (
     <div className="w-full relative h-[40vh] flex items-center overflow-hidden">
       <div
         ref={(node) => {
-          containerRef.current = node; // containerRef'e atama
-          ref(node); // useSwipeable'a atama
+          containerRef.current = node;
+          swipeRef(node);
         }}
         className="flex gap-4 absolute will-change-transform"
         style={{ transform: "translateZ(0)" }}
-        {...swipeHandlers} // ref hariç diğer handler'ları yay
+        {...swipeHandlers}
       >
         {[...categoriesSlider, ...categoriesSlider, ...categoriesSlider].map(
           (item, index) => (
             <div key={index} className="slider-card">
-              <SliderCard path={item.path} name={item.name} />
+              <MobilSliderCard path={item.path} name={item.name} />
             </div>
           )
         )}
