@@ -11,7 +11,7 @@ interface CardProps {
 
 const SliderCard: React.FC<CardProps> = ({ path, name }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLHeadingElement>(null);
+  const buttonRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (!overlayRef.current || !buttonRef.current) return;
@@ -63,13 +63,19 @@ const SliderCard: React.FC<CardProps> = ({ path, name }) => {
         ref={overlayRef}
         className="absolute inset-0 bg-black opacity-0 pointer-events-none"
       ></div>
+      <div className="absolute bottom-0 left-0 bg-black/70 h-16 w-full">
+        {" "}
+        <span className="z-50 text-white flex items-center h-full justify-center font-semibold">
+          {name}
+        </span>
+      </div>
       <div className="absolute inset-0 flex justify-center items-center">
-        <h3
+        <a
           ref={buttonRef}
-          className="bg-white font-semibold text-sm px-3 py-2 rounded-lg flex items-center gap-1 hover:opacity-75"
+          className="bg-white font-semibold text-sm px-3 py-2 rounded-lg flex items-center gap-1 hover:opacity-75 cursor-pointer"
         >
-          <span>{name}</span>
-        </h3>
+          <span>İncele</span>
+        </a>
       </div>
     </div>
   );

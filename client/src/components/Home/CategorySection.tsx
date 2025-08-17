@@ -4,6 +4,7 @@ import Link from "next/link";
 import CategorySlider from "../SliderGsap/CategorySlider";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
+import MobilSlider from "../SliderGsap/MobilSlider";
 
 export default function CategorySection() {
   const handleScroll = () => {
@@ -27,7 +28,12 @@ export default function CategorySection() {
             </p>
           </div>
         </div>
-        <CategorySlider />
+        <div className="hidden md:block">
+          <CategorySlider />
+        </div>
+        <div className="md:hidden">
+          <MobilSlider />
+        </div>
         <div className="mx-auto container pb-16">
           <div className="flex gap-4 h-full items-center w-fit p-3 md:p-0">
             <Button
