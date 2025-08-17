@@ -43,135 +43,139 @@ export default function DetailsTabArtist({ sanatciDetayData }: any) {
         onValueChange={setSelectedTab}
         className="py-4 hidden lg:block"
       >
-        <TabsList className="grid w-full grid-cols-5 gap-2 h-12 mb-4">
-          <TabsTrigger value="genel-bakis" className="text-sm">
+        <TabsList className="grid w-full grid-cols-5 gap-2 h-12 mb-4 bg-transparent">
+          <TabsTrigger value="genel-bakis" className="md:text-lg text-sm">
             Genel Bakış
           </TabsTrigger>
-          <TabsTrigger value="etkinlikler" className="text-sm">
-            Katılabileceği Etkinlikler
+          <TabsTrigger value="etkinlikler" className="text-sm md:text-lg">
+            Etkinlikler
           </TabsTrigger>
-          <TabsTrigger value="repertuvar" className="text-sm">
+          <TabsTrigger value="repertuvar" className="text-sm md:text-lg">
             Repertuvar
           </TabsTrigger>
-          <TabsTrigger value="tur" className="text-sm">
+          <TabsTrigger value="tur" className="text-sm md:text-lg">
             Akım/Tür
           </TabsTrigger>
-          <TabsTrigger value="kategoriler" className="text-sm">
+          <TabsTrigger value="kategoriler" className="text-sm md:text-lg">
             Kategoriler
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="genel-bakis">
-          <Card className="p-14">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.description}</p>
+          <div className="flex flex-col gap-5">
+            <div className="p-0">
+              <p className="text-[#f5f5f5]">{sanatciDetayData.description}</p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">
+              <p className="text-[#f5f5f5] flex items-center">
+                <span className="font-semibold text-lg w-46">
                   Konuşulan Diller:{" "}
                 </span>
                 {sanatciDetayData.language}
               </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">
+              <p className="text-[#f5f5f5] flex items-center">
+                <span className="font-semibold text-lg w-46">
                   Kuruluş Tarihi:{" "}
                 </span>
                 {sanatciDetayData.createdAt}
               </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">
+              <p className="text-[#f5f5f5] flex items-center gap-14">
+                <span className="font-semibold text-lg w-46">
                   Kullanılan Enstrümanlar:{" "}
                 </span>
                 {sanatciDetayData.enstrumans}
               </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">
+              <p className="text-[#f5f5f5] flex items-center">
+                <span className="font-semibold text-lg w-46">
                   Üyelik Tarihi:{" "}
                 </span>
                 {sanatciDetayData.memberDate}
               </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">Adres: </span>
+              <p className="text-[#f5f5f5] flex items-center">
+                <span className="font-semibold text-lg w-46">Adres: </span>
                 {sanatciDetayData.address}
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </TabsContent>
         <TabsContent value="etkinlikler">
-          <Card className="p-14">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.events}</p>
-            </CardContent>
-          </Card>
+          <div className="flex flex-col gap-5">
+            <div className="p-0">
+              <p className="text-[#f5f5f5]">{sanatciDetayData.events}</p>
+            </div>
+          </div>
         </TabsContent>
         <TabsContent value="repertuvar">
-          <Card className="p-14">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.repertuvar}</p>
-            </CardContent>
-          </Card>
+          <div className="flex flex-col gap-5">
+            <div className="p-0">
+              <p className="text-[#f5f5f5]">{sanatciDetayData.repertuvar}</p>
+            </div>
+          </div>
         </TabsContent>
         <TabsContent value="tur">
-          <Card className="p-14">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.tur}</p>
-            </CardContent>
-          </Card>
+          <div className="flex flex-col gap-5">
+            <div className="p-0">
+              <p className="text-[#f5f5f5]">{sanatciDetayData.tur}</p>
+            </div>
+          </div>
         </TabsContent>
         <TabsContent value="kategoriler">
-          <Card className="p-14">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.category}</p>
-            </CardContent>
-          </Card>
+          <div className="flex flex-col gap-5">
+            <div className="p-0">
+              <p className="text-[#f5f5f5]">{sanatciDetayData.category}</p>
+            </div>
+          </div>
         </TabsContent>
       </Tabs>
 
       {/* Küçük ekranlar için Select ile içerik gösterimi */}
       <div className="lg:hidden">
         {selectedTab === "genel-bakis" && (
-          <Card className="p-6 mt-4">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.description}</p>
+          <div className="mt-4">
+            <div className="p-2">
+              <p className="text-[#f5f5f5] text-sm sm:text-base leading-relaxed">
+                {sanatciDetayData.description}
+              </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">
+              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
+                <span className="text-[#f5f5f5] font-semibold sm:w-30">
                   Konuşulan Diller:{" "}
                 </span>
                 {sanatciDetayData.language}
               </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">
+              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
+                <span className="text-[#f5f5f5] font-semibold sm:w-30">
                   Kuruluş Tarihi:{" "}
                 </span>
                 {sanatciDetayData.createdAt}
               </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">
+              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
+                <span className="text-[#f5f5f5] font-semibold sm:w-30">
                   Kullanılan Enstrümanlar:{" "}
                 </span>
                 {sanatciDetayData.enstrumans}
               </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">
+              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
+                <span className="text-[#f5f5f5] font-semibold sm:w-30">
                   Üyelik Tarihi:{" "}
                 </span>
                 {sanatciDetayData.memberDate}
               </p>
               <Separator className="my-4" />
-              <p className="text-gray-600">
-                <span className="text-[#040519] font-semibold">Adres: </span>
+              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
+                <span className="text-[#f5f5f5] font-semibold sm:w-30">
+                  Adres:{" "}
+                </span>
                 {sanatciDetayData.address}
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         )}
         {selectedTab === "etkinlikler" && (
           <Card className="p-6 mt-4">

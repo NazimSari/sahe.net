@@ -89,10 +89,10 @@ export default function SanatciDetayPage() {
 
               {/* Butonlar */}
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Button className="flex-1 bg-[#FF007A] py-3 text-sm sm:text-base">
+                <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
                   Hemen İzle
                 </Button>
-                <Button className="flex-1 bg-[#FF007A] py-3 text-sm sm:text-base">
+                <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
                   Teklif Al
                 </Button>
               </div>
@@ -101,8 +101,8 @@ export default function SanatciDetayPage() {
         </div>
       </section>
       <section className="bg-[#160317]">
-        <div className="container mx-auto py-16">
-          <div className="flex flex-col lg:flex-row">
+        <div className="container mx-auto py-16 xl:px-20">
+          <div className="flex flex-col lg:flex-row justify-between">
             <DetailsTabArtist sanatciDetayData={sanatciDetayData} />
             <DetailsPriceCardArtist sanatciDetayData={sanatciDetayData} />
           </div>

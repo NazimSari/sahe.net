@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
-import { Button } from "../ui/button";
 import Link from "next/link";
 
 interface CardProps {
@@ -88,12 +87,14 @@ const ArtistSliderCard: React.FC<CardProps> = ({ path, name, category }) => {
               <span>İncele</span>
             </Link>
           </div>
-        </div>
-
-        {/* Alt kısım - her zaman görünen metin */}
-        <div className="mt-2 flex flex-col justify-center items-center">
-          <p className="text-[#f5f5f5] text-xs">{category}</p>
-          <h3 className="text-sm font-semibold mt-2 text-[#f5f5f5]">{name}</h3>
+          <div className="absolute bottom-0 left-0 bg-black/70 h-16 w-full">
+            <div className="z-50 text-white flex flex-col items-center h-full justify-center font-semibold">
+              <p className="text-[#f5f5f5] text-xs">{category}</p>
+              <h3 className="text-sm font-semibold mt-2 text-[#f5f5f5]">
+                {name}
+              </h3>
+            </div>
+          </div>
         </div>
       </div>
     </>

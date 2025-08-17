@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import RithmSlider from "../SliderGsap/RithmSlider";
+import MobilRithmSlider from "../SliderGsap/MobilRithmSlider";
 
 export default function RithmSection() {
   const handleScroll = () => {
@@ -26,7 +27,12 @@ export default function RithmSection() {
             </p>
           </div>
         </div>
-        <RithmSlider />
+        <div className="hidden md:block">
+          <RithmSlider />
+        </div>
+        <div className="md:hidden">
+          <MobilRithmSlider />
+        </div>
         <div className="mx-auto container pb-16">
           <div className="flex gap-4 h-full items-center w-fit p-3 md:p-0">
             <Button

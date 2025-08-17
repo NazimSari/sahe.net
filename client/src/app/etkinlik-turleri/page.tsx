@@ -16,6 +16,7 @@ import {
 
 import Link from "next/link";
 import React from "react";
+import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
 
 export default function EtkinlikTurleri() {
   return (
@@ -103,7 +104,12 @@ export default function EtkinlikTurleri() {
             </p>
           </div>
         </div>
-        <ArtistSlider />
+        <div className="hidden md:block">
+          <ArtistSlider />
+        </div>
+        <div className="md:hidden">
+          <MobilArtistSlider />
+        </div>
       </section>
       <section className="w-full bg-[#f5f5f5] py-16">
         <div className="container mx-auto">

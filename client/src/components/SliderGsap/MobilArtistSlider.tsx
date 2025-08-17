@@ -3,12 +3,12 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-import MobilSliderCard from "./MobilSliderCard";
-import { categoriesSlider } from "@/lib/data";
+import { artistsSlider } from "@/lib/data";
+import MobilArtistSliderCard from "./MobilArtistSliderCard";
 
-export default function MobilSlider() {
+export default function MobilArtistSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const currentIndexRef = useRef(categoriesSlider.length); // Ortadaki setten başla
+  const currentIndexRef = useRef(artistsSlider.length); // Ortadaki setten başla
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -55,16 +55,16 @@ export default function MobilSlider() {
       onComplete: () => {
         if (!containerRef.current) return;
         let currentX = gsap.getProperty(containerRef.current, "x") as number;
-        const totalWidth = step * categoriesSlider.length;
+        const totalWidth = step * artistsSlider.length;
 
         // Sonsuz kaydırma için pozisyon resetle
-        if (currentIndexRef.current >= categoriesSlider.length * 2) {
+        if (currentIndexRef.current >= artistsSlider.length * 2) {
           // Çok sağa gitti → orta sete al
-          currentIndexRef.current -= categoriesSlider.length;
+          currentIndexRef.current -= artistsSlider.length;
           gsap.set(containerRef.current, { x: currentX + totalWidth });
-        } else if (currentIndexRef.current < categoriesSlider.length) {
+        } else if (currentIndexRef.current < artistsSlider.length) {
           // Çok sola gitti → orta sete al
-          currentIndexRef.current += categoriesSlider.length;
+          currentIndexRef.current += artistsSlider.length;
           gsap.set(containerRef.current, { x: currentX - totalWidth });
         }
       },
@@ -78,7 +78,6 @@ export default function MobilSlider() {
     trackMouse: false,
   });
   const { ref: swipeRef, ...swipeHandlers } = handlers;
-
   return (
     <div className="w-full relative h-[40vh] flex items-center overflow-hidden">
       <div
@@ -90,10 +89,14 @@ export default function MobilSlider() {
         style={{ transform: "translateZ(0)" }}
         {...swipeHandlers}
       >
-        {[...categoriesSlider, ...categoriesSlider, ...categoriesSlider].map(
+        {[...artistsSlider, ...artistsSlider, ...artistsSlider].map(
           (item, index) => (
             <div key={index} className="slider-card">
-              <MobilSliderCard path={item.path} name={item.name} />
+              <MobilArtistSliderCard
+                path={item.imageUrl}
+                name={item.name}
+                category={item.category}
+              />
             </div>
           )
         )}

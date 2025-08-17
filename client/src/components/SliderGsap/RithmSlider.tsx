@@ -3,15 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import SliderCard from "./SliderCard";
 import gsap from "gsap";
-
-const rithmSlider = [
-  { path: "/dugun-orkestra.jpg", name: "Düğün Orkestrası" },
-  { path: "/etnik-music.jpg", name: "Etnik Müzik" },
-  { path: "/jazz-music.jpg", name: "Jazz Müzik" },
-  { path: "/rock-music.jpg", name: "Rock Müzik" },
-  { path: "/dj-performans.jpg", name: "Elektronik Müzik" },
-  { path: "/latin-perkusyon.jpg", name: "Latin Perküsyon" },
-];
+import { rithmSlider } from "@/lib/data";
 
 export default function RithmSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
