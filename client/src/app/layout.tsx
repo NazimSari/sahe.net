@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"], // İhtiyacın olan ağırlıkları seç
@@ -26,7 +27,9 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <Navbar />
         {children}
+
         <Footer />
+        <Toaster richColors />
       </body>
     </html>
   );

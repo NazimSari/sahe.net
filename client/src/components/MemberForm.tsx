@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import React from "react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import {
   Select,
@@ -12,23 +12,114 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { toast } from "sonner";
+
+interface FormData {
+  name: string;
+  email: string;
+  talent: string;
+}
 
 export default function MemberForm() {
+  // Form state
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    talent: "",
+  });
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  // Input değişimlerini yönet
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Select değişimlerini yönet
+  const handleSelectChange = (value: string) => {
+    setFormData({
+      ...formData,
+      talent: value,
+    });
+  };
+
+  // Form submit işlemi
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    // Basit doğrulama: Tüm alanlar dolu mu?
+    if (!formData.name || !formData.email || !formData.talent) {
+      toast.error("Lütfen gerekli alanları doldurun!");
+      setIsLoading(false);
+      return;
+    }
+
+    // E-posta format doğrulama
+    const isValidEmail = (email: string) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!isValidEmail(formData.email)) {
+      toast.error("Geçerli bir e-posta adresi girin!");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/register/pre-register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        toast.error("Ön kayıt basarısız!");
+        setIsLoading(false);
+        return;
+      }
+
+      const data = await response.json();
+      toast.success("Ön kayıt başarılı!");
+      setFormData({ name: "", email: "", talent: "" }); // Formu sıfırla
+      setIsLoading(false);
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Bir hata oluştu, lütfen tekrar deneyin!";
+      toast.error(errorMessage);
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
-      <form className="max-w-3xl">
+      <form className="max-w-3xl" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 md:flex-row">
           <Input
             placeholder="Adınız Soyadınız"
             className="flex-1 md:p-6 p-3 text-[#f5f5f5] md:text-base text-sm  min-w-0"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
           />
           <Input
             placeholder="E Posta Adresiniz"
             className="flex-1 md:p-6 p-3 text-[#f5f5f5] md:text-base text-sm  min-w-0"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
         <div className="flex flex-col mt-2">
-          <Select>
+          <Select onValueChange={handleSelectChange} value={formData.talent}>
             <SelectTrigger className="mt-4 p-6  text-[#f5f5f5] w-full">
               <SelectValue placeholder="Etkinlik Seçiniz" />
             </SelectTrigger>
@@ -48,11 +139,13 @@ export default function MemberForm() {
             </SelectContent>
           </Select>
           <Button
+            disabled={isLoading}
             className="md:p-6 p-3 text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200"
             size={"lg"}
             variant="default"
+            type="submit"
           >
-            Ön Kayıt
+            {isLoading ? "Gönderiliyor..." : "Ön Kayıt"}
           </Button>
         </div>
       </form>

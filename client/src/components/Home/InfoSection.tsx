@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function InfoSection() {
   const handleScroll = () => {
@@ -16,7 +17,7 @@ export default function InfoSection() {
         <div className="flex flex-col lg:flex-row gap-8 md:gap-4 justify-center lg:justify-between items-center h-full text-center lg:text-left">
           {/* Başlık */}
           <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#f5f5f5] leading-snug max-w-2xl">
-            Müziğin Gücüyle Kalpleri Birleştiriyoruz
+            Oksijeni Müzik Olanların Sahnesi!
           </h3>
 
           {/* Açıklama + Butonlar */}
@@ -36,10 +37,13 @@ export default function InfoSection() {
               >
                 Ön Kayıt
               </Button>
-              <span className="flex items-center text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer">
+              <Link
+                href={"/hakkimizda"}
+                className="flex items-center text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer"
+              >
                 Daha Fazlası İçin{" "}
                 <ChevronRight size={20} className="text-[#FF007A] mt-1 ml-1" />
-              </span>
+              </Link>
             </div>
           </div>
         </div>
