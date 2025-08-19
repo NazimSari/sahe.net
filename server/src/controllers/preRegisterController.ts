@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import prisma from "../../lib/prisma";
+import { sendRegistrationEmail } from "../../utils/sendEmail";
 
 export const createPreRegister = async (req: Request, res: Response) => {
   try {
@@ -15,7 +16,13 @@ export const createPreRegister = async (req: Request, res: Response) => {
       data: { name, email, talent },
     });
 
-    return res.status(201).json(newRegister);
+    // E-posta gönder
+    await sendRegistrationEmail({ name, email });
+
+    return res.status(201).json({
+      message: "Ön kayıt başarıyla oluşturuldu ve e-posta gönderildi.",
+      data: newRegister,
+    });
   } catch (error: any) {
     console.error("PreRegister error:", error);
 
