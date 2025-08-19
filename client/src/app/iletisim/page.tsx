@@ -12,9 +12,13 @@ export default function IletisimPage() {
       <section className="p-4 lg:pt-16 pt-28 bg-[url('/page3.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
         <div className="container mx-auto bg-[#160317]/50 rounded-2xl xl:py-20 py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 h-full w-full">
+            {/* Form Kısmı */}
+            <div className="w-full lg:w-1/2 max-w-[550px] rounded-xl order-2 lg:order-1">
+              <ContactForm />
+            </div>
             {/* Metin ve Bilgi Kısmı */}
-            <div className="flex flex-col gap-5 h-full  w-full lg:w-1/2">
-              <div className="flex flex-col gap-4 text-[#f5f5f5] items-center">
+            <div className="flex flex-col gap-5 h-full w-full lg:w-1/2 order-1 lg:order-2">
+              <div className="flex flex-col gap-4 text-[#f5f5f5] items-center md:items-start md:ml-24">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
                   Bize Ulaşın!
                 </h1>
@@ -70,10 +74,6 @@ export default function IletisimPage() {
                   </div>
                 </div>
               </div>
-            </div>
-            {/* Görsel Kısmı */}
-            <div className="w-full lg:w-1/2 max-w-[550px] rounded-xl">
-              <ContactForm />
             </div>
           </div>
         </div>
