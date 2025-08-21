@@ -27,7 +27,7 @@ interface Artist {
   imageUrl: string;
 }
 
-export const categoriesSlider = [
+export const eventTypesSlider = [
   { path: "/dugun.jpg", name: "Düğün" },
   { path: "/ozel-cekim.jpg", name: "Özel Çekim" },
   { path: "/baby-shower.jpg", name: "Bebek Partisi" },
@@ -36,7 +36,7 @@ export const categoriesSlider = [
   { path: "/dogum-gunu.jpg", name: "Doğum Günü" },
 ];
 
-export const rithmSlider = [
+export const musicTypesSlider = [
   { path: "/dugun-orkestra.jpg", name: "Düğün Orkestrası" },
   { path: "/etnik-music.jpg", name: "Etnik Müzik" },
   { path: "/jazz-music.jpg", name: "Jazz Müzik" },
@@ -45,7 +45,7 @@ export const rithmSlider = [
   { path: "/latin-perkusyon.jpg", name: "Latin Perküsyon" },
 ];
 
-export const artistsSlider: Artist[] = [
+export const newArtistsSlider: Artist[] = [
   { id: 1, name: "Artist 1", category: "Pop", imageUrl: "/dj-performans.jpg" },
   { id: 2, name: "Artist 2", category: "Rock", imageUrl: "/rock-music.jpg" },
   { id: 3, name: "Artist 3", category: "Jazz", imageUrl: "/jazz-music.jpg" },

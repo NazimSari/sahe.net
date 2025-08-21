@@ -3,9 +3,9 @@
 import React, { useEffect, useRef } from "react";
 import SliderCard from "./SliderCard";
 import gsap from "gsap";
-import { rithmSlider } from "@/lib/data";
+import { eventTypesSlider } from "@/lib/data";
 
-export default function RithmSlider() {
+export default function EventTypeSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
   const tl = useRef<gsap.core.Tween | null>(null);
 
@@ -16,15 +16,12 @@ export default function RithmSlider() {
     const width = container.scrollWidth / 3;
 
     tl.current = gsap.to(container, {
-      x: `+=${width}`,
+      x: `-=${width}`,
       ease: "none",
       duration: 30,
       repeat: -1,
       modifiers: {
-        x: (x) => {
-          const parsedX = parseFloat(x);
-          return `${(((parsedX % width) + width) % width) - width}px`;
-        },
+        x: (x) => `${parseFloat(x) % width}px`,
       },
     });
 
@@ -49,9 +46,11 @@ export default function RithmSlider() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {[...rithmSlider, ...rithmSlider, ...rithmSlider].map((item, index) => (
-          <SliderCard key={index} path={item.path} name={item.name} />
-        ))}
+        {[...eventTypesSlider, ...eventTypesSlider, ...eventTypesSlider].map(
+          (item, index) => (
+            <SliderCard key={index} path={item.path} name={item.name} />
+          )
+        )}
       </div>
     </div>
   );

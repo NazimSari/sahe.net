@@ -3,8 +3,8 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
-import RithmSlider from "../SliderGsap/RithmSlider";
 import MobilRithmSlider from "../SliderGsap/MobilRithmSlider";
+import MusicTypeSlider from "../SliderGsap/MusicTypeSlider";
 
 export default function RithmSection() {
   const handleScroll = () => {
@@ -28,7 +28,7 @@ export default function RithmSection() {
           </div>
         </div>
         <div className="hidden md:block">
-          <RithmSlider />
+          <MusicTypeSlider />
         </div>
         <div className="md:hidden">
           <MobilRithmSlider />

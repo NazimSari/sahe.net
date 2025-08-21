@@ -2,9 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ArtistSliderCard from "./ArtistSliderCard";
-import { artistsSlider } from "@/lib/data";
+import { newArtistsSlider } from "@/lib/data";
 
-export default function ArtistSlider() {
+export default function NewArtistSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
   const tl = useRef<gsap.core.Tween | null>(null);
 
@@ -46,7 +46,7 @@ export default function ArtistSlider() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {[...artistsSlider, ...artistsSlider, ...artistsSlider].map(
+          {[...newArtistsSlider, ...newArtistsSlider, ...newArtistsSlider].map(
             (item, index) => (
               <ArtistSliderCard
                 key={index}

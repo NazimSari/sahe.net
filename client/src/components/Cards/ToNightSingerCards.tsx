@@ -11,7 +11,7 @@ interface SingerCardsProps {
   data: SingerData[];
 }
 
-const SingerCards = ({ data }: SingerCardsProps) => {
+const ToNightSingerCards = ({ data }: SingerCardsProps) => {
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const overlayRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -121,4 +121,4 @@ const SingerCards = ({ data }: SingerCardsProps) => {
   );
 };
 
-export default SingerCards;
+export default ToNightSingerCards;

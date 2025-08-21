@@ -4,11 +4,11 @@ import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
 import MobilSliderCard from "./MobilSliderCard";
-import { rithmSlider } from "@/lib/data";
+import { musicTypesSlider } from "@/lib/data";
 
 export default function MobilRithmSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const currentIndexRef = useRef(rithmSlider.length); // Ortadaki setten başla
+  const currentIndexRef = useRef(musicTypesSlider.length); // Ortadaki setten başla
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -55,16 +55,16 @@ export default function MobilRithmSlider() {
       onComplete: () => {
         if (!containerRef.current) return;
         let currentX = gsap.getProperty(containerRef.current, "x") as number;
-        const totalWidth = step * rithmSlider.length;
+        const totalWidth = step * musicTypesSlider.length;
 
         // Sonsuz kaydırma için pozisyon resetle
-        if (currentIndexRef.current >= rithmSlider.length * 2) {
+        if (currentIndexRef.current >= musicTypesSlider.length * 2) {
           // Çok sağa gitti → orta sete al
-          currentIndexRef.current -= rithmSlider.length;
+          currentIndexRef.current -= musicTypesSlider.length;
           gsap.set(containerRef.current, { x: currentX + totalWidth });
-        } else if (currentIndexRef.current < rithmSlider.length) {
+        } else if (currentIndexRef.current < musicTypesSlider.length) {
           // Çok sola gitti → orta sete al
-          currentIndexRef.current += rithmSlider.length;
+          currentIndexRef.current += musicTypesSlider.length;
           gsap.set(containerRef.current, { x: currentX - totalWidth });
         }
       },
@@ -89,11 +89,13 @@ export default function MobilRithmSlider() {
         style={{ transform: "translateZ(0)" }}
         {...swipeHandlers}
       >
-        {[...rithmSlider, ...rithmSlider, ...rithmSlider].map((item, index) => (
-          <div key={index} className="slider-card">
-            <MobilSliderCard path={item.path} name={item.name} />
-          </div>
-        ))}
+        {[...musicTypesSlider, ...musicTypesSlider, ...musicTypesSlider].map(
+          (item, index) => (
+            <div key={index} className="slider-card">
+              <MobilSliderCard path={item.path} name={item.name} />
+            </div>
+          )
+        )}
       </div>
     </div>
   );

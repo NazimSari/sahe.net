@@ -3,12 +3,12 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-import { artistsSlider } from "@/lib/data";
+import { newArtistsSlider } from "@/lib/data";
 import MobilArtistSliderCard from "./MobilArtistSliderCard";
 
 export default function MobilArtistSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const currentIndexRef = useRef(artistsSlider.length); // Ortadaki setten başla
+  const currentIndexRef = useRef(newArtistsSlider.length); // Ortadaki setten başla
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -55,16 +55,16 @@ export default function MobilArtistSlider() {
       onComplete: () => {
         if (!containerRef.current) return;
         let currentX = gsap.getProperty(containerRef.current, "x") as number;
-        const totalWidth = step * artistsSlider.length;
+        const totalWidth = step * newArtistsSlider.length;
 
         // Sonsuz kaydırma için pozisyon resetle
-        if (currentIndexRef.current >= artistsSlider.length * 2) {
+        if (currentIndexRef.current >= newArtistsSlider.length * 2) {
           // Çok sağa gitti → orta sete al
-          currentIndexRef.current -= artistsSlider.length;
+          currentIndexRef.current -= newArtistsSlider.length;
           gsap.set(containerRef.current, { x: currentX + totalWidth });
-        } else if (currentIndexRef.current < artistsSlider.length) {
+        } else if (currentIndexRef.current < newArtistsSlider.length) {
           // Çok sola gitti → orta sete al
-          currentIndexRef.current += artistsSlider.length;
+          currentIndexRef.current += newArtistsSlider.length;
           gsap.set(containerRef.current, { x: currentX - totalWidth });
         }
       },
@@ -89,7 +89,7 @@ export default function MobilArtistSlider() {
         style={{ transform: "translateZ(0)" }}
         {...swipeHandlers}
       >
-        {[...artistsSlider, ...artistsSlider, ...artistsSlider].map(
+        {[...newArtistsSlider, ...newArtistsSlider, ...newArtistsSlider].map(
           (item, index) => (
             <div key={index} className="slider-card">
               <MobilArtistSliderCard

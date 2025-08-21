@@ -4,11 +4,11 @@ import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
 import MobilSliderCard from "./MobilSliderCard";
-import { categoriesSlider } from "@/lib/data";
+import { eventTypesSlider } from "@/lib/data";
 
 export default function MobilCategorySlider() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const currentIndexRef = useRef(categoriesSlider.length); // Ortadaki setten başla
+  const currentIndexRef = useRef(eventTypesSlider.length); // Ortadaki setten başla
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -55,16 +55,16 @@ export default function MobilCategorySlider() {
       onComplete: () => {
         if (!containerRef.current) return;
         let currentX = gsap.getProperty(containerRef.current, "x") as number;
-        const totalWidth = step * categoriesSlider.length;
+        const totalWidth = step * eventTypesSlider.length;
 
         // Sonsuz kaydırma için pozisyon resetle
-        if (currentIndexRef.current >= categoriesSlider.length * 2) {
+        if (currentIndexRef.current >= eventTypesSlider.length * 2) {
           // Çok sağa gitti → orta sete al
-          currentIndexRef.current -= categoriesSlider.length;
+          currentIndexRef.current -= eventTypesSlider.length;
           gsap.set(containerRef.current, { x: currentX + totalWidth });
-        } else if (currentIndexRef.current < categoriesSlider.length) {
+        } else if (currentIndexRef.current < eventTypesSlider.length) {
           // Çok sola gitti → orta sete al
-          currentIndexRef.current += categoriesSlider.length;
+          currentIndexRef.current += eventTypesSlider.length;
           gsap.set(containerRef.current, { x: currentX - totalWidth });
         }
       },
@@ -90,7 +90,7 @@ export default function MobilCategorySlider() {
         style={{ transform: "translateZ(0)" }}
         {...swipeHandlers}
       >
-        {[...categoriesSlider, ...categoriesSlider, ...categoriesSlider].map(
+        {[...eventTypesSlider, ...eventTypesSlider, ...eventTypesSlider].map(
           (item, index) => (
             <div key={index} className="slider-card">
               <MobilSliderCard path={item.path} name={item.name} />

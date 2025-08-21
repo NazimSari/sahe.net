@@ -3,9 +3,9 @@
 import React, { useEffect, useRef } from "react";
 import SliderCard from "./SliderCard";
 import gsap from "gsap";
-import { categoriesSlider } from "@/lib/data";
+import { musicTypesSlider } from "@/lib/data";
 
-export default function CategorySlider() {
+export default function MusicTypeSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
   const tl = useRef<gsap.core.Tween | null>(null);
 
@@ -16,12 +16,15 @@ export default function CategorySlider() {
     const width = container.scrollWidth / 3;
 
     tl.current = gsap.to(container, {
-      x: `-=${width}`,
+      x: `+=${width}`,
       ease: "none",
       duration: 30,
       repeat: -1,
       modifiers: {
-        x: (x) => `${parseFloat(x) % width}px`,
+        x: (x) => {
+          const parsedX = parseFloat(x);
+          return `${(((parsedX % width) + width) % width) - width}px`;
+        },
       },
     });
 
@@ -46,7 +49,7 @@ export default function CategorySlider() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {[...categoriesSlider, ...categoriesSlider, ...categoriesSlider].map(
+        {[...musicTypesSlider, ...musicTypesSlider, ...musicTypesSlider].map(
           (item, index) => (
             <SliderCard key={index} path={item.path} name={item.name} />
           )

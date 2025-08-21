@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import CategorySlider from "../SliderGsap/CategorySlider";
+import CategorySlider from "../SliderGsap/EventTypeSlider";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import MobilCategorySlider from "../SliderGsap/MobilCategorySlider";
+import EventTypeSlider from "../SliderGsap/EventTypeSlider";
 
 export default function CategorySection() {
   const handleScroll = () => {
@@ -29,7 +30,7 @@ export default function CategorySection() {
           </div>
         </div>
         <div className="hidden md:block">
-          <CategorySlider />
+          <EventTypeSlider />
         </div>
         <div className="md:hidden">
           <MobilCategorySlider />

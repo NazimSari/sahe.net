@@ -4,7 +4,6 @@ import StepsSection from "@/components/Home/StepsSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import MobilFilter from "@/components/Filters/MobilFilter";
 import SceneCards from "@/components/Cards/SceneCards";
-import ArtistSlider from "@/components/SliderGsap/ArtistSlider";
 import {
   babyshowerData,
   djData,
@@ -17,6 +16,7 @@ import {
 import Link from "next/link";
 import React from "react";
 import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
+import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
 
 export default function EtkinlikTurleri() {
   return (
@@ -105,7 +105,7 @@ export default function EtkinlikTurleri() {
           </div>
         </div>
         <div className="hidden md:block">
-          <ArtistSlider />
+          <NewArtistSlider />
         </div>
         <div className="md:hidden">
           <MobilArtistSlider />

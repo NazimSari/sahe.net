@@ -1,6 +1,6 @@
 "use client";
 
-import SingerCards from "@/components/Cards/SingerCards";
+import ToNightSingerCards from "@/components/Cards/ToNightSingerCards";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -180,7 +180,7 @@ export default function BuGeceSahnePage() {
                 İstanbul
               </h3>
             </div>
-            <SingerCards data={singerCardsDataIstanbul} />
+            <ToNightSingerCards data={singerCardsDataIstanbul} />
           </div>
           <div className="flex flex-col items-center lg:items-start justify-between gap-3">
             <div>
@@ -188,7 +188,7 @@ export default function BuGeceSahnePage() {
                 Ankara
               </h3>
             </div>
-            <SingerCards data={singerCardsDataAnkara} />
+            <ToNightSingerCards data={singerCardsDataAnkara} />
           </div>
           <div className="flex flex-col items-center lg:items-start justify-between gap-3">
             <div>
@@ -196,7 +196,7 @@ export default function BuGeceSahnePage() {
                 İzmir
               </h3>
             </div>
-            <SingerCards data={singerCardsDataIzmir} />
+            <ToNightSingerCards data={singerCardsDataIzmir} />
           </div>
         </div>
       </section>

@@ -128,3 +128,8 @@ h6,
 p {
   font-family: var(--font-poppins);
 }
+
+.will-change-transform {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
