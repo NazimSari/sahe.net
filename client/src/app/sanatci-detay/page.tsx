@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button";
 import { happyhourData, sanatciDetayData } from "@/lib/data";
 import { Check } from "lucide-react";
 import { FaStar, FaUserCircle, FaDotCircle } from "react-icons/fa";
-import StepsSection from "@/components/Home/StepsSection";
-import SceneCards from "@/components/Cards/SceneCards";
+import StepsSection from "@/components/Home/PaymentStepsSection";
+import SceneCards from "@/components/Cards/StageCards";
 import DetailsTabArtist from "@/components/DeatilsTab/DetailsTabArtist";
 import DetailsPriceCardArtist from "@/components/DeatilsPriceCard/DetailsPriceCardArtist";
+import MobileStageSlider from "@/components/SliderGsap/MobilStageSlider";
 
 export default function SanatciDetayPage() {
   return (
@@ -348,8 +349,11 @@ export default function SanatciDetayPage() {
               gruplarıyla tanış, sahnede yeni favorilerini keşfet.
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 hidden md:block">
             <SceneCards data={happyhourData} />
+          </div>
+          <div className="mt-8 md:hidden">
+            <MobileStageSlider data={happyhourData} />
           </div>
         </div>
       </section>

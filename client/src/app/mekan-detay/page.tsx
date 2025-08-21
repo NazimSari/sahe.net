@@ -12,7 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import PlaceCards from "@/components/Cards/PlaceCards";
+import PlaceCards from "@/components/Cards/HangoutInfoCards";
 import { canliMuzikData } from "@/lib/data";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 

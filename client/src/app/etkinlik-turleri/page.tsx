@@ -1,9 +1,9 @@
 import Filter from "@/components/Filters/Filter";
 import Banner from "@/components/Home/Banner";
-import StepsSection from "@/components/Home/StepsSection";
+import StepsSection from "@/components/Home/PaymentStepsSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import MobilFilter from "@/components/Filters/MobilFilter";
-import SceneCards from "@/components/Cards/SceneCards";
+import SceneCards from "@/components/Cards/StageCards";
 import {
   babyshowerData,
   djData,

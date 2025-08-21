@@ -2,7 +2,6 @@
 
 import React from "react";
 import { ContainerTextFlipDemo } from "../Banner/ContainerText";
-import { Button } from "../ui/button";
 import Link from "next/link";
 
 export default function Banner() {

@@ -3,10 +3,10 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-import MobilSliderCard from "./MobilSliderCard";
+import MobilSliderCard from "../Cards/MobilSliderCard";
 import { musicTypesSlider } from "@/lib/data";
 
-export default function MobilRithmSlider() {
+export default function MobilMusicTypeSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentIndexRef = useRef(musicTypesSlider.length); // Ortadaki setten başla
 

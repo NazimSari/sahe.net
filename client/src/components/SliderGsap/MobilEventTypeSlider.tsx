@@ -3,10 +3,10 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-import MobilSliderCard from "./MobilSliderCard";
+import MobilSliderCard from "../Cards/MobilSliderCard";
 import { eventTypesSlider } from "@/lib/data";
 
-export default function MobilCategorySlider() {
+export default function MobilEventTypeSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentIndexRef = useRef(eventTypesSlider.length); // Ortadaki setten başla
 

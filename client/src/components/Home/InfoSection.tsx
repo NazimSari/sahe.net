@@ -42,7 +42,10 @@ export default function InfoSection() {
                 className="flex items-center text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer"
               >
                 Daha Fazlası İçin{" "}
-                <ChevronRight size={20} className="text-[#FF007A] mt-1 ml-1" />
+                <ChevronRight
+                  size={16}
+                  className="text-[#FF007A] mt-0.5 ml-2"
+                />
               </Link>
             </div>
           </div>

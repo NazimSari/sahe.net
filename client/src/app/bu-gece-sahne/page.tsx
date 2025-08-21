@@ -1,6 +1,7 @@
 "use client";
 
 import ToNightSingerCards from "@/components/Cards/ToNightSingerCards";
+import MobileToNightSingerSlider from "@/components/SliderGsap/MobilTonightSingerSlider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -43,8 +44,8 @@ export default function BuGeceSahnePage() {
   }, []);
   return (
     <main className="min-h-screen w-full overflow-hidden bg-[#160317]">
-      <section className="w-full h-[800px] my-16 lg:my-0 px-2">
-        <div className="flex flex-col lg:flex-row items-center justify-between h-full container mx-auto gap-10 mt-30 lg:mt-0">
+      <section className="w-full h-[800px] my-16 lg:my-0 px-4">
+        <div className="flex flex-col lg:flex-row items-center md:justify-between h-full container mx-auto gap-5 xl:gap-10 mt-30 lg:mt-0">
           <div className="w-full lg:w-1/2">
             <div className="flex flex-col jusitfy-between gap-5">
               <h1 className="lg:text-7xl md:text-5xl text-4xl  font-bold text-[#f5f5f5]">
@@ -54,7 +55,7 @@ export default function BuGeceSahnePage() {
                 Gecenin ritmini belirleyen sanatçılar burada! Bu gece kim
                 performans sergiliyor, hemen göz at.
               </p>
-              <div className="mt-6">
+              <div className="hidden md:block mt-6">
                 <div className="flex flex-col sm:flex-row gap-2 items-center max-w-4xl">
                   <Input
                     placeholder="Ara..."
@@ -170,8 +171,67 @@ export default function BuGeceSahnePage() {
               ))}
             </div>
           </div>
+          {/* mobil ekranlarda */}
+          <div className="md:hidden mt-6 w-full">
+            <div className="flex flex-col sm:flex-row gap-2 items-center w-full">
+              <Input
+                placeholder="Ara..."
+                className="w-full  sm:flex-1 bg-[#f5f5f5] md:py-6 "
+              />
+              <Button className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border hover:text-white text-sm sm:text-base">
+                Sonuçları Göster
+              </Button>
+            </div>
+            <div className="flex flex-col gap-3 mt-4 max-w-4xl">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <Select>
+                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
+                    <SelectValue
+                      placeholder="Şehir"
+                      className="text-[#040519]"
+                    />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="enstruman">Enstrüman</SelectItem>
+                    <SelectItem value="solist">Solist</SelectItem>
+                    <SelectItem value="dj">Dj Performans</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Select>
+                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
+                    <SelectValue
+                      placeholder="Mekan Türü"
+                      className="text-[#040519]"
+                    />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="enstruman">Enstrüman</SelectItem>
+                    <SelectItem value="solist">Solist</SelectItem>
+                    <SelectItem value="dj">Dj Performans</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Select>
+                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
+                    <SelectValue
+                      placeholder="Müzik Türü"
+                      className="text-[#040519]"
+                    />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="enstruman">Enstrüman</SelectItem>
+                    <SelectItem value="solist">Solist</SelectItem>
+                    <SelectItem value="dj">Dj Performans</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Button className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border hover:text-white text-sm">
+                Sonuçları Göster
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
+
       <section className="w-full py-16">
         <div className="container mx-auto flex flex-col gap-16 p-3">
           <div className="flex flex-col items-center lg:items-start justify-between gap-3">
@@ -180,7 +240,12 @@ export default function BuGeceSahnePage() {
                 İstanbul
               </h3>
             </div>
-            <ToNightSingerCards data={singerCardsDataIstanbul} />
+            <div className="hidden md:block">
+              <ToNightSingerCards data={singerCardsDataIstanbul} />
+            </div>
+            <div className="md:hidden">
+              <MobileToNightSingerSlider singerData={singerCardsDataIstanbul} />
+            </div>
           </div>
           <div className="flex flex-col items-center lg:items-start justify-between gap-3">
             <div>
@@ -188,7 +253,12 @@ export default function BuGeceSahnePage() {
                 Ankara
               </h3>
             </div>
-            <ToNightSingerCards data={singerCardsDataAnkara} />
+            <div className="hidden md:block">
+              <ToNightSingerCards data={singerCardsDataAnkara} />
+            </div>
+            <div className="md:hidden">
+              <MobileToNightSingerSlider singerData={singerCardsDataAnkara} />
+            </div>
           </div>
           <div className="flex flex-col items-center lg:items-start justify-between gap-3">
             <div>
@@ -196,7 +266,12 @@ export default function BuGeceSahnePage() {
                 İzmir
               </h3>
             </div>
-            <ToNightSingerCards data={singerCardsDataIzmir} />
+            <div className="hidden md:block">
+              <ToNightSingerCards data={singerCardsDataIzmir} />
+            </div>
+            <div className="md:hidden">
+              <MobileToNightSingerSlider singerData={singerCardsDataIzmir} />
+            </div>
           </div>
         </div>
       </section>

@@ -18,22 +18,25 @@ interface CardProps {
   item: EventData;
 }
 
-const MobilSwipeCard: React.FC<CardProps> = ({ item }) => {
+const MobilStageCard: React.FC<CardProps> = ({ item }) => {
   return (
-    <div className="slider-card bg-black rounded-lg shadow-lg overflow-hidden transform h-[450px] w-[60vw] max-w-[250px] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
-      <div className="relative rounded-t-lg">
+    <div className="slider-card bg-black rounded-lg shadow-lg overflow-hidden transform w-[min(80vw,280px)] min-h-[400px] max-h-[500px] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col">
+      <div className="relative">
         <img
           src={item.url}
           alt={item.name}
-          className="w-full h-[250px] object-cover rounded-t-lg"
+          className="w-full aspect-[4/3.3] object-cover rounded-t-lg"
         />
-        <Badge variant="secondary" className="absolute top-8 left-3 py-1">
-          <FaLocationDot />
+        <Badge
+          variant="secondary"
+          className="absolute top-4 left-3 py-1 text-xs"
+        >
+          <FaLocationDot className="inline mr-1" />
           {item.badgeText || "Yeni"}
         </Badge>
       </div>
-      <div className="p-3">
-        <span className="inline-block text-[#9D9D9D] text-xs font-semibold">
+      <div className="px-4 flex flex-col flex-grow gap-2">
+        <span className="text-[#9D9D9D] text-xs font-semibold mt-2">
           {item.category}
         </span>
         <div className="flex text-yellow-400 text-xs my-1">
@@ -43,22 +46,24 @@ const MobilSwipeCard: React.FC<CardProps> = ({ item }) => {
               <FaStar key={i} />
             ))}
         </div>
-        <h3 className="text-base font-semibold text-[#f5f5f5]">{item.name}</h3>
-        <p className="text-[#9D9D9D] mt-1 text-xs line-clamp-2">
+        <h3 className="text-base font-semibold text-[#f5f5f5] line-clamp-1">
+          {item.name}
+        </h3>
+        <p className="text-[#9D9D9D] mt-1 text-xs line-clamp-3 flex-grow">
           {item.description}
         </p>
       </div>
-      <div className="p-3 flex items-center justify-between">
+      <div className="p-4 flex items-center justify-between shrink-0">
         <Link
           href="/sanatci-detay"
           className="flex items-center text-xs text-[#FF007A] font-semibold cursor-pointer"
         >
           Rezervasyon Yap
-          <ChevronRight size={16} className="text-[#FF007A] mt-1" />
+          <ChevronRight size={16} className="text-[#FF007A] ml-1 mt-1" />
         </Link>
       </div>
     </div>
   );
 };
 
-export default MobilSwipeCard;
+export default MobilStageCard;

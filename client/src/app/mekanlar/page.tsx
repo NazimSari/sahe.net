@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -8,7 +10,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import React from "react";
-import PlaceCards from "@/components/Cards/PlaceCards";
 import {
   beachClubData,
   canliMuzikData,
@@ -17,6 +18,8 @@ import {
   rooftopData,
 } from "@/lib/data";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
+import HangoutInfoCards from "@/components/Cards/HangoutInfoCards";
+import MobilHangoutInfoSlider from "@/components/SliderGsap/MobilHangoutInfoSlider";
 
 export default function MekanPage() {
   return (
@@ -92,7 +95,7 @@ export default function MekanPage() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] py-16">
+      <section className="w-full bg-[#160317] pt-16">
         <div className="container mx-auto">
           <div className="flex flex-col gap-4  justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
@@ -107,12 +110,15 @@ export default function MekanPage() {
               atmosferin büyüsüne kapılın!
             </p>
           </div>
-          <div className="mt-6">
-            <PlaceCards data={canliMuzikData} />
+          <div className="mt-6 hidden md:block">
+            <HangoutInfoCards data={canliMuzikData} />
+          </div>
+          <div className="mt-6 md:hidden">
+            <MobilHangoutInfoSlider data={canliMuzikData} />
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] py-16">
+      <section className="w-full bg-[#160317] py-8 md:py-16">
         <div className="container mx-auto">
           <div className="flex flex-col gap-4  justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
@@ -126,12 +132,15 @@ export default function MekanPage() {
               prestijli beach clublarında, lüks ve eğlenceyi bir arada yaşayın.
             </p>
           </div>
-          <div className="mt-6">
-            <PlaceCards data={beachClubData} />
+          <div className="mt-6 hidden md:block">
+            <HangoutInfoCards data={beachClubData} />
+          </div>
+          <div className="mt-6 md:hidden">
+            <MobilHangoutInfoSlider data={beachClubData} />
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] py-16">
+      <section className="w-full bg-[#160317] py-8 md:py-16">
         <div className="container mx-auto">
           <div className="flex flex-col gap-4  justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
@@ -145,12 +154,15 @@ export default function MekanPage() {
               zarif mekanlarında, her yudumda farklı bir hikâyeye yolculuk edin.
             </p>
           </div>
-          <div className="mt-6">
-            <PlaceCards data={kokteylBarData} />
+          <div className="mt-6 hidden md:block">
+            <HangoutInfoCards data={kokteylBarData} />
+          </div>
+          <div className="mt-6 md:hidden">
+            <MobilHangoutInfoSlider data={kokteylBarData} />
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] py-16">
+      <section className="w-full bg-[#160317] py-8 md:py-16">
         <div className="container mx-auto">
           <div className="flex flex-col gap-4  justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
@@ -165,12 +177,15 @@ export default function MekanPage() {
               yaşayın.
             </p>
           </div>
-          <div className="mt-6">
-            <PlaceCards data={djbarsData} />
+          <div className="mt-6 hidden md:block">
+            <HangoutInfoCards data={djbarsData} />
+          </div>
+          <div className="mt-6 md:hidden">
+            <MobilHangoutInfoSlider data={djbarsData} />
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] py-16">
+      <section className="w-full bg-[#160317] py-8 md:py-16">
         <div className="container mx-auto">
           <div className="flex flex-col gap-4  justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
@@ -185,8 +200,11 @@ export default function MekanPage() {
               sizi bekliyor.
             </p>
           </div>
-          <div className="mt-6">
-            <PlaceCards data={rooftopData} />
+          <div className="mt-6 hidden md:block">
+            <HangoutInfoCards data={rooftopData} />
+          </div>
+          <div className="mt-6 md:hidden">
+            <MobilHangoutInfoSlider data={rooftopData} />
           </div>
         </div>
       </section>

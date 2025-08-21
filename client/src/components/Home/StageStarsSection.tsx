@@ -1,11 +1,11 @@
 "use client";
-import SceneCards from "../Cards/SceneCards";
+import SceneCards from "../Cards/StageCards";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { sahneData } from "@/lib/data";
-import MobileSceneSlider from "../SliderGsap/MobilSceneSlider";
+import MobileStageSlider from "../SliderGsap/MobilStageSlider";
 
-export default function SceneStarsSection() {
+export default function StageStarsSection() {
   return (
     <>
       <section id="scene-stars" className="mx-auto  my-16">
@@ -27,7 +27,8 @@ export default function SceneStarsSection() {
               <Link href="/#festivals">
                 <span className="flex items-center ml-3">
                   {" "}
-                  Daha Fazlası İçin <ChevronRight size={20} className="mt-1" />
+                  Daha Fazlası İçin{" "}
+                  <ChevronRight size={16} className="mt-0.5 ml-2" />
                 </span>
               </Link>
             </div>
@@ -36,13 +37,14 @@ export default function SceneStarsSection() {
             <SceneCards data={sahneData} />
           </div>
           <div className="mt-8 md:hidden">
-            <MobileSceneSlider data={sahneData} />
+            <MobileStageSlider data={sahneData} />
           </div>
-          <div className="md:hidden border w-fit mt-5 border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
+          <div className="md:hidden border w-fit mt-5 border-[#FF007A] py-2 ml-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
             <Link href="/#festivals">
               <span className="flex items-center ml-3">
                 {" "}
-                Daha Fazlası İçin <ChevronRight size={20} className="mt-1" />
+                Daha Fazlası İçin{" "}
+                <ChevronRight size={16} className="mt-0.5 ml-2" />
               </span>
             </Link>
           </div>

@@ -88,7 +88,7 @@ export function Navbar() {
           : "absolute top-0 w-full bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* LOGO */}
         <Link
           href="/"

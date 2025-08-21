@@ -12,7 +12,7 @@ import { IoLogoYoutube } from "react-icons/io";
 
 export default function Footer() {
   return (
-    <footer className="mx-auto pt-32 pb-8 w-full bg-[#040519]">
+    <footer className="mx-auto pt-32 pb-8 w-full bg-[#040519] px-4">
       <div className="container w-full mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-[#f5f5f5]">
           <div className="flex flex-col px-5 mb-3 sm:px-0 gap-2">

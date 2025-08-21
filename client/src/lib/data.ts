@@ -6,7 +6,7 @@ interface EventData {
   badgeText?: string; // Opsiyonel, çünkü badgeText her zaman zorunlu değil
 }
 
-interface PlaceData {
+interface MekanDetayData {
   name: string;
   url: string;
   description: string;
@@ -26,6 +26,69 @@ interface Artist {
   category: string;
   imageUrl: string;
 }
+interface HangoutData {
+  img: string;
+  title: string;
+  isLarge?: boolean;
+}
+
+export const festivalSectionData = [
+  {
+    title: "Zeytinli Rock Festivali",
+    description:
+      "Muğla’da rock müzik coşkusu! Efsane gruplar ve genç yeteneklerle dolu bu festival, yazın en enerjik etkinliği.",
+    img: "/zeytinli-festival.jpg",
+    month: "NİS",
+    day: "26",
+  },
+  {
+    title: "İstanbul Müzik Festivali",
+    description:
+      "İstanbul’un tarihi mekanlarında klasik müzik, opera ve çağdaş eserlerle buluş! 53. yılında bu festival, müzik tutkunlarını bir araya...",
+    img: "/istanbul-festival.jpeg",
+    month: "TEM",
+    day: "31",
+  },
+  {
+    title: "Antalya Akra Jazz Festivali",
+    description:
+      "Antalya’da cazın büyüsüne kapıl! Yerli ve uluslararası sanatçılar, Akdeniz’in eşsiz atmosferinde seni bekliyor.",
+    img: "/akra-festival.png",
+    month: "HAZ",
+    day: "16",
+  },
+  {
+    title: "Rock n Cock Müzik Festivali",
+    description:
+      "Antalya’da cazın büyüsüne kapıl! Yerli ve uluslararası sanatçılar, Akdeniz’in eşsiz atmosferinde seni bekliyor.",
+    img: "/rock-festival.jpeg",
+    month: "AĞU",
+    day: "09",
+  },
+];
+export const hangoutSectionData: HangoutData[] = [
+  {
+    img: "/canli-music.jpg",
+    title: "Canlı Müzik Mekanları",
+    isLarge: true,
+  },
+  {
+    img: "/roof.jpg",
+    title: "Roof Top Mekanlar",
+  },
+  {
+    img: "/kokteyl.jpg",
+    title: "Kokteyl Mekanları",
+  },
+  {
+    img: "/beach.jpg",
+    title: "Beach Club",
+  },
+  {
+    img: "/vip-dj.jpg",
+    title: "Vip Dj Bars",
+  },
+];
 
 export const eventTypesSlider = [
   { path: "/dugun.jpg", name: "Düğün" },
@@ -56,6 +119,33 @@ export const newArtistsSlider: Artist[] = [
     imageUrl: "/latin-perkusyon.jpg",
   },
   { id: 5, name: "Artist 5", category: "Electronic", imageUrl: "/nefes.jpg" },
+];
+
+export const stepsData = [
+  {
+    title: "Sanatçını Bul",
+    description:
+      "Düğün, nişan veya partin için en iyi sanatçıları keşfet! Profilleri incele, filtrelerle seç, bir tıkla iletişime geç ve hızlıca rezervasyon yap.",
+    img: "/sanatci-bul.png",
+  },
+  {
+    title: "Rezervasyon Yap",
+    description:
+      "Düğün, nişan veya partin için en iyi sanatçıları keşfet! Profilleri incele, filtrelerle seç, bir tıkla iletişime geç ve hızlıca rezervasyon yap.",
+    img: "/rezervasyon-yap.png",
+  },
+  {
+    title: "Güvenli Ödeme",
+    description:
+      "Ödemelerin güvenli platformumuz üzerinden yapılır. Etkinliğin onaylanana kadar paran güvence altında.",
+    img: "/guvenli-odeme.png",
+  },
+  {
+    title: "Sahnede Unutulmaz Anlar",
+    description:
+      "Müzisyenin hazır, etkinlik günün geldi! Hayalindeki performansı yaşa, anılarını müzikle taçlandır.",
+    img: "/unutulmaz-anlar.png",
+  },
 ];
 
 export const sahneData: EventData[] = [
@@ -361,7 +451,7 @@ export const festivalDetayData = {
   amenities: "",
 };
 
-export const canliMuzikData: PlaceData[] = [
+export const canliMuzikData: MekanDetayData[] = [
   {
     name: "Distortion Bar",
     url: "https://st.depositphotos.com/1001099/4130/i/380/depositphotos_41309515-stock-photo-towns.jpg",
@@ -395,7 +485,7 @@ export const canliMuzikData: PlaceData[] = [
     badgeText: "Ankara",
   },
 ];
-export const beachClubData: PlaceData[] = [
+export const beachClubData: MekanDetayData[] = [
   {
     name: "Sunset Vibes",
     url: "https://st4.depositphotos.com/18086274/38810/i/380/depositphotos_388101346-stock-photo-descanso-beach-club-santa-catalina.jpg",
@@ -430,7 +520,7 @@ export const beachClubData: PlaceData[] = [
   },
 ];
 
-export const kokteylBarData: PlaceData[] = [
+export const kokteylBarData: MekanDetayData[] = [
   {
     name: "Shaker & Soul",
     url: "https://static8.depositphotos.com/1007248/808/i/380/depositphotos_8087626-stock-photo-glasses-with-cocktail.jpg",
@@ -464,7 +554,7 @@ export const kokteylBarData: PlaceData[] = [
     badgeText: "Antalya",
   },
 ];
-export const djbarsData: PlaceData[] = [
+export const djbarsData: MekanDetayData[] = [
   {
     name: "Neon Pulse",
     url: "https://st.depositphotos.com/2022413/4741/i/380/depositphotos_47413235-stock-photo-needle-playing-red-vinyl.jpg",
@@ -499,7 +589,7 @@ export const djbarsData: PlaceData[] = [
   },
 ];
 
-export const rooftopData: PlaceData[] = [
+export const rooftopData: MekanDetayData[] = [
   {
     name: "Sky Lounge 360",
     url: "https://st4.depositphotos.com/2853475/24695/i/380/depositphotos_246954930-stock-photo-young-happy-people-having-barbecue.jpg",

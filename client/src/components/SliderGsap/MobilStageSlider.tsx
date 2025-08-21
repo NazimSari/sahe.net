@@ -2,8 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-import MobilCard from "../Cards/MobilSwipeCard";
-import MobilSwipeCard from "../Cards/MobilSwipeCard";
+import MobilStageCard from "../Cards/MobilStageCard";
 
 interface EventData {
   name: string;
@@ -17,7 +16,7 @@ interface MobileSceneSliderCardProps {
   data: EventData[];
 }
 
-const MobileSceneSlider: React.FC<MobileSceneSliderCardProps> = ({ data }) => {
+const MobileStageSlider: React.FC<MobileSceneSliderCardProps> = ({ data }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentIndexRef = useRef(data.length); // ortadaki setten başla
 
@@ -74,7 +73,7 @@ const MobileSceneSlider: React.FC<MobileSceneSliderCardProps> = ({ data }) => {
 
     gsap.to(container, {
       x: targetX,
-      duration: 0.55,
+      duration: 0.4,
       ease: "power2.inOut",
       onComplete: () => {
         const total = data.length;
@@ -105,7 +104,7 @@ const MobileSceneSlider: React.FC<MobileSceneSliderCardProps> = ({ data }) => {
   const { ref: swipeRef, ...swipeHandlers } = handlers;
 
   return (
-    <div className="w-screen relative h-[50vh] flex items-center overflow-hidden">
+    <div className="w-screen relative h-[60vh] flex items-center overflow-hidden">
       <div
         ref={(node) => {
           containerRef.current = node;
@@ -115,11 +114,11 @@ const MobileSceneSlider: React.FC<MobileSceneSliderCardProps> = ({ data }) => {
         {...swipeHandlers}
       >
         {[...data, ...data, ...data].map((item, index) => (
-          <MobilSwipeCard key={index} item={item} />
+          <MobilStageCard key={index} item={item} />
         ))}
       </div>
     </div>
   );
 };
 
-export default MobileSceneSlider;
+export default MobileStageSlider;

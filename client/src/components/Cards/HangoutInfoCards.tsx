@@ -11,7 +11,7 @@ interface PlaceCardProps {
   }[];
 }
 
-const PlaceCard = ({ data }: PlaceCardProps) => {
+const HangoutInfoCards = ({ data }: PlaceCardProps) => {
   return (
     <div className="container mx-auto p-2">
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -28,4 +28,4 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
   );
 };
 
-export default PlaceCard;
+export default HangoutInfoCards;

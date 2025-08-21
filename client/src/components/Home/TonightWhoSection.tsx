@@ -33,9 +33,9 @@ export default function TonightWhoSection() {
 
   return (
     <section className="mx-auto my-16 w-full bg-[#1A1A2E]">
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto px-2">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between lg:gap-8">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 px-2">
             <h3 className="lg:text-6xl md:text-5xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:mt-16 mt-8">
               Bu Gece <span className="text-[#FF007A]">Sahnede</span> Kim Var?
             </h3>
@@ -73,7 +73,9 @@ export default function TonightWhoSection() {
                       <span>
                         <FaLocationDot />
                       </span>{" "}
-                      <p className="font-semibold">{bannerItem.location}</p>
+                      <p className="font-semibold text-xs md:text-sm">
+                        {bannerItem.location}
+                      </p>
                     </div>
                   </div>
                 </div>
