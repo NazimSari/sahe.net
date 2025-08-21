@@ -3,6 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
+import MobileHangoutSliderCard from "../Cards/MobilHangoutSliderCard";
 
 interface HangoutData {
   img: string;
@@ -10,11 +11,11 @@ interface HangoutData {
   isLarge?: boolean;
 }
 
-interface MobileHangoutCardsProps {
+interface MobileHangoutSliderProps {
   hangoutData: HangoutData[];
 }
 
-const MobileHangoutSlider: React.FC<MobileHangoutCardsProps> = ({
+const MobileHangoutSlider: React.FC<MobileHangoutSliderProps> = ({
   hangoutData,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -120,24 +121,11 @@ const MobileHangoutSlider: React.FC<MobileHangoutCardsProps> = ({
       >
         {[...hangoutData, ...hangoutData, ...hangoutData].map(
           (hangout, index) => (
-            <div
+            <MobileHangoutSliderCard
               key={index}
-              className="slider-card flex-shrink-0 w-[min(85vw,320px)]"
-            >
-              <div className="relative h-[300px] bg-[#040519] rounded-tl-2xl rounded-tr-2xl shadow-md">
-                <img
-                  src={hangout.img}
-                  alt={hangout.title}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-                <div className="absolute bottom-0 left-0 right-0 h-1/4 z-10 flex flex-col items-center bg-black/70" />
-                <div className="absolute bottom-0 left-4 right-0 h-1/6 z-10 flex flex-col">
-                  <h4 className="text-[#FF007A] text-lg font-semibold">
-                    {hangout.title}
-                  </h4>
-                </div>
-              </div>
-            </div>
+              hangout={hangout}
+              index={index}
+            />
           )
         )}
       </div>

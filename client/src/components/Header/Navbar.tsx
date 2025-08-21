@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 import {
   NavigationMenu,
@@ -71,6 +72,7 @@ const categories: {
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -104,7 +106,7 @@ export function Navbar() {
             <NavigationMenuList>
               {/* HOME */}
               <NavItem href="/" scrolled={scrolled}>
-                Home
+                Ana Sayfa
               </NavItem>
 
               {/* HAKKIMIZDA */}
@@ -118,7 +120,7 @@ export function Navbar() {
                   className="bg-transparent hover:bg-[#f5f5f5] rounded-md px-3 py-2 transition-colors duration-300
                    text-white text-base"
                 >
-                  Category
+                  Kategoriler
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[400px] gap-2 p-4 md:w-[600px] md:grid-cols-2">
@@ -187,30 +189,51 @@ export function Navbar() {
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="left" className="w-[280px]">
+          <SheetContent side="left" className="w-[280px] bg-[#040519]">
             <SheetHeader>
-              <SheetTitle>Sahne</SheetTitle>
+              <SheetTitle className="text-[#FF007A] text-lg">Sahne</SheetTitle>
             </SheetHeader>
-            <div className="mt-4 flex flex-col gap-2 p-3">
-              <Link href="/" onClick={() => setOpen(false)}>
-                Home
+            <div className="mt-4 flex flex-col gap-5 p-3 text-[#f5f5f5] text-lg font-semibold">
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className={`py-2 ${
+                  pathname === "/"
+                    ? "underline decoration-[#FF007A] decoration-2"
+                    : ""
+                }`}
+              >
+                Ana Sayfa
               </Link>
-              <Link href="/hakkimizda" onClick={() => setOpen(false)}>
+              <Link
+                href="/hakkimizda"
+                onClick={() => setOpen(false)}
+                className={`py-2 ${
+                  pathname === "/hakkimizda"
+                    ? "underline decoration-[#FF007A] decoration-2"
+                    : ""
+                }`}
+              >
                 Hakkımızda
               </Link>
 
               {/* Category accordion */}
               <Accordion type="single" collapsible>
                 <AccordionItem value="category">
-                  <AccordionTrigger className="flex justify-between">
-                    Category
+                  <AccordionTrigger className="flex justify-between text-lg">
+                    Kategoriler
                   </AccordionTrigger>
-                  <AccordionContent className="flex flex-col gap-2 pl-4">
+                  <AccordionContent className="flex flex-col gap-2 pl-4 text-[#f5f5f5]">
                     {categories.map((category) => (
                       <Link
                         key={category.title}
                         href={category.href}
                         onClick={() => setOpen(false)}
+                        className={
+                          pathname === category.href
+                            ? "underline decoration-[#FF007A] decoration-2"
+                            : ""
+                        }
                       >
                         {category.title}
                       </Link>
@@ -219,21 +242,23 @@ export function Navbar() {
                 </AccordionItem>
               </Accordion>
 
-              <Link href="/iletisim" onClick={() => setOpen(false)}>
+              <Link
+                href="/iletisim"
+                onClick={() => setOpen(false)}
+                className={`py-2 ${
+                  pathname === "/iletisim"
+                    ? "underline decoration-[#FF007A] decoration-2"
+                    : ""
+                }`}
+              >
                 İletişim
               </Link>
 
               {/* Mobile'de butonlar */}
               <div className="mt-4 flex flex-col gap-2">
-                {/* <Button
-                  variant="outline"
-                  className="w-1/2 bg-transparent hover:bg-[#f5f5f5]"
-                >
-                  Sign In
-                </Button> */}
                 <Link
-                  href={"/#hero-section"}
-                  className="w-1/2 bg-[#040519] hover:bg-[#f5f5f5] text-white rounded-md py-1 text-center border border-[#040519] transition-all duration-300 hover:text-[#040519]"
+                  href="/#hero-section"
+                  className="w-fit px-4 text-base bg-transparent border border-[#FF007A] hover:bg-[#FF007A] text-white rounded-md py-1 text-center transition-all duration-300 hover:text-[#f5f5f5]"
                 >
                   Ön Kayıt
                 </Link>

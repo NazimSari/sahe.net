@@ -1,4 +1,4 @@
-// MobileSceneSliderCard.tsx
+"use client";
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";

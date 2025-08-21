@@ -17,6 +17,7 @@ import Link from "next/link";
 import React from "react";
 import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
 import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
+import MobileStageSlider from "@/components/SliderGsap/MobilStageSlider";
 
 export default function EtkinlikTurleri() {
   return (
@@ -57,8 +58,11 @@ export default function EtkinlikTurleri() {
               iyi müzik gruplarını keşfedin, romantik ve enerjik anlar yaratın.
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 hidden md:block">
             <SceneCards data={sahneData} />
+          </div>
+          <div className="mt-8 md:hidden">
+            <MobileStageSlider data={sahneData} />
           </div>
           <div className="text-center mt-2">
             <Link href="/etkinlik-turleri" className="text-[#f5f5f5]">
@@ -82,8 +86,11 @@ export default function EtkinlikTurleri() {
               coşkuyla kutla!
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 hidden md:block">
             <SceneCards data={dogumGunuData} />
+          </div>
+          <div className="mt-8 md:hidden">
+            <MobileStageSlider data={dogumGunuData} />
           </div>
           <div className="text-center mt-5">
             <Link href="/etkinlik-turleri" className="text-[#040519]">
@@ -126,8 +133,11 @@ export default function EtkinlikTurleri() {
               kutlamaya dönüştürün!
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 hidden md:block">
             <SceneCards data={babyshowerData} />
+          </div>
+          <div className="mt-8 md:hidden">
+            <MobileStageSlider data={babyshowerData} />
           </div>
           <div className="text-center mt-5">
             <Link href="/etkinlik-turleri" className="text-[#040519]">
@@ -150,8 +160,11 @@ export default function EtkinlikTurleri() {
               Lezzetli ikramlar ve müzik eşliğinde sosyalleşmenin tam zamanı.
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 hidden md:block">
             <SceneCards data={happyhourData} />
+          </div>
+          <div className="mt-8 md:hidden">
+            <MobileStageSlider data={happyhourData} />
           </div>
           <div className="text-center mt-2">
             <Link href="/etkinlik-turleri" className="text-[#f5f5f5]">
@@ -174,8 +187,11 @@ export default function EtkinlikTurleri() {
               performanslarımızla geceye ritmini ve şıklığını katıyoruz.
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 hidden md:block">
             <SceneCards data={djData} />
+          </div>
+          <div className="mt-8 md:hidden">
+            <MobileStageSlider data={djData} />
           </div>
           <div className="text-center mt-5">
             <Link href="/etkinlik-turleri" className="text-[#040519]">
@@ -200,8 +216,11 @@ export default function EtkinlikTurleri() {
               ölümsüzleştiriyoruz.
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 hidden md:block">
             <SceneCards data={ozelcekimData} />
+          </div>
+          <div className="mt-8 md:hidden">
+            <MobileStageSlider data={ozelcekimData} />
           </div>
           <div className="text-center mt-5">
             <Link href="/etkinlik-turleri" className="text-[#040519]">
