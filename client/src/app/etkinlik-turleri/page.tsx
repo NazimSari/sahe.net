@@ -4,19 +4,11 @@ import StepsSection from "@/components/Home/PaymentStepsSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import MobilFilter from "@/components/Filters/MobilFilter";
 import SceneCards from "@/components/Cards/StageCards";
-import {
-  babyshowerData,
-  djData,
-  dogumGunuData,
-  happyhourData,
-  ozelcekimData,
-  sahneData,
-} from "@/lib/data";
-
+import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
+import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
+import { dataSources, eventTypesSlider } from "@/lib/data";
 import Link from "next/link";
 import React from "react";
-import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
-import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
 import MobileStageSlider from "@/components/SliderGsap/MobilStageSlider";
 
 export default function EtkinlikTurleri() {
@@ -44,61 +36,81 @@ export default function EtkinlikTurleri() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] py-16">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-4  justify-center">
-            <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
-              Düğün Etkinlikleri
-            </h3>
-            <p
-              id="scene-paragraf"
-              className="text-[#f5f5f5] text-sm md:text-base max-w-xl ml-2"
-            >
-              Aşkınızı müziğin büyüsüyle kutlayın! Düğün etkinlikleriniz için en
-              iyi müzik gruplarını keşfedin, romantik ve enerjik anlar yaratın.
-            </p>
-          </div>
-          <div className="mt-8 hidden md:block">
-            <SceneCards data={sahneData} />
-          </div>
-          <div className="mt-8 md:hidden">
-            <MobileStageSlider data={sahneData} />
-          </div>
-          <div className="text-center mt-2">
-            <Link href="/etkinlik-turleri" className="text-[#f5f5f5]">
-              Daha Fazla Gör
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="w-full bg-[#f5f5f5] py-16">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-4  justify-center">
-            <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#040519] md:leading-snug">
-              Doğum Günü Etkinlikleri
-            </h3>
-            <p
-              id="scene-paragraf"
-              className="text-[#040519] text-sm md:text-base max-w-xl ml-2"
-            >
-              Doğum günün sıradan olmasın! En eğlenceli müzik gruplarıyla
-              partini unutulmaz kıl. Tarzını seç, ritme kapıl ve yeni yaşını
-              coşkuyla kutla!
-            </p>
-          </div>
-          <div className="mt-8 hidden md:block">
-            <SceneCards data={dogumGunuData} />
-          </div>
-          <div className="mt-8 md:hidden">
-            <MobileStageSlider data={dogumGunuData} />
-          </div>
-          <div className="text-center mt-5">
-            <Link href="/etkinlik-turleri" className="text-[#040519]">
-              Daha Fazla Gör
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* İlk 4 Kategori Section'ı */}
+      {eventTypesSlider.slice(0, 4).map((etkinlik) => {
+        const dataSource = dataSources[etkinlik.slug];
+        if (!dataSource) return null; // Veri kaynağı yoksa atla
+
+        return (
+          <section
+            key={etkinlik.slug}
+            className={`w-full py-16 ${
+              ["dogum-gunu", "baby-shower", "ozel-cekim"].includes(
+                etkinlik.slug
+              )
+                ? "bg-[#f5f5f5]"
+                : "bg-[#160317]"
+            }`}
+          >
+            <div className="container mx-auto">
+              <div className="flex flex-col gap-4 justify-center">
+                <h3
+                  className={`md:text-4xl text-2xl max-w-2xl ml-2 font-bold md:leading-snug ${
+                    ["dogum-gunu", "baby-shower", "ozel-cekim"].includes(
+                      etkinlik.slug
+                    )
+                      ? "text-[#040519]"
+                      : "text-[#f5f5f5]"
+                  }`}
+                >
+                  {etkinlik.title}
+                </h3>
+                <p
+                  id="scene-paragraf"
+                  className={`text-sm md:text-base max-w-xl ml-2 ${
+                    ["dogum-gunu", "baby-shower", "ozel-cekim"].includes(
+                      etkinlik.slug
+                    )
+                      ? "text-[#040519]"
+                      : "text-[#f5f5f5]"
+                  }`}
+                >
+                  {etkinlik.description}
+                </p>
+              </div>
+              <div className="mt-8 hidden md:block">
+                <SceneCards
+                  data={dataSource}
+                  type="artist"
+                  selectedCategory={etkinlik.slug}
+                />
+              </div>
+              {/* <div className="mt-8 md:hidden">
+                <MobileStageSlider
+                  data={dataSource}
+                  type="artist"
+                  selectedCategory={etkinlik.slug}
+                />
+              </div> */}
+              <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
+                <Link
+                  href={`/etkinlik-turleri/${etkinlik.slug}`}
+                  className={
+                    ["dogum-gunu", "baby-shower", "ozel-cekim"].includes(
+                      etkinlik.slug
+                    )
+                      ? "text-[#040519]"
+                      : "text-[#f5f5f5]"
+                  }
+                >
+                  Daha Fazla Gör
+                </Link>
+              </div>
+            </div>
+          </section>
+        );
+      })}
+      {/* Aramıza Yeni Katılanlar */}
       <section className="w-full bg-[#160317] py-20 md:py-16">
         <div className="container mx-auto flex flex-col items-center gap-10">
           <div className="flex flex-col gap-4 justify-center items-center">
@@ -118,120 +130,79 @@ export default function EtkinlikTurleri() {
           <MobilArtistSlider />
         </div>
       </section>
-      <section className="w-full bg-[#f5f5f5] py-16">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-4  justify-center">
-            <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#040519] md:leading-snug">
-              Baby Shower Etkinlikleri
-            </h3>
-            <p
-              id="scene-paragraf"
-              className="text-[#040519] text-sm md:text-base max-w-xl ml-2"
-            >
-              Anne adayları için unutulmaz anlar… Baby Shower etkinliklerimizle,
-              bu özel günü sevdiklerinizle birlikte eğlenceli ve şık bir
-              kutlamaya dönüştürün!
-            </p>
-          </div>
-          <div className="mt-8 hidden md:block">
-            <SceneCards data={babyshowerData} />
-          </div>
-          <div className="mt-8 md:hidden">
-            <MobileStageSlider data={babyshowerData} />
-          </div>
-          <div className="text-center mt-5">
-            <Link href="/etkinlik-turleri" className="text-[#040519]">
-              Daha Fazla Gör
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="w-full bg-[#160317] py-16">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-4  justify-center">
-            <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
-              Happy Hour Etkinlikleri
-            </h3>
-            <p
-              id="scene-paragraf"
-              className="text-[#f5f5f5] text-sm md:text-base max-w-xl ml-2"
-            >
-              İş çıkışı stresini atmak isteyenler için keyifli bir mola!
-              Lezzetli ikramlar ve müzik eşliğinde sosyalleşmenin tam zamanı.
-            </p>
-          </div>
-          <div className="mt-8 hidden md:block">
-            <SceneCards data={happyhourData} />
-          </div>
-          <div className="mt-8 md:hidden">
-            <MobileStageSlider data={happyhourData} />
-          </div>
-          <div className="text-center mt-2">
-            <Link href="/etkinlik-turleri" className="text-[#f5f5f5]">
-              Daha Fazla Gör
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="w-full bg-[#f5f5f5] py-16">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-4  justify-center">
-            <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#040519] md:leading-snug">
-              DJ Performansı
-            </h3>
-            <p
-              id="scene-paragraf"
-              className="text-[#040519] text-sm md:text-base max-w-xl ml-2"
-            >
-              Zarif bir atmosferde, özenle seçilmiş setler… DJ
-              performanslarımızla geceye ritmini ve şıklığını katıyoruz.
-            </p>
-          </div>
-          <div className="mt-8 hidden md:block">
-            <SceneCards data={djData} />
-          </div>
-          <div className="mt-8 md:hidden">
-            <MobileStageSlider data={djData} />
-          </div>
-          <div className="text-center mt-5">
-            <Link href="/etkinlik-turleri" className="text-[#040519]">
-              Daha Fazla Gör
-            </Link>
-          </div>
-        </div>
-      </section>
-      <Banner />
-      <section className="w-full bg-[#f5f5f5] py-16">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-4  justify-center">
-            <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#040519] md:leading-snug">
-              Özel Çekimler
-            </h3>
-            <p
-              id="scene-paragraf"
-              className="text-[#040519] text-sm md:text-base max-w-xl ml-2"
-            >
-              Her karede zarafet, her sahnede duygu… Özel çekimlerimizle bu
-              unutulmaz anları estetik ve sanatsal bir dokunuşla
-              ölümsüzleştiriyoruz.
-            </p>
-          </div>
-          <div className="mt-8 hidden md:block">
-            <SceneCards data={ozelcekimData} />
-          </div>
-          <div className="mt-8 md:hidden">
-            <MobileStageSlider data={ozelcekimData} />
-          </div>
-          <div className="text-center mt-5">
-            <Link href="/etkinlik-turleri" className="text-[#040519]">
-              Daha Fazla Gör
-            </Link>
-          </div>
-        </div>
-      </section>
+
+      {/* Geri Kalan Kategori Section'ları */}
+      {eventTypesSlider.slice(4).map((etkinlik) => {
+        const dataSource = dataSources[etkinlik.slug];
+        if (!dataSource) return null; // Veri kaynağı yoksa atla
+
+        return (
+          <section
+            key={etkinlik.slug}
+            className={`w-full py-16 ${
+              ["dj-performans", "ozel-cekim"].includes(etkinlik.slug)
+                ? "bg-[#f5f5f5]"
+                : "bg-[#160317]"
+            }`}
+          >
+            <div className="container mx-auto">
+              <div className="flex flex-col gap-4 justify-center">
+                <h3
+                  className={`md:text-4xl text-2xl max-w-2xl ml-2 font-bold md:leading-snug ${
+                    ["dj-performans", "ozel-cekim"].includes(etkinlik.slug)
+                      ? "text-[#040519]"
+                      : "text-[#f5f5f5]"
+                  }`}
+                >
+                  {etkinlik.title}
+                </h3>
+                <p
+                  id="scene-paragraf"
+                  className={`text-sm md:text-base max-w-xl ml-2 ${
+                    ["dj-performans", "ozel-cekim"].includes(etkinlik.slug)
+                      ? "text-[#040519]"
+                      : "text-[#f5f5f5]"
+                  }`}
+                >
+                  {etkinlik.description}
+                </p>
+              </div>
+              <div className="mt-8 hidden md:block">
+                <SceneCards
+                  data={dataSource}
+                  type="artist"
+                  selectedCategory={etkinlik.slug}
+                />
+              </div>
+              {/* <div className="mt-8 md:hidden">
+                <MobileStageSlider
+                  data={dataSource}
+                  type="artist"
+                  selectedCategory={etkinlik.slug}
+                />
+              </div> */}
+              <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
+                <Link
+                  href={`/etkinlik-turleri/${etkinlik.slug}`}
+                  className={
+                    ["dj-performans", "ozel-cekim"].includes(etkinlik.slug)
+                      ? "text-[#040519]"
+                      : "text-[#f5f5f5]"
+                  }
+                >
+                  Daha Fazla Gör
+                </Link>
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
+      {/* Banner ve Diğer Section'lar */}
       <section className="w-full bg-[#f5f5f5]">
         <StepsSection />
       </section>
+      <Banner />
       <SubscriptionSection />
     </main>
   );

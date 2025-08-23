@@ -12,13 +12,16 @@ interface CardProps {
     url: string;
     name: string;
     badgeText?: string;
-    category: string;
+    category: string[];
     description: string;
+    slug: string;
+    musicType?: string;
   };
   index: number;
+  type: "artist" | "venue";
 }
 
-const Card = ({ item, index }: CardProps) => {
+const Card = ({ item, index, type }: CardProps) => {
   const router = useRouter();
 
   return (
@@ -55,12 +58,12 @@ const Card = ({ item, index }: CardProps) => {
         <Button
           variant="outline"
           className="w-fit cursor-pointer"
-          onClick={() => router.push("/mekan-detay")}
+          onClick={() => router.push(`/sanatci-detay/${item.slug}`)}
         >
-          Hemen İncele
+          {type === "artist" ? "Sanatçıyı İncele" : "Mekanı İncele"}
         </Button>
         <Link
-          href="/mekan-detay"
+          href={`/sanatci-detay/${item.slug}`}
           className="flex items-center md:ml-3 text-sm text-[#FF007A] font-semibold cursor-pointer"
         >
           Rezervasyon Yap

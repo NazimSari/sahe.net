@@ -48,7 +48,13 @@ export default function EventTypeSlider() {
       >
         {[...eventTypesSlider, ...eventTypesSlider, ...eventTypesSlider].map(
           (item, index) => (
-            <SliderCard key={index} path={item.path} name={item.name} />
+            <SliderCard
+              key={index}
+              path={item.path}
+              name={item.name}
+              id={item.id}
+              slug={item.slug}
+            />
           )
         )}
       </div>

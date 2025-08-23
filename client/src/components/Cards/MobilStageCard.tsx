@@ -4,21 +4,15 @@ import { FaStar } from "react-icons/fa";
 import { ChevronRight } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { FaLocationDot } from "react-icons/fa6";
+import { EventData } from "@/lib/data";
 import Link from "next/link";
 
-interface EventData {
-  name: string;
-  url: string;
-  description: string;
-  category: string;
-  badgeText?: string;
-}
-
-interface CardProps {
+interface MobilStageCardProps {
   item: EventData;
+  type: "artist" | "venue";
 }
 
-const MobilStageCard: React.FC<CardProps> = ({ item }) => {
+const MobilStageCard: React.FC<MobilStageCardProps> = ({ item, type }) => {
   return (
     <div className="slider-card bg-black rounded-lg shadow-lg overflow-hidden transform w-[min(80vw,280px)] min-h-[400px] max-h-[500px] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col">
       <div className="relative">
@@ -55,7 +49,7 @@ const MobilStageCard: React.FC<CardProps> = ({ item }) => {
       </div>
       <div className="p-4 flex items-center justify-between shrink-0">
         <Link
-          href="/sanatci-detay"
+          href={`/sanatci-detay/${item.slug}`}
           className="flex items-center text-xs text-[#FF007A] font-semibold cursor-pointer"
         >
           Rezervasyon Yap

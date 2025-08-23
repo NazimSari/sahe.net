@@ -2,8 +2,14 @@
 import SceneCards from "../Cards/StageCards";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { sahneData } from "@/lib/data";
+import { dataSources, sahneData } from "@/lib/data";
 import MobileStageSlider from "../SliderGsap/MobilStageSlider";
+import { EventData } from "@/lib/data";
+
+interface StageStarsSectionProps {
+  data: EventData[];
+  category: string;
+}
 
 export default function StageStarsSection() {
   return (
@@ -24,7 +30,7 @@ export default function StageStarsSection() {
               </p>
             </div>
             <div className="hidden md:block border border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-              <Link href="/#festivals">
+              <Link href="/etkinlik-turleri/dugun">
                 <span className="flex items-center ml-3">
                   {" "}
                   Daha Fazlası İçin{" "}
@@ -34,13 +40,13 @@ export default function StageStarsSection() {
             </div>
           </div>
           <div className="mt-8 hidden md:block">
-            <SceneCards data={sahneData} />
+            <SceneCards data={sahneData} type="artist" />
           </div>
           <div className="mt-8 md:hidden">
             <MobileStageSlider data={sahneData} />
           </div>
           <div className="md:hidden border w-fit mt-5 border-[#FF007A] py-2 ml-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-            <Link href="/#festivals">
+            <Link href="/etkinlik-turleri/dugun">
               <span className="flex items-center ml-3">
                 {" "}
                 Daha Fazlası İçin{" "}

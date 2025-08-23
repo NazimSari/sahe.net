@@ -4,7 +4,12 @@ import ClockIcon from "@/components/icons/ClockIcon";
 import UserIcon from "@/components/icons/UserIcon";
 import VehicleIcon from "@/components/icons/VehicleIcon";
 import { Button } from "@/components/ui/button";
-import { happyhourData, sanatciDetayData } from "@/lib/data";
+import {
+  dataSources,
+  dogumGunuData,
+  happyhourData,
+  sanatciDetayData,
+} from "@/lib/data";
 import { Check } from "lucide-react";
 import { FaStar, FaUserCircle, FaDotCircle } from "react-icons/fa";
 import StepsSection from "@/components/Home/PaymentStepsSection";
@@ -12,18 +17,46 @@ import SceneCards from "@/components/Cards/StageCards";
 import DetailsTabArtist from "@/components/DeatilsTab/DetailsTabArtist";
 import DetailsPriceCardArtist from "@/components/DeatilsPriceCard/DetailsPriceCardArtist";
 import MobileStageSlider from "@/components/SliderGsap/MobilStageSlider";
+import { useParams, notFound } from "next/navigation";
+import { EventData } from "@/lib/data";
 
 export default function SanatciDetayPage() {
+  const params = useParams();
+  const artistSlug = params.artist as string;
+
+  // Tüm dataSources içinde sanatçıyı ara
+  let sanatci: EventData | null = null;
+  for (const category in dataSources) {
+    const found = dataSources[category].find((s) => s.slug === artistSlug);
+    if (found) {
+      sanatci = found;
+      break;
+    }
+  }
+
+  if (!sanatci) {
+    notFound(); // Sanatçı bulunamazsa 404
+  }
+
+  // Benzer sanatçıları bul (sanatçının kategorilerine göre)
+  const similarArtists = Object.values(dataSources)
+    .flat()
+    .filter(
+      (artist) =>
+        artist.slug !== sanatci.slug &&
+        artist.category.some((cat) => sanatci.category.includes(cat))
+    )
+    .slice(0, 6); // En fazla 6 benzer sanatçı
   return (
     <main className="min-h-screen w-full overflow-hidden">
       <section className="p-4 lg:pt-16 pt-28 bg-[url('/page3.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
         <div className="container mx-auto bg-[#160317]/50 rounded-2xl xl:py-20 py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 h-full w-full">
             {/* Görsel Kısmı */}
-            <div className="w-full lg:w-1/2 max-w-[550px] aspect-[4/3] overflow-hidden rounded-xl">
+            <div className="w-full lg:w-1/2 lg:max-w-[600px] md:aspect-[16/9] lg:aspect-[3/4]  xl:aspect-[4/3] overflow-hidden rounded-xl">
               <img
-                src="/rock-music.jpg"
-                alt="Arser Orkestrası"
+                src={sanatci.url}
+                alt={sanatci.name}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -32,11 +65,10 @@ export default function SanatciDetayPage() {
             <div className="flex flex-col gap-6 w-full lg:w-1/2 justify-center">
               <div className="flex flex-col gap-4 text-[#f5f5f5]">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-                  Arser Orkestrası
+                  {sanatci.name}
                 </h1>
-                <p className="text-sm sm:text-base lg:text-xl font-semibold max-w-md leading-relaxed">
-                  Efsanevi Gitar Soloları ve Patlayıcı Sahne Enerjisiyle
-                  Tanışın!
+                <p className="text-sm sm:text-base xl:text-lg font-semibold leading-relaxed">
+                  {sanatci.description}
                 </p>
               </div>
 
@@ -113,7 +145,7 @@ export default function SanatciDetayPage() {
         <div className="container mx-auto py-16">
           <div className="flex flex-col gap-4 justify-center mb-10">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#040519] md:leading-snug">
-              Arser Orkestrası Sahnesi
+              {sanatci.name} Sahnesi
             </h3>
             <p
               id="scene-paragraf"
@@ -350,10 +382,10 @@ export default function SanatciDetayPage() {
             </p>
           </div>
           <div className="mt-8 hidden md:block">
-            <SceneCards data={happyhourData} />
+            <SceneCards data={similarArtists} type="artist" />
           </div>
           <div className="mt-8 md:hidden">
-            <MobileStageSlider data={happyhourData} />
+            <MobileStageSlider data={similarArtists} type="artist" />
           </div>
         </div>
       </section>

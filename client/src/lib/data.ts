@@ -1,9 +1,11 @@
-interface EventData {
+export interface EventData {
   name: string;
   url: string;
   description: string;
-  category: string;
-  badgeText?: string; // Opsiyonel, çünkü badgeText her zaman zorunlu değil
+  category: string[];
+  badgeText?: string;
+  musicType?: string;
+  slug: string;
 }
 
 interface MekanDetayData {
@@ -91,12 +93,61 @@ export const hangoutSectionData: HangoutData[] = [
 ];
 
 export const eventTypesSlider = [
-  { path: "/dugun.jpg", name: "Düğün" },
-  { path: "/ozel-cekim.jpg", name: "Özel Çekim" },
-  { path: "/baby-shower.jpg", name: "Bebek Partisi" },
-  { path: "/happy-hour.jpg", name: "Mutlu Saatler" },
-  { path: "/dj-performans.jpg", name: "DJ Performansı" },
-  { path: "/dogum-gunu.jpg", name: "Doğum Günü" },
+  {
+    id: 1,
+    path: "/dugun.jpg",
+    name: "Düğün",
+    slug: "dugun",
+    title: "Düğün Etkinlikleri",
+    description:
+      "Aşkınızı müziğin büyüsüyle kutlayın! Düğün etkinlikleriniz için en iyi müzik gruplarını keşfedin, romantik ve enerjik anlar yaratın.",
+  },
+  {
+    id: 2,
+    path: "/ozel-cekim.jpg",
+    name: "Özel Çekim",
+    slug: "ozel-cekim",
+    title: "Özel Çekimler",
+    description:
+      "Her karede zarafet, her sahnede duygu… Özel çekimlerimizle bu unutulmaz anları estetik ve sanatsal bir dokunuşla ölümsüzleştiriyoruz.",
+  },
+  {
+    id: 3,
+    path: "/happy-hour.jpg",
+    name: "Happy Hour",
+    slug: "happy-hour",
+    title: "Happy Hour Etkinlikleri",
+    description:
+      "İş çıkışı stresini atmak isteyenler için keyifli bir mola! Lezzetli ikramlar ve müzik eşliğinde sosyalleşmenin tam zamanı.",
+  },
+  {
+    id: 4,
+    path: "/baby-shower.jpg",
+    name: "Bebek Partisi",
+    slug: "baby-shower",
+    title: "Baby Shower Etkinlikleri",
+    description:
+      "Anne adayları için unutulmaz anlar… Baby Shower etkinliklerimizle, bu özel günü sevdiklerinizle birlikte eğlenceli ve şık bir kutlamaya dönüştürün!",
+  },
+
+  {
+    id: 5,
+    path: "/dj-performans.jpg",
+    name: "DJ Performansı",
+    slug: "dj-performans",
+    title: "DJ Performansı",
+    description:
+      "Zarif bir atmosferde, özenle seçilmiş setler… DJ performanslarımızla geceye ritmini ve şıklığını katıyoruz.",
+  },
+  {
+    id: 6,
+    path: "/dogum-gunu.jpg",
+    name: "Doğum Günü",
+    slug: "dogum-gunu",
+    title: "Doğum Günü Etkinlikleri",
+    description:
+      "Doğum günün sıradan olmasın! En eğlenceli müzik gruplarıyla partini unutulmaz kıl. Tarzını seç, ritme kapıl ve yeni yaşını coşkuyla kutla!",
+  },
 ];
 
 export const musicTypesSlider = [
@@ -154,31 +205,49 @@ export const sahneData: EventData[] = [
     url: "/kamil.jpg",
     description:
       "Pop ve funk’ın enerjik birleşimi! Düğün ve partiler için mükemmel.",
-    category: "Rock",
+    musicType: "Rock",
     badgeText: "İstanbul",
+    category: ["Düğün", "Happy Hour", "Doğum Günü"],
+    slug: "kamil-aydinli",
   },
   {
     name: "Micheal Tartum",
     url: "/micheal.jpg",
     description:
       "Elektronik ritimlerle dans pistini ateşler. Özel etkinliklerin aranan ismi!",
-    category: "Jazz",
+    musicType: "Jazz",
     badgeText: "Ankara",
+    category: [
+      "Düğün",
+      "Happy Hour",
+      "Doğum Günü",
+      "Baby Shower, Dj Performansı",
+    ],
+    slug: "micheal-tartum",
   },
   {
     name: "Group Brooke",
     url: "/brooklin.jpg",
     description:
       "Sert ritimler, güçlü sahne! Festivaller ve partiler için hazır.",
-    category: "Rock",
+    musicType: "Rock",
     badgeText: "Antalya",
+    category: [
+      "Düğün",
+      "Happy Hour",
+      "Doğum Günü",
+      "Baby Shower, Dj Performansı",
+    ],
+    slug: "group-brooke",
   },
   {
     name: "Group Nefes",
     url: "/nefes.jpg",
     description: "Zarif klasik müzikle nişan ve davetlere sınıf katar.",
-    category: "Enstrümantal",
+    musicType: "Enstrümantal",
     badgeText: "İzmir",
+    slug: "group-nefes",
+    category: ["Düğün", "Happy Hour", "Doğum Günü"],
   },
 ];
 
@@ -188,32 +257,36 @@ export const dogumGunuData: EventData[] = [
     url: "https://images.unsplash.com/photo-1474959783111-a0f551bdad25?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlydGhkYXklMjBzaW5nZXJ8ZW58MHx8MHx8fDI%3D",
     description:
       "Romantik melodilerden eğlenceli ritmlere… Elif, doğum günü kutlamalarınıza duyguyu ve enerjiyi aynı anda getiriyor. Canlı performansıyla geceye renk katmak isteyenler için birebir!",
-    category: "Canlı Müzik",
+    category: ["Canlı Müzik", "Etkinlik Sunucusu"],
     badgeText: "Ankara",
+    slug: "elif-kaya",
   },
   {
     name: "Mert Uslu",
     url: "https://images.unsplash.com/photo-1584778672056-82fb68242666?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMyfHxldmVudHMlMjBhbm5vdW5jZXJ8ZW58MHx8MHx8fDI%3D",
     description:
       "Doğum günü enerjisini en iyi şekilde yansıtmak Mert’in işi! Eğlenceli sunumları ve profesyonel duruşuyla hem çocuklara hem yetişkinlere özel kutlamalarda tam aradığınız isim.",
-    category: "Etkinlik Sunucusu",
+    category: ["Canlı Müzik", "Etkinlik Sunucusu"],
     badgeText: "İstanbul",
+    slug: "mert-uslu",
   },
   {
     name: "Kerem Yıldız",
     url: "https://images.unsplash.com/photo-1572208131938-22179274932c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGFuaW1hdG9yJTIwY2xvd258ZW58MHx8MHx8fDI%3D",
     description:
       "Özellikle çocuk doğum günlerinin neşe kaynağı! Kerem; yüz boyama, mini şovlar ve oyunlarla küçük misafirlere unutulmaz anlar yaşatıyor.",
-    category: "Animasyon",
+    category: ["Animasyon"],
     badgeText: "İzmir",
+    slug: "kerem-yildiz",
   },
   {
     name: "Can Demir",
     url: "https://images.unsplash.com/photo-1504376626428-15e04b55193b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGFjdXN0aWslMjBzaW5nZXJ8ZW58MHx8MHx8fDI%3D",
     description:
       "Canlı müziğin sade ama etkileyici hali… Can, akustik repertuarıyla doğum günü organizasyonlarını sıcak ve samimi bir atmosfere dönüştürüyor. Hem ev partileri hem butik etkinlikler için ideal!",
-    category: "Akustik Performans",
+    category: ["Akustik Performans"],
     badgeText: "Antalya",
+    slug: "can-demir",
   },
 ];
 
@@ -223,32 +296,36 @@ export const babyshowerData: EventData[] = [
     url: "https://images.unsplash.com/photo-1565562183660-62c4a72ab233?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGFjdXN0aWslMjBzaW5nZXJ8ZW58MHx8MHx8fDI%3D",
     description:
       "Yumuşak tınılar, huzur veren melodiler… Elif Naz, Baby Shower davetlerinize zarif bir müzik dokunuşu katıyor. Anne adayları için duygusal anlara fon olacak canlı performanslar sunuyor.",
-    category: "Akustik Vokal",
+    category: ["Akustik Vokal"],
     badgeText: "Ankara",
+    slug: "elif-naz",
   },
   {
     name: "Ayça Mutlu",
     url: "https://images.unsplash.com/photo-1544654935-036f583c952a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODB8fG9yZ2FuaXplcnxlbnwwfHwwfHx8Mg%3D%3D",
     description:
       "Balonlar, masa süslemeleri, tema detayları… Ayça, hayalinizdeki Baby Shower’ı A'dan Z'ye tasarlıyor. Minimalden gösterişli konsepte kadar her zevke hitap ediyor.",
-    category: "Organizasyon",
+    category: ["Organizasyon", "Animasyon"],
     badgeText: "İstanbul",
+    slug: "ayca-mutlu",
   },
   {
     name: "Melis Efe",
     url: "https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFydGlzdHxlbnwwfHwwfHx8Mg%3D%3D",
     description:
       "Farklı ve özel bir dokunuş arayanlar için… Melis, etkinlik sırasında misafirlerin canlı illüstrasyonlarını yapıyor ve ortaya çıkan eserlerle unutulmaz bir anı köşesi oluşturuyor.",
-    category: "Organizasyon",
+    category: ["Organizasyon"],
     badgeText: "İstanbul",
+    slug: "melis-efe",
   },
   {
     name: "Emir Saruhan",
     url: "https://images.unsplash.com/photo-1525204016358-717c1c37382f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fGFjdXN0aWslMjBzaW5nZXJ8ZW58MHx8MHx8fDI%3D",
     description:
       "Sakinlik, zarafet ve müzik bir arada… Emir, Baby Shower etkinliklerinize akustik gitarı ve huzur veren sesiyle eşlik ediyor. Duygusal anlara anlam katan canlı performansıyla fark yaratıyor.",
-    category: "Akustik ",
+    category: ["Akustik ", "Vokal"],
     badgeText: "İzmir",
+    slug: "emir-saruhan",
   },
 ];
 
@@ -258,32 +335,36 @@ export const happyhourData: EventData[] = [
     url: "https://images.unsplash.com/photo-1686242585398-6a069e7eb7c3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGolMjBmZW1hbGV8ZW58MHx8MHx8fDI%3D",
     description:
       "Yumuşak geçişler, cool ritimler… Derya, Happy Hour atmosferine uygun chill, deep house ve lounge setleriyle gecenize müzikal bir şıklık katıyor.",
-    category: "Dj-Lounge",
+    category: ["Dj-Lounge"],
     badgeText: "Ankara",
+    slug: "derya-aksoy",
   },
   {
     name: "Bora Yüce",
     url: "https://images.unsplash.com/flagged/photo-1569231290150-9c6200705c5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNheG9waG9uZXxlbnwwfHwwfHx8Mg%3D%3D",
     description:
       "Canlı saksafon tınılarıyla anın ruhunu yakalayın. Bora, özellikle kokteyl saatlerinde ambiyansı bir üst seviyeye taşıyan performansıyla unutulmaz bir deneyim sunuyor.",
-    category: "Saksafon Performans",
+    category: ["Saksafon Performans"],
     badgeText: "İstanbul",
+    slug: "bora-yuce",
   },
   {
     name: "Simge Aral",
     url: "https://images.unsplash.com/photo-1555084415-b708df0fef3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fGJhcm1haWR8ZW58MHx8MHx8fDI%3D",
     description:
       "Tatlar kadar sunum da önemli! Simge, özel tariflerle hazırladığı özgün kokteyller ve şık bar sunumlarıyla Happy Hour partilerinizi lezzetle taçlandırıyor.",
-    category: "Kokteyl Bar",
+    category: ["Kokteyl Bar"],
     badgeText: "Antalya",
+    slug: "simge-aral",
   },
   {
     name: "Cem Deniz",
     url: "https://images.unsplash.com/photo-1483393458019-411bc6bd104e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMzfHxhY291c3RpYyUyMHRyaW98ZW58MHx8MHx8fDI%3D",
     description:
       "Ne çok gürültülü, ne çok sakin... Cem ve ekibi, canlı akustik performanslarıyla Happy Hour buluşmalarına sıcak ve davetkâr bir hava katıyor.",
-    category: "Akustik Trio",
+    category: ["Akustik Trio"],
     badgeText: "İzmir",
+    slug: "cem-deniz",
   },
 ];
 
@@ -293,32 +374,36 @@ export const djData: EventData[] = [
     url: "https://images.unsplash.com/photo-1669030565211-3f09bbe16782?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGolMjBzZXRzfGVufDB8fDB8fHwy",
     description:
       "Zarif geçişler, atmosferik soundlar… DJ Mira, butik etkinliklerden lüks davetlere kadar her ortamda lounge ve deep house setleriyle geceye sofistike bir hava katıyor.",
-    category: "Deep House & Lounge",
+    category: ["Deep House & Lounge"],
     badgeText: "Ankara",
+    slug: "dj-mira",
   },
   {
     name: "DJ Rüzgar",
     url: "https://images.unsplash.com/photo-1541126274323-dbac58d14741?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGp8ZW58MHx8MHx8fDI%3D",
     description:
       "Enerji mi lazım? DJ Rüzgar, en sevilen Türkçe pop parçalar ve ritmik geçişlerle herkesi piste çekiyor. Doğum günü, parti ve açık hava etkinliklerinde tam bir atmosfer kurucu.",
-    category: "Pop & Türkçe Hits",
+    category: ["Pop & Türkçe Hits"],
     badgeText: "İstanbul",
+    slug: "dj-ruzgar",
   },
   {
     name: "DJ Lena",
     url: "https://images.unsplash.com/photo-1642344741786-97a10415a0ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRqJTIwZmVtYWxlfGVufDB8fDB8fHwy",
     description:
       "Sınırları aşan ritimler… DJ Lena, Afrobeat ve global ezgilerle farklı bir deneyim sunuyor. Alternatif müzik sevenler için eşsiz bir set deneyimi.",
-    category: "Afrobeat & World Music",
+    category: ["Afrobeat & World Music"],
     badgeText: "Bursa",
+    slug: "dj-lena",
   },
   {
     name: "DJ Arda K",
     url: "https://images.unsplash.com/photo-1599423424751-54e0c1187a02?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGp8ZW58MHx8MHx8fDI%3D",
     description:
       "Sınırları aşan ritimler… DJ Lena, Afrobeat ve global ezgilerle farklı bir deneyim sunuyor. Alternatif müzik sevenler için eşsiz bir set deneyimi.",
-    category: "Club & Techno Set",
+    category: ["Club & Techno Set"],
     badgeText: "Eskişehir",
+    slug: "dj-arda-k",
   },
 ];
 export const ozelcekimData: EventData[] = [
@@ -327,32 +412,36 @@ export const ozelcekimData: EventData[] = [
     url: "https://images.unsplash.com/photo-1506105496842-dd8d1b18bb07?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGhvdG9ncmFwaGVyJTIwZmVtYWxlfGVufDB8fDB8fHwy",
     description:
       "Doğallık ve zarafet bir arada… Selin, özel günlerinizi ve samimi anlarınızı estetik karelerle ölümsüzleştiriyor. Özellikle Baby Shower, doğum günü ve nişan çekimleri için tercih ediliyor.",
-    category: "Fotoğraf & Portre Çekimi",
+    category: ["Fotoğraf & Portre Çekimi"],
     badgeText: "İstanbul",
+    slug: "selin-aras",
   },
   {
     name: "Can Eren",
     url: "https://images.unsplash.com/photo-1593806061006-bee8dc30fdee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJlZWxzJTIwc2hvb3RlcnxlbnwwfHwwfHx8Mg%3D%3D",
     description:
       "Anı sadece kaydetmek yetmez, hissettirmek gerekir… Can, sosyal medya uyumlu dikey videolar, reels ve aftermovie’lerle etkinliklerinize profesyonel bir dokunuş katıyor.",
-    category: "Video & Reels Prodüksiyon",
+    category: ["Video & Reels Prodüksiyon"],
     badgeText: "İstanbul",
+    slug: "can-eren",
   },
   {
     name: "Naz Su",
     url: "https://images.unsplash.com/photo-1648662199460-34b7597ba771?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBob3RvZ3JhcGhlciUyMGZlbWFsZXxlbnwwfHwwfHx8Mg%3D%3D",
     description:
       "Farklı bir şey arıyorsan, doğru yerdesin. Naz; temalı arka planlar, styling ve yaratıcı yönlendirmelerle özgün kareler yaratıyor. Özellikle stilize Baby Shower ve arkadaş grubu çekimleri için birebir.",
-    category: "Konsept & Tematik Çekim",
+    category: ["Konsept & Tematik Çekim"],
     badgeText: "Ankara",
+    slug: "naz-su",
   },
   {
     name: "Emir Can",
     url: "https://images.unsplash.com/photo-1596913799254-c261205fe191?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YW5hbG9nJTIwdmlkZW8lMjBzaG9vdGluZ3xlbnwwfHwwfHx8Mg%3D%3D",
     description:
       "Estetikte sadelik arayanlara özel... Emir, analog kamera ve film efektli dijital çekimlerle nostaljik ve duygusal kareler sunuyor. Sanat ve duygu dolu bir çekim deneyimi için ideal.",
-    category: "Analog & Film Tarzı Çekimler",
+    category: ["Analog & Film Tarzı Çekimler"],
     badgeText: "Adana",
+    slug: "emir-can",
   },
 ];
 
@@ -747,3 +836,12 @@ export const singerCardsDataIzmir = [
     category: "Pop",
   },
 ];
+
+export const dataSources: Record<string, EventData[]> = {
+  dugun: sahneData,
+  "dogum-gunu": dogumGunuData,
+  "baby-shower": babyshowerData,
+  "happy-hour": happyhourData,
+  "dj-performans": djData,
+  "ozel-cekim": ozelcekimData,
+};

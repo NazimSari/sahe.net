@@ -7,9 +7,11 @@ import gsap from "gsap";
 interface CardProps {
   path: string;
   name: string;
+  id: number;
+  slug: string;
 }
 
-const SliderCard: React.FC<CardProps> = ({ path, name }) => {
+const SliderCard: React.FC<CardProps> = ({ path, name, slug }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLAnchorElement>(null);
 
@@ -70,6 +72,7 @@ const SliderCard: React.FC<CardProps> = ({ path, name }) => {
       </div>
       <div className="absolute inset-0 flex justify-center items-center">
         <a
+          href={`etkinlik-turleri/${slug}`}
           ref={buttonRef}
           className="bg-white font-semibold text-sm px-3 py-2 rounded-lg flex items-center gap-1 hover:opacity-75 cursor-pointer"
         >
