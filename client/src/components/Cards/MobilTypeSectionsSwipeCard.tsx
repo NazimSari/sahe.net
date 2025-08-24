@@ -7,7 +7,7 @@ interface CardProps {
   name: string;
 }
 
-const MobilSliderCard: React.FC<CardProps> = ({ path, name }) => {
+const MobilTypeSectionsSwipeCard: React.FC<CardProps> = ({ path, name }) => {
   return (
     <div className="relative w-[60vw] max-w-[250px] aspect-square overflow-hidden bg-white flex justify-center items-center rounded-lg">
       <Image src={path} alt={name} fill style={{ objectFit: "cover" }} />
@@ -22,4 +22,4 @@ const MobilSliderCard: React.FC<CardProps> = ({ path, name }) => {
   );
 };
 
-export default MobilSliderCard;
+export default MobilTypeSectionsSwipeCard;

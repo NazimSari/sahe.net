@@ -8,7 +8,7 @@ import StageStarsSection from "@/components/Home/StageStarsSection";
 import MusicTypeSection from "@/components/Home/MusicTypeSection";
 import EventTypeSection from "@/components/Home/EventTypeSection";
 import PaymentStepsSection from "@/components/Home/PaymentStepsSection";
-import HangoutSection from "@/components/Home/HangoutSection";
+import VenuesSection from "@/components/Home/VenuesSection";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       <Banner />
       <FestivalSection />
       <TonightWhoSection />
-      <HangoutSection />
+      <VenuesSection />
       <InfoSection />
       <SubscriptionSection />
     </main>

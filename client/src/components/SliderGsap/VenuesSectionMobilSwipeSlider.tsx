@@ -3,23 +3,23 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-import MobileHangoutSliderCard from "../Cards/MobilHangoutSliderCard";
+import VenuesSectionMobileSwipeCard from "../Cards/VenuesSectionMobileSwipeCard";
 
-interface HangoutData {
+interface VenueData {
   img: string;
   title: string;
   isLarge?: boolean;
 }
 
-interface MobileHangoutSliderProps {
-  hangoutData: HangoutData[];
+interface MobileVenueSliderProps {
+  venueData: VenueData[];
 }
 
-const MobileHangoutSlider: React.FC<MobileHangoutSliderProps> = ({
-  hangoutData,
+const VenuesSectionMobilSwipeSlider: React.FC<MobileVenueSliderProps> = ({
+  venueData,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const currentIndexRef = useRef(hangoutData.length); // Orta setten başla
+  const currentIndexRef = useRef(venueData.length); // Orta setten başla
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -54,7 +54,7 @@ const MobileHangoutSlider: React.FC<MobileHangoutSliderProps> = ({
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [hangoutData]);
+  }, [venueData]);
 
   const slideTo = (direction: "left" | "right") => {
     if (!containerRef.current) return;
@@ -84,16 +84,16 @@ const MobileHangoutSlider: React.FC<MobileHangoutSliderProps> = ({
       onComplete: () => {
         if (!containerRef.current) return;
         let currentX = gsap.getProperty(containerRef.current, "x") as number;
-        const totalWidth = step * hangoutData.length;
+        const totalWidth = step * venueData.length;
 
         // Sonsuz kaydırma için pozisyon resetle
-        if (currentIndexRef.current >= hangoutData.length * 2) {
+        if (currentIndexRef.current >= venueData.length * 2) {
           // Çok sağa gitti → orta sete al
-          currentIndexRef.current -= hangoutData.length;
+          currentIndexRef.current -= venueData.length;
           gsap.set(containerRef.current, { x: currentX + totalWidth });
-        } else if (currentIndexRef.current < hangoutData.length) {
+        } else if (currentIndexRef.current < venueData.length) {
           // Çok sola gitti → orta sete al
-          currentIndexRef.current += hangoutData.length;
+          currentIndexRef.current += venueData.length;
           gsap.set(containerRef.current, { x: currentX - totalWidth });
         }
       },
@@ -119,18 +119,16 @@ const MobileHangoutSlider: React.FC<MobileHangoutSliderProps> = ({
         style={{ transform: "translateZ(0)" }}
         {...swipeHandlers}
       >
-        {[...hangoutData, ...hangoutData, ...hangoutData].map(
-          (hangout, index) => (
-            <MobileHangoutSliderCard
-              key={index}
-              hangout={hangout}
-              index={index}
-            />
-          )
-        )}
+        {[...venueData, ...venueData, ...venueData].map((venue, index) => (
+          <VenuesSectionMobileSwipeCard
+            key={index}
+            venue={venue}
+            index={index}
+          />
+        ))}
       </div>
     </div>
   );
 };
 
-export default MobileHangoutSlider;
+export default VenuesSectionMobilSwipeSlider;

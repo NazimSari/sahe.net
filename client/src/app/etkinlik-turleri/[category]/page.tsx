@@ -11,8 +11,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import SceneCards from "@/components/Cards/StageCards";
-import MobileStageSlider from "@/components/SliderGsap/MobilStageSlider";
+import SceneCards from "@/components/Cards/InfoCard";
+import MobileStageSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
 
 export default function EtkinlikTurleriPage() {
   const params = useParams();

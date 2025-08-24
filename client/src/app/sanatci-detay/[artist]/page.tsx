@@ -4,19 +4,14 @@ import ClockIcon from "@/components/icons/ClockIcon";
 import UserIcon from "@/components/icons/UserIcon";
 import VehicleIcon from "@/components/icons/VehicleIcon";
 import { Button } from "@/components/ui/button";
-import {
-  dataSources,
-  dogumGunuData,
-  happyhourData,
-  sanatciDetayData,
-} from "@/lib/data";
+import { dataSources, sanatciDetayData } from "@/lib/data";
 import { Check } from "lucide-react";
 import { FaStar, FaUserCircle, FaDotCircle } from "react-icons/fa";
 import StepsSection from "@/components/Home/PaymentStepsSection";
-import SceneCards from "@/components/Cards/StageCards";
+import SceneCards from "@/components/Cards/InfoCard";
 import DetailsTabArtist from "@/components/DeatilsTab/DetailsTabArtist";
 import DetailsPriceCardArtist from "@/components/DeatilsPriceCard/DetailsPriceCardArtist";
-import MobileStageSlider from "@/components/SliderGsap/MobilStageSlider";
+import MobileStageSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
 import { useParams, notFound } from "next/navigation";
 import { EventData } from "@/lib/data";
 

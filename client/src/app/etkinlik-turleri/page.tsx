@@ -3,13 +3,14 @@ import Banner from "@/components/Home/Banner";
 import StepsSection from "@/components/Home/PaymentStepsSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import MobilFilter from "@/components/Filters/MobilFilter";
-import SceneCards from "@/components/Cards/StageCards";
 import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
 import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
 import { dataSources, eventTypesSlider } from "@/lib/data";
 import Link from "next/link";
 import React from "react";
-import MobileStageSlider from "@/components/SliderGsap/MobilStageSlider";
+import MobileStageSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
+import InfoCard from "@/components/Cards/InfoCard";
+import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
 
 export default function EtkinlikTurleri() {
   return (
@@ -79,10 +80,10 @@ export default function EtkinlikTurleri() {
                 </p>
               </div>
               <div className="mt-8 hidden md:block">
-                <SceneCards data={dataSource} type="artist" />
+                <InfoCard data={dataSource} type="artist" />
               </div>
               <div className="mt-8 md:hidden">
-                <MobileStageSlider data={dataSource} type="artist" />
+                <MobileInfoCardSwipeSlider data={dataSource} type="artist" />
               </div>
               <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
                 <Link
@@ -160,10 +161,10 @@ export default function EtkinlikTurleri() {
                 </p>
               </div>
               <div className="mt-8 hidden md:block">
-                <SceneCards data={dataSource} type="artist" />
+                <InfoCard data={dataSource} type="artist" />
               </div>
               <div className="mt-8 md:hidden">
-                <MobileStageSlider data={dataSource} type="artist" />
+                <MobileInfoCardSwipeSlider data={dataSource} type="artist" />
               </div>
               <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
                 <Link

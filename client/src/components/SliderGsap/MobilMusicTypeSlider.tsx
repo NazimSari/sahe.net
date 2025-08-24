@@ -3,8 +3,8 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-import MobilSliderCard from "../Cards/MobilSliderCard";
 import { musicTypesSlider } from "@/lib/data";
+import MobilTypeSectionsSwipeCard from "../Cards/MobilTypeSectionsSwipeCard";
 
 export default function MobilMusicTypeSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -92,7 +92,7 @@ export default function MobilMusicTypeSlider() {
         {[...musicTypesSlider, ...musicTypesSlider, ...musicTypesSlider].map(
           (item, index) => (
             <div key={index} className="slider-card">
-              <MobilSliderCard path={item.path} name={item.name} />
+              <MobilTypeSectionsSwipeCard path={item.path} name={item.name} />
             </div>
           )
         )}

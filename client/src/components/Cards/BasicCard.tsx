@@ -21,8 +21,12 @@ interface CardProps {
   type: "artist" | "venue";
 }
 
-const Card = ({ item, index, type }: CardProps) => {
+const BasicCard = ({ item, index, type }: CardProps) => {
   const router = useRouter();
+  const detailPath =
+    type === "artist"
+      ? `/sanatci-detay/${item.slug}`
+      : `/mekan-detay/${item.slug}`;
 
   return (
     <div
@@ -58,12 +62,12 @@ const Card = ({ item, index, type }: CardProps) => {
         <Button
           variant="outline"
           className="w-fit cursor-pointer"
-          onClick={() => router.push(`/sanatci-detay/${item.slug}`)}
+          onClick={() => router.push(detailPath)}
         >
           {type === "artist" ? "Sanatçıyı İncele" : "Mekanı İncele"}
         </Button>
         <Link
-          href={`/sanatci-detay/${item.slug}`}
+          href={detailPath}
           className="flex items-center md:ml-3 text-sm text-[#FF007A] font-semibold cursor-pointer"
         >
           Rezervasyon Yap
@@ -74,4 +78,4 @@ const Card = ({ item, index, type }: CardProps) => {
   );
 };
 
-export default Card;
+export default BasicCard;

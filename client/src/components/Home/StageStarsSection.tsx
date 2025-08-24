@@ -1,15 +1,11 @@
 "use client";
-import SceneCards from "../Cards/StageCards";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { dataSources, sahneData } from "@/lib/data";
-import MobileStageSlider from "../SliderGsap/MobilStageSlider";
-import { EventData } from "@/lib/data";
-
-interface StageStarsSectionProps {
-  data: EventData[];
-  category: string;
-}
+import { sahneData } from "@/lib/data";
+import InfoCard from "../Cards/InfoCard";
+import MobileInfoCard from "../Cards/MobileInfoCard";
+import MobileStageSlider from "../SliderGsap/MobileInfoCardSwipeSlider";
+import MobileInfoCardSwipeSlider from "../SliderGsap/MobileInfoCardSwipeSlider";
 
 export default function StageStarsSection() {
   return (
@@ -40,10 +36,10 @@ export default function StageStarsSection() {
             </div>
           </div>
           <div className="mt-8 hidden md:block">
-            <SceneCards data={sahneData} type="artist" />
+            <InfoCard data={sahneData} type="artist" />
           </div>
           <div className="mt-8 md:hidden">
-            <MobileStageSlider data={sahneData} />
+            <MobileInfoCardSwipeSlider data={sahneData} type="artist" />
           </div>
           <div className="md:hidden border w-fit mt-5 border-[#FF007A] py-2 ml-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
             <Link href="/etkinlik-turleri/dugun">

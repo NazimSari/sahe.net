@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { MapPin, Users, Music, UserRoundX } from "lucide-react";
 import DetailsTabPlace from "@/components/DeatilsTab/DetailsTabPlace";
@@ -12,11 +13,30 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import PlaceCards from "@/components/Cards/HangoutInfoCards";
-import { canliMuzikData } from "@/lib/data";
+import { canliMuzikData, dataSources, EventData } from "@/lib/data";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
+import { notFound, useParams } from "next/navigation";
 
 export default function MekanDetayPage() {
+  const params = useParams();
+  const venueSlug = params.venue as string;
+
+  // Tüm dataSources içinde sanatçıyı ara
+  let mekan: EventData | null = null;
+  for (const category in dataSources) {
+    const found = dataSources[category].find((s) => s.slug === venueSlug);
+    if (found) {
+      mekan = found;
+      break;
+    }
+  }
+
+  if (!mekan) {
+    notFound();
+  }
+
+  // dataSources'dan rastgele 6 sanatçı al
+  const displayArtists = Object.values(dataSources).flat().slice(4, 8);
   return (
     <main className="min-h-screen w-full overflow-hidden">
       <section className="p-4 lg:pt-16 pt-28 bg-[url('/page11.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
@@ -25,8 +45,8 @@ export default function MekanDetayPage() {
             {/* Görsel Kısmı */}
             <div className="w-full lg:w-1/2 max-w-[550px] aspect-[4/3] overflow-hidden rounded-xl">
               <img
-                src="/vip-dj.jpg"
-                alt="Arser Orkestrası"
+                src={mekan.url}
+                alt={mekan.name}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -35,10 +55,10 @@ export default function MekanDetayPage() {
             <div className="flex flex-col gap-6 w-full lg:w-1/2 justify-center">
               <div className="flex flex-col gap-4 text-[#f5f5f5]">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-                  Neon Pulse
+                  {mekan.name}
                 </h1>
                 <p className="text-sm sm:text-base lg:text-xl font-semibold max-w-md leading-relaxed">
-                  Neon ışıkların altında, en iyi DJ’lerin canlı performansları
+                  {mekan.description}
                 </p>
               </div>
 
@@ -452,7 +472,7 @@ export default function MekanDetayPage() {
             </p>
           </div>
           <div className="mt-6">
-            <PlaceCards data={canliMuzikData} />
+            {/* <PlaceCards data={canliMuzikData} /> */}
           </div>
         </div>
       </section>

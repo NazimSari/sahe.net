@@ -8,14 +8,6 @@ export interface EventData {
   slug: string;
 }
 
-interface MekanDetayData {
-  name: string;
-  url: string;
-  description: string;
-  category: string;
-  badgeText?: string; // Opsiyonel, çünkü badgeText her zaman zorunlu değil
-}
-
 interface SingerData {
   name: string;
   url: string;
@@ -28,7 +20,7 @@ interface Artist {
   category: string;
   imageUrl: string;
 }
-interface HangoutData {
+export interface VenueData {
   img: string;
   title: string;
   isLarge?: boolean;
@@ -68,7 +60,7 @@ export const festivalSectionData = [
     day: "09",
   },
 ];
-export const hangoutSectionData: HangoutData[] = [
+export const venueSectionData: VenueData[] = [
   {
     img: "/canli-music.jpg",
     title: "Canlı Müzik Mekanları",
@@ -540,176 +532,216 @@ export const festivalDetayData = {
   amenities: "",
 };
 
-export const canliMuzikData: MekanDetayData[] = [
+export const canliMuzikData: EventData[] = [
   {
     name: "Distortion Bar",
     url: "https://st.depositphotos.com/1001099/4130/i/380/depositphotos_41309515-stock-photo-towns.jpg",
     description:
       "Gitarın kalbine inen riff’ler ve güçlü vokallerle dolu, enerjinin tavan yaptığı rock geceleri için Distortion Bar’a bekleniyorsunuz.",
-    category: "Rock & Alternative",
+    musicType: "Rock & Alternative",
     badgeText: "İstanbul",
+    slug: "distortion-bar",
+    category: ["Canli Müzik"],
   },
   {
     name: "Blue Note Terrace",
     url: "https://st5.depositphotos.com/15601592/80828/i/380/depositphotos_808289356-stock-photo-male-musician-mixed-ethnicity-attired.jpg",
     description:
       "Şehrin en zarif caz terasında, saksofon tınıları ve samimi atmosferle gecenizi unutulmaz kılın.",
-    category: "Caz & Blues",
+    musicType: "Caz & Blues",
     badgeText: "Antalya",
+    category: ["Canli Müzik"],
+    slug: "blue-note-terrace",
   },
   {
     name: "Salsa Mar",
     url: "https://st.depositphotos.com/3917667/61486/i/600/depositphotos_614866790-stock-photo-aspiration-stylish-ballroom-dancers-couple.jpg",
     description:
       "Latin ritimlerinin deniz esintisiyle buluştuğu bu mekânda dans pistinde sınır tanımayın",
-    category: "Latin & Salsa",
+    musicType: "Latin & Salsa",
     badgeText: "İstanbul",
+    category: ["Canli Müzik"],
+    slug: "salsa-mar",
   },
   {
     name: "Luna Akustik",
     url: "https://st.depositphotos.com/19430740/55858/i/380/depositphotos_558583406-stock-photo-live-music-guitars-and-strings.jpg",
     description:
       "Ay ışığı altında, akustik ezgiler ve huzurlu bir bahçe atmosferiyle kendinizi müziğin kollarına bırakın.",
-    category: " Akustik & Indie",
+    musicType: " Akustik & Indie",
     badgeText: "Ankara",
+    category: ["Canli Müzik"],
+    slug: "luna-akustik",
   },
 ];
-export const beachClubData: MekanDetayData[] = [
+export const beachClubData: EventData[] = [
   {
     name: "Sunset Vibes",
     url: "https://st4.depositphotos.com/18086274/38810/i/380/depositphotos_388101346-stock-photo-descanso-beach-club-santa-catalina.jpg",
     description:
       "Gün batımının büyüsünü deniz kenarında hissedin. Yumuşak lounge müzikleri, özel kokteyller ve altın kumlar eşliğinde huzurlu bir akşam geçirin.",
-    category: "Chill-Out & Lounge",
+    musicType: "Chill-Out & Lounge",
     badgeText: "Çeşme/İzmir",
+    category: ["Beach Club"],
+    slug: "sunset-vibes",
   },
   {
-    name: "WavePoints",
+    name: "Wave Points",
     url: "https://st5.depositphotos.com/23957582/65536/i/380/depositphotos_655369504-stock-photo-view-petitenget-beach-kuta-bali.jpg",
     description:
       "Gün batımının büyüsünü deniz kenarında hissedin. Yumuşak lounge müzikleri, özel kokteyller ve altın kumlar eşliğinde huzurlu bir akşam geçirin.",
-    category: "Elektronik & Deep House",
+    musicType: "Elektronik & Deep House",
     badgeText: "Bodrum/Muğla",
+    category: ["Beach Club"],
+    slug: "wave-points",
   },
   {
     name: "Coral Bay",
     url: "https://static7.depositphotos.com/1043073/762/i/380/depositphotos_7628013-stock-photo-tropical-cafe.jpg",
     description:
       "Hindistan cevizi kokteylleri, reggae ritimleri ve palmiyeler altında tropikal bir tatil havası yaşayın. Coral Bay, yazın vazgeçilmezi.",
-    category: "Tropikal & Reggae",
+    musicType: "Tropikal & Reggae",
     badgeText: "Bodrum/Muğla",
+    category: ["Beach Club"],
+    slug: "coral-bay",
   },
   {
     name: "Moonlight Pier",
     url: "https://st.depositphotos.com/15199906/56425/i/380/depositphotos_564255340-stock-photo-night-beach-with-a-view.jpg",
     description:
       "Ay ışığının denize yansıdığı iskelede, akustik performanslar ve samimi bir atmosferle unutulmaz bir yaz gecesi sizi bekliyor.",
-    category: "Akustik & Chill",
+    musicType: "Akustik & Chill",
     badgeText: "Çeşme/İzmir",
+    category: ["Beach Club"],
+    slug: "moonlight-pier",
   },
 ];
 
-export const kokteylBarData: MekanDetayData[] = [
+export const kokteylBarData: EventData[] = [
   {
     name: "Shaker & Soul",
     url: "https://static8.depositphotos.com/1007248/808/i/380/depositphotos_8087626-stock-photo-glasses-with-cocktail.jpg",
     description:
       " Usta miksolojistlerin elinden çıkan yaratıcı kokteyller, modern dekor ve enerjik bir bar atmosferiyle Shaker & Soul sizi bekliyor.",
-    category: "Modern Kokteyl & Mixology",
+    musicType: "Modern Kokteyl & Mixology",
     badgeText: "İstanbul",
+    category: ["Kokteyl Bar"],
+    slug: "shaker-and-soul",
   },
   {
     name: "Velvet Sip",
     url: "https://static5.depositphotos.com/1001025/521/i/380/depositphotos_5219977-stock-photo-chairs-in-row-in-bar.jpg",
     description:
       "Kadife dokulu lezzetler, premium içki seçenekleri ve şık bir ortamda keyifli bir gece deneyimi.",
-    category: "Lüks & Premium Kokteyl",
+    musicType: "Lüks & Premium Kokteyl",
     badgeText: "Ankara",
+    category: ["Kokteyl Bar"],
+    slug: "velvet-sip",
   },
   {
     name: "Citrus & Chill",
     url: "https://st2.depositphotos.com/4208693/42939/i/380/depositphotos_429393606-stock-photo-young-bartender-demonstrates-the-process.jpg",
     description:
       "Tropikal meyveler ve taze aromalarla hazırlanmış ferah kokteyller, sahil esintisiyle buluşuyor.",
-    category: "Tropikal & Ferah Kokteyl",
+    musicType: "Tropikal & Ferah Kokteyl",
     badgeText: "İzmir",
+    category: ["Kokteyl Bar"],
+    slug: "citrus-and-chill",
   },
   {
     name: "Midnight Mule",
     url: "https://static8.depositphotos.com/1018611/963/i/380/depositphotos_9630627-stock-photo-cocktail-glass-with-drink-in.jpg",
     description:
       "Geceyi efsaneleşmiş klasik kokteyllerle taçlandırmak isteyenler için sıcak ve samimi bir bar ortamı.",
-    category: "Klasik & İkonik Kokteyl",
+    musicType: "Klasik & İkonik Kokteyl",
     badgeText: "Antalya",
+    category: ["Kokteyl Bar"],
+    slug: "midnight-mule",
   },
 ];
-export const djbarsData: MekanDetayData[] = [
+export const djbarsData: EventData[] = [
   {
     name: "Neon Pulse",
     url: "https://st.depositphotos.com/2022413/4741/i/380/depositphotos_47413235-stock-photo-needle-playing-red-vinyl.jpg",
     description:
       "Neon ışıkların altında, en iyi DJ’lerin canlı performanslarıyla yüksek enerjili dans geceleri sizi bekliyor. VIP alan ayrıcalığıyla farkı yaşayın.",
-    category: "EDM & House",
+    musicType: "EDM & House",
     badgeText: "İstanbul",
+    category: ["DJ Bar"],
+    slug: "neon-pulse",
   },
   {
     name: "Echo Lounge",
     url: "https://st3.depositphotos.com/2853475/13343/i/380/depositphotos_133430502-stock-photo-friends-dancing-in-lounge-bar.jpg",
     description:
       "Minimalist dekoru ve güçlü ses sistemiyle Echo Lounge, underground DJ setleriyle elektronik müzik tutkunlarının adresi.",
-    category: "Techno & Deep House",
+    musicType: "Techno & Deep House",
     badgeText: "İstanbul",
+    category: ["DJ Bar"],
+    slug: "echo-lounge",
   },
   {
     name: "Skyline Beats",
     url: "https://st.depositphotos.com/19415244/53093/i/380/depositphotos_530935970-stock-photo-mixer-headphones-nightclub.jpg",
     description:
       "Şehrin en yüksek noktasında, VIP bölümlerde ünlü DJ’ler eşliğinde trap ve hip-hop ritimleriyle unutulmaz geceler.",
-    category: "Trap & Hip-Hop",
+    musicType: "Trap & Hip-Hop",
     badgeText: "Bursa",
+    category: ["DJ Bar"],
+    slug: "skyline-beats",
   },
   {
     name: "Bass Horizon",
     url: "https://static8.depositphotos.com/1055352/844/i/380/depositphotos_8444087-stock-photo-dj-playing-vinyl.jpg",
     description:
       "Güçlü baslar ve enerjik setlerle dolu, dans pistinin nabzını tutan Bass Horizon’da VIP ayrıcalığını yaşayın.",
-    category: "Dubstep & Bass Music",
+    musicType: "Dubstep & Bass Music",
     badgeText: "Eskişehir",
+    category: ["DJ Bar"],
+    slug: "bass-horizon",
   },
 ];
 
-export const rooftopData: MekanDetayData[] = [
+export const rooftopData: EventData[] = [
   {
     name: "Sky Lounge 360",
     url: "https://st4.depositphotos.com/2853475/24695/i/380/depositphotos_246954930-stock-photo-young-happy-people-having-barbecue.jpg",
     description:
       "Şehrin panoramik manzarası eşliğinde, rahatlatıcı lounge müzikleri ve şık kokteyllerle keyif dolu anlar.",
-    category: "Chill-Out & Lounge",
+    musicType: "Chill-Out & Lounge",
     badgeText: "İstanbul",
+    category: ["Roof Top Bar"],
+    slug: "sky-lounge-360",
   },
   {
     name: "Altitude Beats",
     url: "https://st3.depositphotos.com/32520976/35552/i/380/depositphotos_355525318-stock-photo-party-crowd-people-having-fun.jpg",
     description:
       "Yükseklerde elektronik ritimlerin hakim olduğu, yıldızların altında dans geceleri için ideal mekan.",
-    category: "Deep House & Chillwave",
+    musicType: "Deep House & Chillwave",
     badgeText: "İzmir",
+    category: ["Roof Top Bar"],
+    slug: "altitude-beats",
   },
   {
     name: "Cloud Nine Bar",
     url: "https://st2.depositphotos.com/1000998/12437/v/600/depositphotos_124377928-stock-video-sun-loungers-and-plants-next.jpg",
     description:
       "Bulutların üstünde, zarif caz ve soul tınılarıyla şık ve samimi bir atmosferde buluşun.",
-    category: "Jazz & Soul",
+    musicType: "Jazz & Soul",
     badgeText: "Antalya",
+    category: ["Roof Top Bar"],
+    slug: "cloud-nine-bar",
   },
   {
     name: "Sunset Horizon",
     url: "https://st5.depositphotos.com/23957582/65084/i/450/depositphotos_650845294-stock-photo-aerial-view-patong-city-center.jpg",
     description:
       "Gün batımını izlerken akustik performanslarla ruhunuzu besleyin, şehir ışıkları eşliğinde unutulmaz anlar yaşayın.",
-    category: "Akustik & Indie",
+    musicType: "Akustik & Indie",
     badgeText: "Muğla",
+    category: ["Roof Top Bar"],
+    slug: "sunset-horizon",
   },
 ];
 
@@ -844,4 +876,9 @@ export const dataSources: Record<string, EventData[]> = {
   "happy-hour": happyhourData,
   "dj-performans": djData,
   "ozel-cekim": ozelcekimData,
+  "canli-music": canliMuzikData,
+  "beach-club": beachClubData,
+  "kokteyl-bar": kokteylBarData,
+  "dj-bar": djbarsData,
+  "roof-top-bar": rooftopData,
 };

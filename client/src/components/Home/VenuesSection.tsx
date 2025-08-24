@@ -1,11 +1,13 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import HangoutCards from "../Cards/HangoutCards";
-import { hangoutSectionData } from "@/lib/data";
-import MobileHangoutSlider from "../SliderGsap/MobilHangoutSlider";
+import { venueSectionData } from "@/lib/data";
+// import MobileHangoutSlider from "../SliderGsap/MobilHangoutSlider";
+import VenuesSectionCards from "../Cards/VenuesSectionCards";
+import VenuesSectionMobileSwipeCard from "../Cards/VenuesSectionMobileSwipeCard";
+import VenuesSectionMobilSwipeSlider from "../SliderGsap/VenuesSectionMobilSwipeSlider";
 
-const HangoutSection: React.FC = () => {
+const VenuesSection: React.FC = () => {
   return (
     <section className="mx-auto my-16 pb-16 w-full">
       <div className="container mx-auto md:p-0">
@@ -31,13 +33,13 @@ const HangoutSection: React.FC = () => {
           </div>
         </div>
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-5 md:gap-3 mt-10 px-2">
-          {hangoutSectionData.map((hangout, index) => (
-            <HangoutCards key={index} hangout={hangout} />
+          {venueSectionData.map((venue, index) => (
+            <VenuesSectionCards key={index} venue={venue} />
           ))}
         </div>
         {/* Mobil ekranlarda MobileHangoutCardSlider */}
         <div className="md:hidden mt-8">
-          <MobileHangoutSlider hangoutData={hangoutSectionData} />
+          <VenuesSectionMobilSwipeSlider venueData={venueSectionData} />
         </div>
         <div className="lg:hidden border w-fit mt-5 border-[#FF007A] py-2 ml-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
           <Link href="/mekanlar">
@@ -51,4 +53,4 @@ const HangoutSection: React.FC = () => {
   );
 };
 
-export default HangoutSection;
+export default VenuesSection;

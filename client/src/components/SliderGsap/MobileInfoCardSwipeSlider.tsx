@@ -2,15 +2,18 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
-import MobilStageCard from "../Cards/MobilStageCard";
 import { EventData } from "@/lib/data";
+import MobileInfoCard from "../Cards/MobileInfoCard";
 
 interface SceneCardsProps {
   data: EventData[];
   type: "artist" | "venue";
 }
 
-const MobileStageSlider: React.FC<SceneCardsProps> = ({ data, type }) => {
+const MobileInfoCardSwipeSlider: React.FC<SceneCardsProps> = ({
+  data,
+  type,
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentIndexRef = useRef(data.length); // ortadaki setten başla
 
@@ -108,11 +111,11 @@ const MobileStageSlider: React.FC<SceneCardsProps> = ({ data, type }) => {
         {...swipeHandlers}
       >
         {[...data, ...data, ...data].map((item, index) => (
-          <MobilStageCard key={index} item={item} type={type} />
+          <MobileInfoCard key={index} item={item} type={type} />
         ))}
       </div>
     </div>
   );
 };
 
-export default MobileStageSlider;
+export default MobileInfoCardSwipeSlider;
