@@ -35,18 +35,11 @@ export default function SanatciDetayPage() {
   }
 
   if (!sanatci) {
-    notFound(); // Sanatçı bulunamazsa 404
+    notFound();
   }
 
-  // Benzer sanatçıları bul (sanatçının kategorilerine göre)
-  const similarArtists = Object.values(dataSources)
-    .flat()
-    .filter(
-      (artist) =>
-        artist.slug !== sanatci.slug &&
-        artist.category.some((cat) => sanatci.category.includes(cat))
-    )
-    .slice(0, 6); // En fazla 6 benzer sanatçı
+  // dataSources'dan rastgele 6 sanatçı al
+  const displayArtists = Object.values(dataSources).flat().slice(4, 8);
   return (
     <main className="min-h-screen w-full overflow-hidden">
       <section className="p-4 lg:pt-16 pt-28 bg-[url('/page3.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
@@ -382,10 +375,10 @@ export default function SanatciDetayPage() {
             </p>
           </div>
           <div className="mt-8 hidden md:block">
-            <SceneCards data={similarArtists} type="artist" />
+            <SceneCards data={displayArtists} type="artist" />
           </div>
           <div className="mt-8 md:hidden">
-            <MobileStageSlider data={similarArtists} type="artist" />
+            <MobileStageSlider data={displayArtists} type="artist" />
           </div>
         </div>
       </section>

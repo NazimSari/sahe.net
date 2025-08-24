@@ -79,19 +79,11 @@ export default function EtkinlikTurleri() {
                 </p>
               </div>
               <div className="mt-8 hidden md:block">
-                <SceneCards
-                  data={dataSource}
-                  type="artist"
-                  selectedCategory={etkinlik.slug}
-                />
+                <SceneCards data={dataSource} type="artist" />
               </div>
-              {/* <div className="mt-8 md:hidden">
-                <MobileStageSlider
-                  data={dataSource}
-                  type="artist"
-                  selectedCategory={etkinlik.slug}
-                />
-              </div> */}
+              <div className="mt-8 md:hidden">
+                <MobileStageSlider data={dataSource} type="artist" />
+              </div>
               <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
                 <Link
                   href={`/etkinlik-turleri/${etkinlik.slug}`}
@@ -168,19 +160,11 @@ export default function EtkinlikTurleri() {
                 </p>
               </div>
               <div className="mt-8 hidden md:block">
-                <SceneCards
-                  data={dataSource}
-                  type="artist"
-                  selectedCategory={etkinlik.slug}
-                />
+                <SceneCards data={dataSource} type="artist" />
               </div>
-              {/* <div className="mt-8 md:hidden">
-                <MobileStageSlider
-                  data={dataSource}
-                  type="artist"
-                  selectedCategory={etkinlik.slug}
-                />
-              </div> */}
+              <div className="mt-8 md:hidden">
+                <MobileStageSlider data={dataSource} type="artist" />
+              </div>
               <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
                 <Link
                   href={`/etkinlik-turleri/${etkinlik.slug}`}
