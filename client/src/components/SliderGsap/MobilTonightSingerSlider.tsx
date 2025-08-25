@@ -3,11 +3,15 @@
 import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
+import { Clock, MapPin } from "lucide-react";
 
 interface SingerData {
   url: string;
   name: string;
   category: string;
+  slug: string;
+  venue: string;
+  hour: string;
 }
 
 interface MobileToNightSingerCardSliderProps {
@@ -149,9 +153,23 @@ const MobileToNightSingerSlider: React.FC<
               <span className="absolute top-3 left-3 text-[#160317] px-3 py-1 bg-[#f5f5f5] rounded-lg text-sm font-semibold z-10">
                 {singer.category}
               </span>
-              <h4 className="absolute bottom-5 text-lg left-1/2 -translate-x-1/2 text-[#f5f5f5] font-semibold text-center z-10 whitespace-nowrap">
-                {singer.name}
-              </h4>
+              <div className="absolute bottom-3 left-2 text-[#f5f5f5] font-semibold text-center z-10 whitespace-nowrap">
+                <div className="text-[#f5f5f5] text-sm font-semibold">
+                  <p className="flex items-center gap-2">
+                    <MapPin size={16} color="#FF007A" strokeWidth={3} />
+                    {singer.venue}
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Clock size={16} color="#FF007A" strokeWidth={3} />
+                    <span>{singer.hour}</span>
+                  </p>
+                </div>
+              </div>
+              <div className="absolute inset-0 flex justify-center items-center">
+                <p className="text-[#f5f5f5] text-3xl font-semibold">
+                  {singer.name}
+                </p>
+              </div>
             </div>
           </div>
         ))}

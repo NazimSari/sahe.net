@@ -8,12 +8,6 @@ export interface EventData {
   slug: string;
 }
 
-interface SingerData {
-  name: string;
-  url: string;
-  category: string;
-}
-
 interface Artist {
   id: number;
   name: string;
@@ -83,6 +77,18 @@ export const venueSectionData: VenueData[] = [
     title: "Vip Dj Bars",
   },
 ];
+export const newArtistsSlider: Artist[] = [
+  { id: 1, name: "Artist 1", category: "Pop", imageUrl: "/dj-performans.jpg" },
+  { id: 2, name: "Artist 2", category: "Rock", imageUrl: "/rock-music.jpg" },
+  { id: 3, name: "Artist 3", category: "Jazz", imageUrl: "/jazz-music.jpg" },
+  {
+    id: 4,
+    name: "Artist 4",
+    category: "Hip-Hop",
+    imageUrl: "/latin-perkusyon.jpg",
+  },
+  { id: 5, name: "Artist 5", category: "Electronic", imageUrl: "/nefes.jpg" },
+];
 
 export const eventTypesSlider = [
   {
@@ -143,25 +149,60 @@ export const eventTypesSlider = [
 ];
 
 export const musicTypesSlider = [
-  { path: "/dugun-orkestra.jpg", name: "Düğün Orkestrası" },
-  { path: "/etnik-music.jpg", name: "Etnik Müzik" },
-  { path: "/jazz-music.jpg", name: "Jazz Müzik" },
-  { path: "/rock-music.jpg", name: "Rock Müzik" },
-  { path: "/dj-performans.jpg", name: "Elektronik Müzik" },
-  { path: "/latin-perkusyon.jpg", name: "Latin Perküsyon" },
-];
-
-export const newArtistsSlider: Artist[] = [
-  { id: 1, name: "Artist 1", category: "Pop", imageUrl: "/dj-performans.jpg" },
-  { id: 2, name: "Artist 2", category: "Rock", imageUrl: "/rock-music.jpg" },
-  { id: 3, name: "Artist 3", category: "Jazz", imageUrl: "/jazz-music.jpg" },
+  {
+    id: 1,
+    path: "/dugun-orkestra.jpg",
+    name: "Düğün Orkestrası",
+    slug: "dugun-orkestrasi",
+    title: "Düğün Orkestra Sanatçıları",
+    description:
+      "Düğün etkinliklerinizde en iyi orkestra sanatçılarını keşfedin, romantik ve enerjik anlar yaratın.",
+  },
+  {
+    id: 2,
+    path: "/etnik-music.jpg",
+    name: "Etnik Müzik",
+    slug: "etnik-muzik",
+    title: "Etnik Müzik Sanatçıları",
+    description:
+      "Etkinliklerinizde en iyi etnik muzik sanatçılarını keşfedin, romantik ve enerjik anlar yaratın.",
+  },
+  {
+    id: 3,
+    path: "/jazz-music.jpg",
+    name: "Jazz Müzik",
+    slug: "jazz-muzik",
+    title: "Jazz Müzik Sanatçıları",
+    description:
+      "Etkinliklerinizde en iyi jazz muzik sanatçılarını keşfedin, romantik ve enerjik anlar yaratın.",
+  },
   {
     id: 4,
-    name: "Artist 4",
-    category: "Hip-Hop",
-    imageUrl: "/latin-perkusyon.jpg",
+    path: "/rock-music.jpg",
+    name: "Rock Müzik",
+    slug: "rock-muzik",
+    title: "Rock Müzik Sanatçıları",
+    description:
+      "Etkinliklerinizde en iyi rock muzik sanatçılarını keşfedin, romantik ve enerjik anlar yaratın.",
   },
-  { id: 5, name: "Artist 5", category: "Electronic", imageUrl: "/nefes.jpg" },
+  {
+    id: 5,
+    path: "/dj-performans.jpg",
+    name: "Elektronik Müzik",
+    slug: "elektronik-muzik",
+    title: "DJ Performans Sanatçıları",
+    description:
+      "Etkinliklerinizde en iyi dj performans sanatçılarını keşfedin, romantik ve enerjik anlar yaratın.",
+  },
+  {
+    id: 6,
+    path: "/latin-perkusyon.jpg",
+    name: "Latin Perküsyon",
+    slug: "latin-perkusyon",
+    title: "Latin Perküsyon Sanatçıları",
+    description:
+      "Etkinliklerinizde en iyi latin perküsyon sanatçılarını keşfedin, romantik ve enerjik anlar yaratın.",
+  },
 ];
 
 export const stepsData = [
@@ -804,23 +845,35 @@ export const banners = [
 export const singerCardsDataIstanbul = [
   {
     url: "https://st2.depositphotos.com/6571396/9693/i/380/depositphotos_96932416-stock-photo-beautiful-girl-singing-into-microphone.jpg",
-    name: " Şermin Yüce",
+    name: "Şermin Yüce",
     category: "Pop",
+    venue: "Ritim Bar",
+    hour: "19:30",
+    slug: "sermin-yuce",
   },
   {
     url: "https://st3.depositphotos.com/9880800/17889/i/380/depositphotos_178892154-stock-photo-sensual-young-female-singer-performing.jpg",
     name: "Deniz Derman",
     category: "Türkü",
+    venue: "Black Bar",
+    hour: "20:00",
+    slug: "deniz-derman",
   },
   {
     url: "https://st4.depositphotos.com/12985790/25168/i/380/depositphotos_251683390-stock-photo-close-good-looking-musician-singing.jpg",
     name: "Berkut",
     category: "Rock",
+    hour: "21:00",
+    venue: "Catch Bar",
+    slug: "berkut",
   },
   {
     url: "https://st3.depositphotos.com/1001951/13987/i/380/depositphotos_139879404-stock-photo-two-professional-guitarists-performing-in.jpg",
     name: "Grup Tarçın",
     category: "Pop",
+    hour: "22:00",
+    venue: "Hard Rock Bar",
+    slug: "grup-tarcin",
   },
 ];
 export const singerCardsDataAnkara = [
@@ -828,21 +881,33 @@ export const singerCardsDataAnkara = [
     url: "https://st3.depositphotos.com/10638998/15079/i/380/depositphotos_150799476-stock-photo-rock-band-on-stage.jpg",
     name: "Melisa Güven",
     category: "Pop",
+    hour: "19:00",
+    venue: "Lucky Bar",
+    slug: "melisa-guven",
   },
   {
     url: "https://st.depositphotos.com/1010710/3384/i/380/depositphotos_33840331-stock-photo-pop-singer.jpg",
     name: "Antonio Morano",
     category: "Akustik",
+    hour: "20:00",
+    venue: "Sticky Bar",
+    slug: "antonio-morano",
   },
   {
     url: "https://st2.depositphotos.com/3662505/5297/i/380/depositphotos_52979941-stock-photo-recording-studio.jpg",
     name: "Sinem Kaya",
     category: "Blues",
+    hour: "21:00",
+    venue: "Brunch Bar",
+    slug: "sinem-kaya",
   },
   {
     url: "https://st2.depositphotos.com/1284069/6417/i/380/depositphotos_64170833-stock-photo-beautiful-african-woman-singing-with.jpg",
     name: "Angelina Jolie",
     category: "Rock",
+    hour: "22:00",
+    venue: "Termessos Bar",
+    slug: "angelina-jolie",
   },
 ];
 
@@ -851,21 +916,33 @@ export const singerCardsDataIzmir = [
     url: "https://st5.depositphotos.com/16122460/72457/i/380/depositphotos_724574592-stock-photo-beautiful-young-woman-stylish-dress.jpg",
     name: "Selin Sarıkaya",
     category: "Rock",
+    hour: "19:00",
+    venue: "Ghost Bar",
+    slug: "selin-sarikaya",
   },
   {
     url: "https://st.depositphotos.com/1003293/1485/i/380/depositphotos_14854739-stock-photo-singer.jpg",
     name: "Can Sırdaş",
     category: "Pop",
+    hour: "20:00",
+    venue: "Dust Bar",
+    slug: "can-sirdas",
   },
   {
     url: "https://st2.depositphotos.com/1004918/6227/i/380/depositphotos_62270347-stock-photo-woman-singer-recording-a-ballad.jpg",
     name: "Hazan Yıldız",
     category: "Akustik",
+    hour: "21:00",
+    venue: "Dance Bar",
+    slug: "hazan-yildiz",
   },
   {
     url: "https://static3.depositphotos.com/1003368/160/i/380/depositphotos_1605170-stock-photo-singer-with-the-retro-microphone.jpg",
     name: "Gülçin Turan",
     category: "Pop",
+    venue: "Grace Bar",
+    hour: "19:00",
+    slug: "gulcin-turan",
   },
 ];
 
@@ -881,4 +958,9 @@ export const dataSources: Record<string, EventData[]> = {
   "kokteyl-bar": kokteylBarData,
   "dj-bar": djbarsData,
   "roof-top-bar": rooftopData,
+  "dugun-orkestrasi": sahneData,
+  "etnik-muzik": dogumGunuData,
+  "rock-muzik": happyhourData,
+  "jazz-muzik": babyshowerData,
+  "elektronik-muzik": djData,
 };

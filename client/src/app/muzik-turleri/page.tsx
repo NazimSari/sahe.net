@@ -1,24 +1,24 @@
+import InfoCard from "@/components/Cards/InfoCard";
 import Filter from "@/components/Filters/Filter";
-import Banner from "@/components/Home/Banner";
-import StepsSection from "@/components/Home/PaymentStepsSection";
-import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import MobilFilter from "@/components/Filters/MobilFilter";
-import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
+import Banner from "@/components/Home/Banner";
+import PaymentStepsSection from "@/components/Home/PaymentStepsSection";
+import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
-import { dataSources, eventTypesSlider } from "@/lib/data";
+import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
+import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
+import { dataSources, musicTypesSlider } from "@/lib/data";
 import Link from "next/link";
 import React from "react";
-import InfoCard from "@/components/Cards/InfoCard";
-import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
 
-export default function EtkinlikTurleri() {
+export default function page() {
   return (
     <main className="bg-[#040519] min-h-screen w-full overflow-hidden">
-      <section className="p-4 pt-16 sm:pt-20 bg-[url('/page2.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
+      <section className="p-4 pt-16 sm:pt-20 bg-[url('/page14.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
         <div className="container mx-auto flex flex-col justify-center gap-8 py-8">
           <div className="flex flex-col gap-4 justify-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f5f5f5] leading-tight max-w-4xl">
-              Tarzına Uygun Etkinlik Sanatçılarını Keşfet
+              Tarzına Uygun Müzik Gruplarını Keşfet
             </h1>
             <p className="text-sm sm:text-base md:text-lg xl:text-xl font-semibold text-[#f5f5f5] max-w-4xl leading-relaxed">
               Rock’tan caza, pop’tan metale, her türden müzik grubunu bir arada
@@ -37,7 +37,7 @@ export default function EtkinlikTurleri() {
         </div>
       </section>
       {/* İlk 4 Kategori Section'ı */}
-      {eventTypesSlider.slice(0, 4).map((etkinlik) => {
+      {musicTypesSlider.slice(0, 4).map((etkinlik) => {
         const dataSource = dataSources[etkinlik.slug];
         if (!dataSource) return null; // Veri kaynağı yoksa atla
 
@@ -86,7 +86,7 @@ export default function EtkinlikTurleri() {
               </div>
               <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
                 <Link
-                  href={`/etkinlik-turleri/${etkinlik.slug}`}
+                  href={`/muzik-turleri/${etkinlik.slug}`}
                   className={
                     ["dogum-gunu", "baby-shower", "ozel-cekim"].includes(
                       etkinlik.slug
@@ -124,7 +124,7 @@ export default function EtkinlikTurleri() {
       </section>
 
       {/* Geri Kalan Kategori Section'ları */}
-      {eventTypesSlider.slice(4).map((etkinlik) => {
+      {musicTypesSlider.slice(4).map((etkinlik) => {
         const dataSource = dataSources[etkinlik.slug];
         if (!dataSource) return null; // Veri kaynağı yoksa atla
 
@@ -167,7 +167,7 @@ export default function EtkinlikTurleri() {
               </div>
               <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
                 <Link
-                  href={`/etkinlik-turleri/${etkinlik.slug}`}
+                  href={`/muzik-turleri/${etkinlik.slug}`}
                   className={
                     ["dj-performans", "ozel-cekim"].includes(etkinlik.slug)
                       ? "text-[#040519]"
@@ -184,7 +184,7 @@ export default function EtkinlikTurleri() {
 
       {/* Banner ve Diğer Section'lar */}
       <section className="w-full bg-[#f5f5f5]">
-        <StepsSection />
+        <PaymentStepsSection />
       </section>
       <Banner />
       <SubscriptionSection />

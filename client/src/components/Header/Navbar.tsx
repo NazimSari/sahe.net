@@ -39,22 +39,24 @@ const categories: {
   img: string;
 }[] = [
   {
-    title: "Bu Gece Sahnede Kim Var?",
+    title: "Bu Gece Sahne",
     href: "/bu-gece-sahne",
-    description: "Son teknoloji haberleri ve ürün incelemeleri.",
+    description:
+      "Canlı müzik performansları, sahne deneyimleri ve geceye renk katan etkinlikler.",
     img: "/rock-music.jpg",
   },
   {
     title: "Mekanlar",
     href: "/mekanlar",
-    description: "UI/UX, grafik tasarım ve yaratıcı fikirler.",
+    description: "Şehrin en popüler kulüpler ve etkinlik mekanlarını keşfet.",
     img: "/page10.jpg",
   },
   {
     title: "Müzik Türleri",
-    href: "/category/yazilim",
-    description: "Kodlama, frameworkler ve yazılım geliştirme.",
-    img: "/happy-hour.jpg",
+    href: "/muzik-turleri",
+    description:
+      "Rock’tan caz’a, pop’tan elektronik müziğe kadar farklı tarzları keşfet.",
+    img: "/page14.jpg",
   },
   {
     title: "Etkinlik Türleri",
@@ -65,7 +67,8 @@ const categories: {
   {
     title: "Festivaller",
     href: "/festivaller",
-    description: "Startup hikayeleri ve iş stratejileri.",
+    description:
+      "Müziğin, eğlencenin ve kalabalıkların buluştuğu en unutulmaz festivalleri keşfet.",
     img: "/page4.jpg",
   },
 ];

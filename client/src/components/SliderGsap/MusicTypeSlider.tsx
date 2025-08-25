@@ -51,7 +51,13 @@ export default function MusicTypeSlider() {
       >
         {[...musicTypesSlider, ...musicTypesSlider, ...musicTypesSlider].map(
           (item, index) => (
-            <SliderCard key={index} path={item.path} name={item.name} />
+            <SliderCard
+              key={index}
+              id={item.id}
+              slug={item.slug}
+              path={item.path}
+              name={item.name}
+            />
           )
         )}
       </div>
