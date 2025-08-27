@@ -8,12 +8,12 @@ import { dataSources, sanatciDetayData } from "@/lib/data";
 import { Check } from "lucide-react";
 import { FaStar, FaUserCircle, FaDotCircle } from "react-icons/fa";
 import StepsSection from "@/components/Home/PaymentStepsSection";
-import SceneCards from "@/components/Cards/InfoCard";
 import DetailsTabArtist from "@/components/DeatilsTab/DetailsTabArtist";
 import DetailsPriceCardArtist from "@/components/DeatilsPriceCard/DetailsPriceCardArtist";
 import MobileStageSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
 import { useParams, notFound } from "next/navigation";
 import { EventData } from "@/lib/data";
+import InfoCard from "@/components/Cards/InfoCard";
 
 export default function SanatciDetayPage() {
   const params = useParams();
@@ -370,7 +370,7 @@ export default function SanatciDetayPage() {
             </p>
           </div>
           <div className="mt-8 hidden md:block">
-            <SceneCards data={displayArtists} type="artist" />
+            <InfoCard data={displayArtists} type="artist" />
           </div>
           <div className="mt-8 md:hidden">
             <MobileStageSlider data={displayArtists} type="artist" />

@@ -6,6 +6,8 @@ export interface EventData {
   badgeText?: string;
   musicType?: string;
   slug: string;
+  venue?: string;
+  hour?: string;
 }
 
 interface Artist {
@@ -480,19 +482,187 @@ export const ozelcekimData: EventData[] = [
 
 export const sanatciDetayData = {
   description:
-    "2002 yılında İstanbul’da, sazının 4 usta müzisyeni tarafından kurulan ARSER ORKESTRASI dinleyicilerini Jazz, Latin ve Napoliten klasiklerinden, unutulmaz müzikallere; Rock’n Roll eserlerden Hicaz örneklemelere uzanan eşsiz bir yolculuğa davet ediyor. Medeniyetler şehri olan İstanbul’un tarihi zenginliğinden aldıkları ilham ile beslenen grup kendisini takip eden seçkin bir dinleyici topluluğu ile yoluna devam etmektedir. Ülke çapında birçok firmanın özel organizasyonu, lansman toplantıları olmak üzere referans listesinde sayısız seçkin düğün davet ve toplantı bulundurmaktadır. Türkiye’yi ziyaret eden misafirleri tarihi ve coğrafi güzelliği ile büyüleyen cennet vatanımızın müzikal zenginliğini göstermeyi kendimize görev bilmiş ve bu bilinçte hizmet vermeyi kendimize prensip edinmişizdir.",
+    "2002 yılında İstanbul’da, sazının 4 usta müzisyeni tarafından kurulan Group Nefes dinleyicilerini Jazz, Latin ve Napoliten klasiklerinden, unutulmaz müzikallere; Rock’n Roll eserlerden Hicaz örneklemelere uzanan eşsiz bir yolculuğa davet ediyor. Medeniyetler şehri olan İstanbul’un tarihi zenginliğinden aldıkları ilham ile beslenen grup kendisini takip eden seçkin bir dinleyici topluluğu ile yoluna devam etmektedir. Ülke çapında birçok firmanın özel organizasyonu, lansman toplantıları olmak üzere referans listesinde sayısız seçkin düğün davet ve toplantı bulundurmaktadır. Türkiye’yi ziyaret eden misafirleri tarihi ve coğrafi güzelliği ile büyüleyen cennet vatanımızın müzikal zenginliğini göstermeyi kendimize görev bilmiş ve bu bilinçte hizmet vermeyi kendimize prensip edinmişizdir.",
   language: "Türkçe",
   createdAt: "2002",
-  enstrumans:
-    "Akordeon, Akustik Davul, Akustik Gitar, Cajon, Asma Davul, Bağlama, Banjo, Bas Gitar, Bendir, Bongo, Buzuki, Cümbüş, Çello/Viyolonsel, Darbuka, Davul, Def, Elektro Davul, Elektro Gitar, Flüt, Gitar, Kanun, Kaşık, Kaval, Keman, Kemençe, Klarnet, Klavye, Konga, Kontrbas, Ney, Perküsyon, Saksafon, Solist, Trompet, Ud, Viyola, Viyolonsel/Çello, Vokal, Zurna",
+  enstrumans: [
+    "Akordeon",
+    "Akustik Davul",
+    "Akustik Gitar",
+    "Solist",
+    "Trompet",
+  ],
   memberDate: "9 Şubat 2017",
   address: "İstanbul/Türkiye",
-  events: "Doğum Günü, Happy Hour, Baby Shower, Düğün",
-  tur: "Latin, Pop, Jazz, Rock, Dans",
-  repertuvar: "",
+  events: ["Doğum Günü", "Happy Hour", "Baby Shower", "Düğün"],
+  musicType: ["Latin", "Pop", "Jazz", "Rock", "Dans"],
+  repertuvar: [
+    "Sezen Aksu – Tükeneceğiz",
+    "Tarkan – Kuzu Kuzu",
+    "Kenan Doğulu – Tutamıyorum Zamanı",
+    "Ajda Pekkan – Yakar Geçerim",
+    "MFÖ – Sude",
+    "Teoman – Renkli Rüyalar Oteli",
+    "Barış Manço – Gibi Gibi",
+    "Sertab Erener – Rengârenk",
+    "Duman – Her Şeyi Yak",
+    "Edis – Martılar",
+  ],
   category: "",
   price: "3.000 TL - 5.000 TL",
 };
+export const mekanDetayData = {
+  description:
+    "Ritim Bar, İstanbul’un gece hayatının nabzını tutan, canlı müzik ve DJ partilerinin vazgeçilmez adresi! Beyoğlu’nun kalbinde yer alan bu enerjik mekan, rock’tan elektroniğe, indie’den popa geniş bir müzik yelpazesi sunuyor. Sıcak bir pub atmosferi, samimi sahne performansları ve dans pistinde bitmeyen eğlenceyle, Ritim Bar müzikseverlerin buluşma noktası. Haftanın her günü farklı bir vibe, her gece yeni bir hikaye!",
+  address: "İstanbul/Türkiye",
+  tur: "Pop, Rock, Alternatif",
+  musicType: "Canlı Müzik",
+  price: "3.000 TL - 5.000 TL",
+  age: "18+",
+  program: [
+    { day: "Pazartesi", artist: "DJ Can", time: "22:00" },
+    { day: "Salı", artist: "Akustik Trio", time: "21:30" },
+    { day: "Çarşamba", artist: "DJ Melis", time: "23:00" },
+    { day: "Perşembe", artist: "Rock Band", time: "21:00" },
+    { day: "Cuma", artist: "Pop Live", time: "22:30" },
+    { day: "Cumartesi", artist: "DJ Ali", time: "00:00" },
+    { day: "Pazar", artist: "Jazz Night", time: "20:00" },
+  ],
+  foodDrink: [
+    "https://st5.depositphotos.com/19194144/66543/v/600/depositphotos_665438908-stock-illustration-bar-restaurant-menu-crafted-paper.jpg",
+    "https://st2.depositphotos.com/1792782/12430/v/600/depositphotos_124305286-stock-illustration-menu-restaurant-food-template.jpg",
+    "https://st3.depositphotos.com/3557125/13060/v/600/depositphotos_130609060-stock-illustration-restaurant-menu-design-chalkboard-background.jpg",
+  ],
+  menuLink: "https://www.ritimbar.com.tr/Menu",
+  phone: "0535 000 00 00",
+  singers: [
+    {
+      name: "DJ Can",
+      genre: "Elektronik / House",
+      type: "DJ Set",
+      time: "22:00",
+      description: "Enerjik house setleriyle gecenin ritmini yükseltiyor.",
+      highlights: "Tomorrowland Türkiye sahnesinde çaldı.",
+      links: {
+        instagram: "https://instagram.com/djcan",
+        spotify: "https://spotify.com/djcan",
+      },
+    },
+    {
+      name: "Akustik Trio",
+      genre: "Alternatif / Akustik",
+      type: "Canlı Performans",
+      time: "21:30",
+      description:
+        "Üç kişilik grup, akustik cover performanslarıyla keyifli bir atmosfer yaratıyor.",
+      highlights: "Moda Sahnesi’nde kapalı gişe konser verdi.",
+      links: {
+        youtube: "https://youtube.com/akustiktrio",
+      },
+    },
+    {
+      name: "DJ Melis",
+      genre: "Techno / Deep House",
+      type: "DJ Set",
+      time: "23:00",
+      description:
+        "Setlerinde underground techno ile deep house’u harmanlıyor.",
+      highlights: "Berlin’de ünlü kulüp Berghain’de sahne aldı.",
+      links: {
+        instagram: "https://instagram.com/djmelis",
+      },
+    },
+    {
+      name: "Rock Band",
+      genre: "Rock / Alternatif",
+      type: "Canlı Grup",
+      time: "21:00",
+      description:
+        "Kendi şarkıları ve rock klasiklerinin cover’larıyla sahnede.",
+      highlights: "Geçen yaz Zeytinli Rock Festivali’nde sahne aldı.",
+      links: {
+        spotify: "https://spotify.com/rockband",
+      },
+    },
+    {
+      name: "Jazz Night Ensemble",
+      genre: "Jazz / Blues",
+      type: "Canlı Performans",
+      time: "20:00",
+      description:
+        "Caz standartları ve blues parçalarıyla sakin bir kapanış sunuyor.",
+      highlights: "İstanbul Caz Festivali’nde yer aldı.",
+      links: {
+        youtube: "https://youtube.com/jazznightensemble",
+      },
+    },
+  ],
+  amenities: ["Otopark", "Vale", "Canlı Müzik"],
+  worksHours: "14:00-02:00",
+  reservationPhone: "0535 000 00 00",
+  locationUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.745627376184!2d4.893723577003981!3d52.3656489476455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6099569640179%3A0x5bb6611a01667b1!2sClub%20Prime!5e1!3m2!1str!2str!4v1756203626078!5m2!1str!2str",
+};
+
+export const mekanDetaySayfasiHaftalikProgramData = [
+  {
+    day: "Pazartesi-Salı-Çarşamba",
+    name: "Salamanca",
+    time: "22:00-24:00",
+    img: "https://st5.depositphotos.com/3430693/72771/i/380/depositphotos_727719968-stock-photo-mixing-music-professional-equipment-showcasing.jpg",
+  },
+  {
+    day: "Pazartesi-Perşembe",
+    name: "DJ Ernesto",
+    time: "21:30-23:00",
+    img: "https://st.depositphotos.com/1026550/4167/i/380/depositphotos_41679805-stock-photo-dj-silhouette.jpg",
+  },
+  {
+    day: "Cuma-Cumartesi",
+    name: "Engin Yurt",
+    time: "20:00-22:00",
+    img: "https://st3.depositphotos.com/13194036/18527/i/380/depositphotos_185271722-stock-photo-black-and-white-shot-of.jpg",
+  },
+  {
+    day: "Salı-Persembe",
+    name: "Tyler Durden",
+    time: "22:00-24:00",
+    img: "https://st3.depositphotos.com/10638998/15080/i/380/depositphotos_150801298-stock-photo-rock-band-on-stage.jpg",
+  },
+];
+
+export const mekanDetaySayfasiVideoData = [
+  {
+    id: 1,
+    title: "Michael Jackson - They Don’t Care About Us",
+    src: "https://www.youtube.com/embed/hN9yVnM9W68?si=w6sIApbD5UY1oGWh",
+  },
+  {
+    id: 2,
+    title: "Linkin Park - Numb",
+    src: "https://www.youtube.com/embed/UpxKKBLUP2g?si=ia3lyyXJN3mipgJn",
+  },
+  {
+    id: 3,
+    title: "Eminem - Without Me",
+    src: "https://www.youtube.com/embed/YVkUvmDQ3HY?si=5M9hMfVVn4GCUMR2",
+  },
+  {
+    id: 4,
+    title: "Coldplay - Fix You",
+    src: "https://www.youtube.com/embed/EDwb9jOVRtU?si=G1Eqi1g7iS1tMNEB",
+  },
+  {
+    id: 5,
+    title: "Backstreet Boys - I Want It That Way",
+    src: "https://www.youtube.com/embed/h_D3VFfhvs4?si=yHd1WnfRi0eHTB-x",
+  },
+  {
+    id: 6,
+    title: "Adele - Rolling in the Deep",
+    src: "https://www.youtube.com/embed/1V_xRb0x9aw?si=Rm9CXJVUNUflav_4",
+  },
+];
 
 export const festivalData = [
   {
@@ -786,23 +956,6 @@ export const rooftopData: EventData[] = [
   },
 ];
 
-export const mekanDetayData = {
-  description:
-    "Ritim Bar, İstanbul’un gece hayatının nabzını tutan, canlı müzik ve DJ partilerinin vazgeçilmez adresi! Beyoğlu’nun kalbinde yer alan bu enerjik mekan, rock’tan elektroniğe, indie’den popa geniş bir müzik yelpazesi sunuyor. Sıcak bir pub atmosferi, samimi sahne performansları ve dans pistinde bitmeyen eğlenceyle, Ritim Bar müzikseverlerin buluşma noktası. Haftanın her günü farklı bir vibe, her gece yeni bir hikaye!",
-  address: "İstanbul/Türkiye",
-  tur: "Pop, Rock, Alternatif",
-  category: "Canlı Müzik",
-  price: "3.000 TL - 5.000 TL",
-  age: "16+ (16-18 yas arası ebeveyn izniyle katılabilir)",
-  program: "",
-  foodDrink: "",
-  phone: "0535 000 00 00",
-  singers: "",
-  amenities: "",
-  worksHours: "14:00-02:00",
-  reservation: "0535 000 00 00",
-};
-
 export const banners = [
   {
     id: 1,
@@ -846,68 +999,76 @@ export const singerCardsDataIstanbul = [
   {
     url: "https://st2.depositphotos.com/6571396/9693/i/380/depositphotos_96932416-stock-photo-beautiful-girl-singing-into-microphone.jpg",
     name: "Şermin Yüce",
-    category: "Pop",
+    category: ["Pop"],
     venue: "Ritim Bar",
     hour: "19:30",
     slug: "sermin-yuce",
+    description: "",
   },
   {
     url: "https://st3.depositphotos.com/9880800/17889/i/380/depositphotos_178892154-stock-photo-sensual-young-female-singer-performing.jpg",
     name: "Deniz Derman",
-    category: "Türkü",
+    category: ["Türkü"],
     venue: "Black Bar",
     hour: "20:00",
     slug: "deniz-derman",
+    description: "",
   },
   {
     url: "https://st4.depositphotos.com/12985790/25168/i/380/depositphotos_251683390-stock-photo-close-good-looking-musician-singing.jpg",
     name: "Berkut",
-    category: "Rock",
+    category: ["Rock"],
     hour: "21:00",
     venue: "Catch Bar",
     slug: "berkut",
+    description: "",
   },
   {
     url: "https://st3.depositphotos.com/1001951/13987/i/380/depositphotos_139879404-stock-photo-two-professional-guitarists-performing-in.jpg",
     name: "Grup Tarçın",
-    category: "Pop",
+    category: ["Pop"],
     hour: "22:00",
     venue: "Hard Rock Bar",
     slug: "grup-tarcin",
+    description: "",
   },
 ];
 export const singerCardsDataAnkara = [
   {
     url: "https://st3.depositphotos.com/10638998/15079/i/380/depositphotos_150799476-stock-photo-rock-band-on-stage.jpg",
     name: "Melisa Güven",
-    category: "Pop",
+    category: ["Pop"],
     hour: "19:00",
     venue: "Lucky Bar",
     slug: "melisa-guven",
+    description: "",
   },
   {
     url: "https://st.depositphotos.com/1010710/3384/i/380/depositphotos_33840331-stock-photo-pop-singer.jpg",
     name: "Antonio Morano",
-    category: "Akustik",
+    category: ["Akustik"],
     hour: "20:00",
     venue: "Sticky Bar",
     slug: "antonio-morano",
+    description: "",
   },
   {
     url: "https://st2.depositphotos.com/3662505/5297/i/380/depositphotos_52979941-stock-photo-recording-studio.jpg",
     name: "Sinem Kaya",
-    category: "Blues",
+    category: ["Blues"],
     hour: "21:00",
     venue: "Brunch Bar",
     slug: "sinem-kaya",
+    description: "",
   },
   {
     url: "https://st2.depositphotos.com/1284069/6417/i/380/depositphotos_64170833-stock-photo-beautiful-african-woman-singing-with.jpg",
     name: "Angelina Jolie",
-    category: "Rock",
+    category: ["Rock"],
     hour: "22:00",
     venue: "Termessos Bar",
     slug: "angelina-jolie",
+    description: "",
   },
 ];
 
@@ -915,34 +1076,57 @@ export const singerCardsDataIzmir = [
   {
     url: "https://st5.depositphotos.com/16122460/72457/i/380/depositphotos_724574592-stock-photo-beautiful-young-woman-stylish-dress.jpg",
     name: "Selin Sarıkaya",
-    category: "Rock",
+    category: ["Rock"],
     hour: "19:00",
     venue: "Ghost Bar",
     slug: "selin-sarikaya",
+    description: "",
   },
   {
     url: "https://st.depositphotos.com/1003293/1485/i/380/depositphotos_14854739-stock-photo-singer.jpg",
     name: "Can Sırdaş",
-    category: "Pop",
+    category: ["Pop"],
     hour: "20:00",
     venue: "Dust Bar",
     slug: "can-sirdas",
+    description: "",
   },
   {
     url: "https://st2.depositphotos.com/1004918/6227/i/380/depositphotos_62270347-stock-photo-woman-singer-recording-a-ballad.jpg",
     name: "Hazan Yıldız",
-    category: "Akustik",
+    category: ["Akustik"],
     hour: "21:00",
     venue: "Dance Bar",
     slug: "hazan-yildiz",
+    description: "",
   },
   {
     url: "https://static3.depositphotos.com/1003368/160/i/380/depositphotos_1605170-stock-photo-singer-with-the-retro-microphone.jpg",
     name: "Gülçin Turan",
-    category: "Pop",
+    category: ["Pop"],
     venue: "Grace Bar",
     hour: "19:00",
     slug: "gulcin-turan",
+    description: "",
+  },
+];
+
+export const commentsData = [
+  {
+    id: 1,
+    name: "Mehmet",
+    comment:
+      "16.10.2016 tarihinde Piyalepaşa Hilton Otel'de yaptığımız düğün etkinliğimizde hem repertuvar hem de muhteşem performanslarından dolayı Neon Pulse çok teşekkür ederiz.",
+    date: "16.05.2021",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Selin",
+    comment:
+      "Umduğumuzdan fazla eğlendik. Siz de özel günlerinizde sıra dışı bir eğlence diyorsanız Neon Pulse'u seçebilirsiniz.",
+    date: "16.05.2021",
+    rating: 5,
   },
 ];
 
@@ -963,4 +1147,7 @@ export const dataSources: Record<string, EventData[]> = {
   "rock-muzik": happyhourData,
   "jazz-muzik": babyshowerData,
   "elektronik-muzik": djData,
+  istanbul: singerCardsDataIstanbul,
+  ankara: singerCardsDataAnkara,
+  izmir: singerCardsDataIzmir,
 };

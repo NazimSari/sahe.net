@@ -1,13 +1,11 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { useState } from "react";
 
 export default function DetailsTabArtist({ sanatciDetayData }: any) {
@@ -15,28 +13,6 @@ export default function DetailsTabArtist({ sanatciDetayData }: any) {
 
   return (
     <div className="w-full lg:w-2/3 p-3">
-      {/* Küçük ekranlar için Select */}
-      <div className="block lg:hidden">
-        <Select
-          value={selectedTab}
-          onValueChange={setSelectedTab}
-          defaultValue="genel-bakis"
-        >
-          <SelectTrigger className="w-full text-[#f5f5f5] bg-[#160317]">
-            <SelectValue placeholder="Genel Bakış" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="genel-bakis">Genel Bakış</SelectItem>
-            <SelectItem value="etkinlikler">
-              Katılabileceği Etkinlikler
-            </SelectItem>
-            <SelectItem value="repertuvar">Repertuvar</SelectItem>
-            <SelectItem value="tur">Akım/Tür</SelectItem>
-            <SelectItem value="kategoriler">Kategoriler</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
       {/* Orta ve büyük ekranlar için Tabs */}
       <Tabs
         value={selectedTab}
@@ -56,8 +32,8 @@ export default function DetailsTabArtist({ sanatciDetayData }: any) {
           <TabsTrigger value="tur" className="text-sm md:text-lg">
             Akım/Tür
           </TabsTrigger>
-          <TabsTrigger value="kategoriler" className="text-sm md:text-lg">
-            Kategoriler
+          <TabsTrigger value="enstrumanlar" className="text-sm md:text-lg">
+            Enstrumanlar
           </TabsTrigger>
         </TabsList>
 
@@ -80,13 +56,6 @@ export default function DetailsTabArtist({ sanatciDetayData }: any) {
                 {sanatciDetayData.createdAt}
               </p>
               <Separator className="my-4" />
-              <p className="text-[#f5f5f5] flex items-center gap-14">
-                <span className="font-semibold text-lg w-46">
-                  Kullanılan Enstrümanlar:{" "}
-                </span>
-                {sanatciDetayData.enstrumans}
-              </p>
-              <Separator className="my-4" />
               <p className="text-[#f5f5f5] flex items-center">
                 <span className="font-semibold text-lg w-46">
                   Üyelik Tarihi:{" "}
@@ -103,108 +72,148 @@ export default function DetailsTabArtist({ sanatciDetayData }: any) {
         </TabsContent>
         <TabsContent value="etkinlikler">
           <div className="flex flex-col gap-5">
-            <div className="p-0">
-              <p className="text-[#f5f5f5]">{sanatciDetayData.events}</p>
-            </div>
+            <ul className="list-disc list-inside text-[#f5f5f5] space-y-2">
+              {sanatciDetayData.events.map((event: string, index: number) => (
+                <li key={index}>{event}</li>
+              ))}
+            </ul>
           </div>
         </TabsContent>
         <TabsContent value="repertuvar">
           <div className="flex flex-col gap-5">
-            <div className="p-0">
-              <p className="text-[#f5f5f5]">{sanatciDetayData.repertuvar}</p>
-            </div>
+            <ul className="list-disc list-inside text-[#f5f5f5] space-y-2">
+              {sanatciDetayData.repertuvar.map(
+                (sarki: string, index: number) => (
+                  <li key={index}>{sarki}</li>
+                )
+              )}
+            </ul>
           </div>
         </TabsContent>
         <TabsContent value="tur">
           <div className="flex flex-col gap-5">
-            <div className="p-0">
-              <p className="text-[#f5f5f5]">{sanatciDetayData.tur}</p>
-            </div>
+            <ul className="list-disc list-inside text-[#f5f5f5] space-y-2">
+              {sanatciDetayData.musicType.map((type: string, index: number) => (
+                <li key={index}>{type}</li>
+              ))}
+            </ul>
           </div>
         </TabsContent>
-        <TabsContent value="kategoriler">
+        <TabsContent value="enstrumanlar">
           <div className="flex flex-col gap-5">
-            <div className="p-0">
-              <p className="text-[#f5f5f5]">{sanatciDetayData.category}</p>
-            </div>
+            <ul className="list-disc list-inside text-[#f5f5f5] space-y-2">
+              {sanatciDetayData.enstrumans.map(
+                (enstruman: string, index: number) => (
+                  <li key={index}>{enstruman}</li>
+                )
+              )}
+            </ul>
           </div>
         </TabsContent>
       </Tabs>
 
-      {/* Küçük ekranlar için Select ile içerik gösterimi */}
+      {/* Küçük ekranlar için accordion içerik gösterimi */}
       <div className="lg:hidden">
-        {selectedTab === "genel-bakis" && (
-          <div className="mt-4">
-            <div className="p-2">
-              <p className="text-[#f5f5f5] text-sm sm:text-base leading-relaxed">
-                {sanatciDetayData.description}
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full md:w-1/2"
+          defaultValue="item-1"
+        >
+          <AccordionItem value="item-1">
+            <AccordionTrigger>
+              <p className="text-[#f5f5f5] md:text-xl text-lg cursor-pointer">
+                Genel Bakış
               </p>
-              <Separator className="my-4" />
-              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
-                <span className="text-[#f5f5f5] font-semibold sm:w-30">
-                  Konuşulan Diller:{" "}
-                </span>
+            </AccordionTrigger>
+            <AccordionContent className="flex flex-col gap-4 text-balance">
+              <p className="text-[#f5f5f5]">{sanatciDetayData.description}</p>
+              <Separator className="my-2" />
+              <p className="text-[#f5f5f5] flex items-center gap-2">
+                <span className="font-semibold">Konuşulan Diller: </span>
                 {sanatciDetayData.language}
               </p>
-              <Separator className="my-4" />
-              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
-                <span className="text-[#f5f5f5] font-semibold sm:w-30">
-                  Kuruluş Tarihi:{" "}
-                </span>
+              <Separator className="my-2" />
+              <p className="text-[#f5f5f5] flex items-center gap-2">
+                <span className="font-semibold">Kuruluş Tarihi: </span>
                 {sanatciDetayData.createdAt}
               </p>
-              <Separator className="my-4" />
-              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
-                <span className="text-[#f5f5f5] font-semibold sm:w-30">
-                  Kullanılan Enstrümanlar:{" "}
-                </span>
-                {sanatciDetayData.enstrumans}
-              </p>
-              <Separator className="my-4" />
-              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
-                <span className="text-[#f5f5f5] font-semibold sm:w-30">
-                  Üyelik Tarihi:{" "}
-                </span>
+
+              <Separator className="my-2" />
+              <p className="text-[#f5f5f5] flex items-center gap-2">
+                <span className="font-semibold">Üyelik Tarihi: </span>
                 {sanatciDetayData.memberDate}
               </p>
-              <Separator className="my-4" />
-              <p className="text-[#f5f5f5] flex items-center text-sm sm:text-base gap-2">
-                <span className="text-[#f5f5f5] font-semibold sm:w-30">
-                  Adres:{" "}
-                </span>
+              <Separator className="my-2" />
+              <p className="text-[#f5f5f5] flex items-center gap-2">
+                <span className="font-semibold">Adres: </span>
                 {sanatciDetayData.address}
               </p>
-            </div>
-          </div>
-        )}
-        {selectedTab === "etkinlikler" && (
-          <Card className="p-6 mt-4">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.events}</p>
-            </CardContent>
-          </Card>
-        )}
-        {selectedTab === "repertuvar" && (
-          <Card className="p-6 mt-4">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.repertuvar}</p>
-            </CardContent>
-          </Card>
-        )}
-        {selectedTab === "tur" && (
-          <Card className="p-6 mt-4">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.tur}</p>
-            </CardContent>
-          </Card>
-        )}
-        {selectedTab === "kategoriler" && (
-          <Card className="p-6 mt-4">
-            <CardContent className="p-0">
-              <p className="text-gray-600">{sanatciDetayData.category}</p>
-            </CardContent>
-          </Card>
-        )}
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>
+              <p className="text-[#f5f5f5] md:text-xl text-lg cursor-pointer">
+                Etkinlikler
+              </p>
+            </AccordionTrigger>
+            <AccordionContent className="flex flex-col gap-4 text-balance">
+              <ul className="list-disc list-inside text-[#f5f5f5] space-y-2">
+                {sanatciDetayData.events.map((event: string, index: number) => (
+                  <li key={index}>{event}</li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>
+              <p className="text-[#f5f5f5] md:text-xl text-lg cursor-pointer">
+                Repertuvar
+              </p>
+            </AccordionTrigger>
+            <AccordionContent className="flex flex-col gap-4 text-balance">
+              <ul className="list-disc list-inside text-[#f5f5f5] space-y-2">
+                {sanatciDetayData.repertuvar.map(
+                  (sarki: string, index: number) => (
+                    <li key={index}>{sarki}</li>
+                  )
+                )}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-4">
+            <AccordionTrigger>
+              <p className="text-[#f5f5f5] md:text-xl text-lg cursor-pointer">
+                Müzik Türü
+              </p>
+            </AccordionTrigger>
+            <AccordionContent className="flex flex-col gap-4 text-balance">
+              <ul className="list-disc list-inside text-[#f5f5f5] space-y-2">
+                {sanatciDetayData.musicType.map(
+                  (type: string, index: number) => (
+                    <li key={index}>{type}</li>
+                  )
+                )}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-5">
+            <AccordionTrigger>
+              <p className="text-[#f5f5f5] md:text-xl text-lg cursor-pointer">
+                Enstrumanlar
+              </p>
+            </AccordionTrigger>
+            <AccordionContent className="flex flex-col gap-4 text-balance">
+              <ul className="list-disc list-inside text-[#f5f5f5] space-y-2">
+                {sanatciDetayData.enstrumans.map(
+                  (enstruman: string, index: number) => (
+                    <li key={index}>{enstruman}</li>
+                  )
+                )}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   );

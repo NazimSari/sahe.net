@@ -4,14 +4,16 @@ import React, { useRef, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
 import { Clock, MapPin } from "lucide-react";
+import Link from "next/link";
 
 interface SingerData {
   url: string;
   name: string;
-  category: string;
+  category: string[];
   slug: string;
   venue: string;
   hour: string;
+  description: string;
 }
 
 interface MobileToNightSingerCardSliderProps {
@@ -139,7 +141,8 @@ const MobileToNightSingerSlider: React.FC<
         {...swipeHandlers}
       >
         {[...singerData, ...singerData, ...singerData].map((singer, index) => (
-          <div
+          <Link
+            href={`/sanatci-detay/${singer.slug}`}
             key={index}
             className="slider-card flex-shrink-0 w-[min(85vw,320px)] h-[48vh]"
           >
@@ -171,7 +174,7 @@ const MobileToNightSingerSlider: React.FC<
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

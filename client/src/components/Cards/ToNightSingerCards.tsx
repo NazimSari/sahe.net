@@ -1,14 +1,16 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Clock, MapPin } from "lucide-react";
+import Link from "next/link";
 
 interface SingerData {
   url: string;
   name: string;
-  category: string;
+  category: string[];
   slug: string;
   venue: string;
   hour: string;
+  description: string;
 }
 
 interface SingerCardsProps {
@@ -63,7 +65,11 @@ const ToNightSingerCards = ({ data }: SingerCardsProps) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto gap-4">
       {data.map((singer, index) => (
-        <div key={index} className="flex flex-col">
+        <Link
+          href={`/sanatci-detay/${singer.slug}`}
+          key={index}
+          className="flex flex-col"
+        >
           <div className="2xl:w-90 2xl:h-110 xl:w-70 xl:h-90 md:w-61 md:h-80 w-full relative overflow-hidden">
             <img
               src={singer.url}
@@ -97,7 +103,7 @@ const ToNightSingerCards = ({ data }: SingerCardsProps) => {
               </p>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

@@ -2,20 +2,28 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Users, Music, UserRoundX } from "lucide-react";
 import DetailsTabPlace from "@/components/DeatilsTab/DetailsTabPlace";
-import { FaFacebookSquare, FaStar, FaUserCircle } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa6";
-import { AiFillTikTok } from "react-icons/ai";
-import { IoLogoYoutube } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { canliMuzikData, dataSources, EventData } from "@/lib/data";
+import {
+  commentsData,
+  dataSources,
+  EventData,
+  mekanDetaySayfasiVideoData,
+} from "@/lib/data";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import { notFound, useParams } from "next/navigation";
+import MobilVenueDetailsPageThisWeekSlider from "@/components/SliderGsap/MobilVenueDeatilsPageThisWeekSlider";
+import VenueDetailsPageThisWeekCard from "@/components/Cards/VenueDetailsPageThisWeekCard";
+import MobileVideoSlider from "@/components/SliderGsap/MobilVideoSlider";
+import CommentsSection from "@/components/CommentSection";
+import MobilCommentCardSlider from "@/components/SliderGsap/MobilCommentCardSlider";
+import InfoCard from "@/components/Cards/InfoCard";
+import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
 
 export default function MekanDetayPage() {
   const params = useParams();
@@ -43,7 +51,7 @@ export default function MekanDetayPage() {
         <div className="container mx-auto bg-[#040519]/50 rounded-2xl xl:py-20 py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 h-full w-full">
             {/* Görsel Kısmı */}
-            <div className="w-full lg:w-1/2 max-w-[550px] aspect-[4/3] overflow-hidden rounded-xl">
+            <div className="w-full lg:w-1/2 lg:max-w-[600px] md:aspect-[16/9] lg:aspect-[3/4]  xl:aspect-[4/3] overflow-hidden rounded-xl">
               <img
                 src={mekan.url}
                 alt={mekan.name}
@@ -125,120 +133,27 @@ export default function MekanDetayPage() {
       </section>
       <section className="bg-[#160317]">
         <div className="container mx-auto py-16">
-          <div className="flex flex-col lg:grid lg:grid-cols-[3fr_1fr] gap-4">
+          <div className="flex flex-col xl:grid lg:grid-cols-[3fr_1fr] gap-4">
             {/* 1. ve 2. kolon */}
             <DetailsTabPlace />
             {/* 3.kolon */}
-            <div className="w-full md:w-2/3 lg:w-full mx-auto flex flex-col gap-3 lg:ml-3 p-2">
-              <h3 className="text-2xl text-[#f5f5f5] text-center mb-3">
+
+            <div className="w-full  lg:w-full mx-auto flex flex-col xl:gap-3  px-2 mt-10 xl:mt-0">
+              <h3 className="text-2xl font-semibold text-[#f5f5f5] text-center md:mb-3">
                 Bu Hafta Sahnede
               </h3>
-              <div className="p-2 bg-gray-100 rounded-lg">
-                <div className="flex  gap-2">
-                  <div className="w-30 h-30  aspect-[1/1] overflow-hidden rounded-xl">
-                    <img
-                      src="https://st5.depositphotos.com/3430693/72771/i/380/depositphotos_727719968-stock-photo-mixing-music-professional-equipment-showcasing.jpg"
-                      alt="Arser Orkestrası"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h4 className="font-semibold underline decoration-[#FF007A] decoration-2">
-                      Salamanca
-                    </h4>
-                    <p className="text-sm">Pazartesi-Salı-Çarşamba </p>
-                    <p className="text-sm">21:00-24:00</p>
-                    <div className="flex gap-2 items-center mt-2">
-                      <FaFacebookSquare size={20} color="#FF007A" />
-                      <FaSquareInstagram size={20} color="#FF007A" />
-                      <FaLinkedin size={20} color="#FF007A" />
-                      <AiFillTikTok size={20} color="#FF007A" />
-                      <IoLogoYoutube size={20} color="#FF007A" />
-                    </div>
-                  </div>
-                </div>
+              <div className="hidden xl:flex">
+                <VenueDetailsPageThisWeekCard />
               </div>
-              <div className="p-2 bg-gray-100 rounded-lg">
-                <div className="flex  gap-2">
-                  <div className="w-30 h-30 aspect-[1/1] overflow-hidden rounded-xl">
-                    <img
-                      src="https://st.depositphotos.com/1026550/4167/i/380/depositphotos_41679805-stock-photo-dj-silhouette.jpg"
-                      alt="Arser Orkestrası"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h4 className="font-semibold underline decoration-[#FF007A] decoration-2">
-                      DJ Ernesto
-                    </h4>
-                    <p className="text-sm">Pazartesi-Perşembe </p>
-                    <p className="text-sm">20:00-21:00</p>
-                    <div className="flex gap-2 items-center mt-2">
-                      <FaFacebookSquare size={20} color="#FF007A" />
-                      <FaSquareInstagram size={20} color="#FF007A" />
-                      <FaLinkedin size={20} color="#FF007A" />
-                      <AiFillTikTok size={20} color="#FF007A" />
-                      <IoLogoYoutube size={20} color="#FF007A" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-2 bg-gray-100 rounded-lg">
-                <div className="flex  gap-2">
-                  <div className="w-30 h-30 aspect-[1/1] overflow-hidden rounded-xl">
-                    <img
-                      src="https://st3.depositphotos.com/13194036/18527/i/380/depositphotos_185271722-stock-photo-black-and-white-shot-of.jpg"
-                      alt="Arser Orkestrası"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h4 className="font-semibold underline decoration-[#FF007A] decoration-2">
-                      Engin Yurt
-                    </h4>
-                    <p className="text-sm">Cuma-Cumartesi </p>
-                    <p className="text-sm">20:00-22:00</p>
-                    <div className="flex gap-2 items-center mt-2">
-                      <FaFacebookSquare size={20} color="#FF007A" />
-                      <FaSquareInstagram size={20} color="#FF007A" />
-                      <FaLinkedin size={20} color="#FF007A" />
-                      <AiFillTikTok size={20} color="#FF007A" />
-                      <IoLogoYoutube size={20} color="#FF007A" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-2 bg-gray-100 rounded-lg">
-                <div className="flex  gap-2">
-                  <div className="w-30 h-30 aspect-[1/1] overflow-hidden rounded-xl">
-                    <img
-                      src="https://st3.depositphotos.com/10638998/15080/i/380/depositphotos_150801298-stock-photo-rock-band-on-stage.jpg"
-                      alt="Arser Orkestrası"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h4 className="font-semibold underline decoration-[#FF007A] decoration-2">
-                      Tyler Durden
-                    </h4>
-                    <p className="text-sm">Cuma-Cumartesi </p>
-                    <p className="text-sm">22:00-24:00</p>
-                    <div className="flex gap-2 items-center mt-2">
-                      <FaFacebookSquare size={20} color="#FF007A" />
-                      <FaSquareInstagram size={20} color="#FF007A" />
-                      <FaLinkedin size={20} color="#FF007A" />
-                      <AiFillTikTok size={20} color="#FF007A" />
-                      <IoLogoYoutube size={20} color="#FF007A" />
-                    </div>
-                  </div>
-                </div>
+              <div className="w-full xl:hidden">
+                <MobilVenueDetailsPageThisWeekSlider />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-[#160317]">
-        <div className="container mx-auto py-16">
+      <section className="bg-[#160317] md:pb-10">
+        <div className="container mx-auto pb-6">
           <div className="flex flex-col gap-4 justify-center mb-10">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
               Neon Pulse Sanatçıları Sahnede!
@@ -252,75 +167,30 @@ export default function MekanDetayPage() {
               önceden hissedin.
             </p>
           </div>
-          <div className="flex flex-col gap-4 justify-center p-3 md:p-0">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/hN9yVnM9W68?si=w6sIApbD5UY1oGWh"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/UpxKKBLUP2g?si=ia3lyyXJN3mipgJn"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/YVkUvmDQ3HY?si=5M9hMfVVn4GCUMR2"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/EDwb9jOVRtU?si=G1Eqi1g7iS1tMNEB"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/h_D3VFfhvs4?si=yHd1WnfRi0eHTB-x"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/1V_xRb0x9aw?si=Rm9CXJVUNUflav_4"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
+          <div className="hidden md:flex flex-col gap-4 justify-center p-3 md:p-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {mekanDetaySayfasiVideoData.map((video) => (
+                <div key={video.id} className="relative aspect-video">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-xl"
+                    src={video.src}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              ))}
             </div>
+          </div>
+          <div className="md:hidden">
+            <MobileVideoSlider videoData={mekanDetaySayfasiVideoData} />
           </div>
         </div>
       </section>
-      <section className="bg-[#160317]">
-        <div className="container mx-auto py-8 md:py-16 px-4">
-          <div className="flex flex-col md:flex-row items-center gap-4  mb-10">
+      <section className="bg-[#160317] pb-16">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row items-center md:gap-4 gap-2 mb-2">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
               Değerlendirmeler{" "}
             </h3>
@@ -333,62 +203,17 @@ export default function MekanDetayPage() {
               <span className="text-[#f5f5f5] mt-1">(5)</span>
             </p>
           </div>
-          <div className="flex flex-col gap-4">
-            <div className="bg-[#f5f5f5] flex flex-col md:flex-row items-center md:gap-8 gap-2 p-4 rounded-xl">
-              <div className="flex flex-col justify-center gap-2">
-                <FaUserCircle className="h-16 w-16 md:h-20 md:w-20 text-gray-300" />
-                <p className="text-center text-sm md:text-base">Mehmet</p>
-              </div>
-              <div>
-                <p className="text-sm md:text-base">
-                  16.10.2016 tarihinde Piyalepaşa Hilton Otel'de yaptığımız
-                  düğün etkinliğimizde hem repertuvar hemde muhteşem
-                  performanslarından dolayı Neon Pulse çok teşekkür ederiz
-                </p>
-                <div className="flex items-center gap-2 mt-3 md:mt-0">
-                  <span className="text-[#FF007A] text-xs md:text-sm">
-                    16.05.2021
-                  </span>
-                  <span className="flex text-[#FF007A] items-center text-xs md:text-sm">
-                    {Array(5)
-                      .fill(null)
-                      .map((_, i) => (
-                        <FaStar key={i} />
-                      ))}{" "}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="bg-[#f5f5f5] flex flex-col md:flex-row items-center md:gap-8 gap-2 p-4 rounded-xl">
-              <div className="flex flex-col justify-center gap-2">
-                <FaUserCircle className="h-16 w-16 md:h-20 md:w-20 text-gray-300" />
-                <p className="text-center text-sm md:text-base">Selin</p>
-              </div>
-              <div>
-                <p className="text-sm md:text-base">
-                  Umduğumuzdan fazla eğlendik siz de özel günlerinizde sıra dışı
-                  bi eğlence diyorsanız ANeon Pulse yı seçebilirsiniz.
-                </p>
-                <div className="flex items-center gap-2 mt-3 md:mt-0">
-                  <span className="text-[#FF007A] text-xs md:text-sm">
-                    16.05.2021
-                  </span>
-                  <span className="flex text-[#FF007A] items-center text-xs md:text-sm">
-                    {Array(5)
-                      .fill(null)
-                      .map((_, i) => (
-                        <FaStar key={i} />
-                      ))}{" "}
-                  </span>
-                </div>
-              </div>
-            </div>
+          <div className="hidden md:block">
+            <CommentsSection />
+          </div>
+          <div className="md:hidden">
+            <MobilCommentCardSlider comments={commentsData} />
           </div>
         </div>
       </section>
       <section className="w-full bg-[#160317]">
-        <div className="container mx-auto py-16">
-          <div className="flex flex-col gap-4 justify-center mb-10">
+        <div className="container mx-auto pb-16">
+          <div className="flex flex-col gap-4 justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
               Sıkça Sorulan Sorular
             </h3>
@@ -456,7 +281,7 @@ export default function MekanDetayPage() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] py-16">
+      <section className="w-full bg-[#160317] pb-16">
         <div className="container mx-auto">
           <div className="flex flex-col gap-4  justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
@@ -471,8 +296,11 @@ export default function MekanDetayPage() {
               atmosferin büyüsüne kapılın!
             </p>
           </div>
-          <div className="mt-6">
-            {/* <PlaceCards data={canliMuzikData} /> */}
+          <div className="mt-8 hidden md:block">
+            <InfoCard data={displayArtists} type="artist" />
+          </div>
+          <div className="mt-8 md:hidden">
+            <MobileInfoCardSwipeSlider data={displayArtists} type="artist" />
           </div>
         </div>
       </section>
