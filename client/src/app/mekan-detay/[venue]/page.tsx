@@ -299,7 +299,7 @@ export default function MekanDetayPage() {
           <div className="mt-8 hidden md:block">
             <InfoCard data={displayArtists} type="artist" />
           </div>
-          <div className="mt-8 md:hidden">
+          <div className="mt-2 md:hidden">
             <MobileInfoCardSwipeSlider data={displayArtists} type="artist" />
           </div>
         </div>

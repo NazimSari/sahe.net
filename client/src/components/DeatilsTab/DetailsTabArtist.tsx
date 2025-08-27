@@ -117,7 +117,7 @@ export default function DetailsTabArtist({ sanatciDetayData }: any) {
         <Accordion
           type="single"
           collapsible
-          className="w-full md:w-1/2"
+          className="w-full"
           defaultValue="item-1"
         >
           <AccordionItem value="item-1">
@@ -128,23 +128,19 @@ export default function DetailsTabArtist({ sanatciDetayData }: any) {
             </AccordionTrigger>
             <AccordionContent className="flex flex-col gap-4 text-balance">
               <p className="text-[#f5f5f5]">{sanatciDetayData.description}</p>
-              <Separator className="my-2" />
               <p className="text-[#f5f5f5] flex items-center gap-2">
                 <span className="font-semibold">Konuşulan Diller: </span>
                 {sanatciDetayData.language}
               </p>
-              <Separator className="my-2" />
               <p className="text-[#f5f5f5] flex items-center gap-2">
                 <span className="font-semibold">Kuruluş Tarihi: </span>
                 {sanatciDetayData.createdAt}
               </p>
 
-              <Separator className="my-2" />
               <p className="text-[#f5f5f5] flex items-center gap-2">
                 <span className="font-semibold">Üyelik Tarihi: </span>
                 {sanatciDetayData.memberDate}
               </p>
-              <Separator className="my-2" />
               <p className="text-[#f5f5f5] flex items-center gap-2">
                 <span className="font-semibold">Adres: </span>
                 {sanatciDetayData.address}

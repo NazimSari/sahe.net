@@ -103,7 +103,7 @@ const MobileVideoSlider: React.FC<MobileVideoSliderProps> = ({ videoData }) => {
   const { ref: swipeRef, ...swipeHandlers } = handlers;
 
   return (
-    <div className="w-full relative h-[500px] flex items-center overflow-hidden">
+    <div className="w-full relative h-[60vh] flex items-center overflow-hidden">
       <div
         ref={(node) => {
           containerRef.current = node;
@@ -116,11 +116,11 @@ const MobileVideoSlider: React.FC<MobileVideoSliderProps> = ({ videoData }) => {
         {[...videoData, ...videoData, ...videoData].map((video, index) => (
           <div
             key={index}
-            className="slider-card flex-shrink-0 w-[min(70vw,370px)]"
+            className="slider-card w-[min(80vw,230px)] bg-white min-h-[400px] rounded-xl shadow-lg"
           >
-            <div className="relative aspect-[9/16] rounded-xl overflow-hidden shadow-md">
+            <div className="relative rounded-xl">
               <iframe
-                className="absolute top-0 left-0 w-full h-full"
+                className="w-full aspect-[9/16] object-cover"
                 src={video.src}
                 title={video.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -128,7 +128,9 @@ const MobileVideoSlider: React.FC<MobileVideoSliderProps> = ({ videoData }) => {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="h-16"></div>
+            <div className="h-16 flex items-center justify-center p-2">
+              <p>{video.title}</p>
+            </div>
           </div>
         ))}
       </div>
