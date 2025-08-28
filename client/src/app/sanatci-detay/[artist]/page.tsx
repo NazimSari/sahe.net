@@ -22,8 +22,18 @@ import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwi
 import MobileVideoSlider from "@/components/SliderGsap/MobilVideoSlider";
 import CommentsSection from "@/components/CommentSection";
 import MobilCommentCardSlider from "@/components/SliderGsap/MobilCommentCardSlider";
+import SuperArtistBadge from "@/components/SuperArtistBadge";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useState } from "react";
+import { BookingCalendar } from "@/components/BookingCalendar";
 
 export default function SanatciDetayPage() {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const params = useParams();
   const artistSlug = params.artist as string;
 
@@ -49,12 +59,15 @@ export default function SanatciDetayPage() {
         <div className="container mx-auto bg-[#160317]/50 rounded-2xl xl:py-20 py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 h-full w-full">
             {/* Görsel Kısmı */}
-            <div className="w-full lg:w-1/2 lg:max-w-[600px] md:aspect-[16/9] lg:aspect-[3/4]  xl:aspect-[4/3] overflow-hidden rounded-xl">
+            <div className="w-full relative lg:w-1/2 lg:max-w-[600px] md:aspect-[16/9] lg:aspect-[3/4]  xl:aspect-[4/3] overflow-hidden rounded-xl">
               <img
                 src={sanatci.url}
                 alt={sanatci.name}
                 className="w-full h-full object-cover"
               />
+              <div className="absolute top-4 right-3">
+                {sanatci.isSuperArtist && <SuperArtistBadge />}
+              </div>
             </div>
 
             {/* Metin ve Bilgi Kısmı */}
@@ -118,9 +131,28 @@ export default function SanatciDetayPage() {
 
               {/* Butonlar */}
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
-                  Hemen İzle
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
+                      Rezervasyon Yap
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogTitle>{sanatci.name} için rezervasyon</DialogTitle>
+                    <div className="w-full flex justify-center mt-4">
+                      <BookingCalendar
+                        unavailableDates={sanatci.unavailableDates ?? []}
+                        onSelectDate={(date) => setSelectedDate(date)}
+                      />
+                    </div>
+                    {selectedDate && (
+                      <p className="text-sm mt-2">
+                        Seçilen Tarih:{" "}
+                        <b>{selectedDate.toLocaleDateString()}</b>
+                      </p>
+                    )}
+                  </DialogContent>
+                </Dialog>
                 <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
                   Teklif Al
                 </Button>

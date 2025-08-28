@@ -8,6 +8,8 @@ export interface EventData {
   slug: string;
   venue?: string;
   hour?: string;
+  isSuperArtist?: boolean;
+  unavailableDates?: string[];
 }
 
 interface Artist {
@@ -244,6 +246,14 @@ export const sahneData: EventData[] = [
     badgeText: "İstanbul",
     category: ["Düğün", "Happy Hour", "Doğum Günü"],
     slug: "kamil-aydinli",
+    isSuperArtist: true,
+    unavailableDates: [
+      "2025-08-31",
+      "2025-09-01",
+      "2025-09-05",
+      "2025-09-10",
+      "2025-09-11",
+    ],
   },
   {
     name: "Micheal Tartum",
@@ -259,6 +269,8 @@ export const sahneData: EventData[] = [
       "Baby Shower, Dj Performansı",
     ],
     slug: "micheal-tartum",
+    isSuperArtist: true,
+    unavailableDates: ["2025-09-01", "2025-09-05", "2025-09-10"],
   },
   {
     name: "Group Brooke",
@@ -274,6 +286,8 @@ export const sahneData: EventData[] = [
       "Baby Shower, Dj Performansı",
     ],
     slug: "group-brooke",
+    isSuperArtist: false,
+    unavailableDates: ["2025-09-01", "2025-09-05", "2025-09-10"],
   },
   {
     name: "Group Nefes",
@@ -283,6 +297,8 @@ export const sahneData: EventData[] = [
     badgeText: "İzmir",
     slug: "group-nefes",
     category: ["Düğün", "Happy Hour", "Doğum Günü"],
+    isSuperArtist: false,
+    unavailableDates: ["2025-09-01", "2025-09-05", "2025-09-10"],
   },
 ];
 
@@ -304,6 +320,7 @@ export const dogumGunuData: EventData[] = [
     category: ["Canlı Müzik", "Etkinlik Sunucusu"],
     badgeText: "İstanbul",
     slug: "mert-uslu",
+    isSuperArtist: true,
   },
   {
     name: "Kerem Yıldız",
@@ -352,6 +369,7 @@ export const babyshowerData: EventData[] = [
     category: ["Organizasyon"],
     badgeText: "İstanbul",
     slug: "melis-efe",
+    isSuperArtist: true,
   },
   {
     name: "Emir Saruhan",
@@ -421,6 +439,7 @@ export const djData: EventData[] = [
     category: ["Pop & Türkçe Hits"],
     badgeText: "İstanbul",
     slug: "dj-ruzgar",
+    isSuperArtist: true,
   },
   {
     name: "DJ Lena",

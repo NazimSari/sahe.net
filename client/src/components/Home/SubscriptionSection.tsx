@@ -12,7 +12,7 @@ export default function SubscriptionSection() {
     heroSection?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <section className="w-full py-16 bg-[url('/abonelik.jpg')] bg-cover bg-top">
+    <section className="w-full py-16 bg-[url('/abonelik1.jpg')] bg-cover bg-top px-2">
       <div className="container mx-auto h-full">
         <div className="flex flex-col gap-6 h-full justify-center">
           <div className="flex flex-col justify-center items-center">
@@ -28,7 +28,7 @@ export default function SubscriptionSection() {
           <div className="flex flex-col items-center justify-center w-full max-w-3xl mx-auto gap-5">
             <Input
               placeholder="E-posta adresinizi girin"
-              className="p-6 border-1 border-[#040519] placeholder:text-[#040519] text-[#040519] font-semibold focus:border-[#FF007A]"
+              className="p-6 border-3 border-[#040519] placeholder:text-[#040519] text-[#040519] font-semibold"
             />
             <Button
               onClick={handleScroll}

@@ -5,6 +5,7 @@ import { Badge } from "../ui/badge";
 import { FaLocationDot } from "react-icons/fa6";
 import { EventData } from "@/lib/data";
 import Link from "next/link";
+import SuperArtistBadge from "../SuperArtistBadge";
 
 interface MobilStageCardProps {
   item: EventData;
@@ -20,13 +21,15 @@ const MobileInfoCard: React.FC<MobilStageCardProps> = ({ item, type }) => {
           alt={item.name}
           className="w-full aspect-[4/3.3] object-cover rounded-t-lg"
         />
-        <Badge
-          variant="secondary"
-          className="absolute top-4 left-3 py-1 text-xs"
-        >
-          <FaLocationDot className="inline mr-1" />
-          {item.badgeText || "Yeni"}
-        </Badge>
+        <div className="absolute top-4 left-3 right-3">
+          <div className="flex items-center justify-between">
+            <Badge variant="secondary" className=" py-1 text-xs">
+              <FaLocationDot className="inline mr-1" />
+              {item.badgeText || "Yeni"}
+            </Badge>
+            {item.isSuperArtist && <SuperArtistBadge />}
+          </div>
+        </div>
       </div>
       <div className="px-4 flex flex-col flex-grow gap-2">
         <span className="text-[#9D9D9D] text-xs font-semibold mt-2">

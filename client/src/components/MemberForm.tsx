@@ -120,8 +120,8 @@ export default function MemberForm() {
         </div>
         <div className="flex flex-col mt-2">
           <Select onValueChange={handleSelectChange} value={formData.talent}>
-            <SelectTrigger className="mt-4 p-6  text-[#f5f5f5] w-full">
-              <SelectValue placeholder="Etkinlik Seçiniz" />
+            <SelectTrigger className="mt-4 p-6  text-[#f5f5f5] w-full md:text-base text-sm">
+              <SelectValue placeholder="Yetkinliğinizi Seçiniz" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
@@ -129,18 +129,27 @@ export default function MemberForm() {
                 <SelectItem value="enstruman">Enstrüman</SelectItem>
                 <SelectItem value="solist">Solist</SelectItem>
                 <SelectItem value="dj">Dj Performans</SelectItem>
+                <SelectItem value="group">Müzik Grubu</SelectItem>
               </SelectGroup>
               <SelectGroup>
                 <SelectLabel>Mekan</SelectLabel>
+                <SelectItem value="canlimuzik">Canlı Müzik</SelectItem>
                 <SelectItem value="roofbar">Roof Bar</SelectItem>
                 <SelectItem value="kokteyl">Kokteyl Bar</SelectItem>
-                <SelectItem value="canlimuzik">Canlı Müzik</SelectItem>
+                <SelectItem value="beachclub">Beach Club</SelectItem>
+                <SelectItem value="vipDj">Vip DJ</SelectItem>
+              </SelectGroup>
+              <SelectGroup>
+                <SelectLabel>Özel Çekim</SelectLabel>
+                <SelectItem value="fotograf">Fotoğraf Çekimi</SelectItem>
+                <SelectItem value="video">Video Çekimi</SelectItem>
+                <SelectItem value="instagram">Instagram Çekimi</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
           <Button
             disabled={isLoading}
-            className="md:p-6 p-3 text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200"
+            className="md:p-6 p-3 mt-5 text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200"
             size={"lg"}
             variant="default"
             type="submit"

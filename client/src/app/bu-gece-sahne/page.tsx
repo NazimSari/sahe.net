@@ -68,42 +68,44 @@ export default function BuGeceSahnePage() {
                 <div className="flex flex-col gap-3 mt-4 max-w-4xl">
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <Select>
-                      <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
-                        <SelectValue
-                          placeholder="Şehir"
-                          className="text-[#040519]"
-                        />
+                      <SelectTrigger className="md:py-6 bg-[#f5f5f5] w-full text-sm sm:text-base">
+                        <SelectValue placeholder="Şehir" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="enstruman">Enstrüman</SelectItem>
-                        <SelectItem value="solist">Solist</SelectItem>
-                        <SelectItem value="dj">Dj Performans</SelectItem>
+                        <SelectItem value="istanbul">İstanbul</SelectItem>
+                        <SelectItem value="ankara">Ankara</SelectItem>
+                        <SelectItem value="izmir">İzmir</SelectItem>
+                        <SelectItem value="antalya">Antalya</SelectItem>
+                        <SelectItem value="mugla">Muğla</SelectItem>
                       </SelectContent>
                     </Select>
                     <Select>
-                      <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
-                        <SelectValue
-                          placeholder="Mekan Türü"
-                          className="text-[#040519]"
-                        />
+                      <SelectTrigger className="md:py-6 bg-[#f5f5f5] w-full text-sm sm:text-base">
+                        <SelectValue placeholder="Mekan Türü" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="enstruman">Enstrüman</SelectItem>
-                        <SelectItem value="solist">Solist</SelectItem>
-                        <SelectItem value="dj">Dj Performans</SelectItem>
+                        <SelectItem value="canli-muzik">Canlı Müzik</SelectItem>
+                        <SelectItem value="beach-club">Beach Club</SelectItem>
+                        <SelectItem value="kokteyl-bar">Kokteyl Bar</SelectItem>
+                        <SelectItem value="dj-bar">VIP DJ Mekanları</SelectItem>
+                        <SelectItem value="rooftop">Roof Top</SelectItem>
                       </SelectContent>
                     </Select>
                     <Select>
-                      <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
-                        <SelectValue
-                          placeholder="Müzik Türü"
-                          className="text-[#040519]"
-                        />
+                      <SelectTrigger className="md:py-6 bg-[#f5f5f5] w-full text-sm sm:text-base">
+                        <SelectValue placeholder="Müzik Türü" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="enstruman">Enstrüman</SelectItem>
-                        <SelectItem value="solist">Solist</SelectItem>
-                        <SelectItem value="dj">Dj Performans</SelectItem>
+                        <SelectItem value="rock">Rock & Alternative</SelectItem>
+                        <SelectItem value="caz">Caz & Blues</SelectItem>
+                        <SelectItem value="latin">Latin & Salsa</SelectItem>
+                        <SelectItem value="akustik">Akustik & Indie</SelectItem>
+                        <SelectItem value="elektronik">
+                          Elektronik & Deep House
+                        </SelectItem>
+                        <SelectItem value="tropikal">
+                          Tropikal & Reggae
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -185,42 +187,42 @@ export default function BuGeceSahnePage() {
             <div className="flex flex-col gap-3 mt-4 max-w-4xl">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <Select>
-                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
-                    <SelectValue
-                      placeholder="Şehir"
-                      className="text-[#040519]"
-                    />
+                  <SelectTrigger className="md:py-6 bg-[#f5f5f5] w-full text-sm sm:text-base">
+                    <SelectValue placeholder="Şehir" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="enstruman">Enstrüman</SelectItem>
-                    <SelectItem value="solist">Solist</SelectItem>
-                    <SelectItem value="dj">Dj Performans</SelectItem>
+                    <SelectItem value="istanbul">İstanbul</SelectItem>
+                    <SelectItem value="ankara">Ankara</SelectItem>
+                    <SelectItem value="izmir">İzmir</SelectItem>
+                    <SelectItem value="antalya">Antalya</SelectItem>
+                    <SelectItem value="mugla">Muğla</SelectItem>
                   </SelectContent>
                 </Select>
                 <Select>
-                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
-                    <SelectValue
-                      placeholder="Mekan Türü"
-                      className="text-[#040519]"
-                    />
+                  <SelectTrigger className="md:py-6 bg-[#f5f5f5] w-full text-sm sm:text-base">
+                    <SelectValue placeholder="Mekan Türü" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="enstruman">Enstrüman</SelectItem>
-                    <SelectItem value="solist">Solist</SelectItem>
-                    <SelectItem value="dj">Dj Performans</SelectItem>
+                    <SelectItem value="canli-muzik">Canlı Müzik</SelectItem>
+                    <SelectItem value="beach-club">Beach Club</SelectItem>
+                    <SelectItem value="kokteyl-bar">Kokteyl Bar</SelectItem>
+                    <SelectItem value="dj-bar">VIP DJ Mekanları</SelectItem>
+                    <SelectItem value="rooftop">Roof Top</SelectItem>
                   </SelectContent>
                 </Select>
                 <Select>
-                  <SelectTrigger className="md:py-6  bg-[#f5f5f5] w-full text-sm sm:text-base">
-                    <SelectValue
-                      placeholder="Müzik Türü"
-                      className="text-[#040519]"
-                    />
+                  <SelectTrigger className="md:py-6 bg-[#f5f5f5] w-full text-sm sm:text-base">
+                    <SelectValue placeholder="Müzik Türü" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="enstruman">Enstrüman</SelectItem>
-                    <SelectItem value="solist">Solist</SelectItem>
-                    <SelectItem value="dj">Dj Performans</SelectItem>
+                    <SelectItem value="rock">Rock & Alternative</SelectItem>
+                    <SelectItem value="caz">Caz & Blues</SelectItem>
+                    <SelectItem value="latin">Latin & Salsa</SelectItem>
+                    <SelectItem value="akustik">Akustik & Indie</SelectItem>
+                    <SelectItem value="elektronik">
+                      Elektronik & Deep House
+                    </SelectItem>
+                    <SelectItem value="tropikal">Tropikal & Reggae</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

@@ -4,6 +4,7 @@ import MemberForm from "../MemberForm";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
+import MenifestModal from "../MenifestModal";
 
 export default function HeroSection() {
   useGSAP(() => {
@@ -85,10 +86,14 @@ export default function HeroSection() {
                 türlü etkinlik için müzisyenleri kolayca bul, iletişime geç ve
                 hemen rezervasyon yap.
               </p>
+
               <div id="hero-forms" className="mt-10 opacity-0 z-10">
-                <p className="text-slate-400 text-sm mb-2">
-                  *Sanatçı ve mekan ön kayıt formu
-                </p>
+                <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-2">
+                  <p className="text-[#f5f5f5] text-sm">
+                    *Sanatçı ve mekan ön kayıt formu
+                  </p>
+                  <MenifestModal />
+                </div>
                 <MemberForm />
               </div>
             </div>

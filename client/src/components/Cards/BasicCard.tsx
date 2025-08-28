@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import SuperArtistBadge from "../SuperArtistBadge";
 
 interface CardProps {
   item: {
@@ -16,6 +17,7 @@ interface CardProps {
     description: string;
     slug: string;
     musicType?: string;
+    isSuperArtist?: boolean; // Yeni prop
   };
   index: number;
   type: "artist" | "venue";
@@ -39,10 +41,15 @@ const BasicCard = ({ item, index, type }: CardProps) => {
           alt={item.name}
           className="w-full h-[350px] object-cover"
         />
-        <Badge variant="secondary" className="absolute top-5 left-4 py-1">
-          <FaLocationDot />
-          {item.badgeText || "Yeni"}
-        </Badge>
+        <div className="absolute top-4 left-3 right-3">
+          <div className="flex items-center justify-between">
+            <Badge variant="secondary" className=" py-1 text-xs">
+              <FaLocationDot className="inline mr-1" />
+              {item.badgeText || "Yeni"}
+            </Badge>
+            {item.isSuperArtist && <SuperArtistBadge />}
+          </div>
+        </div>
       </div>
       <div className="p-4">
         <span className="inline-block text-[#9D9D9D] text-sm font-semibold">
