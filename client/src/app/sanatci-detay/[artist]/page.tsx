@@ -11,7 +11,7 @@ import {
   sanatciDetayData,
 } from "@/lib/data";
 import { Check } from "lucide-react";
-import { FaStar, FaUserCircle, FaDotCircle } from "react-icons/fa";
+import { FaStar, FaDotCircle } from "react-icons/fa";
 import StepsSection from "@/components/Home/PaymentStepsSection";
 import DetailsTabArtist from "@/components/DeatilsTab/DetailsTabArtist";
 import DetailsPriceCardArtist from "@/components/DeatilsPriceCard/DetailsPriceCardArtist";

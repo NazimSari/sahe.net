@@ -734,13 +734,186 @@ export const festivalDetayData = {
     "İstanbul Yaz Rüzgarı Festivali, müziğin birleştirici gücünü İstanbul’un eşsiz atmosferinde buluşturan 3 günlük bir müzik şölenidir. Pop, rock ve alternatif müzik tutkunlarını bir araya getiren bu festival, yerli ve uluslararası sanatçıların enerjik performanslarıyla unutulmaz anlar vadediyor. KüçükÇiftlik Park’ın açık hava sahnesinde, yazın en güzel günlerinde müzik, dans ve eğlence bir arada!",
   date: "20-22 Haziran 2025",
   location: "KüçükÇiftlik Park, İstanbul",
-  tur: "Pop, Rock, Alternatif",
-  price:
-    "300 TL, Kombine (3 Gün), 800 TL (Erken bilet alımlarında %20 indirim!)",
-  age: "16+ (16-18 yaş arası ebeveyn izniyle katılabilir)",
-  program: "",
-  singers: "",
-  amenities: "",
+  musicType: "Pop, Rock, Alternatif",
+  price: "300 TL, Kombine (3 Gün)",
+  age: "16+",
+  program: [
+    {
+      day: "20 Haziran 2025 - Cuma",
+      events: [
+        { time: "16:00", artist: "DJ Sunrise", genre: "Elektronik / Pop" },
+        { time: "18:00", artist: "Zeynep Bastık", genre: "Pop" },
+        { time: "20:00", artist: "Teoman", genre: "Rock" },
+        { time: "22:00", artist: "Imagine Dragons", genre: "Alternatif Rock" },
+      ],
+    },
+    {
+      day: "21 Haziran 2025 - Cumartesi",
+      events: [
+        { time: "15:30", artist: "Can Ozan", genre: "Alternatif" },
+        { time: "17:30", artist: "Athena", genre: "Ska / Punk Rock" },
+        { time: "19:30", artist: "Mor ve Ötesi", genre: "Rock" },
+        { time: "21:30", artist: "Coldplay", genre: "Alternatif / Pop Rock" },
+      ],
+    },
+    {
+      day: "22 Haziran 2025 - Pazar",
+      events: [
+        { time: "14:30", artist: "Edis", genre: "Pop" },
+        { time: "16:30", artist: "Duman", genre: "Rock" },
+        { time: "18:30", artist: "Şebnem Ferah", genre: "Rock" },
+        { time: "20:30", artist: "The Killers", genre: "Alternatif Rock" },
+      ],
+    },
+  ],
+  singers: [
+    {
+      name: "Zeynep Bastık",
+      genre: "Pop",
+      type: "Canlı Performans",
+      time: "18:00",
+      description:
+        "Türkiye’nin en sevilen pop sanatçılarından biri olan Zeynep Bastık, enerjik sahne performansı ve hit şarkılarıyla festivalin ilk gününde sahne alıyor.",
+      highlights: "Spotify Global listelerinde milyonlarca dinlenmeye ulaştı.",
+      links: {
+        instagram: "https://instagram.com/zeynepbastik",
+        spotify: "https://spotify.com/zeynepbastik",
+      },
+    },
+    {
+      name: "Teoman",
+      genre: "Rock",
+      type: "Canlı Performans",
+      time: "20:00",
+      description:
+        "Türk rock müziğinin efsane ismi Teoman, unutulmaz şarkılarıyla festival sahnesinde nostalji ve coşku dolu bir akşam sunuyor.",
+      highlights: "Türkiye’nin en çok dinlenen rock sanatçılarından.",
+      links: {
+        instagram: "https://instagram.com/teoman",
+        spotify: "https://spotify.com/teoman",
+      },
+    },
+    {
+      name: "Imagine Dragons",
+      genre: "Alternatif Rock",
+      type: "Canlı Grup",
+      time: "22:00",
+      description:
+        "Dünya çapında milyonlarca hayranı olan Imagine Dragons, enerjik performansı ve hit şarkılarıyla İstanbul’da unutulmaz bir gece yaşatacak.",
+      highlights: "Grammy ödüllü alternatif rock grubu.",
+      links: {
+        youtube: "https://youtube.com/imaginedragons",
+        spotify: "https://spotify.com/imaginedragons",
+      },
+    },
+    {
+      name: "Coldplay",
+      genre: "Alternatif / Pop Rock",
+      type: "Canlı Grup",
+      time: "21:30",
+      description:
+        "Sahne şovları ve eşsiz repertuarıyla Coldplay, Cumartesi gecesine damga vuracak.",
+      highlights: "Dünyanın en çok bilet satan gruplarından biri.",
+      links: {
+        instagram: "https://instagram.com/coldplay",
+        spotify: "https://spotify.com/coldplay",
+      },
+    },
+    {
+      name: "Duman",
+      genre: "Rock",
+      type: "Canlı Grup",
+      time: "16:30",
+      description:
+        "Türkiye’nin en sevilen rock gruplarından Duman, sahnede unutulmaz şarkılarını seslendirecek.",
+      highlights: "Zeytinli Rock Festivali’nin değişmez gruplarından.",
+      links: {
+        youtube: "https://youtube.com/duman",
+        spotify: "https://spotify.com/duman",
+      },
+    },
+    {
+      name: "Şebnem Ferah",
+      genre: "Rock",
+      type: "Canlı Performans",
+      time: "18:30",
+      description:
+        "Türk rock müziğinin kraliçesi Şebnem Ferah, güçlü sesi ve şarkılarıyla festival sahnesinde olacak.",
+      highlights: "30 yıllık kariyerinde sayısız ödül sahibi.",
+      links: {
+        instagram: "https://instagram.com/sebnemferah",
+        spotify: "https://spotify.com/sebnemferah",
+      },
+    },
+    {
+      name: "Edis",
+      genre: "Pop",
+      type: "Canlı Performans",
+      time: "14:30",
+      description:
+        "Pop müziğin sevilen ismi Edis, sahne enerjisi ve dans şovlarıyla festivale renk katacak.",
+      highlights: "Türkiye’nin en çok dinlenen pop sanatçılarından biri.",
+      links: {
+        instagram: "https://instagram.com/edis",
+        spotify: "https://spotify.com/edis",
+      },
+    },
+    {
+      name: "Athena",
+      genre: "Ska / Punk Rock",
+      type: "Canlı Grup",
+      time: "17:30",
+      description:
+        "Enerjik sahne performansıyla Athena, festivale coşku ve eğlence katacak.",
+      highlights: "Eurovision’da Türkiye’yi temsil eden rock grubu.",
+      links: {
+        youtube: "https://youtube.com/athena",
+        spotify: "https://spotify.com/athena",
+      },
+    },
+    {
+      name: "Mor ve Ötesi",
+      genre: "Rock",
+      type: "Canlı Grup",
+      time: "19:30",
+      description:
+        "Alternatif rock müziğin öncülerinden Mor ve Ötesi, sahnede unutulmaz şarkılarını seslendirecek.",
+      highlights: "Türkiye’nin en önemli rock gruplarından.",
+      links: {
+        instagram: "https://instagram.com/morveotesi",
+        spotify: "https://spotify.com/morveotesi",
+      },
+    },
+    {
+      name: "Can Ozan",
+      genre: "Alternatif",
+      type: "Canlı Performans",
+      time: "15:30",
+      description:
+        "Duygusal şarkıları ve akustik performanslarıyla bilinen Can Ozan, Cumartesi gününe sakin bir başlangıç yapacak.",
+      highlights: "Youtube’da milyonlarca dinlenmeye ulaştı.",
+      links: {
+        youtube: "https://youtube.com/canozan",
+        spotify: "https://spotify.com/canozan",
+      },
+    },
+  ],
+  amenities: [
+    "Ana Sahne",
+    "Alternatif Sahne",
+    "Yeme-İçme Stantları",
+    "Vegan Seçenekler",
+    "Alkol Satışı",
+    "Tuvaletler",
+    "Kamp Alanı",
+    "VIP Alanı",
+    "Telefon Şarj İstasyonları",
+    "İlk Yardım Alanı",
+    "Güvenlik Noktaları",
+    "Otopark",
+  ],
+  locationUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.745627376184!2d4.893723577003981!3d52.3656489476455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6099569640179%3A0x5bb6611a01667b1!2sClub%20Prime!5e1!3m2!1str!2str!4v1756203626078!5m2!1str!2str",
 };
 
 export const canliMuzikData: EventData[] = [

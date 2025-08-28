@@ -90,18 +90,18 @@ export function Navbar() {
     <header
       className={`transition-all duration-300 z-50 ${
         scrolled
-          ? "fixed top-0 w-full h-24 bg-[#040519]/50 backdrop-blur-md backdrop-saturate-150 shadow-sm"
+          ? "fixed top-0 w-full md:h-24 h-20 bg-[#040519]/50 backdrop-blur-md backdrop-saturate-150 shadow-sm"
           : "absolute top-0 w-full bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex h-24 items-center justify-between px-4 lg:px-0">
+      <div className="container mx-auto flex md:h-24 h-20 items-center justify-between px-4 lg:px-0">
         {/* LOGO */}
         <Link
           href="/"
           className="font-bold text-xl transition-colors duration-300
             text-[#FF007A]"
         >
-          <Logo className="w-20 h-20 text-[#FF007A] mt-2 font-extralight" />
+          <Logo className="md:w-20 md:h-20 w-12 h-12 text-[#FF007A] mt-2 font-extralight" />
         </Link>
 
         {/* MENÜ ORTADA */}

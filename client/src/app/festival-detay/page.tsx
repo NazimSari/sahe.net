@@ -4,12 +4,14 @@ import DetailsPriceCardFestival from "@/components/DeatilsPriceCard/DetailsPrice
 import DetailsTabFstival from "@/components/DeatilsTab/DetailsTabFstival";
 import FestivalSection from "@/components/Home/FestivalSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
+import MobileVideoSlider from "@/components/SliderGsap/MobilVideoSlider";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { mekanDetaySayfasiVideoData } from "@/lib/data";
 
 export default function FestivalDetayPage() {
   return (
@@ -59,69 +61,24 @@ export default function FestivalDetayPage() {
               coşkusunu şimdiden hisset!
             </p>
           </div>
-          <div className="flex flex-col gap-4 justify-center p-3 md:p-0">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/h61QG4s0I3U?si=ttnDq6KhiF9w_QgC"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/ub747pprmJ8?si=WVDdgV-WtV02TaUL"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/beGjncfEPt8?si=jxvxkeT8j7gPpiO3"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/bVRnMrl2oj8?si=A2GkJeeHF5K-_bfA"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/rdlvPe959Ck?si=3XeHHNnXAUhUYgwu"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="relative aspect-video">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/mMfxI3r_LyA?si=4gh5vL8jO7ObtrG-"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
+          <div className="hidden md:flex flex-col gap-4 justify-center p-3 md:p-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {mekanDetaySayfasiVideoData.map((video) => (
+                <div key={video.id} className="relative aspect-video">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-xl"
+                    src={video.src}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              ))}
             </div>
+          </div>
+          <div className="md:hidden">
+            <MobileVideoSlider videoData={mekanDetaySayfasiVideoData} />
           </div>
         </div>
       </section>
@@ -136,7 +93,7 @@ export default function FestivalDetayPage() {
             <Accordion
               type="single"
               collapsible
-              className="w-full md:w-1/2"
+              className="w-full lg:w-1/2"
               defaultValue="item-1"
             >
               <AccordionItem value="item-1">
