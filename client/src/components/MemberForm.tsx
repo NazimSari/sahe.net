@@ -120,7 +120,7 @@ export default function MemberForm() {
         </div>
         <div className="flex flex-col mt-2">
           <Select onValueChange={handleSelectChange} value={formData.talent}>
-            <SelectTrigger className="mt-4 p-6  text-[#f5f5f5] w-full md:text-base text-sm">
+            <SelectTrigger className="mt-3 md:p-6 py-6 text-[#f5f5f5] w-full md:text-base text-sm min-w-0">
               <SelectValue placeholder="Yetkinliğinizi Seçiniz" />
             </SelectTrigger>
             <SelectContent>
@@ -149,7 +149,7 @@ export default function MemberForm() {
           </Select>
           <Button
             disabled={isLoading}
-            className="md:p-6 p-3 mt-5 text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200"
+            className="md:p-6 p-3 text-sm md:text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200 w-fit px-8 md:w-full"
             size={"lg"}
             variant="default"
             type="submit"

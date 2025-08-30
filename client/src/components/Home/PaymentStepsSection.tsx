@@ -14,7 +14,7 @@ const PaymentStepsSection: React.FC = () => {
     <section className="mx-auto pb-16">
       <div className="container mx-auto md:p-0">
         <div className="flex flex-col gap-4 h-full justify-center px-2">
-          <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug md:mt-16 mt-8">
+          <h3 className="md:text-4xl text-2xl max-w-3xl ml-2 font-bold text-[#1A1A2E] md:leading-snug md:mt-16">
             4 Adımda Sahneni Kur!
           </h3>
           <p className="text-[#1A1A2E] text-sm md:text-base max-w-xl ml-2">
@@ -29,7 +29,7 @@ const PaymentStepsSection: React.FC = () => {
           ))}
         </div>
         {/* Mobil ekranlarda (lg altı) MobileStepsCards görünecek */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden gap-4 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden gap-4">
           <MobilePaymentStepsSlider stepsData={stepsData} />
         </div>
       </div>

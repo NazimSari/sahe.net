@@ -101,7 +101,7 @@ const MobileInfoCardSwipeSlider: React.FC<SceneCardsProps> = ({
   const { ref: swipeRef, ...swipeHandlers } = handlers;
 
   return (
-    <div className="w-screen relative h-[60vh] flex items-center overflow-hidden">
+    <div className="w-full relative h-[500px] flex items-center overflow-hidden">
       <div
         ref={(node) => {
           containerRef.current = node;

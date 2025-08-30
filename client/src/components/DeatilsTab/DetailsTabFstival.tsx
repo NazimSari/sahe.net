@@ -194,12 +194,7 @@ export default function DetailsTabFstival() {
       </Tabs>
       {/* Küçük ekranlar için Accordion ile içerik gösterimi */}
       <div className="lg:hidden">
-        <Accordion
-          type="single"
-          collapsible
-          className="w-full"
-          defaultValue="item-1"
-        >
+        <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
               <p className="text-[#f5f5f5] md:text-xl text-lg cursor-pointer">

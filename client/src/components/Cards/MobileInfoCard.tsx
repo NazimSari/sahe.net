@@ -60,7 +60,7 @@ const MobileInfoCard: React.FC<MobilStageCardProps> = ({ item, type }) => {
           className="flex items-center text-xs text-[#FF007A] font-semibold cursor-pointer"
         >
           Rezervasyon Yap
-          <ChevronRight size={16} className="text-[#FF007A] ml-1 mt-1" />
+          <ChevronRight size={14} className="text-[#FF007A] mt-1" />
         </Link>
       </div>
     </div>

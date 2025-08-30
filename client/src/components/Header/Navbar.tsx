@@ -20,6 +20,7 @@ import {
   SheetTrigger,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet";
 
 import {
@@ -30,7 +31,6 @@ import {
 } from "@/components/ui/accordion";
 
 import { Button } from "@/components/ui/button";
-import Logo from "../icons/Logo";
 
 const categories: {
   title: string;
@@ -98,10 +98,13 @@ export function Navbar() {
         {/* LOGO */}
         <Link
           href="/"
-          className="font-bold text-xl transition-colors duration-300
+          className="font-bold
             text-[#FF007A]"
         >
-          <Logo className="md:w-20 md:h-20 w-12 h-12 text-[#FF007A] mt-2 font-extralight" />
+          <span className="text-sm md:text-lg flex items-center">
+            <img src={"/logo.png"} alt="Sahne.net" className="w-12 h-12" />
+            <span className="hidden md:block">Sahne.net</span>
+          </span>
         </Link>
 
         {/* MENÜ ORTADA */}
@@ -196,6 +199,9 @@ export function Navbar() {
           <SheetContent side="left" className="w-[280px] bg-[#040519]">
             <SheetHeader>
               <SheetTitle className="text-[#FF007A] text-lg">Sahne</SheetTitle>
+              <SheetDescription className="sr-only">
+                Menü açıklaması
+              </SheetDescription>
             </SheetHeader>
             <div className="mt-4 flex flex-col gap-5 p-3 text-[#f5f5f5] text-lg font-semibold">
               <Link

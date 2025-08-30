@@ -5,14 +5,6 @@ import FestivalCards from "../Cards/FestivalCards";
 import { festivalSectionData } from "@/lib/data";
 import MobileFestivalCardSlider from "../SliderGsap/MobilFestivalCardSlider";
 
-interface FestivalData {
-  img: string;
-  title: string;
-  description: string;
-  day: string;
-  month: string;
-}
-
 const FestivalSection: React.FC = () => {
   return (
     <section className="mx-auto my-16 w-full">

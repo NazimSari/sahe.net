@@ -31,6 +31,7 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import { BookingCalendar } from "@/components/BookingCalendar";
+import { Separator } from "@/components/ui/separator";
 
 export default function SanatciDetayPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -171,7 +172,7 @@ export default function SanatciDetayPage() {
       </section>
       <section className="bg-[#160317]">
         <div className="container mx-auto pb-16">
-          <div className="flex flex-col gap-4 justify-center mb-10">
+          <div className="flex flex-col gap-4 justify-center md:mb-10">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
               {sanatci.name} Sahnesi
             </h3>
@@ -206,12 +207,16 @@ export default function SanatciDetayPage() {
         </div>
       </section>
       <section className="bg-[#160317]">
-        <div className="container mx-auto py-8 md:py-16 px-4">
-          <div className="flex flex-row gap-4 md:gap-8 items-center justify-evenly overflow-x-auto no-scrollbar">
+        <div className="container mx-auto pb-16 md:py-16 px-4">
+          <div className="flex flex-col sm:flex-row gap-6 md:gap-8 items-center justify-evenly">
+            {/* 1. Kart */}
             <div className="flex flex-col items-center gap-3 md:gap-5 flex-shrink-0">
-              <div className="relative border border-[#FF007A] rounded-full aspect-square w-[120px] md:w-[150px] lg:w-[200px]">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <p className="text-[#FF007A] text-2xl lg:text-4xl font-semibold">
+              <div
+                className="relative border border-[#FF007A] rounded-full aspect-square 
+                        w-[80px] sm:w-[120px] md:w-[150px] lg:w-[200px]"
+              >
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <p className="text-[#FF007A] text-lg sm:text-2xl lg:text-4xl font-semibold">
                     100%
                   </p>
                 </div>
@@ -220,23 +225,39 @@ export default function SanatciDetayPage() {
                 Tekliflere Yanıt Verme Oranı
               </p>
             </div>
+
+            {/* 2. Kart */}
             <div className="flex flex-col items-center gap-3 md:gap-5 flex-shrink-0">
-              <div className="relative border border-[#FF007A] rounded-full aspect-square w-[120px] md:w-[150px] lg:w-[200px]">
-                <div className="absolute lg:hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <Check className="text-[#FF007A]" size={48} strokeWidth={3} />
-                </div>
-                <div className="absolute hidden lg:block top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <Check className="text-[#FF007A]" size={80} strokeWidth={3} />
+              <div
+                className="relative border border-[#FF007A] rounded-full aspect-square 
+                        w-[80px] sm:w-[120px] md:w-[150px] lg:w-[200px]"
+              >
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <Check
+                    className="text-[#FF007A] sm:hidden"
+                    size={28} // mobil default
+                    strokeWidth={3}
+                  />
+                  <Check
+                    className="text-[#FF007A] sm:block hidden"
+                    size={48} // mobil default
+                    strokeWidth={3}
+                  />
                 </div>
               </div>
               <p className="text-[#f5f5f5] text-center text-sm md:text-base">
                 Kimlik Onaylı
               </p>
             </div>
+
+            {/* 3. Kart */}
             <div className="flex flex-col items-center gap-3 md:gap-5 flex-shrink-0">
-              <div className="relative border border-[#FF007A] rounded-full aspect-square w-[120px] md:w-[150px] lg:w-[200px]">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <p className="text-[#FF007A] lg:text-3xl font-semibold">
+              <div
+                className="relative border border-[#FF007A] rounded-full aspect-square 
+                        w-[80px] sm:w-[120px] md:w-[150px] lg:w-[200px]"
+              >
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <p className="text-[#FF007A] text-base sm:text-lg lg:text-3xl font-semibold text-center sm:text-start">
                     5 Saat
                   </p>
                 </div>
@@ -275,9 +296,9 @@ export default function SanatciDetayPage() {
         <div className="container mx-auto py-8 md:py-16 px-4">
           <StepsSection />
           <div className="flex flex-col justify-center gap-5">
-            <div className="flex items-center gap-6">
-              <span>
-                <FaDotCircle className="text-3xl" />
+            <div className="flex items-center md:gap-4 gap-2">
+              <span className="hidden md:block">
+                <FaDotCircle className="text-2xl" />
               </span>
               <p className="max-w-5xl md:text-base text-sm">
                 Rezervasyonun onaylanması için havuz hesaba yaptığınız hizmet
@@ -287,9 +308,9 @@ export default function SanatciDetayPage() {
                 cayma hakkınızı da kullanabilirsiniz.
               </p>
             </div>
-            <div className="flex items-center gap-6">
-              <span>
-                <FaDotCircle className="text-3xl" />
+            <div className="flex items-center md:gap-4 gap-2">
+              <span className="hidden md:block">
+                <FaDotCircle className="text-2xl" />
               </span>
               <p className="max-w-5xl md:text-base text-sm">
                 <span className="font-semibold">14 Gün Cayma Hakkı:</span>{" "}
@@ -303,8 +324,8 @@ export default function SanatciDetayPage() {
         </div>
       </section>
       <section className="bg-[#160317]">
-        <div className="container mx-auto py-16">
-          <div className="flex flex-col gap-4 justify-center mb-10">
+        <div className="container mx-auto md:py-16 pt-16">
+          <div className="flex flex-col gap-4 justify-center md:mb-10">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
               Benzer Saheneler
             </h3>
@@ -319,7 +340,7 @@ export default function SanatciDetayPage() {
           <div className="mt-8 hidden md:block">
             <InfoCard data={displayArtists} type="artist" />
           </div>
-          <div className="mt-8 md:hidden">
+          <div className="md:hidden">
             <MobileInfoCardSwipeSlider data={displayArtists} type="artist" />
           </div>
         </div>

@@ -107,7 +107,7 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="absolute inset-0 lg:hidden z-0">
+          <div className="absolute inset-0 lg:hidden z-0 pointer-events-none">
             <img
               src="/hero.png"
               alt="hero image"

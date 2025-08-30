@@ -60,7 +60,13 @@ const SliderCard: React.FC<CardProps> = ({ path, name, slug }) => {
 
   return (
     <div className="relative w-[60vw] max-w-[250px] aspect-square overflow-hidden bg-white flex justify-center items-center rounded-lg">
-      <Image src={path} alt={name} fill style={{ objectFit: "cover" }} />
+      <Image
+        src={path}
+        alt={name}
+        fill
+        style={{ objectFit: "cover" }}
+        sizes="(max-width: 768px) 60vw, 250px"
+      />
       <div
         ref={overlayRef}
         className="absolute inset-0 bg-black opacity-0 pointer-events-none"

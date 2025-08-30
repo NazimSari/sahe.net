@@ -29,7 +29,7 @@ export const festivalSectionData = [
     title: "Zeytinli Rock Festivali",
     description:
       "Muğla’da rock müzik coşkusu! Efsane gruplar ve genç yeteneklerle dolu bu festival, yazın en enerjik etkinliği.",
-    img: "/zeytinli-festival.jpg",
+    img: "https://i.imgur.com/uEFp0X6.jpeg",
     month: "NİS",
     day: "26",
   },
@@ -37,7 +37,7 @@ export const festivalSectionData = [
     title: "İstanbul Müzik Festivali",
     description:
       "İstanbul’un tarihi mekanlarında klasik müzik, opera ve çağdaş eserlerle buluş! 53. yılında bu festival, müzik tutkunlarını bir araya...",
-    img: "/istanbul-festival.jpeg",
+    img: "https://i.imgur.com/JiIO5BJ.jpeg",
     month: "TEM",
     day: "31",
   },
@@ -45,7 +45,7 @@ export const festivalSectionData = [
     title: "Antalya Akra Jazz Festivali",
     description:
       "Antalya’da cazın büyüsüne kapıl! Yerli ve uluslararası sanatçılar, Akdeniz’in eşsiz atmosferinde seni bekliyor.",
-    img: "/akra-festival.png",
+    img: "https://i.imgur.com/6AHOYwg.png",
     month: "HAZ",
     day: "16",
   },
@@ -53,51 +53,77 @@ export const festivalSectionData = [
     title: "Rock n Cock Müzik Festivali",
     description:
       "Antalya’da cazın büyüsüne kapıl! Yerli ve uluslararası sanatçılar, Akdeniz’in eşsiz atmosferinde seni bekliyor.",
-    img: "/rock-festival.jpeg",
+    img: "https://i.imgur.com/AUCrLx7.jpeg",
     month: "AĞU",
     day: "09",
   },
 ];
 export const venueSectionData: VenueData[] = [
   {
-    img: "/canli-music.jpg",
+    img: "https://i.ibb.co/4wPwgFxh/canli-music.jpg",
     title: "Canlı Müzik Mekanları",
     isLarge: true,
   },
   {
-    img: "/roof.jpg",
+    img: "https://i.ibb.co/6xhs8XF/roof.jpg",
     title: "Roof Top Mekanlar",
   },
   {
-    img: "/kokteyl.jpg",
+    img: "https://i.ibb.co/Kjzt8mJX/kokteyl.jpg",
     title: "Kokteyl Mekanları",
   },
   {
-    img: "/beach.jpg",
+    img: "https://i.ibb.co/KxXjS9CB/beach.jpg",
     title: "Beach Club",
   },
   {
-    img: "/vip-dj.jpg",
+    img: "https://i.ibb.co/vxLnDDRG/vip-dj.jpg",
     title: "Vip Dj Bars",
   },
 ];
 export const newArtistsSlider: Artist[] = [
-  { id: 1, name: "Artist 1", category: "Pop", imageUrl: "/dj-performans.jpg" },
-  { id: 2, name: "Artist 2", category: "Rock", imageUrl: "/rock-music.jpg" },
-  { id: 3, name: "Artist 3", category: "Jazz", imageUrl: "/jazz-music.jpg" },
+  {
+    id: 1,
+    name: "Şenay Kara",
+    category: "Pop",
+    imageUrl: "https://i.ibb.co/9m1W9kDM/new1.jpg",
+  },
+  {
+    id: 2,
+    name: "Meltem Yılmaz",
+    category: "Rock",
+    imageUrl: "https://i.ibb.co/p67y6HMS/new2.jpg",
+  },
+  {
+    id: 3,
+    name: "Handan Candan",
+    category: "Jazz",
+    imageUrl: "https://i.ibb.co/y1xm9Jz/new5.jpg",
+  },
   {
     id: 4,
-    name: "Artist 4",
+    name: "Ice King",
     category: "Hip-Hop",
-    imageUrl: "/latin-perkusyon.jpg",
+    imageUrl: "https://i.ibb.co/N6RZR9YF/new7.jpg",
   },
-  { id: 5, name: "Artist 5", category: "Electronic", imageUrl: "/nefes.jpg" },
+  {
+    id: 5,
+    name: "Cenk",
+    category: "Electronic",
+    imageUrl: "https://i.ibb.co/4nGX8k5t/new4.jpg",
+  },
+  {
+    id: 6,
+    name: "Harun Demircan",
+    category: "Türkçe Pop",
+    imageUrl: "https://i.ibb.co/XZxgbj3K/new6.jpg",
+  },
 ];
 
 export const eventTypesSlider = [
   {
     id: 1,
-    path: "/dugun.jpg",
+    path: "https://i.ibb.co/cK7mPKjD/dugun-2.jpg",
     name: "Düğün",
     slug: "dugun",
     title: "Düğün Etkinlikleri",
@@ -106,7 +132,7 @@ export const eventTypesSlider = [
   },
   {
     id: 2,
-    path: "/ozel-cekim.jpg",
+    path: "https://i.ibb.co/nXJNWVJ/ozel-cekim.jpg",
     name: "Özel Çekim",
     slug: "ozel-cekim",
     title: "Özel Çekimler",
@@ -115,7 +141,7 @@ export const eventTypesSlider = [
   },
   {
     id: 3,
-    path: "/happy-hour.jpg",
+    path: "https://i.ibb.co/PGFBZbvr/happy-hour.jpg",
     name: "Happy Hour",
     slug: "happy-hour",
     title: "Happy Hour Etkinlikleri",
@@ -124,7 +150,7 @@ export const eventTypesSlider = [
   },
   {
     id: 4,
-    path: "/baby-shower.jpg",
+    path: "https://i.ibb.co/7t8qHDVR/baby-shower.jpg",
     name: "Bebek Partisi",
     slug: "baby-shower",
     title: "Baby Shower Etkinlikleri",
@@ -134,7 +160,7 @@ export const eventTypesSlider = [
 
   {
     id: 5,
-    path: "/dj-performans.jpg",
+    path: "https://i.ibb.co/Tq40sJ94/dj.jpg",
     name: "DJ Performansı",
     slug: "dj-performans",
     title: "DJ Performansı",
@@ -143,7 +169,7 @@ export const eventTypesSlider = [
   },
   {
     id: 6,
-    path: "/dogum-gunu.jpg",
+    path: "https://i.ibb.co/99MjF1XQ/dogum-gunu.jpg",
     name: "Doğum Günü",
     slug: "dogum-gunu",
     title: "Doğum Günü Etkinlikleri",
@@ -155,7 +181,7 @@ export const eventTypesSlider = [
 export const musicTypesSlider = [
   {
     id: 1,
-    path: "/dugun-orkestra.jpg",
+    path: "https://i.ibb.co/QvPW2PzM/dugun-orkestra.jpg",
     name: "Düğün Orkestrası",
     slug: "dugun-orkestrasi",
     title: "Düğün Orkestra Sanatçıları",
@@ -164,7 +190,7 @@ export const musicTypesSlider = [
   },
   {
     id: 2,
-    path: "/etnik-music.jpg",
+    path: "https://i.ibb.co/DgTxbchX/etnik-music.jpg",
     name: "Etnik Müzik",
     slug: "etnik-muzik",
     title: "Etnik Müzik Sanatçıları",
@@ -173,7 +199,7 @@ export const musicTypesSlider = [
   },
   {
     id: 3,
-    path: "/jazz-music.jpg",
+    path: "https://i.ibb.co/zhyB137F/jazz-music.jpg",
     name: "Jazz Müzik",
     slug: "jazz-muzik",
     title: "Jazz Müzik Sanatçıları",
@@ -182,7 +208,7 @@ export const musicTypesSlider = [
   },
   {
     id: 4,
-    path: "/rock-music.jpg",
+    path: "https://i.ibb.co/TxLqB4bQ/rock-music.jpg",
     name: "Rock Müzik",
     slug: "rock-muzik",
     title: "Rock Müzik Sanatçıları",
@@ -191,7 +217,7 @@ export const musicTypesSlider = [
   },
   {
     id: 5,
-    path: "/dj-performans.jpg",
+    path: "https://i.ibb.co/S7mcBM6q/djperformans.jpg",
     name: "Elektronik Müzik",
     slug: "elektronik-muzik",
     title: "DJ Performans Sanatçıları",
@@ -200,7 +226,7 @@ export const musicTypesSlider = [
   },
   {
     id: 6,
-    path: "/latin-perkusyon.jpg",
+    path: "https://i.ibb.co/JFsgPCb8/latin-perkusyon.jpg",
     name: "Latin Perküsyon",
     slug: "latin-perkusyon",
     title: "Latin Perküsyon Sanatçıları",
@@ -239,7 +265,7 @@ export const stepsData = [
 export const sahneData: EventData[] = [
   {
     name: "Kamil Aydınlı",
-    url: "/kamil.jpg",
+    url: "https://i.ibb.co/ccDXZxZd/kamil.jpg",
     description:
       "Pop ve funk’ın enerjik birleşimi! Düğün ve partiler için mükemmel.",
     musicType: "Rock",
@@ -257,7 +283,7 @@ export const sahneData: EventData[] = [
   },
   {
     name: "Micheal Tartum",
-    url: "/micheal.jpg",
+    url: "https://i.ibb.co/CpPqXqcx/micheal.jpg",
     description:
       "Elektronik ritimlerle dans pistini ateşler. Özel etkinliklerin aranan ismi!",
     musicType: "Jazz",
@@ -274,7 +300,7 @@ export const sahneData: EventData[] = [
   },
   {
     name: "Group Brooke",
-    url: "/brooklin.jpg",
+    url: "https://i.ibb.co/VnrS74K/brooklin.jpg",
     description:
       "Sert ritimler, güçlü sahne! Festivaller ve partiler için hazır.",
     musicType: "Rock",
@@ -291,7 +317,7 @@ export const sahneData: EventData[] = [
   },
   {
     name: "Group Nefes",
-    url: "/nefes.jpg",
+    url: "https://i.ibb.co/4hpYmdq/nefes.jpg",
     description: "Zarif klasik müzikle nişan ve davetlere sınıf katar.",
     musicType: "Enstrümantal",
     badgeText: "İzmir",
@@ -1156,7 +1182,7 @@ export const banners = [
     hour: "19:00",
     venue: "Babylon",
     location: "İstanbul",
-    image: "/dogum-gunu.jpg",
+    image: "https://i.ibb.co/d0CvxFwP/venue1.jpg",
   },
   {
     id: 2,
@@ -1165,7 +1191,7 @@ export const banners = [
     hour: "20:00",
     venue: "Vakkoroma Cafe",
     location: "İstanbul",
-    image: "/dj-performans.jpg",
+    image: "https://i.ibb.co/qMz0zPNP/venue2.jpg",
   },
   {
     id: 3,
@@ -1174,7 +1200,7 @@ export const banners = [
     hour: "21:30",
     venue: "Black Box",
     location: "Ankara",
-    image: "/canli-music.jpg",
+    image: "https://i.ibb.co/0yDrj0d7/venue3.jpg",
   },
   {
     id: 4,
@@ -1183,7 +1209,7 @@ export const banners = [
     hour: "22:00",
     venue: "Cath Restaurant",
     location: "Antalya",
-    image: "/dugun-orkestra.jpg",
+    image: "https://i.ibb.co/Ndv7Qnx9/venue4.jpg",
   },
 ];
 
