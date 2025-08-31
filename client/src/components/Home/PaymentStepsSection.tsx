@@ -14,7 +14,7 @@ const PaymentStepsSection: React.FC = () => {
     <section className="mx-auto pb-16">
       <div className="container mx-auto md:p-0">
         <div className="flex flex-col gap-4 h-full justify-center px-2">
-          <h3 className="md:text-4xl text-2xl max-w-3xl ml-2 font-bold text-[#1A1A2E] md:leading-snug md:mt-16">
+          <h3 className="md:text-4xl text-2xl max-w-3xl ml-2 font-bold text-[#1A1A2E] md:leading-snug">
             4 Adımda Sahneni Kur!
           </h3>
           <p className="text-[#1A1A2E] text-sm md:text-base max-w-xl ml-2">

@@ -36,7 +36,7 @@ export default function MobilArtistSliderCard({
               <span>İncele</span>
             </Link>
           </div>
-          <div className="absolute bottom-0 left-0 bg-black/70 h-20 w-full">
+          <div className="absolute bottom-0 left-0 bg-black/70 h-16 w-full">
             <div className="z-50 text-white flex flex-col items-center h-full justify-center font-semibold">
               <p className="text-[#f5f5f5] text-xs">{category}</p>
               <h3 className="text-sm font-semibold mt-2 text-[#f5f5f5]">

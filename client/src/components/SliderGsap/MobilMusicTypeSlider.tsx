@@ -92,7 +92,12 @@ export default function MobilMusicTypeSlider() {
         {[...musicTypesSlider, ...musicTypesSlider, ...musicTypesSlider].map(
           (item, index) => (
             <div key={index} className="slider-card">
-              <MobilTypeSectionsSwipeCard path={item.path} name={item.name} />
+              <MobilTypeSectionsSwipeCard
+                path={item.path}
+                name={item.name}
+                slug={item.slug}
+                basePath="muzik-turleri"
+              />
             </div>
           )
         )}

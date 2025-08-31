@@ -171,7 +171,7 @@ export default function SanatciDetayPage() {
         </div>
       </section>
       <section className="bg-[#160317]">
-        <div className="container mx-auto pb-16">
+        <div className="container mx-auto md:pb-16">
           <div className="flex flex-col gap-4 justify-center md:mb-10">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
               {sanatci.name} Sahnesi

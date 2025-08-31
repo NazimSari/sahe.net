@@ -32,6 +32,7 @@ export const festivalSectionData = [
     img: "https://i.imgur.com/uEFp0X6.jpeg",
     month: "NİS",
     day: "26",
+    slug: "zeytinli-rock-festivali",
   },
   {
     title: "İstanbul Müzik Festivali",
@@ -40,6 +41,7 @@ export const festivalSectionData = [
     img: "https://i.imgur.com/JiIO5BJ.jpeg",
     month: "TEM",
     day: "31",
+    slug: "istanbul-muzik-festivali",
   },
   {
     title: "Antalya Akra Jazz Festivali",
@@ -48,6 +50,7 @@ export const festivalSectionData = [
     img: "https://i.imgur.com/6AHOYwg.png",
     month: "HAZ",
     day: "16",
+    slug: "akra-jazz-festivali",
   },
   {
     title: "Rock n Cock Müzik Festivali",
@@ -56,6 +59,7 @@ export const festivalSectionData = [
     img: "https://i.imgur.com/AUCrLx7.jpeg",
     month: "AĞU",
     day: "09",
+    slug: "rock-n-cock-muzik-festivali",
   },
 ];
 export const venueSectionData: VenueData[] = [

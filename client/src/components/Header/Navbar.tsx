@@ -43,7 +43,7 @@ const categories: {
     href: "/bu-gece-sahne",
     description:
       "Canlı müzik performansları, sahne deneyimleri ve geceye renk katan etkinlikler.",
-    img: "/rock-music.jpg",
+    img: "/page5.jpg",
   },
   {
     title: "Mekanlar",
@@ -198,7 +198,9 @@ export function Navbar() {
 
           <SheetContent side="left" className="w-[280px] bg-[#040519]">
             <SheetHeader>
-              <SheetTitle className="text-[#FF007A] text-lg">Sahne</SheetTitle>
+              <SheetTitle className="text-[#FF007A] text-lg">
+                Sahne.net
+              </SheetTitle>
               <SheetDescription className="sr-only">
                 Menü açıklaması
               </SheetDescription>
@@ -268,6 +270,7 @@ export function Navbar() {
               <div className="mt-4 flex flex-col gap-2">
                 <Link
                   href="/#hero-section"
+                  onClick={() => setOpen(false)}
                   className="w-fit px-4 text-base bg-transparent border border-[#FF007A] hover:bg-[#FF007A] text-white rounded-md py-1 text-center transition-all duration-300 hover:text-[#f5f5f5]"
                 >
                   Ön Kayıt

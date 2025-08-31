@@ -1,15 +1,26 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface CardProps {
   path: string;
   name: string;
+  slug: string;
+  basePath: string;
 }
 
-const MobilTypeSectionsSwipeCard: React.FC<CardProps> = ({ path, name }) => {
+const MobilTypeSectionsSwipeCard: React.FC<CardProps> = ({
+  path,
+  name,
+  slug,
+  basePath,
+}) => {
   return (
-    <div className="relative w-[60vw] max-w-[250px] aspect-square overflow-hidden bg-white flex justify-center items-center rounded-lg">
+    <Link
+      href={`/${basePath}/${slug}`}
+      className="relative w-[60vw] max-w-[250px] aspect-square overflow-hidden bg-white flex justify-center items-center rounded-lg"
+    >
       <Image src={path} alt={name} fill style={{ objectFit: "cover" }} />
       <div className="absolute inset-0 bg-black opacity-0 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 bg-black/70 h-16 w-full">
@@ -18,7 +29,7 @@ const MobilTypeSectionsSwipeCard: React.FC<CardProps> = ({ path, name }) => {
           {name}
         </span>
       </div>
-    </div>
+    </Link>
   );
 };
 

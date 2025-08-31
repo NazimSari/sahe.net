@@ -168,7 +168,7 @@ export default function EtkinlikTurleriPage() {
           </div>
         </div>
       </section>
-      <section className="w-full py-16">
+      <section className="w-full md:py-16">
         <div className="container mx-auto">
           <div className="mt-8 hidden md:block">
             <SceneCards data={selectedData} type="artist" />

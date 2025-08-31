@@ -103,6 +103,7 @@ export default function HeroSection() {
                   src="/hero.png"
                   alt="hero image"
                   className="w-full h-full object-cover object-center"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                 />
               </div>
             </div>

@@ -16,7 +16,7 @@ export default function MusicTypeSection() {
   };
   return (
     <>
-      <section className="w-full bg-[#040519]">
+      <section className="w-full bg-[#040519] mb-16">
         <div className="container mx-auto">
           <div className="flex flex-col gap-4 h-full justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug md:mt-16 mt-8">

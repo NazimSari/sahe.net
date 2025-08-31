@@ -93,7 +93,12 @@ export default function MobilEventTypeSlider() {
         {[...eventTypesSlider, ...eventTypesSlider, ...eventTypesSlider].map(
           (item, index) => (
             <div key={index} className="slider-card">
-              <MobilTypeSectionsSwipeCard path={item.path} name={item.name} />
+              <MobilTypeSectionsSwipeCard
+                path={item.path}
+                name={item.name}
+                slug={item.slug}
+                basePath="etkinlik-turleri"
+              />
             </div>
           )
         )}

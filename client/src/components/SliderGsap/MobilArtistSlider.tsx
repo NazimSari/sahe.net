@@ -79,7 +79,7 @@ export default function MobilArtistSlider() {
   });
   const { ref: swipeRef, ...swipeHandlers } = handlers;
   return (
-    <div className="w-full relative h-[40vh] flex items-center overflow-hidden">
+    <div className="w-full relative h-[500px] flex items-center overflow-hidden">
       <div
         ref={(node) => {
           containerRef.current = node;
