@@ -13,7 +13,7 @@ export default function InfoSection() {
   };
   return (
     <section className="mx-auto py-32 w-full bg-[#040519]">
-      <div className="container w-full mx-auto p-4 md:p-0 h-full">
+      <div className="container w-full mx-auto px-4 h-full">
         <div className="flex flex-col lg:flex-row gap-8 md:gap-4 justify-center lg:justify-between items-center h-full text-center lg:text-left">
           {/* Başlık */}
           <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#f5f5f5] leading-snug max-w-2xl">

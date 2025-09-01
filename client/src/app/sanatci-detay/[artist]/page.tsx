@@ -31,7 +31,6 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import { BookingCalendar } from "@/components/BookingCalendar";
-import { Separator } from "@/components/ui/separator";
 
 export default function SanatciDetayPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -327,7 +326,7 @@ export default function SanatciDetayPage() {
         <div className="container mx-auto md:py-16 pt-16">
           <div className="flex flex-col gap-4 justify-center md:mb-10">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
-              Benzer Saheneler
+              Benzer Sahneler
             </h3>
             <p
               id="scene-paragraf"

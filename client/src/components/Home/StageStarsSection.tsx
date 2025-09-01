@@ -3,15 +3,13 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { sahneData } from "@/lib/data";
 import InfoCard from "../Cards/InfoCard";
-import MobileInfoCard from "../Cards/MobileInfoCard";
-import MobileStageSlider from "../SliderGsap/MobileInfoCardSwipeSlider";
 import MobileInfoCardSwipeSlider from "../SliderGsap/MobileInfoCardSwipeSlider";
 
 export default function StageStarsSection() {
   return (
     <>
       <section id="scene-stars" className="mx-auto  my-16">
-        <div className="container mx-auto md:p-0 flex flex-col justify-between h-full">
+        <div className="container mx-auto px-2 flex flex-col justify-between h-full">
           <div className="flex items-center justify-between">
             <div className="flex flex-col gap-4  justify-center">
               <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug">

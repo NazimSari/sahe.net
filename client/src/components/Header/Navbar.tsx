@@ -88,22 +88,26 @@ export function Navbar() {
 
   return (
     <header
-      className={`transition-all duration-300 z-50 ${
+      className={`transition-all duration-300 z-50 overflow-hidden ${
         scrolled
           ? "fixed top-0 w-full md:h-24 h-20 bg-[#040519]/50 backdrop-blur-md backdrop-saturate-150 shadow-sm"
           : "absolute top-0 w-full bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex md:h-24 h-20 items-center justify-between px-4 lg:px-0">
+      <div className="container mx-auto flex md:h-24 h-20 items-center justify-between px-4">
         {/* LOGO */}
         <Link
           href="/"
-          className="font-bold
+          className="font-black
             text-[#FF007A]"
         >
           <span className="text-sm md:text-lg flex items-center">
-            <img src={"/logo.png"} alt="Sahne.net" className="w-12 h-12" />
-            <span className="hidden md:block">Sahne.net</span>
+            <img
+              src={"/logo.png"}
+              alt="Sahne.net"
+              className="md:w-12 md:h-12 h-10 w-10 ml-[-20px]"
+            />
+            <span className="ml-[-8px]">Sahne.net</span>
           </span>
         </Link>
 
@@ -199,7 +203,14 @@ export function Navbar() {
           <SheetContent side="left" className="w-[280px] bg-[#040519]">
             <SheetHeader>
               <SheetTitle className="text-[#FF007A] text-lg">
-                Sahne.net
+                <span className="text-sm md:text-lg flex items-center">
+                  <img
+                    src={"/logo.png"}
+                    alt="Sahne.net"
+                    className="md:w-12 md:h-12 h-10 w-10"
+                  />
+                  <span className="font-black">Sahne.net</span>
+                </span>
               </SheetTitle>
               <SheetDescription className="sr-only">
                 Menü açıklaması

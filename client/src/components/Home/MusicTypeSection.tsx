@@ -17,7 +17,7 @@ export default function MusicTypeSection() {
   return (
     <>
       <section className="w-full bg-[#040519] mb-16">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-2">
           <div className="flex flex-col gap-4 h-full justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug md:mt-16 mt-8">
               Her Zevke Uygun Ritimler!
@@ -35,7 +35,7 @@ export default function MusicTypeSection() {
           <MobilMusicTypeSlider />
         </div>
         <div className="mx-auto container pb-16">
-          <div className="flex gap-4 h-full items-center w-fit p-3 md:p-0">
+          <div className="flex gap-4 h-full items-center w-fit px-2">
             <Button
               variant="outline"
               className="cursor-pointer px-8"

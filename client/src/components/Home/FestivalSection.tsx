@@ -8,7 +8,7 @@ import MobileFestivalCardSlider from "../SliderGsap/MobilFestivalCardSlider";
 const FestivalSection: React.FC = () => {
   return (
     <section className="mx-auto my-16 w-full">
-      <div className="container mx-auto md:p-0">
+      <div className="container mx-auto px-2">
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-4 justify-center px-2">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug">

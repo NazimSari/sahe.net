@@ -8,7 +8,7 @@ interface VenueDataProps {
 const VenuesSectionCards: React.FC<VenueDataProps> = ({ venue }) => {
   return (
     <div
-      className={`relative ${
+      className={`relative transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl ${
         venue.isLarge ? "md:col-span-2 md:row-span-2" : ""
       }`}
     >
