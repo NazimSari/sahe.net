@@ -88,7 +88,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`transition-all duration-300 z-50 overflow-hidden ${
+      className={`transition-all duration-300 z-50 ${
         scrolled
           ? "fixed top-0 w-full md:h-24 h-20 bg-[#040519]/50 backdrop-blur-md backdrop-saturate-150 shadow-sm"
           : "absolute top-0 w-full bg-transparent"

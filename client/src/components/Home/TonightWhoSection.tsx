@@ -96,13 +96,16 @@ export default function TonightWhoSection() {
                   <div className="mt-5 flex items-center justify-between">
                     <span className="flex items-center text-sm text-[#FF007A] font-bold cursor-pointer">
                       Rezervasyon Yap
-                      <ChevronRight size={20} className="text-[#FF007A] mt-1" />
+                      <ChevronRight
+                        size={16}
+                        className="text-[#FF007A] mt-0.5"
+                      />
                     </span>
                   </div>
                 </div>
               </div>
             ))}
-            <div className="absolute bottom-6  right-5  mx-1">
+            <div className="absolute bottom-6 sm:right-16 md:right-5 right-8 mx-1">
               {banners.map((_, index) => (
                 <button
                   key={index}

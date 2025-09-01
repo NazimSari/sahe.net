@@ -42,7 +42,7 @@ export default function HakkimizdaPage() {
             </div>
             <div className="w-full h-[300px] md:w-1/2 md:h-[500px] rounded-2xl overflow-hidden">
               <img
-                src="https://st2.depositphotos.com/4327059/6356/v/450/depositphotos_63567575-stock-illustration-colorful-music-background.jpg"
+                src="https://i.ibb.co/4wcCFCy6/hakkimizda-1.png"
                 alt="resim"
                 className="h-full w-full object-cover"
               />
