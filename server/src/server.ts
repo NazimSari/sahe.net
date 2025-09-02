@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import preRegisterRoutes from "./routes/preRegisterRoutes";
+import contactEmailRoutes from "./routes/contactEmailRoutes";
 
 //load all your enviroments
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/api/register", preRegisterRoutes);
+app.use("/api/contact", contactEmailRoutes);
 
 // Health check endpoint backendi uykudan uyandırmak için ping
 app.get("/health", (req, res) => {

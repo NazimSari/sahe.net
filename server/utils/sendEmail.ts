@@ -4,6 +4,11 @@ interface User {
   email: string;
   name?: string | null;
 }
+interface ContactData {
+  name: string;
+  email: string;
+  message: string;
+}
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -45,5 +50,32 @@ async function sendRegistrationEmail(user: User): Promise<void> {
     throw new Error("Kayıt maili gönderilemedi.");
   }
 }
+async function sendContactEmail({
+  name,
+  email,
+  message,
+}: ContactData): Promise<void> {
+  const mailOptions = {
+    from: `"${name}" <${email}>`,
+    to: process.env.SMTP_FROM_EMAIL,
+    subject: `İletişim Formu: ${name}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2>İletişim Formu Mesajı</h2>
+        <p><strong>Ad:</strong> ${name}</p>
+        <p><strong>E-posta:</strong> ${email}</p>
+        <p><strong>Mesaj:</strong> ${message}</p>
+      </div>
+    `,
+  };
 
-export { sendRegistrationEmail };
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log(`İletişim maili gönderildi: ${email}`);
+  } catch (error) {
+    console.error("İletişim maili gönderimi hatası:", error);
+    throw new Error("İletişim maili gönderilemedi.");
+  }
+}
+
+export { sendRegistrationEmail, sendContactEmail };
