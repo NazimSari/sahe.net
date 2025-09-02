@@ -22,6 +22,11 @@ app.use(morgan("dev"));
 
 app.use("/api/register", preRegisterRoutes);
 
+// Health check endpoint backendi uykudan uyandırmak için ping
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
