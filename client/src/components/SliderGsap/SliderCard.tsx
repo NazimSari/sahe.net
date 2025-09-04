@@ -3,15 +3,17 @@
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 interface CardProps {
   path: string;
   name: string;
   id: number;
   slug: string;
+  type?: "etkinlik-turleri" | "muzik-turleri";
 }
 
-const SliderCard: React.FC<CardProps> = ({ path, name, slug }) => {
+const SliderCard: React.FC<CardProps> = ({ path, name, slug, type }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLAnchorElement>(null);
 
@@ -77,13 +79,13 @@ const SliderCard: React.FC<CardProps> = ({ path, name, slug }) => {
         </span>
       </div>
       <div className="absolute inset-0 flex justify-center items-center">
-        <a
-          href={`etkinlik-turleri/${slug}`}
+        <LoaderLink
+          href={`/${type}/${slug}`}
           ref={buttonRef}
           className="bg-white font-semibold text-sm px-3 py-2 rounded-lg flex items-center gap-1 hover:opacity-75 cursor-pointer"
         >
           <span>İncele</span>
-        </a>
+        </LoaderLink>
       </div>
     </div>
   );

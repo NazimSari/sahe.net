@@ -22,6 +22,13 @@ export const LoaderLink = forwardRef<HTMLAnchorElement, LoaderLinkProps>(
     const handleClick = (e: MouseEvent) => {
       e.preventDefault();
       if (onClick) onClick(e);
+
+      if (pathname === href) {
+        // Zaten aynı sayfadaysak loader göstermeye gerek yok, isteğe bağlı scroll yapabiliriz
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
       showLoader();
       router.push(href);
     };

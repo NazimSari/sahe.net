@@ -1366,11 +1366,6 @@ export const dataSources: Record<string, EventData[]> = {
   "happy-hour": happyhourData,
   "dj-performans": djData,
   "ozel-cekim": ozelcekimData,
-  "canli-music": canliMuzikData,
-  "beach-club": beachClubData,
-  "kokteyl-bar": kokteylBarData,
-  "dj-bar": djbarsData,
-  "roof-top-bar": rooftopData,
   "dugun-orkestrasi": sahneData,
   "etnik-muzik": dogumGunuData,
   "rock-muzik": happyhourData,
@@ -1379,4 +1374,12 @@ export const dataSources: Record<string, EventData[]> = {
   istanbul: singerCardsDataIstanbul,
   ankara: singerCardsDataAnkara,
   izmir: singerCardsDataIzmir,
+};
+
+export const venueSource: Record<string, EventData[]> = {
+  "canli-music": canliMuzikData,
+  "beach-club": beachClubData,
+  "kokteyl-bar": kokteylBarData,
+  "dj-bar": djbarsData,
+  "roof-top-bar": rooftopData,
 };

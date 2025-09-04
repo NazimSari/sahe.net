@@ -54,6 +54,7 @@ export default function EventTypeSlider() {
               name={item.name}
               id={item.id}
               slug={item.slug}
+              type="etkinlik-turleri"
             />
           )
         )}

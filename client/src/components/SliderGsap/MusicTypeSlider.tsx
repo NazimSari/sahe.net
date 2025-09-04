@@ -57,6 +57,7 @@ export default function MusicTypeSlider() {
               slug={item.slug}
               path={item.path}
               name={item.name}
+              type="muzik-turleri"
             />
           )
         )}

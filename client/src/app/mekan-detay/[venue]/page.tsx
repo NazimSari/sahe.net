@@ -11,9 +11,9 @@ import {
 } from "@/components/ui/accordion";
 import {
   commentsData,
-  dataSources,
   EventData,
   mekanDetaySayfasiVideoData,
+  venueSource,
 } from "@/lib/data";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import { notFound, useParams } from "next/navigation";
@@ -29,10 +29,15 @@ export default function MekanDetayPage() {
   const params = useParams();
   const venueSlug = params.venue as string;
 
+  const scrollToSection = () => {
+    const element = document.getElementById("scene-paragraf");
+    element?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   // Tüm dataSources içinde sanatçıyı ara
   let mekan: EventData | null = null;
-  for (const category in dataSources) {
-    const found = dataSources[category].find((s) => s.slug === venueSlug);
+  for (const category in venueSource) {
+    const found = venueSource[category].find((s) => s.slug === venueSlug);
     if (found) {
       mekan = found;
       break;
@@ -44,7 +49,8 @@ export default function MekanDetayPage() {
   }
 
   // dataSources'dan rastgele 6 sanatçı al
-  const displayArtists = Object.values(dataSources).flat().slice(4, 8);
+  const displayVenue = Object.values(venueSource).flat().slice(0, 4);
+
   return (
     <main className="min-h-screen w-full overflow-hidden">
       <section className="p-4 lg:pt-16 pt-28 bg-[url('/page11.webp')] bg-cover bg-center flex items-center min-h-screen w-full">
@@ -120,11 +126,14 @@ export default function MekanDetayPage() {
 
               {/* Butonlar */}
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
+                <Button
+                  onClick={scrollToSection}
+                  className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer"
+                >
                   Hemen İzle
                 </Button>
                 <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
-                  Teklif Al
+                  Rezervasyon Yap
                 </Button>
               </div>
             </div>
@@ -152,7 +161,7 @@ export default function MekanDetayPage() {
           </div>
         </div>
       </section>
-      <section className="bg-[#160317] md:pb-10">
+      <section id="scene-section" className="bg-[#160317] md:pb-10">
         <div className="container mx-auto pb-6">
           <div className="flex flex-col gap-4 justify-center mb-10">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
@@ -297,10 +306,10 @@ export default function MekanDetayPage() {
             </p>
           </div>
           <div className="mt-8 hidden md:block">
-            <InfoCard data={displayArtists} type="artist" />
+            <InfoCard data={displayVenue} type="venue" />
           </div>
           <div className="mt-2 md:hidden">
-            <MobileInfoCardSwipeSlider data={displayArtists} type="artist" />
+            <MobileInfoCardSwipeSlider data={displayVenue} type="venue" />
           </div>
         </div>
       </section>
