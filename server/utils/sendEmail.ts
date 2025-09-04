@@ -30,10 +30,10 @@ async function sendRegistrationEmail(user: User): Promise<void> {
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #160317; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         <h2 style="color: #FF007A; text-align: center; font-size: 18px;">Sahne.net</h2>
         <p style="font-size: 16px; color: #f5f5f5; text-align: center; font-weight: 600;">
-          Sayın ${displayName},<br>Ön kaydınız başarıyla gerçekleşti, aramıza hoş geldiniz!
+          Sayın ${displayName},<br>Ön kaydınız başarıyla gerçekleşti. Aramıza hoş geldiniz!
         </p>
         <p style="font-size: 14px; color: #f5f5f5; text-align: center;">
-          Gelişmeler için bu e-posta hesabından bilgilendirileceksiniz.
+          Gelişmeler için bu e-posta hesabından bilgilendirileceksiniz (${user.email}).
         </p>
         <p style="font-size: 12px; color: #777777; text-align: center; margin-top: 10px;">
           Bu otomatik bir e-postadır, lütfen yanıtlamayınız.

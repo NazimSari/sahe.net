@@ -12,7 +12,7 @@ export default function SubscriptionSection() {
     heroSection?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <section className="w-full py-16 bg-[url('/abonelik1.jpg')] bg-cover bg-top px-2">
+    <section className="w-full py-16 bg-[url('/abonelik1.webp')] bg-cover bg-top px-2">
       <div className="container mx-auto h-full">
         <div className="flex flex-col gap-6 h-full justify-center">
           <div className="flex flex-col justify-center items-center">

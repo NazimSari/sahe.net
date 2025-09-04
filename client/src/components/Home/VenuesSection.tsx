@@ -1,11 +1,11 @@
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
 import React from "react";
 import { venueSectionData } from "@/lib/data";
 // import MobileHangoutSlider from "../SliderGsap/MobilHangoutSlider";
 import VenuesSectionCards from "../Cards/VenuesSectionCards";
 import VenuesSectionMobileSwipeCard from "../Cards/VenuesSectionMobileSwipeCard";
 import VenuesSectionMobilSwipeSlider from "../SliderGsap/VenuesSectionMobilSwipeSlider";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 const VenuesSection: React.FC = () => {
   return (
@@ -24,12 +24,12 @@ const VenuesSection: React.FC = () => {
             </p>
           </div>
           <div className="hidden lg:block border border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-            <Link href="/mekanlar">
+            <LoaderLink href="/mekanlar">
               <span className="flex items-center ml-3">
                 Tümünü Gör
                 <ChevronRight size={20} className="mt-1" />
               </span>
-            </Link>
+            </LoaderLink>
           </div>
         </div>
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-5 md:gap-3 mt-10 px-2">
@@ -42,11 +42,11 @@ const VenuesSection: React.FC = () => {
           <VenuesSectionMobilSwipeSlider venueData={venueSectionData} />
         </div>
         <div className="lg:hidden border w-fit mt-5 border-[#FF007A] py-2 ml-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-          <Link href="/mekanlar">
+          <LoaderLink href="/mekanlar">
             <span className="flex items-center ml-3">
               Tümünü Gör <ChevronRight size={16} className="mt-0.5 ml-2" />
             </span>
-          </Link>
+          </LoaderLink>
         </div>
       </div>
     </section>

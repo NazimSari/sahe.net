@@ -11,19 +11,26 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { mekanDetaySayfasiVideoData } from "@/lib/data";
+import { festivalData, mekanDetaySayfasiVideoData } from "@/lib/data";
+import { useParams } from "next/navigation";
 
 export default function FestivalDetayPage() {
+  const { festival } = useParams(); // URL'deki [festival] parametresini al
+  const festivalDetail = festivalData.find((item) => item.slug === festival);
+
+  if (!festivalDetail) {
+    return <div>Festival bulunamadı!</div>;
+  }
   return (
     <main className="min-h-screen w-full overflow-hidden">
-      <section className="bg-[url('/page5.jpg')] bg-cover bg-center flex flex-col justify-center items-center h-auto min-h-[60vh] md:min-h-screen w-full gap-6 md:gap-10 pt-16 sm:pt-20">
+      <section className="bg-[url('/page5.webp')] bg-cover bg-center flex flex-col justify-center items-center h-auto min-h-[60vh] md:min-h-screen w-full gap-6 md:gap-10 pt-16 sm:pt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 md:gap-4 justify-center items-center">
             <p className="text-xs sm:text-sm md:text-base px-4 py-2 rounded-lg font-semibold bg-[#f5f5f5]">
-              KüçükÇiftlik Park İstanbul
+              {festivalDetail.location}
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-center font-bold text-[#f5f5f5] leading-tight">
-              İstanbul Yaz Rüzgarı Festivali
+              {festivalDetail.title}
             </h1>
           </div>
         </div>

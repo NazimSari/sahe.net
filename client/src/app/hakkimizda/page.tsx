@@ -3,7 +3,7 @@ import React from "react";
 export default function HakkimizdaPage() {
   return (
     <main className="min-h-screen w-full overflow-hidden">
-      <section className="p-2 pt-16 sm:pt-20 bg-[url('/12.jpg')] bg-cover bg-center flex items-center h-[600px] w-full">
+      <section className="p-2 pt-16 sm:pt-20 bg-[url('/12.webp')] bg-cover bg-center flex items-center h-[600px] w-full">
         <div className="container mx-auto flex flex-col justify-center gap-6 py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 justify-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f5f5f5] leading-tight max-w-4xl">

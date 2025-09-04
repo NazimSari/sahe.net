@@ -55,7 +55,7 @@ export default function SanatciDetayPage() {
   const displayArtists = Object.values(dataSources).flat().slice(4, 8);
   return (
     <main className="min-h-screen w-full overflow-hidden">
-      <section className="p-4 lg:pt-16 pt-28 bg-[url('/page3.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
+      <section className="p-4 lg:pt-16 pt-28 bg-[url('/page3.webp')] bg-cover bg-center flex items-center min-h-screen w-full">
         <div className="container mx-auto bg-[#160317]/50 rounded-2xl xl:py-20 py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 h-full w-full">
             {/* Görsel Kısmı */}

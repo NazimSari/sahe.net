@@ -1,9 +1,9 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
 import FestivalCards from "../Cards/FestivalCards";
 import { festivalSectionData } from "@/lib/data";
 import MobileFestivalCardSlider from "../SliderGsap/MobilFestivalCardSlider";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 const FestivalSection: React.FC = () => {
   return (
@@ -21,11 +21,11 @@ const FestivalSection: React.FC = () => {
             </p>
           </div>
           <div className="hidden md:block border border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-            <Link href="/festivaller">
+            <LoaderLink href="/festivaller">
               <span className="flex items-center ml-3">
                 Tümünü Gör <ChevronRight size={20} className="mt-1" />
               </span>
-            </Link>
+            </LoaderLink>
           </div>
         </div>
         {/* Geniş ekranlarda FestivalCards */}
@@ -39,11 +39,11 @@ const FestivalSection: React.FC = () => {
           <MobileFestivalCardSlider festivalData={festivalSectionData} />
         </div>
         <div className="md:hidden border w-fit mt-3 border-[#FF007A] py-2 ml-3 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-          <Link href="/festivaller">
+          <LoaderLink href="/festivaller">
             <span className="flex items-center ml-3">
               Tümünü Gör <ChevronRight size={16} className="mt-0.5 ml-2" />
             </span>
-          </Link>
+          </LoaderLink>
         </div>
       </div>
     </section>

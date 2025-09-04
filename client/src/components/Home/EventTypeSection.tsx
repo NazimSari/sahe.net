@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import EventTypeSlider from "../SliderGsap/EventTypeSlider";
 import MobilEventTypeSlider from "../SliderGsap/MobilEventTypeSlider";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 export default function EventTypeSection() {
   const handleScroll = () => {
@@ -43,14 +43,14 @@ export default function EventTypeSection() {
             >
               Ön Kayıt
             </Button>
-            <Link
+            <LoaderLink
               href="/etkinlik-turleri"
               className="flex items-center ml-3 text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer"
             >
               {" "}
               Tümünü Gör
               <ChevronRight size={16} className="text-[#FF007A] mt-0.5 ml-2" />
-            </Link>
+            </LoaderLink>
           </div>
         </div>
       </section>

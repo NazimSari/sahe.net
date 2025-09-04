@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 interface CardProps {
   path: string;
@@ -17,7 +17,7 @@ const MobilTypeSectionsSwipeCard: React.FC<CardProps> = ({
   basePath,
 }) => {
   return (
-    <Link
+    <LoaderLink
       href={`/${basePath}/${slug}`}
       className="relative w-[60vw] max-w-[250px] aspect-square overflow-hidden bg-white flex justify-center items-center rounded-lg"
     >
@@ -29,7 +29,7 @@ const MobilTypeSectionsSwipeCard: React.FC<CardProps> = ({
           {name}
         </span>
       </div>
-    </Link>
+    </LoaderLink>
   );
 };
 

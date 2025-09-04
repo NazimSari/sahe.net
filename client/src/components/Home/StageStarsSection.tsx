@@ -1,9 +1,9 @@
 "use client";
-import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { sahneData } from "@/lib/data";
 import InfoCard from "../Cards/InfoCard";
 import MobileInfoCardSwipeSlider from "../SliderGsap/MobileInfoCardSwipeSlider";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 export default function StageStarsSection() {
   return (
@@ -24,13 +24,13 @@ export default function StageStarsSection() {
               </p>
             </div>
             <div className="hidden md:block border border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-              <Link href="/etkinlik-turleri/dugun">
+              <LoaderLink href="/etkinlik-turleri/dugun">
                 <span className="flex items-center ml-3">
                   {" "}
                   Daha Fazlası İçin{" "}
                   <ChevronRight size={16} className="mt-0.5" />
                 </span>
-              </Link>
+              </LoaderLink>
             </div>
           </div>
           <div className="mt-8 hidden md:block">
@@ -40,12 +40,12 @@ export default function StageStarsSection() {
             <MobileInfoCardSwipeSlider data={sahneData} type="artist" />
           </div>
           <div className="md:hidden border w-fit  border-[#FF007A] py-2 ml-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
-            <Link href="/etkinlik-turleri/dugun">
+            <LoaderLink href="/etkinlik-turleri/dugun">
               <span className="flex items-center ml-3">
                 {" "}
                 Daha Fazlası İçin <ChevronRight size={16} className="mt-0.5" />
               </span>
-            </Link>
+            </LoaderLink>
           </div>
         </div>
       </section>

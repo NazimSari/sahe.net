@@ -1,6 +1,5 @@
 import { commentsData } from "@/lib/data";
 import CommentCard from "./Cards/CommentCard";
-import MobilCommentCard from "./Cards/MobilCommentCard";
 
 export default function CommentsSection() {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Clock, MapPin } from "lucide-react";
-import Link from "next/link";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 interface SingerData {
   url: string;
@@ -65,7 +65,7 @@ const ToNightSingerCards = ({ data }: SingerCardsProps) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto gap-4">
       {data.map((singer, index) => (
-        <Link
+        <LoaderLink
           href={`/sanatci-detay/${singer.slug}`}
           key={index}
           className="flex flex-col"
@@ -103,7 +103,7 @@ const ToNightSingerCards = ({ data }: SingerCardsProps) => {
               </p>
             </div>
           </div>
-        </Link>
+        </LoaderLink>
       ))}
     </div>
   );

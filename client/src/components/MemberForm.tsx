@@ -111,7 +111,7 @@ export default function MemberForm() {
             onChange={handleChange}
           />
           <Input
-            placeholder="E Posta Adresiniz"
+            placeholder="E-Posta Adresiniz"
             className="flex-1 md:p-6 p-3 text-[#f5f5f5] md:text-base text-sm  min-w-0"
             name="email"
             value={formData.email}
@@ -125,14 +125,14 @@ export default function MemberForm() {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectLabel>Müzik</SelectLabel>
+                <SelectLabel className="text-[#FF007A]">Müzik</SelectLabel>
                 <SelectItem value="enstruman">Enstrüman</SelectItem>
                 <SelectItem value="solist">Solist</SelectItem>
                 <SelectItem value="dj">Dj Performans</SelectItem>
                 <SelectItem value="group">Müzik Grubu</SelectItem>
               </SelectGroup>
               <SelectGroup>
-                <SelectLabel>Mekan</SelectLabel>
+                <SelectLabel className="text-[#FF007A]">Mekan</SelectLabel>
                 <SelectItem value="canlimuzik">Canlı Müzik</SelectItem>
                 <SelectItem value="roofbar">Roof Bar</SelectItem>
                 <SelectItem value="kokteyl">Kokteyl Bar</SelectItem>
@@ -140,7 +140,7 @@ export default function MemberForm() {
                 <SelectItem value="vipDj">Vip DJ</SelectItem>
               </SelectGroup>
               <SelectGroup>
-                <SelectLabel>Özel Çekim</SelectLabel>
+                <SelectLabel className="text-[#FF007A]">Özel Çekim</SelectLabel>
                 <SelectItem value="fotograf">Fotoğraf Çekimi</SelectItem>
                 <SelectItem value="video">Video Çekimi</SelectItem>
                 <SelectItem value="instagram">Instagram Çekimi</SelectItem>

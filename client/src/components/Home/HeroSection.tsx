@@ -100,7 +100,7 @@ export default function HeroSection() {
             <div className="hidden lg:flex mt-16 md:mt-10">
               <div className="w-full h-full">
                 <img
-                  src="/hero.png"
+                  src="/hero.webp"
                   alt="hero image"
                   className="w-full h-full object-cover object-center"
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -110,7 +110,7 @@ export default function HeroSection() {
           </div>
           <div className="absolute inset-0 lg:hidden z-0 pointer-events-none">
             <img
-              src="/hero.png"
+              src="/hero.webp"
               alt="hero image"
               className="w-full  h-[50vh] object-cover object-top opacity-30"
             />

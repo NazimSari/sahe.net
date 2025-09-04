@@ -24,7 +24,7 @@ import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwi
 export default function MekanPage() {
   return (
     <main className="min-h-screen w-full overflow-hidden">
-      <section className="p-4 pt-16 sm:pt-20 bg-[url('/page10.jpg')] bg-cover bg-top flex items-center min-h-screen w-full">
+      <section className="p-4 pt-16 sm:pt-20 bg-[url('/page10.webp')] bg-cover bg-top flex items-center min-h-screen w-full">
         <div className="container mx-auto flex flex-col justify-center gap-8 py-8">
           <div className="flex flex-col gap-4 justify-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f5f5f5] leading-tight max-w-4xl">

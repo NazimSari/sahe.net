@@ -30,7 +30,7 @@ export default function FestivalPage() {
 
   return (
     <main className="min-h-screen w-full overflow-hidden">
-      <section className="p-2 pt-16 sm:pt-20 bg-[url('/page4.jpg')] bg-cover bg-bottom flex items-center min-h-screen w-full">
+      <section className="p-2 pt-16 sm:pt-20 bg-[url('/page4.webp')] bg-cover bg-bottom flex items-center min-h-screen w-full">
         <div className="container mx-auto flex flex-col justify-center gap-6 py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 justify-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f5f5f5] leading-tight max-w-4xl">
@@ -175,7 +175,9 @@ export default function FestivalPage() {
                       </Button>
                       <Button
                         className="border border-[#f5f5f5] bg-transparent text-[#f5f5f5] cursor-pointer py-2 text-sm sm:text-base"
-                        onClick={() => router.push("/festival-detay")}
+                        onClick={() =>
+                          router.push(`/festival-detay/${item.slug}`)
+                        }
                       >
                         Hemen İncele
                       </Button>

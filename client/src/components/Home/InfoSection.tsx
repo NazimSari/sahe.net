@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 export default function InfoSection() {
   const handleScroll = () => {
@@ -37,7 +37,7 @@ export default function InfoSection() {
               >
                 Ön Kayıt
               </Button>
-              <Link
+              <LoaderLink
                 href={"/hakkimizda"}
                 className="flex items-center text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer"
               >
@@ -46,7 +46,7 @@ export default function InfoSection() {
                   size={16}
                   className="text-[#FF007A] mt-0.5 ml-2"
                 />
-              </Link>
+              </LoaderLink>
             </div>
           </div>
         </div>

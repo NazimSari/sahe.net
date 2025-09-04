@@ -4,9 +4,9 @@ import { FaLocationDot, FaStar } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import SuperArtistBadge from "../SuperArtistBadge";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 interface CardProps {
   item: {
@@ -73,13 +73,13 @@ const BasicCard = ({ item, index, type }: CardProps) => {
         >
           {type === "artist" ? "Sanatçıyı İncele" : "Mekanı İncele"}
         </Button>
-        <Link
+        <LoaderLink
           href={detailPath}
           className="flex items-center  text-sm text-[#FF007A] font-semibold cursor-pointer"
         >
           Rezervasyon Yap
           <ChevronRight size={16} className="text-[#FF007A] mt-0.5" />
-        </Link>
+        </LoaderLink>
       </div>
     </div>
   );

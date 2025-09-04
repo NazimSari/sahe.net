@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import MusicTypeSlider from "../SliderGsap/MusicTypeSlider";
 import MobilMusicTypeSlider from "../SliderGsap/MobilMusicTypeSlider";
-import Link from "next/link";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 export default function MusicTypeSection() {
   const handleScroll = () => {
@@ -43,14 +43,14 @@ export default function MusicTypeSection() {
             >
               Ön Kayıt
             </Button>
-            <Link
+            <LoaderLink
               href="/muzik-turleri"
               className="flex items-center ml-3 text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer"
             >
               {" "}
               Tümünü Gör
               <ChevronRight size={16} className="text-[#FF007A] mt-0.5 ml-2" />
-            </Link>
+            </LoaderLink>
           </div>
         </div>
       </section>

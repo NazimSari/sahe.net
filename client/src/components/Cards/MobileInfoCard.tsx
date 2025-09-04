@@ -4,8 +4,8 @@ import { ChevronRight } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { FaLocationDot } from "react-icons/fa6";
 import { EventData } from "@/lib/data";
-import Link from "next/link";
 import SuperArtistBadge from "../SuperArtistBadge";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 interface MobilStageCardProps {
   item: EventData;
@@ -53,7 +53,7 @@ const MobileInfoCard: React.FC<MobilStageCardProps> = ({ item, type }) => {
         )}
       </div>
       <div className="p-4 flex items-center justify-between shrink-0">
-        <Link
+        <LoaderLink
           href={`/${type === "artist" ? "sanatci-detay" : "mekan-detay"}/${
             item.slug
           }`}
@@ -61,7 +61,7 @@ const MobileInfoCard: React.FC<MobilStageCardProps> = ({ item, type }) => {
         >
           Rezervasyon Yap
           <ChevronRight size={14} className="text-[#FF007A] mt-1" />
-        </Link>
+        </LoaderLink>
       </div>
     </div>
   );

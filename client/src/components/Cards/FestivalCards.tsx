@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 interface FestivalData {
   img: string;
@@ -16,7 +17,7 @@ interface FestivalCardsProps {
 
 const FestivalCards: React.FC<FestivalCardsProps> = ({ festival }) => {
   return (
-    <Link
+    <LoaderLink
       href={`/festival-detay/${festival.slug}`}
       className="flex flex-col gap-2 bg-[#040519] overflow-hidden rounded-tl-2xl rounded-tr-2xl transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
     >
@@ -43,7 +44,7 @@ const FestivalCards: React.FC<FestivalCardsProps> = ({ festival }) => {
           <p className="text-[#f5f5f5] text-sm">{festival.description}</p>
         </div>
       </div>
-    </Link>
+    </LoaderLink>
   );
 };
 

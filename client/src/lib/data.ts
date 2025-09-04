@@ -244,25 +244,25 @@ export const stepsData = [
     title: "Sanatçını Bul",
     description:
       "Düğün, nişan veya partin için en iyi sanatçıları keşfet! Profilleri incele, filtrelerle seç, bir tıkla iletişime geç ve hızlıca rezervasyon yap.",
-    img: "/sanatci-bul.png",
+    img: "/sanatci-bul.webp",
   },
   {
     title: "Rezervasyon Yap",
     description:
       "Düğün, nişan veya partin için en iyi sanatçıları keşfet! Profilleri incele, filtrelerle seç, bir tıkla iletişime geç ve hızlıca rezervasyon yap.",
-    img: "/rezervasyon-yap.png",
+    img: "/rezervasyon-yap.webp",
   },
   {
     title: "Güvenli Ödeme",
     description:
       "Ödemelerin güvenli platformumuz üzerinden yapılır. Etkinliğin onaylanana kadar paran güvence altında.",
-    img: "/guvenli-odeme.png",
+    img: "/guvenli-odeme.webp",
   },
   {
     title: "Sahnede Unutulmaz Anlar",
     description:
       "Müzisyenin hazır, etkinlik günün geldi! Hayalindeki performansı yaşa, anılarını müzikle taçlandır.",
-    img: "/unutulmaz-anlar.png",
+    img: "/unutulmaz-anlar.webp",
   },
 ];
 
@@ -722,6 +722,7 @@ export const festivalData = [
     month: "NİS",
     day: "26",
     location: "İstanbul",
+    slug: "istanbul-yaz-ruzgari-festivali",
   },
   {
     title: "Cappadox Müzik ve Sanat Festivali",
@@ -731,6 +732,7 @@ export const festivalData = [
     month: "MAY",
     day: "15",
     location: "Kapadokya, Nevşehir",
+    slug: "cappadox-muzik-ve-sanat-festivali",
   },
   {
     title: "İzmir Uluslararası Caz Festivali",
@@ -740,6 +742,7 @@ export const festivalData = [
     month: "TEM",
     day: "15",
     location: "Sanat Merkezi, İzmir",
+    slug: "izmir-uluslararasi-caz-festivali",
   },
   {
     title: "Antalya Gençlik Festivali",
@@ -749,6 +752,7 @@ export const festivalData = [
     month: "TEM",
     day: "15",
     location: "Subaşı Tesisleri, Antalya",
+    slug: "antalya-genclik-festivali",
   },
   {
     title: "Headbangers’ Weekend",
@@ -758,6 +762,7 @@ export const festivalData = [
     month: "AĞU",
     day: "3",
     location: "Life Park, İstanbul",
+    slug: "headbangers-weekend",
   },
   {
     title: "Sónar İstanbul 2025",
@@ -767,6 +772,7 @@ export const festivalData = [
     month: "AĞU",
     day: "12",
     location: "PSM, İstanbul",
+    slug: "sonar-istanbul-2025",
   },
   {
     title: "Nefis Orman Festivali",
@@ -776,6 +782,7 @@ export const festivalData = [
     month: "TEM",
     day: "22",
     location: "Nefes Orman Sahnesi, İstanbul",
+    slug: "nefis-orman-festivali",
   },
 ];
 export const festivalDetayData = {

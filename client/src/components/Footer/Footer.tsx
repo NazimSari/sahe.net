@@ -9,6 +9,13 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { AiFillTikTok } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
+import { LoaderLink } from "../Loader/LoaderLink";
+import { DM_Sans } from "next/font/google";
+
+const dmSans = DM_Sans({
+  weight: ["600", "700"],
+  subsets: ["latin"],
+});
 
 export default function Footer() {
   return (
@@ -16,46 +23,121 @@ export default function Footer() {
       <div className="container w-full mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-[#f5f5f5]">
           <div className="flex flex-col px-5 mb-3 sm:px-0 gap-2">
-            <h4 className="font-semibold text-lg">LOGO</h4>
+            <h4 className="font-semibold text-lg">
+              {" "}
+              {/* LOGO */}
+              <LoaderLink
+                href="/"
+                className="font-black
+                        text-[#FF007A]"
+              >
+                <span className="md:text-lg flex items-center">
+                  <img
+                    src={"/logo.webp"}
+                    alt="Sahne.net"
+                    className="md:w-12 md:h-12 h-10 w-10 md:ml-[-20px] ml-[-10px]"
+                  />
+                  <span className={`ml-[-8px] md:text-xl ${dmSans.className}`}>
+                    Sahne.net
+                  </span>
+                </span>
+              </LoaderLink>
+            </h4>
             <p>Eğlence Dünyasının Yeni Aktörü</p>
           </div>
 
           <ul className="flex flex-col px-5 mb-5 sm:px-0 gap-2 w-2/3">
             <h4 className="font-semibold text-lg">Sayfalar</h4>
             <Separator className="my-2" />
-            <li>Ana Sayfa</li>
-            <li>Hakkımızda</li>
-            <li>İletişim</li>
+            <li>
+              <LoaderLink href="/">Ana Sayfa</LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/hakkimizda">Hakkımızda</LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/iletisim">İletişim</LoaderLink>
+            </li>
           </ul>
           <ul className="flex flex-col px-5 mb-5 sm:px-0 gap-2 w-2/3">
             <h4 className="font-semibold text-lg">Kategoriler</h4>
             <Separator className="my-2" />
 
-            <li>Mekanlar</li>
-            <li>Festivaller</li>
+            <li>
+              <LoaderLink href="/mekanlar">Mekanlar</LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/festivaller">Festivaller</LoaderLink>
+            </li>
             <li>Özel Etkinlikler</li>
           </ul>
           <ul className="flex flex-col px-5 mb-5 sm:px-0 gap-2 w-2/3">
             <h4 className="font-semibold text-lg">Etkinlik Türleri</h4>
             <Separator className="my-2" />
 
-            <li>Düğün</li>
-            <li>Özel Çekim</li>
-            <li>Baby Shower</li>
-            <li>Happy Hour</li>
-            <li>DJ Performansı</li>
-            <li>Doğum Günü</li>
+            <li>
+              <LoaderLink href="/etkinlik-turleri/dugun">Düğün</LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/etkinlik-turleri/ozel-cekim">
+                Özel Çekim
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/etkinlik-turleri/baby-shower">
+                Baby Shower
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/etkinlik-turleri/happy-hour">
+                Happy Hour
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/etkinlik-turleri/dj-performans">
+                DJ Performans
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/etkinlik-turleri/dogum-gunu">
+                Doğum Günü
+              </LoaderLink>
+            </li>
           </ul>
           <ul className="flex flex-col px-5 mb-5 sm:px-0 gap-2 w-2/3">
             <h4 className="font-semibold text-lg">Müzik Türleri</h4>
             <Separator className="my-2" />
 
-            <li>Elektronik Müzik</li>
-            <li>Rock Müzik</li>
-            <li>Jazz Müzik</li>
-            <li>Latin Perküsyon</li>
-            <li>Etnik Müzik</li>
-            <li>Düğün Orkestra</li>
+            <li>
+              <LoaderLink href="/muzik-turleri/elektronik-muzik">
+                Elektronik Müzik
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/muzik-turleri/rock-muzik">
+                Rock Müzik
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/muzik-turleri/jazz-muzik">
+                Jazz Muzik
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/muzik-turleri/latin-perkusyon">
+                Latin Perküsyon
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/muzik-turleri/etnik-muzik">
+                Etnik Müzik
+              </LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/muzik-turleri/dugun-orkestra">
+                Düğün Orkestra
+              </LoaderLink>
+            </li>
           </ul>
           <ul className="flex flex-col px-5 mb-5 sm:px-0 gap-2 w-2/3">
             <h4 className="font-semibold text-lg">İletişim</h4>
@@ -71,7 +153,7 @@ export default function Footer() {
               <span>
                 <Mail size={18} />
               </span>
-              sahne@sahne.com
+              sahnebilgi@gmail.com
             </li>
             <li className="flex items-center gap-2">
               <span>

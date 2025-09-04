@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
-import Link from "next/link";
+import { LoaderLink } from "../Loader/LoaderLink";
 
 interface CardProps {
   path: string;
@@ -79,13 +79,13 @@ const ArtistSliderCard: React.FC<CardProps> = ({ path, name, category }) => {
 
           {/* Buton */}
           <div className="absolute inset-0 flex justify-center items-center">
-            <Link
+            <LoaderLink
               href={`/artist/${category}`}
               ref={buttonRef}
               className="bg-white font-semibold text-sm px-3 py-2 rounded-lg flex items-center gap-1 opacity-0 translate-y-2  hover:opacity-75"
             >
               <span>İncele</span>
-            </Link>
+            </LoaderLink>
           </div>
           <div className="absolute bottom-0 left-0 bg-black/70 h-16 w-full">
             <div className="z-50 text-white flex flex-col items-center h-full justify-center font-semibold">

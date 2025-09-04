@@ -31,6 +31,13 @@ import {
 } from "@/components/ui/accordion";
 
 import { Button } from "@/components/ui/button";
+import { LoaderLink } from "../Loader/LoaderLink";
+import { DM_Sans } from "next/font/google";
+
+const dmSans = DM_Sans({
+  weight: ["600", "700"],
+  subsets: ["latin"],
+});
 
 const categories: {
   title: string;
@@ -43,33 +50,33 @@ const categories: {
     href: "/bu-gece-sahne",
     description:
       "Canlı müzik performansları, sahne deneyimleri ve geceye renk katan etkinlikler.",
-    img: "/page5.jpg",
+    img: "/page5.webp",
   },
   {
     title: "Mekanlar",
     href: "/mekanlar",
     description: "Şehrin en popüler kulüpler ve etkinlik mekanlarını keşfet.",
-    img: "/page10.jpg",
+    img: "/page10.webp",
   },
   {
     title: "Müzik Türleri",
     href: "/muzik-turleri",
     description:
       "Rock’tan caz’a, pop’tan elektronik müziğe kadar farklı tarzları keşfet.",
-    img: "/page14.jpg",
+    img: "/page14.webp",
   },
   {
     title: "Etkinlik Türleri",
     href: "/etkinlik-turleri",
     description: "Etkinliğin için en iyi favori grubunu keşfet!",
-    img: "/page2.jpg",
+    img: "/page2.webp",
   },
   {
     title: "Festivaller",
     href: "/festivaller",
     description:
       "Müziğin, eğlencenin ve kalabalıkların buluştuğu en unutulmaz festivalleri keşfet.",
-    img: "/page4.jpg",
+    img: "/page4.webp",
   },
 ];
 
@@ -96,20 +103,22 @@ export function Navbar() {
     >
       <div className="container mx-auto flex md:h-24 h-20 items-center justify-between px-4">
         {/* LOGO */}
-        <Link
+        <LoaderLink
           href="/"
           className="font-black
             text-[#FF007A]"
         >
           <span className="text-sm md:text-lg flex items-center">
             <img
-              src={"/logo.png"}
+              src={"/logo.webp"}
               alt="Sahne.net"
-              className="md:w-12 md:h-12 h-10 w-10 ml-[-20px]"
+              className="md:w-12 md:h-12 h-10 w-10 md:ml-[-20px] ml-[-10px]"
             />
-            <span className="ml-[-8px]">Sahne.net</span>
+            <span className={`ml-[-8px] md:text-xl ${dmSans.className}`}>
+              Sahne.net
+            </span>
           </span>
-        </Link>
+        </LoaderLink>
 
         {/* MENÜ ORTADA */}
         <div className="hidden md:flex flex-1  justify-center text-[#f5f5f5]">
@@ -139,7 +148,7 @@ export function Navbar() {
                       <div key={category.title}>
                         <NavigationMenuLink asChild>
                           <div className="flex">
-                            <Link
+                            <LoaderLink
                               href={category.href}
                               className="flex items-center gap-3 rounded-md p-2 hover:bg-[#f5f5f5]"
                             >
@@ -159,7 +168,7 @@ export function Navbar() {
                                   {category.description}
                                 </p>
                               </div>
-                            </Link>
+                            </LoaderLink>
                           </div>
                         </NavigationMenuLink>
                       </div>
@@ -205,7 +214,7 @@ export function Navbar() {
               <SheetTitle className="text-[#FF007A] text-lg">
                 <span className="text-sm md:text-lg flex items-center">
                   <img
-                    src={"/logo.png"}
+                    src={"/logo.webp"}
                     alt="Sahne.net"
                     className="md:w-12 md:h-12 h-10 w-10"
                   />
@@ -217,7 +226,7 @@ export function Navbar() {
               </SheetDescription>
             </SheetHeader>
             <div className="mt-4 flex flex-col gap-5 p-3 text-[#f5f5f5] text-lg font-semibold">
-              <Link
+              <LoaderLink
                 href="/"
                 onClick={() => setOpen(false)}
                 className={`py-2 ${
@@ -227,8 +236,8 @@ export function Navbar() {
                 }`}
               >
                 Ana Sayfa
-              </Link>
-              <Link
+              </LoaderLink>
+              <LoaderLink
                 href="/hakkimizda"
                 onClick={() => setOpen(false)}
                 className={`py-2 ${
@@ -238,7 +247,7 @@ export function Navbar() {
                 }`}
               >
                 Hakkımızda
-              </Link>
+              </LoaderLink>
 
               {/* Category accordion */}
               <Accordion type="single" collapsible>
@@ -248,7 +257,7 @@ export function Navbar() {
                   </AccordionTrigger>
                   <AccordionContent className="flex flex-col gap-2 pl-4 text-[#f5f5f5]">
                     {categories.map((category) => (
-                      <Link
+                      <LoaderLink
                         key={category.title}
                         href={category.href}
                         onClick={() => setOpen(false)}
@@ -259,13 +268,13 @@ export function Navbar() {
                         }
                       >
                         {category.title}
-                      </Link>
+                      </LoaderLink>
                     ))}
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
 
-              <Link
+              <LoaderLink
                 href="/iletisim"
                 onClick={() => setOpen(false)}
                 className={`py-2 ${
@@ -275,17 +284,17 @@ export function Navbar() {
                 }`}
               >
                 İletişim
-              </Link>
+              </LoaderLink>
 
               {/* Mobile'de butonlar */}
               <div className="mt-4 flex flex-col gap-2">
-                <Link
+                <LoaderLink
                   href="/#hero-section"
                   onClick={() => setOpen(false)}
                   className="w-fit px-4 text-base bg-transparent border border-[#FF007A] hover:bg-[#FF007A] text-white rounded-md py-1 text-center transition-all duration-300 hover:text-[#f5f5f5]"
                 >
                   Ön Kayıt
-                </Link>
+                </LoaderLink>
               </div>
             </div>
           </SheetContent>
@@ -311,7 +320,7 @@ function NavItem({
         className="rounded-md px-3 py-2 transition-colors duration-300 text-base font-semibold
       text-white"
       >
-        <Link href={href}>{children}</Link>
+        <LoaderLink href={href}>{children}</LoaderLink>
       </NavigationMenuLink>
     </NavigationMenuItem>
   );

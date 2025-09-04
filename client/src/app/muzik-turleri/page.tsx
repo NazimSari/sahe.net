@@ -4,17 +4,17 @@ import MobilFilter from "@/components/Filters/MobilFilter";
 import Banner from "@/components/Home/Banner";
 import PaymentStepsSection from "@/components/Home/PaymentStepsSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
+import { LoaderLink } from "@/components/Loader/LoaderLink";
 import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
 import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
 import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
 import { dataSources, musicTypesSlider } from "@/lib/data";
-import Link from "next/link";
 import React from "react";
 
 export default function page() {
   return (
     <main className="bg-[#040519] min-h-screen w-full overflow-hidden">
-      <section className="p-4 pt-16 sm:pt-20 bg-[url('/page14.jpg')] bg-cover bg-center flex items-center min-h-screen w-full">
+      <section className="p-4 pt-16 sm:pt-20 bg-[url('/page14.webp')] bg-cover bg-center flex items-center min-h-screen w-full">
         <div className="container mx-auto flex flex-col justify-center gap-8 py-8">
           <div className="flex flex-col gap-4 justify-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f5f5f5] leading-tight max-w-4xl">
@@ -85,7 +85,7 @@ export default function page() {
                 <MobileInfoCardSwipeSlider data={dataSource} type="artist" />
               </div>
               <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
-                <Link
+                <LoaderLink
                   href={`/muzik-turleri/${etkinlik.slug}`}
                   className={
                     ["dogum-gunu", "baby-shower", "ozel-cekim"].includes(
@@ -96,7 +96,7 @@ export default function page() {
                   }
                 >
                   Daha Fazla Gör
-                </Link>
+                </LoaderLink>
               </div>
             </div>
           </section>
@@ -166,7 +166,7 @@ export default function page() {
                 <MobileInfoCardSwipeSlider data={dataSource} type="artist" />
               </div>
               <div className="text-center mt-5 font-semibold underline decoration-[#FF007A] decoration-2">
-                <Link
+                <LoaderLink
                   href={`/muzik-turleri/${etkinlik.slug}`}
                   className={
                     ["dj-performans", "ozel-cekim"].includes(etkinlik.slug)
@@ -175,7 +175,7 @@ export default function page() {
                   }
                 >
                   Daha Fazla Gör
-                </Link>
+                </LoaderLink>
               </div>
             </div>
           </section>
