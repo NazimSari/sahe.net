@@ -3,13 +3,19 @@
 import React from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 export default function SubscriptionSection() {
+  const router = useRouter();
+
   const handleScroll = () => {
-    const heroSection = document.getElementById(
-      "hero-section"
-    ) as HTMLDivElement | null;
-    heroSection?.scrollIntoView({ behavior: "smooth" });
+    if (window.location.pathname === "/") {
+      document
+        .getElementById("hero-section")
+        ?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#hero-section");
+    }
   };
   return (
     <section className="w-full py-16 bg-[url('/abonelik1.webp')] bg-cover bg-top px-2">
