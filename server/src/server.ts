@@ -13,8 +13,8 @@ const PORT = process.env.PORT || 3001;
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://sahe-net.vercel.app",
-    "https://www.sahe-net.vercel.app",
+    "https://sahne.net",
+    "https://www.sahne.net",
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
