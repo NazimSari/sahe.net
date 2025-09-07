@@ -32,11 +32,13 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { LoaderLink } from "../Loader/LoaderLink";
-import { DM_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const dmSans = DM_Sans({
-  weight: ["600", "700"],
+const roboto = Roboto({
+  weight: ["700", "900"],
+  style: ["normal"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 const categories: {
@@ -115,9 +117,9 @@ export function Navbar() {
               className="md:w-12 md:h-12 h-10 w-10 md:ml-[-20px] ml-[-10px]"
             />
             <span
-              className={`ml-[-8px] text-xl md:text-xl lg:text-3xl ${dmSans.className}`}
+              className={`ml-[-8px] text-xl md:text-xl lg:text-4xl font-black ${roboto.className}`}
             >
-              Sahne.net
+              sahne.net
             </span>
           </span>
         </LoaderLink>
@@ -223,7 +225,7 @@ export function Navbar() {
                     alt="Sahne.net"
                     className="md:w-12 md:h-12 h-10 w-10"
                   />
-                  <span className="font-black">Sahne.net(BETA)</span>
+                  <span className="font-black">sahne.net(BETA)</span>
                 </span>
               </SheetTitle>
               <SheetDescription className="sr-only">

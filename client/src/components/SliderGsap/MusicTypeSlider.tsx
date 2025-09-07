@@ -41,7 +41,7 @@ export default function MusicTypeSlider() {
     tl.current?.timeScale(1); // normale döndür
   };
   return (
-    <div className="w-full relative h-[40vh] flex items-center">
+    <div className="w-full relative h-[400px] flex items-center">
       <div
         ref={containerRef}
         className="flex gap-4 absolute will-change-transform"

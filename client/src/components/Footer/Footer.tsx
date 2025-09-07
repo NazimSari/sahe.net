@@ -10,11 +10,13 @@ import { FaLinkedin } from "react-icons/fa6";
 import { AiFillTikTok } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
 import { LoaderLink } from "../Loader/LoaderLink";
-import { DM_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const dmSans = DM_Sans({
-  weight: ["600", "700"],
+const roboto = Roboto({
+  weight: ["700", "900"],
+  style: ["normal"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export default function Footer() {
@@ -37,8 +39,8 @@ export default function Footer() {
                     alt="Sahne.net"
                     className="md:w-12 md:h-12 h-10 w-10 md:ml-[-20px] ml-[-10px]"
                   />
-                  <span className={`ml-[-8px] md:text-xl ${dmSans.className}`}>
-                    Sahne.net
+                  <span className={`ml-[-8px] md:text-xl ${roboto.className}`}>
+                    sahne.net
                   </span>
                 </span>
               </LoaderLink>
