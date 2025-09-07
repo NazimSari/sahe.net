@@ -31,9 +31,12 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import { BookingCalendar } from "@/components/BookingCalendar";
+import DemoModal from "@/components/Modals/DemoModal";
 
 export default function SanatciDetayPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   const params = useParams();
   const artistSlug = params.artist as string;
 
@@ -53,6 +56,10 @@ export default function SanatciDetayPage() {
 
   // dataSources'dan rastgele 6 sanatçı al
   const displayArtists = Object.values(dataSources).flat().slice(4, 8);
+
+  const handleShowResults = () => {
+    setIsModalOpen(true); // Butona tıklanınca modal açılır
+  };
   return (
     <main className="min-h-screen w-full overflow-hidden">
       <section className="p-4 lg:pt-16 pt-28 bg-[url('/page3.webp')] bg-cover bg-center flex items-center min-h-screen w-full">
@@ -153,7 +160,10 @@ export default function SanatciDetayPage() {
                     )}
                   </DialogContent>
                 </Dialog>
-                <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
+                <Button
+                  onClick={handleShowResults}
+                  className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer"
+                >
                   Teklif Al
                 </Button>
               </div>
@@ -344,6 +354,12 @@ export default function SanatciDetayPage() {
           </div>
         </div>
       </section>
+      <DemoModal
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        title="Demo Uyarısı"
+        closeButtonText="Tamam"
+      />
     </main>
   );
 }

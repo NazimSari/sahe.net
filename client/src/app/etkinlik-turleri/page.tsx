@@ -7,7 +7,6 @@ import NewArtistSlider from "@/components/SliderGsap/NewArtistSlider";
 import MobilArtistSlider from "@/components/SliderGsap/MobilArtistSlider";
 import { dataSources, eventTypesSlider } from "@/lib/data";
 import Link from "next/link";
-import React from "react";
 import InfoCard from "@/components/Cards/InfoCard";
 import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
 

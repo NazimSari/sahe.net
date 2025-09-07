@@ -9,9 +9,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import DemoModal from "../Modals/DemoModal";
 
 export default function Filter() {
   const [cities, setCities] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleShowResults = () => {
+    setIsModalOpen(true); // Butona tıklanınca modal açılır
+  };
 
   useEffect(() => {
     // Türkiye şehirlerini API'den çek
@@ -32,9 +38,18 @@ export default function Filter() {
           placeholder="Ara..."
           className="max-w-5xl md:py-6 bg-[#f5f5f5]"
         />
-        <Button className="cursor-pointer hidden sm:flex w-1/3 md:py-6 bg-[#040519] text-[#FF007A] border hover:text-white">
+        <Button
+          onClick={handleShowResults}
+          className="cursor-pointer hidden sm:flex w-1/3 md:py-6 bg-[#040519] text-[#FF007A] border"
+        >
           Sonuçları Göster
         </Button>
+        <DemoModal
+          isOpen={isModalOpen}
+          setIsOpen={setIsModalOpen}
+          title="Demo Uyarısı"
+          closeButtonText="Tamam"
+        />
       </div>
       <div className="w-full flex flex-col  gap-3">
         <div className="flex flex-col sm:flex-row md:items-center gap-3">
@@ -172,7 +187,10 @@ export default function Filter() {
             </SelectContent>
           </Select>
         </div>
-        <Button className="cursor-pointer sm:hidden md:py-6 bg-[#040519] text-[#FF007A] border hover:text-white">
+        <Button
+          onClick={handleShowResults}
+          className="cursor-pointer sm:hidden md:py-6 bg-[#040519] text-[#FF007A] border"
+        >
           Sonuçları Göster
         </Button>
       </div>

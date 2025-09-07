@@ -24,8 +24,16 @@ import CommentsSection from "@/components/CommentSection";
 import MobilCommentCardSlider from "@/components/SliderGsap/MobilCommentCardSlider";
 import InfoCard from "@/components/Cards/InfoCard";
 import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
+import { useState } from "react";
+import DemoModal from "@/components/Modals/DemoModal";
 
 export default function MekanDetayPage() {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleShowResults = () => {
+    setIsModalOpen(true); // Butona tıklanınca modal açılır
+  };
+
   const params = useParams();
   const venueSlug = params.venue as string;
 
@@ -132,9 +140,18 @@ export default function MekanDetayPage() {
                 >
                   Hemen İzle
                 </Button>
-                <Button className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer">
+                <Button
+                  onClick={handleShowResults}
+                  className="flex-1 bg-[#FF007A] hover:bg-[#f5f5f5] hover:text-[#FF007A] py-3 text-sm sm:text-base cursor-pointer"
+                >
                   Rezervasyon Yap
                 </Button>
+                <DemoModal
+                  isOpen={isModalOpen}
+                  setIsOpen={setIsModalOpen}
+                  title="Demo Uyarısı"
+                  closeButtonText="Tamam"
+                />
               </div>
             </div>
           </div>

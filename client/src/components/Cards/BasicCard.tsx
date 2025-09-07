@@ -66,13 +66,12 @@ const BasicCard = ({ item, index, type }: CardProps) => {
         <p className="text-[#9D9D9D] mt-2 line-clamp-2">{item.description}</p>
       </div>
       <div className="p-4 flex items-center justify-between">
-        <Button
-          variant="outline"
-          className="w-fit cursor-pointer"
-          onClick={() => router.push(detailPath)}
+        <LoaderLink
+          href={detailPath}
+          className="w-fit cursor-pointer px-4 py-2 rounded-md text-sm font-medium bg-gray-100"
         >
           {type === "artist" ? "Sanatçıyı İncele" : "Mekanı İncele"}
-        </Button>
+        </LoaderLink>
         <LoaderLink
           href={detailPath}
           className="flex items-center  text-sm text-[#FF007A] font-semibold cursor-pointer"

@@ -1,6 +1,7 @@
 "use client";
 
 import ToNightSingerCards from "@/components/Cards/ToNightSingerCards";
+import DemoModal from "@/components/Modals/DemoModal";
 import MobileToNightSingerSlider from "@/components/SliderGsap/MobilTonightSingerSlider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,6 +23,7 @@ import { useEffect, useState, useRef } from "react";
 
 export default function BuGeceSahnePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -42,6 +44,9 @@ export default function BuGeceSahnePage() {
     startSlider();
     return () => stopSlider(); // Temizlik
   }, []);
+  const handleShowResults = () => {
+    setIsModalOpen(true); // Butona tıklanınca modal açılır
+  };
   return (
     <main className="min-h-screen w-full overflow-hidden bg-[#160317]">
       <section className="w-full h-[800px] my-16 lg:my-0 px-4">
@@ -61,7 +66,10 @@ export default function BuGeceSahnePage() {
                     placeholder="Ara..."
                     className="w-full  sm:flex-1 bg-[#f5f5f5] md:py-6 "
                   />
-                  <Button className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border hover:text-white text-sm sm:text-base">
+                  <Button
+                    onClick={handleShowResults}
+                    className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border  text-sm sm:text-base cursor-pointer"
+                  >
                     Sonuçları Göster
                   </Button>
                 </div>
@@ -109,9 +117,18 @@ export default function BuGeceSahnePage() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <Button className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border hover:text-white text-sm">
+                  <Button
+                    onClick={handleShowResults}
+                    className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border text-sm cursor-pointer"
+                  >
                     Sonuçları Göster
                   </Button>
+                  <DemoModal
+                    isOpen={isModalOpen}
+                    setIsOpen={setIsModalOpen}
+                    title="Demo Uyarısı"
+                    closeButtonText="Tamam"
+                  />
                 </div>
               </div>
             </div>
@@ -180,7 +197,10 @@ export default function BuGeceSahnePage() {
                 placeholder="Ara..."
                 className="w-full  sm:flex-1 bg-[#f5f5f5] md:py-6 "
               />
-              <Button className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border hover:text-white text-sm sm:text-base">
+              <Button
+                onClick={handleShowResults}
+                className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border  text-sm sm:text-base cursor-pointer"
+              >
                 Sonuçları Göster
               </Button>
             </div>
@@ -226,7 +246,10 @@ export default function BuGeceSahnePage() {
                   </SelectContent>
                 </Select>
               </div>
-              <Button className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border hover:text-white text-sm">
+              <Button
+                onClick={handleShowResults}
+                className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border cursor-pointer text-sm"
+              >
                 Sonuçları Göster
               </Button>
             </div>

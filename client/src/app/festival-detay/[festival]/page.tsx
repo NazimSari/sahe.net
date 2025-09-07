@@ -4,6 +4,7 @@ import DetailsPriceCardFestival from "@/components/DeatilsPriceCard/DetailsPrice
 import DetailsTabFstival from "@/components/DeatilsTab/DetailsTabFstival";
 import FestivalSection from "@/components/Home/FestivalSection";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
+import DemoModal from "@/components/Modals/DemoModal";
 import MobileVideoSlider from "@/components/SliderGsap/MobilVideoSlider";
 import {
   Accordion,
@@ -13,11 +14,16 @@ import {
 } from "@/components/ui/accordion";
 import { festivalData, mekanDetaySayfasiVideoData } from "@/lib/data";
 import { useParams } from "next/navigation";
+import { useState } from "react";
 
 export default function FestivalDetayPage() {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   const { festival } = useParams(); // URL'deki [festival] parametresini al
   const festivalDetail = festivalData.find((item) => item.slug === festival);
-
+  const handleShowResults = () => {
+    setIsModalOpen(true); // Butona tıklanınca modal açılır
+  };
   if (!festivalDetail) {
     return <div>Festival bulunamadı!</div>;
   }
@@ -38,7 +44,10 @@ export default function FestivalDetayPage() {
           <Countdown />
         </div>
         <div>
-          <button className="px-4 py-2 sm:py-3 rounded-lg font-semibold bg-[#f5f5f5] hover:bg-[#040519] hover:text-[#f5f5f5] border hover:border-[#FF007A] transition duration-300 ease-in-out cursor-pointer text-sm sm:text-base md:text-lg md:w-2xl">
+          <button
+            onClick={handleShowResults}
+            className="px-4 py-2 sm:py-3 rounded-lg font-semibold bg-[#f5f5f5] hover:bg-[#040519] hover:text-[#f5f5f5] border hover:border-[#FF007A] transition duration-300 ease-in-out cursor-pointer text-sm sm:text-base md:text-lg md:w-2xl"
+          >
             Rezervasyon Yap
           </button>
         </div>
@@ -161,6 +170,12 @@ export default function FestivalDetayPage() {
       </section>
       <SubscriptionSection />
       <FestivalSection />
+      <DemoModal
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        title="Demo Uyarısı"
+        closeButtonText="Tamam"
+      />
     </main>
   );
 }

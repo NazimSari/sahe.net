@@ -4,7 +4,7 @@ import MemberForm from "../MemberForm";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
-import MenifestModal from "../MenifestModal";
+import MenifestModal from "../Modals/MenifestModal";
 
 export default function HeroSection() {
   useGSAP(() => {

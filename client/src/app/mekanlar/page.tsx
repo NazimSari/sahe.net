@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -7,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import React from "react";
+import React, { useState } from "react";
 import {
   beachClubData,
   canliMuzikData,
@@ -18,8 +20,14 @@ import {
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import InfoCard from "@/components/Cards/InfoCard";
 import MobileInfoCardSwipeSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
+import DemoModal from "@/components/Modals/DemoModal";
 
 export default function MekanPage() {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleShowResults = () => {
+    setIsModalOpen(true); // Butona tıklanınca modal açılır
+  };
   return (
     <main className="min-h-screen w-full overflow-hidden">
       <section className="p-4 pt-16 sm:pt-20 bg-[url('/page10.webp')] bg-cover bg-top flex items-center min-h-screen w-full">
@@ -40,7 +48,10 @@ export default function MekanPage() {
                 placeholder="Mekan ara..."
                 className="w-full sm:flex-1 bg-[#f5f5f5] md:py-6"
               />
-              <Button className="hidden sm:flex w-full sm:w-1/3 md:py-6 bg-[#040519] text-[#FF007A] border hover:text-white text-sm sm:text-base">
+              <Button
+                onClick={handleShowResults}
+                className="hidden sm:flex w-full sm:w-1/3 md:py-6 bg-[#040519] text-[#FF007A] border  text-sm sm:text-base cursor-pointer"
+              >
                 Sonuçları Göster
               </Button>
             </div>
@@ -207,6 +218,12 @@ export default function MekanPage() {
         </div>
       </section>
       <SubscriptionSection />
+      <DemoModal
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        title="Demo Uyarısı"
+        closeButtonText="Tamam"
+      />
     </main>
   );
 }

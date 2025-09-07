@@ -23,10 +23,16 @@ import { festivalData } from "@/lib/data";
 import SubscriptionSection from "@/components/Home/SubscriptionSection";
 import { PaginationComp } from "@/components/PaginationComp";
 import { useRouter } from "next/navigation";
+import DemoModal from "@/components/Modals/DemoModal";
 
 export default function FestivalPage() {
   const [date, setDate] = useState<Date | undefined>(undefined);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   const router = useRouter();
+  const handleShowResults = () => {
+    setIsModalOpen(true); // Butona tıklanınca modal açılır
+  };
 
   return (
     <main className="min-h-screen w-full overflow-hidden">
@@ -53,7 +59,10 @@ export default function FestivalPage() {
                 placeholder="Ara..."
                 className="w-full sm:flex-1 bg-[#f5f5f5] md:py-6 "
               />
-              <Button className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border hover:text-white text-sm sm:text-base">
+              <Button
+                onClick={handleShowResults}
+                className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border text-sm sm:text-base cursor-pointer"
+              >
                 Sonuçları Göster
               </Button>
             </div>
@@ -122,7 +131,10 @@ export default function FestivalPage() {
                   </PopoverContent>
                 </Popover>
               </div>
-              <Button className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border hover:text-white text-sm">
+              <Button
+                onClick={handleShowResults}
+                className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border  text-sm cursor-pointer"
+              >
                 Sonuçları Göster
               </Button>
             </div>
@@ -194,6 +206,12 @@ export default function FestivalPage() {
         </div>
       </section>
       <SubscriptionSection />
+      <DemoModal
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        title="Demo Uyarısı"
+        closeButtonText="Tamam"
+      />
     </main>
   );
 }
