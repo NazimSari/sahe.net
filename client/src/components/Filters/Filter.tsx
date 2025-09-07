@@ -44,12 +44,6 @@ export default function Filter() {
         >
           Sonuçları Göster
         </Button>
-        <DemoModal
-          isOpen={isModalOpen}
-          setIsOpen={setIsModalOpen}
-          title="Demo Uyarısı"
-          closeButtonText="Tamam"
-        />
       </div>
       <div className="w-full flex flex-col  gap-3">
         <div className="flex flex-col sm:flex-row md:items-center gap-3">
@@ -193,6 +187,11 @@ export default function Filter() {
         >
           Sonuçları Göster
         </Button>
+        <DemoModal
+          isOpen={isModalOpen}
+          setIsOpen={setIsModalOpen}
+          closeButtonText="Tamam"
+        />
       </div>
     </>
   );

@@ -221,7 +221,6 @@ export default function MekanPage() {
       <DemoModal
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
-        title="Demo Uyarısı"
         closeButtonText="Tamam"
       />
     </main>

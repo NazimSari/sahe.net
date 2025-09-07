@@ -173,7 +173,6 @@ export default function FestivalDetayPage() {
       <DemoModal
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
-        title="Demo Uyarısı"
         closeButtonText="Tamam"
       />
     </main>

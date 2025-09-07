@@ -13,8 +13,12 @@ import {
 } from "@/components/ui/select";
 import SceneCards from "@/components/Cards/InfoCard";
 import MobileStageSlider from "@/components/SliderGsap/MobileInfoCardSwipeSlider";
+import { useState } from "react";
+import DemoModal from "@/components/Modals/DemoModal";
 
 export default function EtkinlikTurleriPage() {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   const params = useParams();
   const category = params.category as string;
 
@@ -26,6 +30,10 @@ export default function EtkinlikTurleriPage() {
 
   // Seçilen kategoriye ait veriyi al
   const selectedData = dataSources[category] || [];
+
+  const handleShowResults = () => {
+    setIsModalOpen(true); // Butona tıklanınca modal açılır
+  };
 
   return (
     <main className="min-h-screen w-full overflow-hidden bg-[#160317]">
@@ -48,7 +56,10 @@ export default function EtkinlikTurleriPage() {
                     placeholder="Ara..."
                     className="w-full  sm:flex-1 bg-[#f5f5f5] md:py-6 "
                   />
-                  <Button className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border hover:text-white text-sm sm:text-base">
+                  <Button
+                    onClick={handleShowResults}
+                    className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border text-sm sm:text-base cursor-pointer"
+                  >
                     Sonuçları Göster
                   </Button>
                 </div>
@@ -94,7 +105,10 @@ export default function EtkinlikTurleriPage() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <Button className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border hover:text-white text-sm">
+                  <Button
+                    onClick={handleShowResults}
+                    className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border text-sm cursor-pointer"
+                  >
                     Sonuçları Göster
                   </Button>
                 </div>
@@ -115,7 +129,10 @@ export default function EtkinlikTurleriPage() {
                 placeholder="Ara..."
                 className="w-full  sm:flex-1 bg-[#f5f5f5] md:py-6 "
               />
-              <Button className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border hover:text-white text-sm sm:text-base">
+              <Button
+                onClick={handleShowResults}
+                className="hidden sm:flex w-full sm:w-1/3 md:py-6  bg-[#040519] text-[#FF007A] border  text-sm sm:text-base cursor-pointer"
+              >
                 Sonuçları Göster
               </Button>
             </div>
@@ -161,7 +178,10 @@ export default function EtkinlikTurleriPage() {
                   </SelectContent>
                 </Select>
               </div>
-              <Button className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border hover:text-white text-sm">
+              <Button
+                onClick={handleShowResults}
+                className="sm:hidden py-3 bg-[#040519] text-[#FF007A] border text-sm cursor-pointer"
+              >
                 Sonuçları Göster
               </Button>
             </div>
@@ -178,6 +198,11 @@ export default function EtkinlikTurleriPage() {
           </div>
         </div>
       </section>
+      <DemoModal
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        closeButtonText="Tamam"
+      />
     </main>
   );
 }

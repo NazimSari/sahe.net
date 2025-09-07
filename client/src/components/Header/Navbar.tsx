@@ -195,8 +195,8 @@ export function Navbar() {
           >
             Sign In
           </Button> */}
-          <div className="bg-transparent border border-[#FF007A] text-[#FF007A] flex items-center px-4 py-2 rounded-xl font-semibold">
-            DEMO
+          <div className="bg-transparent border border-[#FF007A] text-[#FF007A] flex items-center px-4 py-2 rounded-lg font-semibold">
+            BETA
           </div>
           <Link
             href={"/#hero-section"}
@@ -223,7 +223,7 @@ export function Navbar() {
                     alt="Sahne.net"
                     className="md:w-12 md:h-12 h-10 w-10"
                   />
-                  <span className="font-black">Sahne.net(DEMO)</span>
+                  <span className="font-black">Sahne.net(BETA)</span>
                 </span>
               </SheetTitle>
               <SheetDescription className="sr-only">

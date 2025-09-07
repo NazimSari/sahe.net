@@ -81,7 +81,6 @@ export default function DetailsPriceCardFestival() {
       <DemoModal
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
-        title="Demo Uyarısı"
         closeButtonText="Tamam"
       />
     </div>

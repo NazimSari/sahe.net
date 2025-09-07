@@ -123,12 +123,6 @@ export default function BuGeceSahnePage() {
                   >
                     Sonuçları Göster
                   </Button>
-                  <DemoModal
-                    isOpen={isModalOpen}
-                    setIsOpen={setIsModalOpen}
-                    title="Demo Uyarısı"
-                    closeButtonText="Tamam"
-                  />
                 </div>
               </div>
             </div>
@@ -300,6 +294,11 @@ export default function BuGeceSahnePage() {
           </div>
         </div>
       </section>
+      <DemoModal
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        closeButtonText="Tamam"
+      />
     </main>
   );
 }

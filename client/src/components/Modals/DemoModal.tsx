@@ -21,8 +21,8 @@ interface DemoModalProps {
 const DemoModal: React.FC<DemoModalProps> = ({
   isOpen,
   setIsOpen,
-  title = "Hey, Bu Bir Demo!",
-  message = "Merhaba! 😊 Şu an demo sürümdesin, o yüzden sonuçlar biraz sınırlı olabilir. Bu versiyon sadece ön izleme için hazırlandı. Tam sürüm hazır olduğunda sana maille haber vereceğiz, merak etme!",
+  title = "Hey, Bu Bir Beta Sürüm!",
+  message = "Merhaba! 😊 Şu an beta sürümdesin, o yüzden sonuçlar biraz sınırlı olabilir. Bu versiyon sadece ön izleme için hazırlandı. Tam sürüm hazır olduğunda sana maille haber vereceğiz, merak etme!",
   closeButtonText = "Kapat",
 }) => {
   return (

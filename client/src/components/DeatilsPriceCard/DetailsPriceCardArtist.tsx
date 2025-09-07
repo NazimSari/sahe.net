@@ -90,7 +90,6 @@ export default function DetailsPriceCardArtist({ sanatciDetayData }: any) {
       <DemoModal
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
-        title="Demo Uyarısı"
         closeButtonText="Tamam"
       />
     </div>
