@@ -6,22 +6,27 @@ export const createPreRegister = async (req: Request, res: Response) => {
   try {
     const { name, email, talent } = req.body;
 
-    // Basit validation
     if (!name || !email || !talent) {
       return res.status(400).json({ error: "Tüm alanlar zorunludur." });
     }
 
-    // Kayıt oluştur
     const newRegister = await prisma.preRegister.create({
       data: { name, email, talent },
     });
 
-    // E-posta gönder
-    await sendRegistrationEmail({ name, email });
+    // ✅ Mail gönderimini arkaya at, cevabı bekleme
+    sendRegistrationEmail({ name, email })
+      .then(() => {
+        console.log("✅ Mail gönderildi:", email);
+      })
+      .catch((err) => {
+        console.error("❌ Mail gönderilemedi:", err);
+      });
 
-    // sadece gerekli alanları dön
+    // ✅ Kullanıcıya cevabı hemen dön
     return res.status(201).json({
-      message: "Ön kayıt başarıyla oluşturuldu ve e-posta gönderildi.",
+      message:
+        "Ön kayıt başarıyla oluşturuldu. E-posta kısa süre içinde gönderilecek.",
       data: {
         name: newRegister.name,
         talent: newRegister.talent,
@@ -30,7 +35,6 @@ export const createPreRegister = async (req: Request, res: Response) => {
   } catch (error: any) {
     console.error("PreRegister error:", error);
 
-    // Unique constraint hatası (email daha önce kayıtlı)
     if (error.code === "P2002") {
       return res
         .status(409)

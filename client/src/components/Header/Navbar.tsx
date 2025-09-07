@@ -115,7 +115,7 @@ export function Navbar() {
               className="md:w-12 md:h-12 h-10 w-10 md:ml-[-20px] ml-[-10px]"
             />
             <span
-              className={`ml-[-8px] text-xl md:text-2xl lg:text-3xl ${dmSans.className}`}
+              className={`ml-[-8px] text-xl md:text-xl lg:text-3xl ${dmSans.className}`}
             >
               Sahne.net
             </span>
@@ -195,6 +195,9 @@ export function Navbar() {
           >
             Sign In
           </Button> */}
+          <div className="bg-transparent border border-[#FF007A] text-[#FF007A] flex items-center px-4 py-2 rounded-xl font-semibold">
+            DEMO
+          </div>
           <Link
             href={"/#hero-section"}
             className="bg-[#f5f5f5] text-[#040519] hover:bg-[#040519] hover:text-[#f5f5f5] border font-semibold border-[#f5f5f5] rounded-lg transition-all duration-300 px-4 py-2"
@@ -220,7 +223,7 @@ export function Navbar() {
                     alt="Sahne.net"
                     className="md:w-12 md:h-12 h-10 w-10"
                   />
-                  <span className="font-black">Sahne.net</span>
+                  <span className="font-black">Sahne.net(DEMO)</span>
                 </span>
               </SheetTitle>
               <SheetDescription className="sr-only">

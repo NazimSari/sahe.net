@@ -18,7 +18,7 @@ async function sendRegistrationEmail(user: User): Promise<void> {
 
   try {
     await resend.emails.send({
-      from: "Sahne.net <noreply@sahne.net>",
+      from: "Sahne.net <noreply@mail.sahne.net>",
       to: user.email,
       subject: "Ön Kayıt Başarılı",
       html: `
@@ -52,8 +52,9 @@ async function sendContactEmail({
 }: ContactData): Promise<void> {
   try {
     await resend.emails.send({
-      from: `"${name}" <${email}>`,
+      from: "Sahne.net <noreply@mail.sahne.net>",
       to: "sahnebilgi@gmail.com",
+      replyTo: email,
       subject: `İletişim Formu: ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
