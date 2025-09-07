@@ -114,7 +114,9 @@ export function Navbar() {
               alt="Sahne.net"
               className="md:w-12 md:h-12 h-10 w-10 md:ml-[-20px] ml-[-10px]"
             />
-            <span className={`ml-[-8px] md:text-xl ${dmSans.className}`}>
+            <span
+              className={`ml-[-8px] text-xl md:text-2xl lg:text-3xl ${dmSans.className}`}
+            >
               Sahne.net
             </span>
           </span>

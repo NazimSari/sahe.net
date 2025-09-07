@@ -19,9 +19,13 @@ export const createPreRegister = async (req: Request, res: Response) => {
     // E-posta gönder
     await sendRegistrationEmail({ name, email });
 
+    // sadece gerekli alanları dön
     return res.status(201).json({
       message: "Ön kayıt başarıyla oluşturuldu ve e-posta gönderildi.",
-      data: newRegister,
+      data: {
+        name: newRegister.name,
+        talent: newRegister.talent,
+      },
     });
   } catch (error: any) {
     console.error("PreRegister error:", error);
