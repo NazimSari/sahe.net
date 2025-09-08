@@ -12,7 +12,7 @@ import VenuesSection from "@/components/Home/VenuesSection";
 
 export default function Home() {
   return (
-    <main className="relative w-full flex justify-center items-center flex-col overflow-hidden sm:px-0">
+    <main className="relative flex flex-col w-full justify-center items-center  overflow-hidden">
       <HeroSection />
       <EventTypeSection />
       <StageStarsSection />
