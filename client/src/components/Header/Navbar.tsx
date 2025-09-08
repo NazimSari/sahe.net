@@ -111,11 +111,6 @@ export function Navbar() {
             text-[#FF007A]"
         >
           <span className="text-sm md:text-lg flex items-center">
-            <img
-              src={"/logo.webp"}
-              alt="Sahne.net"
-              className="md:w-12 md:h-12 h-10 w-10 md:ml-[-20px] ml-[-10px]"
-            />
             <span
               className={`ml-[-8px] text-xl md:text-xl lg:text-4xl font-black ${roboto.className}`}
             >
@@ -220,11 +215,6 @@ export function Navbar() {
             <SheetHeader>
               <SheetTitle className="text-[#FF007A] text-lg">
                 <span className="text-sm md:text-lg flex items-center">
-                  <img
-                    src={"/logo.webp"}
-                    alt="Sahne.net"
-                    className="md:w-12 md:h-12 h-10 w-10"
-                  />
                   <span className="font-black">sahne.net(BETA)</span>
                 </span>
               </SheetTitle>

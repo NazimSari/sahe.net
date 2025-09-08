@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HakkimizdaPage() {
   return (
-    <main className="min-h-screen w-full overflow-hidden">
+    <main className="min-h-screen w-full bg-[#160317]">
       <section className="p-2 pt-16 sm:pt-20 bg-[url('/12.webp')] bg-cover bg-center flex items-center h-[600px] w-full">
         <div className="container mx-auto flex flex-col justify-center gap-6 py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 justify-center">
@@ -17,7 +17,7 @@ export default function HakkimizdaPage() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] pt-16 sm:pt-20 pb-16">
+      <section className="w-full  pt-16 sm:pt-20 pb-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-16 p-2">
             <div className="flex flex-col gap-4 w-full md:w-1/2 justify-center">
@@ -50,7 +50,7 @@ export default function HakkimizdaPage() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] pt-16 sm:pt-20 pb-16">
+      <section className="w-full  pt-16 sm:pt-20 pb-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16">
             <div className="w-full md:w-1/2 flex flex-col gap-4 justify-center order-1 md:order-2">
@@ -81,7 +81,7 @@ export default function HakkimizdaPage() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] pt-16 sm:pt-20 pb-16">
+      <section className="w-full  pt-16 sm:pt-20 pb-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16">
             <div className="w-full md:w-1/2 flex flex-col gap-4 justify-center">
@@ -111,7 +111,7 @@ export default function HakkimizdaPage() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-[#160317] pt-16 sm:pt-20 pb-16">
+      <section className="w-full  pt-16 sm:pt-20 pb-16">
         <div className="container mx-auto px-4">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16">

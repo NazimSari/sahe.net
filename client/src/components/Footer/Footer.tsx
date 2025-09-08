@@ -34,12 +34,7 @@ export default function Footer() {
                         text-[#FF007A]"
               >
                 <span className="md:text-lg flex items-center">
-                  <img
-                    src={"/logo.webp"}
-                    alt="Sahne.net"
-                    className="md:w-12 md:h-12 h-10 w-10 md:ml-[-20px] ml-[-10px]"
-                  />
-                  <span className={`ml-[-8px] md:text-xl ${roboto.className}`}>
+                  <span className={` md:text-xl ${roboto.className}`}>
                     sahne.net
                   </span>
                 </span>

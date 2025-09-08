@@ -13,7 +13,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Sahne.net",
+  title: "sahne.net | Oksijeni müzik olanların sahnesi",
   description: "Etkinlikleriniz için sanatçılara ulaşmanın en kolay yolu!",
   other: {
     "clarity-script": `(function(c,l,a,r,i,t,y){
