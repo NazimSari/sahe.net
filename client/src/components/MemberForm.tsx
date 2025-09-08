@@ -79,13 +79,15 @@ export default function MemberForm() {
         }
       );
 
+      const data = await response.json(); // <-- Hata mesajını almak için json parse et
+
       if (!response.ok) {
-        toast.error("Ön kayıt basarısız!");
+        // Backend'den gelen hata mesajını göster
+        toast.error(data.error || "Ön kayıt başarısız!");
         setIsLoading(false);
         return;
       }
 
-      const data = await response.json();
       toast.success("Ön kayıt başarılı!");
       setFormData({ name: "", email: "", talent: "" }); // Formu sıfırla
       setIsLoading(false);
