@@ -172,8 +172,10 @@ export default function Footer() {
             <p className="text-[#f5f5f5] text-sm">Privacy Policy</p>
           </div>
           <div className="text-[#f5f5f5] flex items-center mr-8 gap-3 order-1 md:order-2">
+            <a href="https://www.instagram.com/sahnenet/" target="_blank">
+              <FaSquareInstagram size={24} className="cursor-pointer" />
+            </a>
             <FaFacebookSquare size={24} />
-            <FaSquareInstagram size={24} />
             <FaSquareXTwitter size={24} />
             <FaLinkedin size={24} />
             <AiFillTikTok size={24} />
