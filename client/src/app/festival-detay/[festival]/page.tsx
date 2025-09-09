@@ -12,7 +12,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { festivalData, mekanDetaySayfasiVideoData } from "@/lib/data";
+import {
+  festivalData,
+  festivalSectionData,
+  mekanDetaySayfasiVideoData,
+} from "@/lib/data";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
@@ -20,7 +24,11 @@ export default function FestivalDetayPage() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const { festival } = useParams(); // URL'deki [festival] parametresini al
-  const festivalDetail = festivalData.find((item) => item.slug === festival);
+
+  const festivalDetail =
+    festivalData.find((item) => item.slug === festival) ||
+    festivalSectionData.find((item) => item.slug === festival);
+
   const handleShowResults = () => {
     setIsModalOpen(true); // Butona tıklanınca modal açılır
   };

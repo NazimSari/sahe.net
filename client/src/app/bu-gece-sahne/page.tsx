@@ -19,6 +19,7 @@ import {
   singerCardsDataIzmir,
 } from "@/lib/data";
 import { ChevronRight } from "lucide-react";
+import { Metadata } from "next";
 import { useEffect, useState, useRef } from "react";
 
 export default function BuGeceSahnePage() {
