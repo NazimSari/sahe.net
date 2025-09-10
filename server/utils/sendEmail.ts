@@ -28,7 +28,7 @@ async function sendRegistrationEmail(user: User): Promise<void> {
             Sayın ${displayName},<br>Ön kaydınız başarıyla gerçekleşti. Aramıza hoş geldiniz!
           </p>
           <p style="font-size: 14px; color: #f5f5f5; text-align: center;">
-            Gelişmeler için bu e-posta hesabından bilgilendirileceksiniz. (${user.email})
+            Gelişmeler için bu e-posta hesabı üzerinden bilgilendirileceksiniz. (${user.email})
           </p>
           <p style="font-size: 12px; color: #777777; text-align: center; margin-top: 10px;">
             Bu otomatik bir e-postadır, lütfen yanıtlamayınız.
@@ -53,7 +53,7 @@ async function sendContactEmail({
   try {
     await resend.emails.send({
       from: "Sahne.net <noreply@mail.sahne.net>",
-      to: "sahnebilgi@gmail.com",
+      to: "info@sahne.net",
       replyTo: email,
       subject: `İletişim Formu: ${name}`,
       html: `

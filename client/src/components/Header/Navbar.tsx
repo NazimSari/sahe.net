@@ -80,6 +80,19 @@ const categories: {
       "Müziğin, eğlencenin ve kalabalıkların buluştuğu en unutulmaz festivalleri keşfet.",
     img: "/page4.webp",
   },
+  {
+    title: "Müzik TV",
+    href: "/muzik-tv",
+    description: "Her kategoriye özel müzik videolarını burada bulabilirsin.",
+    img: "/musictv.webp",
+  },
+  {
+    title: "Müzik Dergisi",
+    href: "/muzik-dergisi",
+    description:
+      "Müziğe dair yazılar, haberler ve ilham verici içerikler burada seni bekliyor.",
+    img: "/musicmagazine.webp",
+  },
 ];
 
 export function Navbar() {

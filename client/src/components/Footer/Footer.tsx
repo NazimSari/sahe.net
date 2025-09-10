@@ -67,6 +67,12 @@ export default function Footer() {
               <LoaderLink href="/festivaller">Festivaller</LoaderLink>
             </li>
             <li>Özel Etkinlikler</li>
+            <li>
+              <LoaderLink href="/muzik-tv">Müzik TV</LoaderLink>
+            </li>
+            <li>
+              <LoaderLink href="/muzik-dergisi">Müzik Dergisi</LoaderLink>
+            </li>
           </ul>
           <ul className="flex flex-col px-5 mb-5 sm:px-0 gap-2 w-2/3">
             <h4 className="font-semibold text-lg">Etkinlik Türleri</h4>
@@ -150,7 +156,7 @@ export default function Footer() {
               <span>
                 <Mail size={18} />
               </span>
-              sahnebilgi@gmail.com
+              info@sahne.net
             </li>
             <li className="flex items-center gap-2">
               <span>
