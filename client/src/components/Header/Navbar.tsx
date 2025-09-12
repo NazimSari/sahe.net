@@ -82,13 +82,13 @@ const categories: {
   },
   {
     title: "Müzik TV",
-    href: "/muzik-tv",
+    href: "https://muzik.tv/",
     description: "Her kategoriye özel müzik videolarını burada bulabilirsin.",
     img: "/musictv.webp",
   },
   {
     title: "Müzik Dergisi",
-    href: "/muzik-dergisi",
+    href: "https://mor-beats-stage.lovable.app/",
     description:
       "Müziğe dair yazılar, haberler ve ilham verici içerikler burada seni bekliyor.",
     img: "/musicmagazine.webp",
