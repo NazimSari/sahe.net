@@ -68,12 +68,14 @@ export default function Footer() {
             </li>
             <li>Özel Etkinlikler</li>
             <li>
-              <LoaderLink href="https://muzik.tv/">Müzik TV</LoaderLink>
+              <a href="https://muzik.tv/" target="_blank">
+                Müzik TV
+              </a>
             </li>
             <li>
-              <LoaderLink href="https://mor-beats-stage.lovable.app/">
+              <a href="https://mor-beats-stage.lovable.app/" target="_blank">
                 Müzik Dergisi
-              </LoaderLink>
+              </a>
             </li>
           </ul>
           <ul className="flex flex-col px-5 mb-5 sm:px-0 gap-2 w-2/3">

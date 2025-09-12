@@ -46,6 +46,7 @@ const categories: {
   href: string;
   description: string;
   img: string;
+  external: boolean;
 }[] = [
   {
     title: "Bu Gece Sahne",
@@ -53,12 +54,14 @@ const categories: {
     description:
       "Canlı müzik performansları, sahne deneyimleri ve geceye renk katan etkinlikler.",
     img: "/page5.webp",
+    external: false,
   },
   {
     title: "Mekanlar",
     href: "/mekanlar",
     description: "Şehrin en popüler kulüpler ve etkinlik mekanlarını keşfet.",
     img: "/page10.webp",
+    external: false,
   },
   {
     title: "Müzik Türleri",
@@ -66,12 +69,14 @@ const categories: {
     description:
       "Rock’tan caz’a, pop’tan elektronik müziğe kadar farklı tarzları keşfet.",
     img: "/page14.webp",
+    external: false,
   },
   {
     title: "Etkinlik Türleri",
     href: "/etkinlik-turleri",
     description: "Etkinliğin için en iyi favori grubunu keşfet!",
     img: "/page2.webp",
+    external: false,
   },
   {
     title: "Festivaller",
@@ -79,12 +84,14 @@ const categories: {
     description:
       "Müziğin, eğlencenin ve kalabalıkların buluştuğu en unutulmaz festivalleri keşfet.",
     img: "/page4.webp",
+    external: false,
   },
   {
     title: "Müzik TV",
     href: "https://muzik.tv/",
     description: "Her kategoriye özel müzik videolarını burada bulabilirsin.",
     img: "/musictv.webp",
+    external: true,
   },
   {
     title: "Müzik Dergisi",
@@ -92,6 +99,7 @@ const categories: {
     description:
       "Müziğe dair yazılar, haberler ve ilham verici içerikler burada seni bekliyor.",
     img: "/musicmagazine.webp",
+    external: true,
   },
 ];
 
@@ -160,27 +168,47 @@ export function Navbar() {
                       <div key={category.title}>
                         <NavigationMenuLink asChild>
                           <div className="flex">
-                            <LoaderLink
-                              href={category.href}
-                              className="flex items-center gap-3 rounded-md p-2 hover:bg-[#f5f5f5]"
-                            >
-                              {/* Görsel solda */}
-                              <img
-                                src={category.img}
-                                alt={category.title}
-                                className="w-20 h-20 object-cover rounded-md flex-shrink-0"
-                              />
-
-                              {/* Metin sağda */}
-                              <div className="flex flex-col text-left">
-                                <div className="text-sm font-medium">
-                                  {category.title}
+                            {category.external ? (
+                              <a
+                                href={category.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 rounded-md p-2 hover:bg-[#f5f5f5]"
+                              >
+                                <img
+                                  src={category.img}
+                                  alt={category.title}
+                                  className="w-20 h-20 object-cover rounded-md flex-shrink-0"
+                                />
+                                <div className="flex flex-col text-left">
+                                  <div className="text-sm font-medium">
+                                    {category.title}
+                                  </div>
+                                  <p className="text-xs text-muted-foreground">
+                                    {category.description}
+                                  </p>
                                 </div>
-                                <p className="text-xs text-muted-foreground">
-                                  {category.description}
-                                </p>
-                              </div>
-                            </LoaderLink>
+                              </a>
+                            ) : (
+                              <LoaderLink
+                                href={category.href}
+                                className="flex items-center gap-3 rounded-md p-2 hover:bg-[#f5f5f5]"
+                              >
+                                <img
+                                  src={category.img}
+                                  alt={category.title}
+                                  className="w-20 h-20 object-cover rounded-md flex-shrink-0"
+                                />
+                                <div className="flex flex-col text-left">
+                                  <div className="text-sm font-medium">
+                                    {category.title}
+                                  </div>
+                                  <p className="text-xs text-muted-foreground">
+                                    {category.description}
+                                  </p>
+                                </div>
+                              </LoaderLink>
+                            )}
                           </div>
                         </NavigationMenuLink>
                       </div>
@@ -266,20 +294,32 @@ export function Navbar() {
                     Kategoriler
                   </AccordionTrigger>
                   <AccordionContent className="flex flex-col gap-2 pl-4 text-[#f5f5f5]">
-                    {categories.map((category) => (
-                      <LoaderLink
-                        key={category.title}
-                        href={category.href}
-                        onClick={() => setOpen(false)}
-                        className={
-                          pathname === category.href
-                            ? "underline decoration-[#FF007A] decoration-2"
-                            : ""
-                        }
-                      >
-                        {category.title}
-                      </LoaderLink>
-                    ))}
+                    {categories.map((category) =>
+                      category.external ? (
+                        <a
+                          key={category.title}
+                          href={category.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="py-2"
+                        >
+                          {category.title}
+                        </a>
+                      ) : (
+                        <LoaderLink
+                          key={category.title}
+                          href={category.href}
+                          onClick={() => setOpen(false)}
+                          className={
+                            pathname === category.href
+                              ? "underline decoration-[#FF007A] decoration-2"
+                              : ""
+                          }
+                        >
+                          {category.title}
+                        </LoaderLink>
+                      )
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
