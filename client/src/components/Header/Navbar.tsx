@@ -95,7 +95,7 @@ const categories: {
   },
   {
     title: "Müzik Dergisi",
-    href: "https://mor-beats-stage.lovable.app/",
+    href: "https://preview--bkksj1hpna57.trickle.host/",
     description:
       "Müziğe dair yazılar, haberler ve ilham verici içerikler burada seni bekliyor.",
     img: "/musicmagazine.webp",

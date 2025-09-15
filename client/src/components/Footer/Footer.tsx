@@ -73,7 +73,10 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://mor-beats-stage.lovable.app/" target="_blank">
+              <a
+                href="https://preview--bkksj1hpna57.trickle.host"
+                target="_blank"
+              >
                 Müzik Dergisi
               </a>
             </li>
