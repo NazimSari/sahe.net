@@ -131,10 +131,8 @@ export function Navbar() {
           className="font-black
             text-[#FF007A]"
         >
-          <span className="text-sm md:text-lg flex items-center">
-            <span
-              className={`ml-[-8px] text-xl md:text-xl lg:text-4xl font-black ${roboto.className}`}
-            >
+          <span className="inline-flex items-center text-3xl lg:text-5xl">
+            <span className={`font-black tracking-tight ${roboto.className}`}>
               sahne.net
             </span>
           </span>
@@ -247,15 +245,18 @@ export function Navbar() {
         {/* MOBILE MENU */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" className="bg-white">
-              <Menu className="h-6 w-6" />
-            </Button>
+            <div className="flex items-center gap-2">
+              <span className="text-md font-semibold text-[#FF007A]">BETA</span>
+              <Button variant="outline" size="icon" className="bg-white">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </div>
           </SheetTrigger>
 
           <SheetContent side="left" className="w-[280px] bg-[#040519]">
             <SheetHeader>
               <SheetTitle className="text-[#FF007A] text-lg">
-                <span className="text-sm md:text-lg flex items-center">
+                <span className="text-xl flex items-center">
                   <span className="font-black">sahne.net(BETA)</span>
                 </span>
               </SheetTitle>
