@@ -32,13 +32,12 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { LoaderLink } from "../Loader/LoaderLink";
-import { Roboto } from "next/font/google";
+import { League_Spartan } from "next/font/google";
 
-const roboto = Roboto({
-  weight: ["700", "900"],
-  style: ["normal"],
+const leagueSpartan = League_Spartan({
   subsets: ["latin"],
-  display: "swap",
+  weight: ["700", "800", "900"],
+  style: ["normal"],
 });
 
 const categories: {
@@ -132,7 +131,9 @@ export function Navbar() {
             text-[#FF007A]"
         >
           <span className="inline-flex items-center text-3xl lg:text-5xl">
-            <span className={`font-black tracking-tight ${roboto.className}`}>
+            <span
+              className={`font-black tracking-tight ${leagueSpartan.className}`}
+            >
               sahne.net
             </span>
           </span>
