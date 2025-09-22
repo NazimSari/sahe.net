@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import {
   commentsData,
   dataSources,
+  mekanDetaySayfasiInstagramData,
   mekanDetaySayfasiVideoData,
   sanatciDetayData,
 } from "@/lib/data";
@@ -29,9 +30,16 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BookingCalendar } from "@/components/BookingCalendar";
 import DemoModal from "@/components/Modals/DemoModal";
+import MobilInstagramSlider from "@/components/SliderGsap/MobilInstagramSlider";
+
+declare global {
+  interface Window {
+    instgrm?: any;
+  }
+}
 
 export default function SanatciDetayPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -60,6 +68,21 @@ export default function SanatciDetayPage() {
   const handleShowResults = () => {
     setIsModalOpen(true); // Butona tıklanınca modal açılır
   };
+
+  useEffect(() => {
+    // Instagram embed.js'i çağır
+    const script = document.createElement("script");
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    // sayfa yüklendikten sonra embedleri işler
+    script.onload = () => {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    };
+  }, []);
   return (
     <main className="min-h-screen w-full overflow-hidden">
       <section className="p-4 lg:pt-16 pt-28 bg-[url('/page3.webp')] bg-cover bg-center flex items-center min-h-screen w-full">
@@ -212,6 +235,43 @@ export default function SanatciDetayPage() {
           </div>
           <div className="md:hidden">
             <MobileVideoSlider videoData={mekanDetaySayfasiVideoData} />
+          </div>
+        </div>
+      </section>
+      <section className="bg-[#160317]">
+        <div className="container mx-auto md:pb-16">
+          <div className="flex flex-col gap-4 justify-center md:mb-10">
+            <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug">
+              {sanatci.name} Instagram Sahnesi
+            </h3>
+            <p
+              id="scene-paragraf"
+              className="text-[#f5f5f5] text-sm md:text-base max-w-xl ml-2"
+            >
+              Sahne arkası, konser anları ve özel içerikler burada! Grubun
+              enerjisini ve ruhunu hissetmek için hemen göz at.
+            </p>
+          </div>
+          {/* Grid yapısı */}
+          <div className="hidden md:flex flex-col gap-4 justify-center p-3 md:p-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {mekanDetaySayfasiInstagramData.map((post) => (
+                <div
+                  key={post.id}
+                  className="w-full rounded-lg overflow-hidden aspect-[9/16] bg-black flex items-center justify-center"
+                >
+                  {/* Instagram Embed */}
+                  <blockquote
+                    className="instagram-media w-full h-full !max-w-full"
+                    data-instgrm-permalink={post.src}
+                    data-instgrm-version="14"
+                  ></blockquote>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="md:hidden">
+            <MobilInstagramSlider posts={mekanDetaySayfasiInstagramData} />
           </div>
         </div>
       </section>

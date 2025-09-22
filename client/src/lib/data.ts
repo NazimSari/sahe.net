@@ -790,6 +790,29 @@ export const mekanDetaySayfasiVideoData = [
   },
 ];
 
+export const mekanDetaySayfasiInstagramData = [
+  {
+    id: 1,
+    title: "Sahne.net - Oksijeni Müzik (Reel 1)",
+    src: "https://www.instagram.com/reel/DOqHS3LDZzU/?utm_source=ig_embed&utm_campaign=loading",
+  },
+  {
+    id: 2,
+    title: "Sahne.net - Oksijeni Müzik (Reel 2)",
+    src: "https://www.instagram.com/reel/DO0825HDKEm/?utm_source=ig_embed&utm_campaign=loading",
+  },
+  {
+    id: 3,
+    title: "Sahne.net - Oksijeni Müzik (Reel 3)",
+    src: "https://www.instagram.com/reel/DO5jeQLjXhB/?utm_source=ig_embed&utm_campaign=loading",
+  },
+  {
+    id: 4,
+    title: "Sahne.net - Oksijeni Müzik (Reel 4)",
+    src: "https://www.instagram.com/reel/DO3AMLNjf_w/?utm_source=ig_embed&utm_campaign=loading",
+  },
+];
+
 export const festivalDetayData = {
   description:
     "İstanbul Yaz Rüzgarı Festivali, müziğin birleştirici gücünü İstanbul’un eşsiz atmosferinde buluşturan 3 günlük bir müzik şölenidir. Pop, rock ve alternatif müzik tutkunlarını bir araya getiren bu festival, yerli ve uluslararası sanatçıların enerjik performanslarıyla unutulmaz anlar vadediyor. KüçükÇiftlik Park’ın açık hava sahnesinde, yazın en güzel günlerinde müzik, dans ve eğlence bir arada!",

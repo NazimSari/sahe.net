@@ -141,3 +141,9 @@ p {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.instagram-media {
+  max-width: 100% !important;
+  width: 100% !important;
+  min-width: 100% !important;
+}
