@@ -47,7 +47,7 @@ export default function IletisimPage() {
                       E Posta Adresi
                     </p>
                     <p className="text-[#858585] text-center font-semibold text-sm lg:text-base">
-                      sahne@sahne.net
+                      sahnebilgi@gmail.com
                     </p>
                   </div>
                 </div>
