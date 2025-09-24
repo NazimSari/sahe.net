@@ -4,6 +4,8 @@ import cors from "cors";
 import morgan from "morgan";
 import preRegisterRoutes from "./routes/preRegisterRoutes";
 import contactEmailRoutes from "./routes/contactEmailRoutes";
+import counterRoutes from "./routes/counterRoutes";
+import { initCronJobs } from "../utils/cronJobs";
 
 //load all your enviroments
 dotenv.config();
@@ -28,11 +30,10 @@ app.use(morgan("dev"));
 
 app.use("/api/register", preRegisterRoutes);
 app.use("/api/contact", contactEmailRoutes);
+app.use("/api/counter", counterRoutes);
 
-// Health check endpoint backendi uykudan uyandırmak için ping
-app.get("/health", (req, res) => {
-  res.status(200).send("OK");
-});
+// ✅ Cron job'u başlat
+initCronJobs();
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

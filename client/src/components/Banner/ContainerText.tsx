@@ -21,7 +21,7 @@ export function ContainerTextFlipDemo() {
       <div className="flex flex-col md:flex-row items-center text-center justify-center p-2 md:gap-5 gap-3 w-full">
         <p className="text-center">Sanatını dünyaya</p>
         <div className="md:w-[224px] w-[146px]">
-          <ContainerTextFlip words={words} />
+          <ContainerTextFlip words={["duyur", "sergile", "paylaş"]} />
         </div>
       </div>
     </motion.div>

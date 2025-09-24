@@ -9,11 +9,13 @@ import MusicTypeSection from "@/components/Home/MusicTypeSection";
 import EventTypeSection from "@/components/Home/EventTypeSection";
 import PaymentStepsSection from "@/components/Home/PaymentStepsSection";
 import VenuesSection from "@/components/Home/VenuesSection";
+import CounterSection from "@/components/Home/CounterSection";
 
 export default function Home() {
   return (
     <main className="relative flex flex-col w-full justify-center items-center  overflow-hidden">
       <HeroSection />
+      <CounterSection />
       <EventTypeSection />
       <StageStarsSection />
       <MusicTypeSection />

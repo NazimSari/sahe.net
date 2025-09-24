@@ -159,7 +159,7 @@ export default function Footer() {
               </span>
               +90 555 555 55 55
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex md:text-sm xl:text-base items-center gap-2">
               <span>
                 <Mail size={18} />
               </span>
