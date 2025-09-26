@@ -19,20 +19,20 @@ export default function HeroSection() {
             <div className="flex flex-col justify-center  gap-5">
               <h1
                 id="hero-title"
-                className="lg:text-6xl md:text-5xl text-4xl  max-w-6xl font-bold text-[#f5f5f5]"
+                className="lg:text-6xl md:text-5xl text-4xl  max-w-6xl font-bold text-[#f5f5f5] z-10"
               >
                 Etkinlikleriniz İçin Sanatçılara Ulaşmanın En Kolay Yolu
               </h1>
               <div
                 id="hero-paragraph"
-                className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed"
+                className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed z-10"
               >
                 Sahne sanatçılarının buluştuğu en iyi online platforma hoş
                 geldin! Her türlü etkinlik için sanatçıları kolayca bul,
                 iletişime geç ve hemen rezervasyon yap.
               </div>
 
-              <div id="hero-forms" className="mt-10">
+              <div id="hero-forms" className="mt-10 z-10">
                 <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-4">
                   <p className="text-[#f5f5f5] text-base">
                     <span className="text-[#FF007A] text-2xl">*</span>Sanatçı ve

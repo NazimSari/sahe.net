@@ -21,7 +21,13 @@ const MobilTypeSectionsSwipeCard: React.FC<CardProps> = ({
       href={`/${basePath}/${slug}`}
       className="relative w-[60vw] max-w-[250px] aspect-square overflow-hidden bg-white flex justify-center items-center rounded-lg"
     >
-      <Image src={path} alt={name} fill style={{ objectFit: "cover" }} />
+      <Image
+        src={path}
+        alt={name}
+        fill
+        sizes="(max-width: 768px) 60vw, 250px"
+        style={{ objectFit: "cover" }}
+      />
       <div className="absolute inset-0 bg-black opacity-0 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 bg-black/70 h-16 w-full">
         {" "}
