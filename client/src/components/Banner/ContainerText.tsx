@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { ContainerTextFlip } from "./ContainerTextFlip ";
 
 export function ContainerTextFlipDemo() {
-  const words = ["duyur!", "sergile!", "paylaş!"];
   return (
     <motion.div
       initial={{

@@ -24,7 +24,7 @@ export default function MusicTypeSection() {
             </h3>
             <p className="text-[#f5f5f5] text-sm md:text-base max-w-xl ml-2">
               Pop, caz, rock veya klasik… Etkinliğin için mükemmel müzik türünü
-              seç en iyi müzisyenlerle anını unutulmaz kıl!
+              seç en iyi sanatçılarla anını unutulmaz kıl!
             </p>
           </div>
         </div>

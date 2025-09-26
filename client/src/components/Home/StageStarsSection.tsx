@@ -19,7 +19,7 @@ export default function StageStarsSection() {
                 id="scene-paragraf"
                 className="text-[#1A1A2E] text-sm md:text-base max-w-xl ml-2"
               >
-                En iyi müzisyenleri bul, güvenli şekilde rezerve et ve sahneyi
+                En iyi sanatçıları bul, güvenli şekilde rezerve et ve sahneyi
                 hazırla! Etkinliğin için her şey birkaç tık uzağında.
               </p>
             </div>

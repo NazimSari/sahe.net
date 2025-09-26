@@ -23,7 +23,7 @@ export default function EventTypeSection() {
               Etkinliğini sahneye taşıyacak sanatçıları keşfet
             </h3>
             <p className="text-[#f5f5f5] text-sm md:text-base max-w-xl ml-2">
-              Hayalindeki etkinliği gerçeğe dönüştür! En yetenekli müzisyenlerle{" "}
+              Hayalindeki etkinliği gerçeğe dönüştür! En yetenekli sanatçılarla{" "}
               tanış ve sahneye kendi hikayeni taşı.
             </p>
           </div>

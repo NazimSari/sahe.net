@@ -23,7 +23,7 @@ export default function InfoSection() {
           {/* Açıklama + Butonlar */}
           <div className="flex flex-col items-center lg:items-start justify-center gap-5 max-w-xl">
             <p className="text-[#f5f5f5] text-sm md:text-lg leading-relaxed">
-              Biz, müzisyenlerin yeteneklerini dünyaya duyurabileceği,
+              Biz, sanatçıların yeteneklerini dünyaya duyurabileceği,
               dinleyicilerin ise unutulmaz müzik deneyimleri yaşayabileceği bir
               platform yaratıyoruz. Her nota, bir bağ kurar; her ritim, bir
               hikaye anlatır. Sen de bu hikayenin parçası ol!

@@ -5,64 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import MenifestModal from "../Modals/MenifestModal";
+import { HeroContainerTextFlip } from "../Banner/HeroContainerTextFlip";
 
 export default function HeroSection() {
-  useGSAP(() => {
-    // SplitText ile metni böl
-    const heroSplit = new SplitText("#hero-title", { type: "words" });
-    const heroParagraph = new SplitText("#hero-paragraph", { type: "lines" });
-
-    // GSAP varsayılan ayarları
-    gsap.set("#hero-title", { opacity: 1 }); // Başlangıçta CSS ile opacity: 0 ayarlandığı için geri getiriyoruz
-    gsap.set("#hero-paragraph", { opacity: 1 });
-    gsap.set("#hero-forms > *", { opacity: 1 });
-    gsap.set("#hero-forms, #hero-forms *", {
-      opacity: 1,
-      visibility: "visible",
-    });
-
-    const tl = gsap.timeline();
-
-    tl.fromTo(
-      heroSplit.words,
-      {
-        opacity: 0,
-        yPercent: 100,
-      },
-      {
-        opacity: 1,
-        yPercent: 0,
-        duration: 1.8,
-        ease: "expo.out",
-        stagger: 0.06,
-      }
-    );
-
-    tl.from(
-      heroParagraph.lines,
-      {
-        opacity: 0,
-        yPercent: 100,
-        duration: 1.8,
-        ease: "expo.out",
-        stagger: 0.06,
-        delay: 1,
-      },
-      0
-    );
-
-    tl.from(
-      "#hero-forms form, #hero-forms form *", // Form ve tüm iç elemanları hedefle
-      {
-        opacity: 0,
-        yPercent: 50,
-        duration: 1.8,
-        ease: "expo.out",
-      },
-      "-=1.5"
-    );
-  }, []);
-
   return (
     <>
       <main className="bg-[#040519] w-full pt-20 xl:pt-0 pl-2">
@@ -74,20 +19,29 @@ export default function HeroSection() {
             <div className="flex flex-col justify-center  gap-5">
               <h1
                 id="hero-title"
-                className="lg:text-6xl md:text-5xl text-4xl  max-w-6xl font-bold text-[#f5f5f5] opacity-0 z-10" // Başlangıçta görünmez
+                className="lg:text-6xl md:text-5xl text-4xl  max-w-6xl font-bold text-[#f5f5f5]"
               >
                 Etkinlikleriniz İçin Sanatçılara Ulaşmanın En Kolay Yolu
               </h1>
-              <p
+              <div
                 id="hero-paragraph"
-                className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed opacity-0 z-10" // Başlangıçta görünmez
+                className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed"
               >
-                Müzisyenlerin buluştuğu en iyi online platforma hoş geldin! Her
-                türlü etkinlik için müzisyenleri kolayca bul, iletişime geç ve
-                hemen rezervasyon yap.
-              </p>
+                <HeroContainerTextFlip
+                  words={["Müzisyenlerin", "Sanatçıların"]}
+                  interval={5000}
+                />{" "}
+                buluştuğu en iyi online platforma hoş geldin! Her türlü etkinlik
+                için{" "}
+                <HeroContainerTextFlip
+                  words={["müzisyenleri", "sanatçıları"]}
+                  interval={3000}
+                  startDelay={2000} // ✅ 1 saniye gecikmeli başlar
+                />{" "}
+                kolayca bul, iletişime geç ve hemen rezervasyon yap.
+              </div>
 
-              <div id="hero-forms" className="mt-10 opacity-0 z-10">
+              <div id="hero-forms" className="mt-10">
                 <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-4">
                   <p className="text-[#f5f5f5] text-base">
                     <span className="text-[#FF007A] text-2xl">*</span>Sanatçı ve
