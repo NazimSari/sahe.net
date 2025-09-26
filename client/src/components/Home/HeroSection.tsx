@@ -88,12 +88,11 @@ export default function HeroSection() {
               </p>
 
               <div id="hero-forms" className="mt-10 opacity-0 z-10">
-                <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-2">
-                  <div className="border-b-2 border-l-2  border-[#FF007A] p-2 mb-4">
-                    <p className="text-[#f5f5f5] text-base">
-                      Sanatçı ve mekan ön kayıt formu
-                    </p>
-                  </div>
+                <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-4">
+                  <p className="text-[#f5f5f5] text-base">
+                    <span className="text-[#FF007A] text-2xl">*</span>Sanatçı ve
+                    müzisyen ön kayıt formu
+                  </p>
                   <MenifestModal />
                 </div>
                 <MemberForm />
