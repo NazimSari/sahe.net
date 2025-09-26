@@ -157,7 +157,7 @@ export default function Footer() {
               <span>
                 <Phone size={18} />
               </span>
-              +90 000 000 00 00
+              +90 505 001 08 44
             </li>
             <li className="flex md:text-sm xl:text-base items-center gap-2">
               <span>

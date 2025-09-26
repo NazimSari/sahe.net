@@ -36,7 +36,7 @@ export default function IletisimPage() {
                       Telefon Numarası
                     </p>
                     <p className="text-[#858585] text-center font-semibold text-sm lg:text-base">
-                      +000 000 00 00
+                      +0505 001 08 44
                     </p>
                   </div>
                 </div>
@@ -58,7 +58,7 @@ export default function IletisimPage() {
                       Whatsapp
                     </p>
                     <p className="text-[#858585] text-center font-semibold text-sm lg:text-base">
-                      +000 000 00 00
+                      +0505 001 08 44
                     </p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function IletisimPage() {
                       Office
                     </p>
                     <p className="text-[#858585] text-center font-semibold text-sm lg:text-base">
-                      Kadıköy/İstanbul
+                      Bakırköy/İstanbul
                     </p>
                   </div>
                 </div>

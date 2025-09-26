@@ -27,18 +27,9 @@ export default function HeroSection() {
                 id="hero-paragraph"
                 className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed"
               >
-                <HeroContainerTextFlip
-                  words={["Müzisyenlerin", "Sanatçıların"]}
-                  interval={5000}
-                />{" "}
-                buluştuğu en iyi online platforma hoş geldin! Her türlü etkinlik
-                için{" "}
-                <HeroContainerTextFlip
-                  words={["müzisyenleri", "sanatçıları"]}
-                  interval={3000}
-                  startDelay={2000} // ✅ 1 saniye gecikmeli başlar
-                />{" "}
-                kolayca bul, iletişime geç ve hemen rezervasyon yap.
+                Sahne sanatçılarının buluştuğu en iyi online platforma hoş
+                geldin! Her türlü etkinlik için sanatçıları kolayca bul,
+                iletişime geç ve hemen rezervasyon yap.
               </div>
 
               <div id="hero-forms" className="mt-10">
