@@ -1,5 +1,5 @@
 "use client";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Star } from "lucide-react";
 import { sahneData } from "@/lib/data";
 import InfoCard from "../Cards/InfoCard";
 import MobileInfoCardSwipeSlider from "../SliderGsap/MobileInfoCardSwipeSlider";
@@ -15,13 +15,16 @@ export default function StageStarsSection() {
               <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#1A1A2E] md:leading-snug">
                 Sahnenin Yıldızları
               </h3>
-              <p
+              <div
                 id="scene-paragraf"
                 className="text-[#1A1A2E] text-sm md:text-base max-w-xl ml-2"
               >
-                En iyi sanatçıları bul, güvenli şekilde rezerve et ve sahneyi
-                hazırla! Etkinliğin için her şey birkaç tık uzağında.
-              </p>
+                <span className="bg-yellow-400 px-2 py-1 rounded-lg font-semibold">
+                  Sahnenin Yıldızı
+                </span>{" "}
+                rozetine sahip en çok ilgi gören sanatçılar burada..
+                Performanslarıyla sahnenin yıldızlarını şimdi keşfet!
+              </div>
             </div>
             <div className="hidden md:block border border-[#FF007A] py-2 rounded-md text-[#FF007A] text-sm md:text-base font-semibold cursor-pointer hover:bg-[#FF007A] hover:text-white transition-colors duration-300">
               <LoaderLink href="/etkinlik-turleri/dugun">
