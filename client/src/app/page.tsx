@@ -10,6 +10,7 @@ import EventTypeSection from "@/components/Home/EventTypeSection";
 import PaymentStepsSection from "@/components/Home/PaymentStepsSection";
 import VenuesSection from "@/components/Home/VenuesSection";
 import CounterSection from "@/components/Home/CounterSection";
+import VideoSection from "@/components/Home/VideoSection";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <TonightWhoSection />
       <VenuesSection />
       <InfoSection />
+      <VideoSection />
       <SubscriptionSection />
     </main>
   );

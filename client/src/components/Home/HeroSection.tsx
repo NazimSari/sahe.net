@@ -65,7 +65,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <main className="bg-[#040519] w-full pt-20 xl:pt-0">
+      <main className="bg-[#040519] w-full pt-20 xl:pt-0 pl-2">
         <section
           id="hero-section"
           className="mx-auto container my-16 md:my-10 p-2"
@@ -89,9 +89,11 @@ export default function HeroSection() {
 
               <div id="hero-forms" className="mt-10 opacity-0 z-10">
                 <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-2">
-                  <p className="text-[#f5f5f5] text-sm">
-                    *Sanatçı ve mekan ön kayıt formu
-                  </p>
+                  <div className="border-b-2 border-l-2  border-[#FF007A] p-2 mb-4">
+                    <p className="text-[#f5f5f5] text-base">
+                      Sanatçı ve mekan ön kayıt formu
+                    </p>
+                  </div>
                   <MenifestModal />
                 </div>
                 <MemberForm />
