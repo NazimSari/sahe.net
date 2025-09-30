@@ -1,68 +1,57 @@
 "use client";
 import React from "react";
 import MemberForm from "../MemberForm";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
 import MenifestModal from "../Modals/MenifestModal";
-import { HeroContainerTextFlip } from "../Banner/HeroContainerTextFlip";
 
 export default function HeroSection() {
   return (
-    <>
-      <main className="bg-[#040519] w-full pt-20 xl:pt-0 pl-2">
-        <section
-          id="hero-section"
-          className="mx-auto container my-16 md:my-10 p-2"
-        >
-          <div className="flex justify-between items-center h-full">
-            <div className="flex flex-col justify-center  gap-5">
-              <h1
-                id="hero-title"
-                className="lg:text-6xl md:text-5xl text-4xl  max-w-6xl font-bold text-[#f5f5f5] z-10"
-              >
-                Etkinlikleriniz İçin Sanatçılara Ulaşmanın En Kolay Yolu
-              </h1>
-              <div
-                id="hero-paragraph"
-                className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed z-10"
-              >
-                Sahne sanatçılarının buluştuğu en iyi online platforma hoş
-                geldin! Her türlü etkinlik için sanatçıları kolayca bul,
-                iletişime geç ve hemen rezervasyon yap.
+    <main className="bg-[#040519] w-full pt-20">
+      <section
+        id="hero-section"
+        className="mx-auto container my-16 md:my-10 p-4"
+      >
+        <div className="flex justify-between items-center h-full">
+          <div className="flex flex-col justify-center  gap-5">
+            <h1
+              id="hero-title"
+              className="lg:text-6xl md:text-5xl text-4xl  max-w-6xl font-bold text-[#f5f5f5]  z-10"
+            >
+              Sanatçılar ve Müzisyenler İçin Ön Kayıt Formu
+            </h1>
+            <p
+              id="hero-paragraph"
+              className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed  z-10"
+            >
+              Sahne.net, yalnızca müzikalitesi yüksek santçılara alan açan tek
+              platform. Eğer siz de bu ayrıcalıklı sahnede yer almak
+              istiyorsanız, ön kayıt formunu doldurun.
+            </p>
+            <div id="hero-forms" className="mt-10  z-10">
+              <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-2">
+                <MenifestModal />
               </div>
-
-              <div id="hero-forms" className="mt-10 z-10">
-                <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-4">
-                  <p className="text-[#f5f5f5] text-base">
-                    <span className="text-[#FF007A] text-2xl">*</span>Sanatçı ve
-                    müzisyen ön kayıt formu
-                  </p>
-                  <MenifestModal />
-                </div>
-                <MemberForm />
-              </div>
-            </div>
-            <div className="hidden lg:flex mt-16 md:mt-10">
-              <div className="w-full h-full">
-                <img
-                  src="/hero.webp"
-                  alt="hero image"
-                  className="w-full h-full object-cover object-center"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-              </div>
+              <MemberForm />
             </div>
           </div>
-          <div className="absolute inset-0 lg:hidden z-0 pointer-events-none">
-            <img
-              src="/hero.webp"
-              alt="hero image"
-              className="w-full  h-[50vh] object-cover object-top opacity-30"
-            />
+          <div className="hidden lg:flex mt-16 md:mt-10">
+            <div className="w-full h-full">
+              <img
+                src="/hero.webp"
+                alt="hero image"
+                className="w-full h-full object-cover object-center"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+        <div className="absolute inset-0 lg:hidden z-0 pointer-events-none">
+          <img
+            src="/hero.webp"
+            alt="hero image"
+            className="w-full  h-[50vh] object-cover object-top opacity-30"
+          />
+        </div>
+      </section>
+    </main>
   );
 }

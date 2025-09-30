@@ -20,11 +20,12 @@ export default function EventTypeSection() {
         <div className="container mx-auto px-2">
           <div className="flex flex-col gap-4 h-full justify-center">
             <h3 className="md:text-4xl text-2xl max-w-2xl ml-2 font-bold text-[#f5f5f5] md:leading-snug md:mt-16 mt-8">
-              Etkinliğini sahneye taşıyacak sanatçıları keşfet
+              Etkinlikleriniz İçin Sanatçılara Ulaşmanın En Kolay Yolu
             </h3>
             <p className="text-[#f5f5f5] text-sm md:text-base max-w-xl ml-2">
-              Hayalindeki etkinliği gerçeğe dönüştür! En yetenekli sanatçılarla{" "}
-              tanış ve sahneye kendi hikayeni taşı.
+              Müzisyenlerin buluştuğu en iyi online platforma hoş geldin! Her
+              türlü etkinlik için müzisyenleri kolayca bul, iletişime geç ve
+              hemen rezervasyon yap.
             </p>
           </div>
         </div>

@@ -151,12 +151,12 @@ export default function MemberForm() {
           </Select>
           <Button
             disabled={isLoading}
-            className="md:p-6 p-3 mt-5 text-sm md:text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200 w-fit px-8 md:w-full"
+            className="md:p-6 p-3 mt-5 text-sm md:text-base bg-[#FF007A] hover:bg-[#ff007b8b] cursor-pointer transition-all duration-200 px-8 w-full"
             size={"lg"}
             variant="default"
             type="submit"
           >
-            {isLoading ? "Gönderiliyor..." : "Ön Kayıt"}
+            {isLoading ? "Gönderiliyor..." : "Sanatçı Ön Kaydımı Başlat"}
           </Button>
         </div>
       </form>
