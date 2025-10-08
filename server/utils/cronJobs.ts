@@ -2,7 +2,7 @@ import cron from "node-cron";
 import { incrementCounter } from "../src/controllers/counterController";
 
 // Günlük hedef ortalama
-const DAILY_TARGET = 65; // 450 / 7 ≈ 64.28
+const DAILY_TARGET = 11; // 450 / 7 ≈ 64.28
 
 // Günlük artışı takip etmek için değişken
 let dailyProgress = 0;
@@ -12,8 +12,8 @@ const getRandomIncrement = (): number => Math.floor(Math.random() * 3) + 1;
 
 // Rastgele zaman aralığı (10-30 dk arası)
 const getRandomInterval = (): number => {
-  const min = 10 * 60 * 1000; // 10 dakika
-  const max = 30 * 60 * 1000; // 30 dakika
+  const min = 60 * 60 * 1000; // 60 dakika
+  const max = 120 * 60 * 1000; // 120 dakika
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 

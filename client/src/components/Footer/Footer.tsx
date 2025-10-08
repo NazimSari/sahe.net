@@ -169,7 +169,7 @@ export default function Footer() {
               <span>
                 <MapPin size={18} />
               </span>
-              123.Sokak, Kadıköy/İstanbul
+              Bakırköy/İstanbul
             </li>
           </ul>
         </div>
