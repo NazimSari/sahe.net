@@ -132,6 +132,7 @@ export default function MemberForm() {
                 <SelectItem value="solist">Solist</SelectItem>
                 <SelectItem value="dj">Dj Performans</SelectItem>
                 <SelectItem value="group">Müzik Grubu</SelectItem>
+                <SelectItem value="group">Organizatör</SelectItem>
               </SelectGroup>
               <SelectGroup>
                 <SelectLabel className="text-[#FF007A]">Mekan</SelectLabel>
