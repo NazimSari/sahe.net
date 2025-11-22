@@ -2,6 +2,7 @@
 import React from "react";
 import MemberForm from "../MemberForm";
 import MenifestModal from "../Modals/MenifestModal";
+import HeroSearchComp from "./HeroSearchComp";
 
 export default function HeroSection() {
   return (
@@ -16,21 +17,22 @@ export default function HeroSection() {
               id="hero-title"
               className="lg:text-6xl md:text-5xl text-4xl  max-w-6xl font-bold text-[#f5f5f5]  z-10"
             >
-              Sanatçılar ve Müzisyenler İçin Ön Kayıt Formu
+              Etkinlikleriniz İçin Sanatçılara Ulaşmanın En Kolay Yolu
             </h1>
             <p
               id="hero-paragraph"
               className="text-[#f5f5f5] font-semibold xl:text-xl md:text-lg sm:text-base text-sm max-w-4xl leading-relaxed  z-10"
             >
-              Sahne.net, yalnızca müzikalitesi yüksek santçılara alan açan tek
-              platform. Eğer siz de bu ayrıcalıklı sahnede yer almak
-              istiyorsanız, ön kayıt formunu doldurun.
+              Müzisyenlerin buluştuğu en iyi online platforma hoş geldin! Her
+              türlü etkinlik için müzisyenleri kolayca bul, iletişime geç ve
+              hemen rezervasyon yap.
             </p>
             <div id="hero-forms" className="mt-10  z-10">
               <div className="flex flex-col md:flex-row gap-2 items-center justify-between mb-2">
                 <MenifestModal />
               </div>
-              <MemberForm />
+              {/* <MemberForm /> */}
+              <HeroSearchComp />
             </div>
           </div>
           <div className="hidden lg:flex mt-16 md:mt-10">
